@@ -6,11 +6,11 @@ execFileSync(process.execPath,['node_modules/typescript/bin/tsc','--noEmit'],{st
 execFileSync(process.execPath,['node_modules/typescript/bin/tsc','--project','tsconfig.build.json'],{stdio:'inherit',windowsHide:true});
 await mkdir('dist',{recursive:true});
 await Promise.all(['index.html','styles.css'].map(file=>copyFile(`public/${file}`,`dist/${file}`)));
-const baselineFile='data/peer-timed-baseline-2026-10-27.json';
+const dataFiles=['data/peer-timed-baseline-2026-10-27.json','data/decoupled-attendance-decision-2026-10-27.json'];
 await mkdir('dist/data',{recursive:true});
-await copyFile(baselineFile,`dist/${baselineFile}`);
+await Promise.all(dataFiles.map(file=>copyFile(file,`dist/${file}`)));
 const revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim();
-const dirty=execFileSync('git',['status','--porcelain','--','src','public',baselineFile,'scripts/build.mjs','package.json','pnpm-lock.yaml','tsconfig.json','tsconfig.build.json'],
+const dirty=execFileSync('git',['status','--porcelain','--','src','public',...dataFiles,'scripts/build.mjs','package.json','pnpm-lock.yaml','tsconfig.json','tsconfig.build.json'],
   {encoding:'utf8',windowsHide:true}).trim().length>0;
 const hash=createHash('sha256');
 async function fingerprint(directory){
@@ -21,7 +21,7 @@ async function fingerprint(directory){
   }
 }
 await fingerprint('src');await fingerprint('public');
-for(const file of ['package.json','pnpm-lock.yaml','tsconfig.json','tsconfig.build.json','scripts/build.mjs',baselineFile]){
+for(const file of ['package.json','pnpm-lock.yaml','tsconfig.json','tsconfig.build.json','scripts/build.mjs',...dataFiles]){
   hash.update(file);hash.update(await readFile(file));
 }
 const sourceFingerprint=hash.digest('hex');

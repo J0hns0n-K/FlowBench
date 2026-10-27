@@ -5,6 +5,7 @@ import type { Group, Comparison, WorkflowResult } from './workflow.ts';
 import { makeExperiment, jsonExport, csvExport } from './export.ts';
 import type { Experiment } from './export.ts';
 import { summarizePeerTiming } from './observed.ts';
+import { compareStudyStartDependencies } from './study-start.ts';
 
 function element<T extends HTMLElement>(id: string): T {
   const value=document.getElementById(id);
@@ -29,6 +30,28 @@ function duration(value:number):string{
   return minutes?`${minutes}분 ${fmt(seconds)}초`:`${fmt(seconds)}초`;
 }
 
+async function loadStudyStartDecision(seatingSec:number,verificationSec:number):Promise<void>{
+  try{
+    const response=await fetch('/data/decoupled-attendance-decision-2026-10-27.json');
+    if(!response.ok)throw new Error('Decision record unavailable.');
+    const decision:unknown=await response.json();
+    if(!decision||typeof decision!=='object'||!('schemaVersion' in decision)||decision.schemaVersion!==1||
+      !('sourceKind' in decision)||decision.sourceKind!=='user-reported-collective-decision'||
+      !('status' in decision)||decision.status!=='decided-not-yet-implemented'){
+      throw new Error('Decision status requires review.');
+    }
+    const model=compareStudyStartDependencies(seatingSec,verificationSec);
+    element('decision-output').innerHTML=[
+      ['이전 대기 구조 가정',duration(model.previousStudyStartSec),'출첵 후 야자 시작이라고 가정'],
+      ['변경안: 야자 시작',duration(model.plannedStudyStartSec),'같은 착석시간·추가 전환 없음 가정'],
+      ['새 출석 확인 완료','미확인','0초가 아닙니다 · 별도 측정 필요'],
+    ].map(([title,value,note])=>`<div class="baseline-stat"><span>${title}</span><strong>${value}</strong><small>${note}</small></div>`).join('');
+    element('decision-note').textContent=`가정이 맞으면 공부 시작이 모델상 ${duration(model.conditionalAdvanceSec)} 앞당겨질 수 있습니다. 실제 절감 효과는 아직 측정되지 않았습니다.`;
+  }catch{
+    element('decision-output').textContent='변경안 기록을 확인하지 못해 모델값을 표시하지 않습니다.';
+  }
+}
+
 async function loadObservedBaseline():Promise<void>{
   try{
     const response=await fetch('/data/peer-timed-baseline-2026-10-27.json');
@@ -42,10 +65,12 @@ async function loadObservedBaseline():Promise<void>{
     const maxTurn=Math.max(...baseline.rows.map(row=>row.turnSec));
     element('baseline-table').innerHTML=baseline.rows.map(row=>`<tr><td>${row.group}</td><td>${row.rosterCount}명</td><td><div class="baseline-duration"><span>${row.turnSec}초</span><span class="baseline-bar" aria-hidden="true"><i style="width:${row.turnSec/maxTurn*100}%"></i></span></div></td><td>${row.cumulativeVerificationSec}초</td></tr>`).join('');
     element('baseline-note').textContent=`명단 ${baseline.targetRosterCount}명 · 실제 당일 출석 인원은 미확인. 누적값은 구간의 산술 합이며, 시계 시각이나 대안 예측이 아닙니다.`;
+    await loadStudyStartDecision(baseline.seatingSec,baseline.verificationSec);
   }catch{
     element('baseline-summary').textContent='기준선 표시를 완료하지 못했습니다.';
     element('baseline-error').textContent='현장 보고 데이터를 읽거나 검증하지 못했습니다. 아래 합성 실험을 현장 자료로 해석하지 마세요.';
     element('baseline-error').hidden=false;
+    element('decision-output').textContent='이전 기준선이 확인되지 않아 모델을 계산하지 않습니다.';
   }
 }
 

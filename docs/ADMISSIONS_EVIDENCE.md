@@ -21,3 +21,5 @@ No submission-ready student accomplishment statement is justified yet. The assis
 When evidence exists: draft only the verified role, completed action and supported outcome; preserve collaborator/AI attribution; then check the actual application field's current character limit. No target university, official Early deadline, timezone, or current form limit has been verified. October 31 is a planning milestone only.
 
 DormSense and RoboMetrics remain separate RD proposals. A common design–measure–model–validate methodology does not make them three completed ECs.
+
+Follow-up: the user reports a collective committee decision to separate attendance checking from study start next time. Describe the collective planning accurately if relevant; do not turn it into Junmo's sole invention or an implemented engineering outcome. The new DAG code/tests are AI-assisted. Actual implementation, study-start benefit, verification quality and the student's precise individual contribution still need evidence.

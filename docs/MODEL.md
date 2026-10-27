@@ -1,5 +1,7 @@
 # Mathematical and computational model v1
 
+This document describes the legacy count/report FCFS model. The planned independent study-start change uses the separate [dependency model](DEPENDENCY_MODEL.md), with planned/conditional status and unknown committee work preserved.
+
 Units: seconds. The engine's time origin is the first modelled verification activity (A in the field protocol), **not** the minute-25 deadline D or an individual student's arrival timestamp. Preparation before A is not included in v1 outputs. This model has no student lateness or disciplinary-policy output.
 
 ## FCFS service primitive

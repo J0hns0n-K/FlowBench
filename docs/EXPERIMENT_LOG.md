@@ -91,3 +91,12 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Added a pure, validated accounting module and a separately labelled baseline panel. No count/report split, counterfactual candidate or improvement claim is generated from the record. Original synthetic engine and fixtures are preserved.
 - `node --test tests/engine.test.ts tests/workflow.test.ts tests/scenario.test.ts tests/export.test.ts tests/observed.test.ts`: **27 passed, 0 failed**, including five baseline tests for arithmetic, cumulative sums, provenance, copying and invalid input.
 - Typechecked browser build and whitespace/diff check passed. Desktop/mobile QA verified 103/160/263, eight rows and preserved synthetic result; no horizontal overflow or console errors. Screenshots and detail in BROWSER_QA.md.
+
+### Collective decision — independent study start, planned
+
+- User reported a change: students start study after seating; committee checks attendance separately. Follow-ups confirmed next-time implementation (not already running) and collective committee discussion/decision. No sole individual proposal or measured benefit attributed.
+- Source decision and ADR-014 committed before implementation in `d252c5dccaccdb7dc6819d4f69fea0cd3e68cd45`. Created field-validation issue #7. Native GitHub integration returned repository write 403; the previously verified existing Git account successfully created the issue, without changing permissions.
+- Added pure dependency-DAG scheduling with null propagation, cycle/reference validation and zero-duration milestones. Conditional comparison gives 263/103 s for non-checking students under explicit assumptions. Committee verification completion, study start, person-time and actual measured advance remain null.
+- Full suite reached **35 passed, 0 failed**; focused dependency tests (8) rerun after validation/role-scope refinements passed. Typechecked build and diff checks passed. No old snapshot or synthetic fixture changed.
+- Desktop/mobile QA confirmed planned status, visible assumptions, unknown attendance completion and preserved previous baseline. No horizontal overflow or console errors. Screenshots in BROWSER_QA.md.
+- Prepared a separate blank observation form for actual study start, committee timing/person-time, accuracy and interruptions. No implementation, observation or approval is fabricated by the form or graph.

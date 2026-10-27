@@ -21,15 +21,24 @@
     <section class="intro" aria-labelledby="page-title">
       <div><p class="eyebrow">01 / ATTENDANCE VERIFICATION</p><h1 id="page-title">인원 확인의 병목을 찾다.</h1>
       <p class="intro-copy">확인하는 순서가 달라지면, 모두의 시간이 어떻게 달라질까요?<br class="desktop-break">같은 작업량으로 두 가지 절차를 비교합니다.</p></div>
-      <div class="study-status"><span class="status-dot"></span><span>현장 보고 + 합성 실험<strong>반별 시간 1회 보고 · 반복 검증 전</strong></span></div>
+      <div class="study-status"><span class="status-dot"></span><span>현장 보고 + 절차 모델<strong>변경 결정 · 시행 후 검증 예정</strong></span></div>
     </section>
     <section class="context-strip" aria-label="확인된 현재 절차">
-      <div class="context-icon" aria-hidden="true">i</div><div><strong>출발점은 대기줄이 아닌, 착석 후 인원 확인입니다.</strong>
-      <p>최신 동료 측정 보고: 착석 103초, 반별 구간 합 160초. 기준선과 합성 시뮬레이션을 나누어 표시합니다.</p></div>
-      <span class="source-tag">사용자가 전달한 측정</span>
+      <div class="context-icon" aria-hidden="true">i</div><div><strong>변경 결정: 착석 후 바로 야자 시작, 출석은 사생회가 별도로 확인합니다.</strong>
+      <p>사생회 공동 논의·결정이며 다음부터 시행할 계획입니다. 새 방식의 시간·업무량·정확성은 아직 측정하지 않았습니다.</p></div>
+      <span class="source-tag">다음부터 시행 · 사용자 보고</span>
+    </section>
+    <section class="panel decision-panel" aria-labelledby="decision-title">
+      <div class="panel-heading"><div><p class="eyebrow">CHANGE THE DEPENDENCY</p><h2 id="decision-title">공부 시작과 출석 완료를 분리하기</h2></div><span class="data-badge">변경 결정 · 아직 미시행</span></div>
+      <div class="dependency-diagrams"><div><strong>이전 대기 구조를 가정</strong><p>착석 → 반별 출석 완료 → 야자 시작</p></div><div><strong>사생회가 결정한 변경안</strong><p>착석 → 야자 시작<br><span>사생회 출석 확인은 별도 진행</span></p></div></div>
+      <p class="section-copy">아래는 확인 업무를 맡지 않는 학생의 조건부 시작 모델입니다. 기존에 출첵 완료를 기다렸고, 착석시간이 같고, 추가 전환이 없다는 가정입니다.</p>
+      <div id="decision-output" class="baseline-summary">변경안의 의존관계를 계산하고 있습니다.</div>
+      <p id="decision-note" class="field-note"></p>
+      <p class="field-note">사생회 담당자의 공부 시작·확인시간·총 작업량·정확성과 공부 중 중단은 미측정입니다. 120명 모두에게 같은 절감 시간을 적용하지 않습니다.</p>
+      <a class="baseline-source" href="https://github.com/J0hns0n-K/FlowBench/blob/main/docs/DECOUPLED_ATTENDANCE_KO.md" target="_blank" rel="noreferrer">변경안과 검증 계획 읽기 ↗</a>
     </section>
     <section class="panel observed-panel" aria-labelledby="baseline-title">
-      <div class="panel-heading"><div><p class="eyebrow">FIRST FIELD REPORT</p><h2 id="baseline-title">첫 기준선: 실제로 보고된 시간</h2></div><span class="data-badge">동료 측정 보고 · 1회</span></div>
+      <div class="panel-heading"><div><p class="eyebrow">PREVIOUS PROCESS BASELINE</p><h2 id="baseline-title">변경 전 절차의 기준선</h2></div><span class="data-badge">동료 측정 보고 · 1회</span></div>
       <p class="section-copy">친구가 재준 시간을 사용자가 전달했습니다. 측정 기기·관찰일·원시 시각은 미확인이며, 반별 구간은 확인과 보고를 나누지 않았습니다.</p>
       <p id="baseline-error" class="error" role="status" hidden></p>
       <div id="baseline-summary" class="baseline-summary" aria-live="polite">기준선 자료를 읽고 있습니다.</div>
@@ -66,7 +75,7 @@
         <section class="panel comparison-panel" aria-labelledby="comparison-title">
           <div class="panel-heading"><div><p class="eyebrow">SEPARATE SYNTHETIC EXPERIMENT</p><h2 id="comparison-title">가정을 비교하는 별도의 합성 실험</h2></div><span class="data-badge">SYNTHETIC</span></div>
           <div class="scenario-cards">
-            <article class="scenario-card serial"><p class="scenario-kicker"><span class="key serial-key"></span>현행 구조 A · 자기보고</p><h3>순차 확인 · 순차 보고</h3><p>한 그룹이 보고까지 마친 뒤<br>다음 그룹 확인을 시작합니다.</p><div class="time-value" id="serial-total">—</div><span class="metric-unit">전체 확인 완료시간 · 합성 입력</span></article>
+            <article class="scenario-card serial"><p class="scenario-kicker"><span class="key serial-key"></span>이전 구조 A · 합성 입력</p><h3>순차 확인 · 순차 보고</h3><p>한 그룹이 보고까지 마친 뒤<br>다음 그룹 확인을 시작합니다.</p><div class="time-value" id="serial-total">—</div><span class="metric-unit">전체 확인 완료시간 · 합성 입력</span></article>
             <article class="scenario-card parallel"><p class="scenario-kicker"><span class="key parallel-key"></span>비교 가정 B</p><h3>동시 확인 · 보고 1명</h3><p>모든 그룹이 함께 확인하고<br>끝나는 순서대로 한 명에게 보고합니다.</p><div class="time-value" id="parallel-total">—</div><span class="metric-unit">전체 확인 완료시간</span></article>
           </div>
           <div class="difference-strip"><span id="difference">—</span><p>절차 가정에 따른 합성 결과이며, 학교에서 측정한 개선 효과가 아닙니다.</p></div>

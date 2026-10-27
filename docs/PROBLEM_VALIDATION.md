@@ -4,7 +4,7 @@
 
 `verified-artifact`: inspected code, test result or primary publication. `user-report`: account given in this session, not an independent observation. `handoff-only`: assertion in the supplied handoff whose original source was not inspected. `synthetic`: invented experimental input, never school data. `proposed`: research design or future activity. `unknown`: not established.
 
-## Current workflow (user-report)
+## Previous procedure and baseline (user-report)
 
 1. Participants enter the study space and sit in their places without waiting at its entrance.
 2. Before the minute-25 deadline, a roughly ten-second countdown is given. The latest peer-timed series relayed by the user reports seating as **103 seconds**. Whether additional settling occurs before verification, and the hour/deadline-relative boundaries, remain unknown.
@@ -17,13 +17,17 @@ No individual check-in step, scanning device or entrance queue is reported. The 
 
 ## Premise correction
 
+### Newly decided procedure — not yet implemented
+
+The user reports a student-committee **joint discussion and decision** for next time: start study after seating, while the committee checks attendance separately. Do not attribute sole proposal to Junmo or claim implemented savings. Preserve the earlier class-turn series as the previous process. See DECOUPLED_ATTENDANCE_KO.md and issue #7.
+
 An earlier brief reply said a queue existed. A later, more specific account explicitly says there is no entrance queue and verification happens after seating. That correction supersedes the earlier reply. The original check-in-completion versus arrival-time hypothesis is **rejected as a description of the present system**.
 
 The identified inconvenience includes seating/settling before verification. Latest reported intervals sum to 103 seconds seating and 160 seconds verification, superseding earlier rough 60/120 estimates as the current reference series. Their sum, 263 seconds, is not an independently established deadline-relative end-to-end duration. No miscount, participant benefit or intervention effect has been verified. See PEER_TIMING_BASELINE_KO.md.
 
 ## Working problem
 
-First distinguish post-deadline preparation from verification, then investigate which phase an intervention could realistically change. The existing prototype isolates count/report timing **after verification starts**. It does not simulate settling, crowd behavior or time from the deadline to the first class's check. See [session phases](SESSION_PHASES_KO.md). Accuracy and practical adoption require separate evidence.
+The current evaluation must distinguish **study start**, attendance completion, committee person-time, accuracy and interruptions. Decoupling tasks can change the path to study start without reducing verification work. A new dependency model handles this conditional structure; the existing FCFS prototype remains a legacy synthetic count/report exercise and the baseline panel remains descriptive accounting. No new-process outcomes are measured. See DECOUPLED_ATTENDANCE_KO.md.
 
 Two synthetic process variants are offered:
 

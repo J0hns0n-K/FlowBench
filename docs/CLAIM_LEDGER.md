@@ -18,6 +18,8 @@
 | C18 | An earlier account gave one-to-two minutes each for seating/settling and verification, with a pre-deadline countdown. | earlier coarse user-report | Phase durations refined by C19; countdown/hour and interval-boundary caveats remain. |
 | C19 | Earlier report: entry-to-all-seated about 60 s; verification about 120 s, referencing the chapel-room clock. | historical clock-referenced approximate user-report | Current reference series is C20. Retain this coarse report's provenance; do not rewrite it as peer timing. |
 | C20 | User relayed peer-timed seating 103 s and eight combined class turns summing to 160 s; reported phase sum 263 s. | user-report-of-peer-timing | First reported series only; instrument, observation date, raw boundaries and actual turnout unverified. No split count/report inputs, counterfactual benefit or gap-free end-to-end proof. |
+| C21 | Student committee jointly decided to start study after seating and check attendance separately next time. | user-reported collective decision; planned | Not yet implemented; individual sole proposal, workload reduction, accuracy and measured time savings unverified. |
+| C22 | A conditional dependency model yields study-start 263 s versus 103 s for non-checking students when old verification gates study and seating remains unchanged. | conditional-model | 160 s is modelled advance, not observed impact. Committee completion/study start, person-time and measured savings remain null; do not multiply advance by all 120 students. |
 
 Add achieved software capabilities only after tests/run evidence. A pushed source repository is not a hosted app or school deployment.
 

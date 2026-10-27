@@ -41,3 +41,11 @@ Screenshots document software behavior only. They establish no school result or 
 - At a 390x844 override, client width and body scroll width both 375 px; eight baseline rows preserved. Viewport reset after checks. No error-level browser logs.
 - [Desktop baseline](images/2026-10-27-peer-baseline-desktop.png), [mobile baseline](images/2026-10-27-peer-baseline-mobile.png). Captured from the working implementation based on source snapshot commit `8ea6825`; no clean-release SHA inferred from screenshots.
 - Did not retry the previously denied browser download action. Existing serializer verification and its documented end-to-end download limitation are unchanged.
+
+## Planned independent-start decision follow-up
+
+- Verified visible status: “변경 결정 · 아직 미시행”, matching the user's confirmation of next-time implementation and collective committee decision.
+- Conditional panel shows previous assumed study start 4 min 23 s, planned study start 1 min 43 s, new attendance completion **unknown**. Assumptions are visible and scope is students not assigned checking duties; committee work/study start is not zero.
+- Previous measured-report panel retains 103/160/263 and eight rows, labelled previous-process baseline. No old class durations assigned to new committee checks.
+- Desktop and narrow mobile checks passed: 375 px client/body widths, no overflow, no error-level console logs. Temporary viewport reset. [Desktop](images/2026-10-27-planned-dependency-desktop.png) and [mobile](images/2026-10-27-planned-dependency-mobile.png) screenshots from working source based on decision snapshot `d252c5d`.
+- Browser download remains untested after the earlier denial; no retry was attempted. This UI verification establishes software behavior, not implementation or intervention results.
