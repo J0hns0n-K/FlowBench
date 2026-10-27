@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "recordId": "decoupled-attendance-decision-01",
+  "sourceKind": "user-reported-collective-decision",
+  "reportedOn": "2026-10-27",
+  "status": "decided-not-yet-implemented",
+  "decisionActor": "Student committee, through joint discussion and decision according to the user.",
+  "individualProposer": null,
+  "plannedStartDate": null,
+  "studyStartRule": "Start study after seating without waiting for attendance verification to finish.",
+  "attendanceOwner": "student-committee",
+  "newAttendanceStartSec": null,
+  "newAttendanceDurationSec": null,
+  "newCommitteePersonSeconds": null,
+  "observedNewStudyStartSec": null,
+  "observedAccuracy": null,
+  "limitations": [
+    "This is a reported collective decision for future use, not an implemented or validated intervention.",
+    "Junmo is not attributed sole proposal, decision, implementation or measured impact.",
+    "New verification timing, staffing, workload, accuracy and study interruptions are unknown.",
+    "Earlier class-turn measurements describe the previous process and must not be assigned to committee checking.",
+    "A study-start dependency model is conditional and does not measure recovered learning time."
+  ]
+}
