@@ -8,6 +8,7 @@
 - Subsequent roster screenshot: visually counted only group labels and nonempty name rows, yielding eight visible groups and 119 rows. User explicitly excluded penalty analysis. Only the aggregate table in GROUP_COUNTS_KO.md is retained; no names, individual scores or source image copied. Completeness and actual verification scope remain unconfirmed.
 - Subsequent roster screenshot: visually counted only group labels and nonempty name rows, initially yielding eight groups and 119 rows. User explicitly excluded penalty analysis. No names, individual scores or source image copied.
 - Roster follow-up: the user confirmed the listed groups are evening-study participants and reported one newcomer in G9-B. Current aggregate is G9-B=15, eight groups, total=120. The name is omitted from repository records. Scope is user-confirmed; actual attendance and timings remain unmeasured.
+- Checking-method follow-up: user reported informal verification of seated students, without required individual name-calling. This does not specify a fixed counting algorithm or measured per-student latency.
 - Starter: user confirmed using the current handoff, without a separate Starter file.
 - Shared earlier chat: background proposal, superseded where it conflicts with the detailed current workflow.
 - Repository: https://github.com/J0hns0n-K/FlowBench — inspected via web, Git and authenticated API. No student identity inferred from access.

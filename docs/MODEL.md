@@ -41,3 +41,5 @@ The fixed fixture is in ADR-002. A documented unsigned-32-bit seeded generator c
 ## Accuracy, uncertainty and identifiability
 
 A five-minute overall estimate cannot identify group count, per-group count durations, report durations, concurrency or interruptions. No numeric calibration from that single estimate is defensible. Accuracy of attendance counts is outside this time-only model. Use paired independent sessions and report distributions/intervals if empirical data become available. Synthetic single-run differences contain no statistical confidence claim.
+
+Follow-up context (ADR-009): verification is informal inspection of seated students, not individual roll call. Roster size alone therefore does not establish a linear counting-time rule. Some checking may be cognitively unobservable or done in advance; separate count/report durations must not be invented from a combined class-turn interval. Confirm stage identifiability before using the two-stage model for field predictions.

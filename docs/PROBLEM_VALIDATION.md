@@ -7,7 +7,7 @@
 ## Current workflow (user-report)
 
 1. Participants enter the study space and sit in their places without waiting at its entrance.
-2. At the scheduled time, class representatives check seated attendance, in lower-grade-first order, **one class at a time** (subsequent explicit user clarification).
+2. At the scheduled time, class representatives check seated attendance, in lower-grade-first order, **one class at a time** (subsequent explicit user clarification). Representatives informally check the seated students; there is **no required name-by-name roll call**. The exact visual-check strategy is not standardized by the user's account.
 3. Representatives report attendance to a student coordinator.
 4. The handoff/session previously described a separate late-entry process; the user subsequently excluded penalty information from this project's analysis. No score or individual disciplinary data are used.
 5. The whole attendance check takes approximately **five minutes**, a retrospective estimate, not a timed sample.
@@ -38,6 +38,7 @@ A user-provided image initially yielded eight groups and 119 visible named rows.
 Before recommending or describing a school improvement, the student must establish:
 
 - Maintain the user-confirmed target roster (eight groups, 120) as roster size, distinguish actual session attendance, and establish the precise counting method for each group.
+- Observe the informal visual-check method without imposing a name-calling procedure. Do not assume a constant time per student or that all checking is externally visible; note if representatives have already checked before their reporting turn.
 - Count start/end times, report start/end times and the definition of “finished”.
 - Independently check the reported serial order, quantify gaps between count/report/class transitions, and establish how results are aggregated.
 - Frequency of absences, recounts, late entrants and incomplete reports, using only approved aggregate observation.

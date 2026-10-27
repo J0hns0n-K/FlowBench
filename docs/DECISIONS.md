@@ -59,3 +59,9 @@ Record only visible group labels and counts of nonempty name rows: eight groups,
 ## ADR-008 — Roster scope confirmed and G9-B incremented
 
 Date: 2026-10-27 (Asia/Seoul). The user confirmed that the supplied list covers evening-study participants and reported one additional newcomer in G9-B. Update the live aggregate to G9-B=15 and total=120 across eight groups. Store no newcomer name. The earlier 119-row image count remains a historical source observation, not an error to silently rewrite in the experiment history. Distinguish this user-confirmed target roster from actual session attendance and measured timing. Scheduling and locked synthetic examples do not change.
+
+## ADR-009 — Informal seated visual verification, without roll call
+
+Date: 2026-10-27 (Asia/Seoul). User clarified that representatives check the seated students themselves without calling each student individually. Record this as user-report, without inventing a fixed head-counting, face-recognition, seat-scanning or checklist algorithm.
+
+Keep measured group-level checking duration as the input. Do not derive duration by multiplying roster size by an assumed name-calling time. The model's serial service recurrence is unchanged. If visual checking begins before a class's reporting turn, or if checking start/end cannot be observed separately, document that limitation rather than fabricating separate stage durations. Aggregate turn-start-to-report-end timing can be collected first; it cannot identify checking and reporting components on its own.

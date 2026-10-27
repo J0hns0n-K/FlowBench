@@ -58,3 +58,9 @@ Subsequent verification commands and observed outputs will be appended after exe
 - User confirmed the listed groups are evening-study participants and reported one newcomer in G9-B. Updated current roster aggregate from G9-B=14 / total=119 to **G9-B=15 / total=120**, still eight groups.
 - Stored only the aggregate correction, not the individual's name. Scope is now explicitly user-confirmed; actual session attendance and timing remain unmeasured.
 - Retained the original 119-row image observation in history. No algorithm, synthetic fixture or earlier numerical outcome changed. Documentation-only consistency/diff checks; no repeated numerical tests needed.
+
+### Follow-up — no individual roll call
+
+- User clarified informal checking of seated students without individual name-calling. Added ADR-009 and C17; kept this as user-report rather than independently observed method or accuracy.
+- Updated the observation protocol to allow unobservable count stages to remain missing; combined class-turn timing must not be split into fabricated component durations. No fixed seconds-per-student formula introduced.
+- Documentation-only change. Numerical engine, locked synthetic data and published experiment outcomes are unchanged.
