@@ -1,5 +1,17 @@
 import { scheduleDependencies } from './dependencies.ts';
 
+export type CheckingRole = 'other-member-checks' | 'self-checks';
+
+/** A role view is a conditional illustration, never a recorded duty assignment. */
+export function studyStartForRole(seatingSec:number, oldVerificationSec:number, role:CheckingRole) {
+  if(role!=='other-member-checks'&&role!=='self-checks')throw new Error('Unknown checking role.');
+  const model=compareStudyStartDependencies(seatingSec,oldVerificationSec);
+  const plannedStudyStartSec=role==='self-checks'?model.newCommitteeStudyStartSec:model.plannedStudyStartSec;
+  return {role,previousStudyStartSec:model.previousStudyStartSec,plannedStudyStartSec,
+    conditionalAdvanceSec:plannedStudyStartSec===null?null:model.previousStudyStartSec-plannedStudyStartSec,
+    measuredAdvanceSec:null};
+}
+
 /** Conditional illustration only; old study gating and unchanged seating are assumptions. */
 export function compareStudyStartDependencies(seatingSec: number, oldVerificationSec: number) {
   const previous = scheduleDependencies([

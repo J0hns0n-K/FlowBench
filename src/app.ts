@@ -5,7 +5,8 @@ import type { Group, Comparison, WorkflowResult } from './workflow.ts';
 import { makeExperiment, jsonExport, csvExport } from './export.ts';
 import type { Experiment } from './export.ts';
 import { summarizePeerTiming } from './observed.ts';
-import { compareStudyStartDependencies } from './study-start.ts';
+import { studyStartForRole } from './study-start.ts';
+import type { CheckingRole } from './study-start.ts';
 
 function element<T extends HTMLElement>(id: string): T {
   const value=document.getElementById(id);
@@ -40,13 +41,21 @@ async function loadStudyStartDecision(seatingSec:number,verificationSec:number):
       !('status' in decision)||decision.status!=='decided-not-yet-implemented'){
       throw new Error('Decision status requires review.');
     }
-    const model=compareStudyStartDependencies(seatingSec,verificationSec);
+    const roleSelect=element<HTMLSelectElement>('checking-role');
+    const renderRole=()=>{
+    const model=studyStartForRole(seatingSec,verificationSec,roleSelect.value as CheckingRole);
     element('decision-output').innerHTML=[
       ['이전 대기 구조 가정',duration(model.previousStudyStartSec),'출첵 후 야자 시작이라고 가정'],
-      ['변경안: 야자 시작',duration(model.plannedStudyStartSec),'같은 착석시간·추가 전환 없음 가정'],
+      ['변경안: 본인 공부 시작',model.plannedStudyStartSec===null?'미확인':duration(model.plannedStudyStartSec),
+        model.role==='self-checks'?'담당자의 확인·공부 전환시간 측정 필요':'같은 착석시간·추가 전환 없음 가정'],
       ['새 출석 확인 완료','미확인','0초가 아닙니다 · 별도 측정 필요'],
     ].map(([title,value,note])=>`<div class="baseline-stat"><span>${title}</span><strong>${value}</strong><small>${note}</small></div>`).join('');
-    element('decision-note').textContent=`가정이 맞으면 공부 시작이 모델상 ${duration(model.conditionalAdvanceSec)} 앞당겨질 수 있습니다. 실제 절감 효과는 아직 측정되지 않았습니다.`;
+    element('decision-note').textContent=model.conditionalAdvanceSec===null?
+      '본인이 확인 담당인 차례에는 공부 시작과 앞당김을 아직 계산할 수 없습니다. 역할 교대만으로 총 확인 업무가 줄었다고 판단하지 않습니다.':
+      `다른 부원이 확인하고 가정이 맞으면 본인의 공부 시작이 모델상 ${duration(model.conditionalAdvanceSec)} 앞당겨질 수 있습니다. 실제 효과는 미측정입니다.`;
+    };
+    roleSelect.value='other-member-checks';roleSelect.disabled=false;
+    roleSelect.addEventListener('change',renderRole);renderRole();
   }catch{
     element('decision-output').textContent='변경안 기록을 확인하지 못해 모델값을 표시하지 않습니다.';
   }

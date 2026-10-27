@@ -49,3 +49,11 @@ Screenshots document software behavior only. They establish no school result or 
 - Previous measured-report panel retains 103/160/263 and eight rows, labelled previous-process baseline. No old class durations assigned to new committee checks.
 - Desktop and narrow mobile checks passed: 375 px client/body widths, no overflow, no error-level console logs. Temporary viewport reset. [Desktop](images/2026-10-27-planned-dependency-desktop.png) and [mobile](images/2026-10-27-planned-dependency-mobile.png) screenshots from working source based on decision snapshot `d252c5d`.
 - Browser download remains untested after the earlier denial; no retry was attempted. This UI verification establishes software behavior, not implementation or intervention results.
+# Rotating checking duty — 2026-10-27 follow-up
+
+- Role selector: other member checking gives conditional study start 103 s; self checking gives unknown study start and unknown advance. Attendance completion remains unknown in both views. The UI labels the selector as a model view rather than an actual duty assignment.
+- Assigned seats and vacant-seat checking appear as user-reported context and an untested user idea. No vacancy-to-absence rule or numeric speedup generated.
+- Desktop and 390x844 mobile checks passed; client/body widths both 375 px, no error-level console logs. Temporary viewport reset. Previous baseline and separate synthetic fixture remain intact.
+- [Desktop](images/2026-10-27-rotating-duty-desktop.png), [mobile](images/2026-10-27-rotating-duty-mobile.png), captured from modified source based on research snapshot `3b62616`.
+- Existing tab was stranded on an earlier connection-refused error page; a fresh IAB tab loaded the running local preview. No browser download attempted.
+

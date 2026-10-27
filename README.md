@@ -36,6 +36,7 @@ The current working question is: **If attendance verification no longer gates th
 | [Planned independent start](docs/DECOUPLED_ATTENDANCE_KO.md) | Collective decision, separate outcomes and explicit assumptions |
 | [Dependency model](docs/DEPENDENCY_MODEL.md) | DAG scheduling with unknown durations, distinct from measured impact |
 | [New-procedure observation](docs/NEW_PROCEDURE_OBSERVATION_KO.md) | Blank event/workload/accuracy record for actual future use |
+| [Assigned-seat hypothesis](docs/ASSIGNED_SEAT_HYPOTHESIS_KO.md) | User-proposed exception checks and rotating-duty roles; effects untested |
 | [Image-derived group sizes](docs/GROUP_COUNTS_KO.md) | Provisional aggregate counts only; no names or scores |
 | [Experiment log](docs/EXPERIMENT_LOG.md) | Dated commands and observed results |
 | [Claim ledger](docs/CLAIM_LEDGER.md) | Permitted and unsupported claims |
@@ -63,9 +64,10 @@ If dependencies and `dist/` are already present, `node scripts/serve.mjs` starts
 ## Implemented and verified
 
 - Pure deterministic FCFS engine plus explicit serial/parallel count-report workflows.
-- 35 passing numerical/invariant/export/accounting/dependency tests, with separate TypeScript checks.
+- 37 passing numerical/invariant/export/accounting/dependency tests, with separate TypeScript checks.
 - Peer-timed baseline panel with source labels, roster counts, combined turn durations and cumulative sums; it generates no intervention prediction.
 - Separate conditional study-start dependency model. Unknown committee completion/workload stay unknown; planned status is displayed explicitly.
+- Role selector distinguishes another member's duty from the user's own checking turn. A checking member's study start and benefit remain unknown. Assigned-seat exception checking is labelled an untested user hypothesis.
 - Same-input comparisons, per-group timeline, P95 reporting wait and target-crossing metrics.
 - Seeded and editable synthetic inputs; JSON/CSV serializers include provenance, assumptions, raw events and model/source versions.
 - Browser checks of exact outputs, invalid ranges, reset, custom edits, 100 groups and a narrow mobile viewport.

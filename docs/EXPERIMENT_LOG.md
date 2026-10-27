@@ -100,3 +100,10 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Full suite reached **35 passed, 0 failed**; focused dependency tests (8) rerun after validation/role-scope refinements passed. Typechecked build and diff checks passed. No old snapshot or synthetic fixture changed.
 - Desktop/mobile QA confirmed planned status, visible assumptions, unknown attendance completion and preserved previous baseline. No horizontal overflow or console errors. Screenshots in BROWSER_QA.md.
 - Prepared a separate blank observation form for actual study start, committee timing/person-time, accuracy and interruptions. No implementation, observation or approval is fabricated by the form or graph.
+### Rotating duty and assigned-seat hypothesis — 2026-10-27
+
+- User confirms committee membership, rotating duties, and individual assigned seats. User's vacant-seat idea is an untested hypothesis, separate from the collective policy decision. Source snapshot committed as `3b62616e37640127774d060e44d7c4b2d77533aa`.
+- Added role-specific pure model and selector. Checker start/advance stay null; another member's checking turn uses the existing conditional non-checker branch. No new checking-time estimate is invented.
+- Full numerical suite: **37 passed, 0 failed**. Typechecked build and diff whitespace checks passed. Desktop/mobile behavior and source labels verified; details in BROWSER_QA.md.
+- Expanded blank observation sheet with duty role, aggregate vacant/uncertain counts, method and optional disjoint work stages. No actual intervention measurement or accuracy result recorded. Field issue #7 remains open.
+

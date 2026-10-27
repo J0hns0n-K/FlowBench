@@ -20,6 +20,8 @@
 | C20 | User relayed peer-timed seating 103 s and eight combined class turns summing to 160 s; reported phase sum 263 s. | user-report-of-peer-timing | First reported series only; instrument, observation date, raw boundaries and actual turnout unverified. No split count/report inputs, counterfactual benefit or gap-free end-to-end proof. |
 | C21 | Student committee jointly decided to start study after seating and check attendance separately next time. | user-reported collective decision; planned | Not yet implemented; individual sole proposal, workload reduction, accuracy and measured time savings unverified. |
 | C22 | A conditional dependency model yields study-start 263 s versus 103 s for non-checking students when old verification gates study and seating remains unchanged. | conditional-model | 160 s is modelled advance, not observed impact. Committee completion/study start, person-time and measured savings remain null; do not multiply advance by all 120 students. |
+| C23 | The user belongs to the committee, expects rotating checking duties, and confirms individually assigned seats. | explicit user-report | Rotation cadence, concurrent staff and actual new-duty execution unknown. No personal duty roster stored. |
+| C24 | Checking vacant assigned seats may reduce verification work when most seats are occupied. | user-proposed, untested hypothesis | Scan, follow-up and recording still take time; vacant seats are not automatically verified absences. No observed vacant count, rate, accuracy or speedup supplied. |
 
 Add achieved software capabilities only after tests/run evidence. A pushed source repository is not a hosted app or school deployment.
 

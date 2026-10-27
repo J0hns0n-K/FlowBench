@@ -31,10 +31,12 @@
     <section class="panel decision-panel" aria-labelledby="decision-title">
       <div class="panel-heading"><div><p class="eyebrow">CHANGE THE DEPENDENCY</p><h2 id="decision-title">공부 시작과 출석 완료를 분리하기</h2></div><span class="data-badge">변경 결정 · 아직 미시행</span></div>
       <div class="dependency-diagrams"><div><strong>이전 대기 구조를 가정</strong><p>착석 → 반별 출석 완료 → 야자 시작</p></div><div><strong>사생회가 결정한 변경안</strong><p>착석 → 야자 시작<br><span>사생회 출석 확인은 별도 진행</span></p></div></div>
-      <p class="section-copy">아래는 확인 업무를 맡지 않는 학생의 조건부 시작 모델입니다. 기존에 출첵 완료를 기다렸고, 착석시간이 같고, 추가 전환이 없다는 가정입니다.</p>
+      <p class="section-copy">준모도 사생회 부원이며 다른 부원과 번갈아 확인할 계획입니다. 아래는 기존에 출첵 완료를 기다렸고, 착석시간이 같고, 추가 전환이 없다는 조건부 모델입니다.</p>
+      <div class="role-control"><label for="checking-role">이번 모델에서 본인의 역할</label><select id="checking-role" disabled><option value="other-member-checks">다른 부원이 담당하는 차례</option><option value="self-checks">본인이 담당하는 차례</option></select><small>실제 당번 배정이 아닌 역할별 모델 보기입니다.</small></div>
       <div id="decision-output" class="baseline-summary">변경안의 의존관계를 계산하고 있습니다.</div>
       <p id="decision-note" class="field-note"></p>
       <p class="field-note">사생회 담당자의 공부 시작·확인시간·총 작업량·정확성과 공부 중 중단은 미측정입니다. 120명 모두에게 같은 절감 시간을 적용하지 않습니다.</p>
+      <div class="method-note"><strong>지정석의 빈자리 확인 — 사용자 제안 · 효과 미검증</strong><p>지정석 훑기 → 빈자리·불확실한 자리 추가 확인 → 결과 정리. 빈자리는 추가 확인의 단서입니다. 빈자리가 없어도 훑기와 정리 시간은 필요합니다.</p><a href="https://github.com/J0hns0n-K/FlowBench/blob/main/docs/ASSIGNED_SEAT_HYPOTHESIS_KO.md" target="_blank" rel="noreferrer">가설과 측정 기준 읽기 ↗</a></div>
       <a class="baseline-source" href="https://github.com/J0hns0n-K/FlowBench/blob/main/docs/DECOUPLED_ATTENDANCE_KO.md" target="_blank" rel="noreferrer">변경안과 검증 계획 읽기 ↗</a>
     </section>
     <section class="panel observed-panel" aria-labelledby="baseline-title">

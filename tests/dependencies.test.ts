@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { scheduleDependencies } from '../src/dependencies.ts';
-import { compareStudyStartDependencies } from '../src/study-start.ts';
+import { compareStudyStartDependencies, studyStartForRole } from '../src/study-start.ts';
 
 test('serial dependency chain yields hand-calculated study-start milestone', () => {
   const result = scheduleDependencies([
@@ -72,4 +72,22 @@ test('policy comparison is conditional, with unknown new workload and completion
   assert.equal(result.measuredAdvanceSec,null);
   assert.equal(result.planned.find(event=>event.id==='committee_checks')!.earliestStartSec,null);
   assert.throws(()=>compareStudyStartDependencies(-1,160));
+});
+
+test('rotating duty preserves unknown study start for the assigned checker', () => {
+  const checking=studyStartForRole(103,160,'self-checks');
+  assert.equal(checking.plannedStudyStartSec,null);
+  assert.equal(checking.conditionalAdvanceSec,null);
+  assert.equal(checking.measuredAdvanceSec,null);
+  const other=studyStartForRole(103,160,'other-member-checks');
+  assert.equal(other.plannedStudyStartSec,103);
+  assert.equal(other.conditionalAdvanceSec,160);
+  assert.equal(other.measuredAdvanceSec,null);
+});
+
+test('role view respects changed inputs and rejects unsupported duty labels', () => {
+  assert.equal(studyStartForRole(40,25,'other-member-checks').plannedStudyStartSec,40);
+  assert.equal(studyStartForRole(40,25,'other-member-checks').conditionalAdvanceSec,25);
+  assert.throws(()=>studyStartForRole(103,160,'free-seat' as never),/Unknown checking role/);
+  assert.throws(()=>studyStartForRole(-1,160,'self-checks'));
 });
