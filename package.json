@@ -1,0 +1,20 @@
+{
+  "name": "flowbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Synthetic attendance-verification workflow experiments with explicit evidence boundaries",
+  "engines": { "node": ">=24.0.0" },
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "test": "node --test tests/engine.test.ts tests/workflow.test.ts tests/scenario.test.ts tests/export.test.ts",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs",
+    "experiment": "node scripts/experiment.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "5.9.3"
+  }
+}
