@@ -13,4 +13,4 @@ Six GitHub issues were created and verified by API readback on 2026-10-27.
 
 Issue completion is scoped precisely. Completing a software issue does not close empirical validation or student attribution.
 
-Live issue state on GitHub is authoritative. #2, #3 and #5 can close after published artifacts are linked; #1, #4 and #6 remain open for field evidence, download smoke verification and original-source/student contribution respectively.
+Live issue state on GitHub is authoritative. Published artifacts were linked in issue comments and **#2, #3 and #5 were closed**. **#1, #4 and #6 remain open** for field evidence, download smoke verification and original-source/student contribution respectively. Closing #2 establishes a documented assisted research model, not student endorsement or empirical validity.

@@ -32,3 +32,10 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Screenshots captured in `docs/images/`; browser temporary viewport override reset after mobile checks.
 - Original-source audit, actual observation/model validity, independent student contribution and application deadline remain unverified.
 - Final boundary review found that halving the minimum UI report duration must remain a supported service duration. Lowered the primitive positive bound to one microsecond and added a regression fixture. The current suite has **22 passing tests**; the original 21-test result above remains the historical first engine check.
+
+### Remote verification
+
+- Workbench commit `ebcc1e334c62bf212b137a2796afc88622964a33` pushed; `git ls-remote origin refs/heads/main` matched the local HEAD. Working tree clean after commit.
+- [GitHub Actions run 40462892254](https://github.com/J0hns0n-K/FlowBench/actions/runs/40462892254) returned `status=completed`, `conclusion=success` for that exact source SHA. Automated scope: dependency lock install, 22 numerical tests, typechecked browser build, synthetic experiment reproduction.
+- Rebuilt the local preview from the clean published workbench commit; source metadata correctly records its SHA without a dirty suffix.
+- Linked evidence in issue comments; closed #2/#3/#5 for their documented research/software/synthetic scopes. #1/#4/#6 remain open. No observation, school intervention or student-authored work was inferred from CI success.
