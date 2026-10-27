@@ -30,7 +30,7 @@ export function makeExperiment(groups: readonly Group[], targetSec: number, meta
       'Target is an experimental completion-time threshold, not a lateness policy.',
     ],
     limitations: [
-      'Actual counting/reporting concurrency is not validated.',
+      'One-class-at-a-time ordering is user-reported; durations and zero-gap handoffs are not field-validated.',
       'The approximate five-minute user estimate was not used to calibrate inputs.',
       'No modelled attendance accuracy, interruptions, walking or communication failure.',
       'This run establishes no measured school improvement or independent student authorship.',

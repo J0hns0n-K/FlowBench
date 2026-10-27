@@ -41,3 +41,11 @@ No backend, auth, personal attendance records, biometrics, school registry, AI A
 ## ADR-005 — Validation hierarchy
 
 Exact hand-calculated fixtures and invariants establish implementation correctness. Synthetic sensitivity tests examine assumptions. Held-out field observations establish model validity only after the process graph is confirmed. A prospective workflow prediction is not a measured intervention result. Counterexamples and rejected premises remain in the record.
+
+## ADR-006 — Explicit one-class-at-a-time clarification
+
+Date: 2026-10-27 (Asia/Seoul), after the kickoff commits. Source: direct user reply to the sequential-versus-simultaneous question: “한 반씩 해”.
+
+Promote serial class ordering from an unresolved model assumption to **explicit user-report**. Do not promote durations or effectiveness to measured evidence. The serial workflow already computes this ordering, so its equations, model version and previous synthetic outcomes do not change. The model's zero-gap transitions remain unverified: one-class-at-a-time does not establish instantaneous reporting or class handoffs.
+
+Update live documentation, display and export limitations accordingly. Preserve the historical synthetic report and screenshots as dated records. Prepare a blank observation sheet separating counting, reporting and gaps; use the residual between observed total time and summed count/report durations to test whether omitted transitions matter. This is a proposed measurement protocol, not collected evidence or an approved school intervention.

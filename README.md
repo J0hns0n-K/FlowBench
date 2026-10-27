@@ -13,7 +13,7 @@ The working research question is now: **Under explicitly stated counting and rep
 ## Evidence and scope
 
 - Simulations use anonymous, **synthetic group tasks**, not student records.
-- Sequential and parallel verification are model assumptions; “lower-grade-first” does not yet prove strict serial execution.
+- The user subsequently clarified that verification is performed **one class at a time**. Serial class ordering is now user-reported context; exact handoff gaps, durations and field validation remain unknown. Parallel verification is a proposed alternative.
 - No measured speedup, error reduction, deployment, or independent student implementation is established.
 - The initial code and documentation are authored with Codex assistance. See [contributions](docs/CONTRIBUTIONS.md).
 - Early: browser-local TypeScript, no server, login, biometrics, IoT, hardware, or school system integration.
@@ -30,6 +30,7 @@ The working research question is now: **Under explicitly stated counting and rep
 | [Decisions](docs/DECISIONS.md) | Versioned research questions, hypotheses and decisions |
 | [Related work](docs/RELATED_WORK.md) | Primary-source competitor and research audit |
 | [Validation protocol](docs/VALIDATION.md) | Numerical verification versus field validation |
+| [Observation sheet](docs/OBSERVATION_SHEET_KO.md) | Blank anonymous timing record and model-gap check |
 | [Experiment log](docs/EXPERIMENT_LOG.md) | Dated commands and observed results |
 | [Claim ledger](docs/CLAIM_LEDGER.md) | Permitted and unsupported claims |
 | [Admissions evidence](docs/ADMISSIONS_EVIDENCE.md) | Prior activities, source status and attribution limits |

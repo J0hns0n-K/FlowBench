@@ -19,7 +19,7 @@ The server pool starts idle at t=0. Tasks are all completed, including those fin
 
 Each anonymous group g has counting duration `c_g > 0` and reporting duration `r_g > 0`.
 
-**Serial handoff:** in input order, `countStart_g = previousReportEnd`; `countEnd_g = countStart_g + c_g`; reporting starts immediately and finishes after `r_g`. Thus `T_serial = sum(c_g + r_g)`. This assumes no overlap and is not yet an observed dependency graph.
+**Serial handoff:** in input order, `countStart_g = previousReportEnd`; `countEnd_g = countStart_g + c_g`; reporting starts immediately and finishes after `r_g`. Thus `T_serial = sum(c_g + r_g)`. One-class-at-a-time ordering is now explicitly user-reported (ADR-006), but not independently observed. Zero-gap transitions and numerical durations remain assumptions.
 
 **Parallel count / single coordinator:** all count starts equal zero; ready reports have `a_g = c_g`, `s_g = r_g`. Feed them through one FCFS coordinator. `T_parallel = max(reportEnd_g)`. No cost for synchronizing representatives, walking, recounting, or communication failure is modelled; such costs require evidence before inclusion.
 

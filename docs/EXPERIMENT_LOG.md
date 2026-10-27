@@ -39,3 +39,10 @@ Subsequent verification commands and observed outputs will be appended after exe
 - [GitHub Actions run 40462892254](https://github.com/J0hns0n-K/FlowBench/actions/runs/40462892254) returned `status=completed`, `conclusion=success` for that exact source SHA. Automated scope: dependency lock install, 22 numerical tests, typechecked browser build, synthetic experiment reproduction.
 - Rebuilt the local preview from the clean published workbench commit; source metadata correctly records its SHA without a dirty suffix.
 - Linked evidence in issue comments; closed #2/#3/#5 for their documented research/software/synthetic scopes. #1/#4/#6 remain open. No observation, school intervention or student-authored work was inferred from CI success.
+
+### Follow-up — one-class-at-a-time clarification
+
+- User clarified “한 반씩 해” in response to the sequential-versus-simultaneous question. Recorded serial class structure as explicit self-report in ADR-006; no measured time, school effect or independent authorship was added.
+- Updated current context in the browser and export limitations. Numerical scheduling and existing synthetic results are unchanged. Historical experiment JSON and screenshots are preserved.
+- Prepared a blank anonymous observation sheet, including counting/reporting timestamps and handoff-gap residuals. No observation, permission or measurement is represented as completed.
+- Follow-up checks: `node --test tests/export.test.ts` — 4 passed; `node scripts/build.mjs` — typecheck/build passed; `git diff --check` — passed. Scheduling code was not changed and historical numerical results were not regenerated.
