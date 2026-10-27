@@ -78,3 +78,9 @@ Subsequent verification commands and observed outputs will be appended after exe
 - The reported phase sum is 180 s, not an independently measured whole-session total; extra settling gap and deadline-relative offsets are unresolved. Observation sheet now records entry I and seated S as well as D/A/F.
 - Updated live context without allocating aggregate verification time to individual classes or recalibrating synthetic fixtures. Scheduling code and earlier numerical outcomes remain unchanged.
 - Checks: typechecked browser build and `git diff --check` passed. No new numeric behavior was introduced, so numerical tests were not repeated.
+
+### Follow-up — chapel-room clock and aggregate identifiability
+
+- User confirmed consulting the chapel-room clock. Updated timing provenance and measurement method, retaining unknown clock resolution, raw readings and observation date. The 60 s / 120 s values remain approximate, user-reported durations.
+- Executed existing `compareWorkflows` on two synthetic eight-group examples: (count=14 s, report=1 s) gives serial 120 s / parallel 22 s; (count=1 s, report=14 s) gives serial 120 s / parallel 113 s. This demonstrates non-identifiability from aggregate time, not a fitted school prediction.
+- Documented inputs, hand calculations and limitations in IDENTIFIABILITY_KO.md. No engine, locked fixture or timing value changed; field validation and student-authorship evidence remain open.

@@ -77,3 +77,9 @@ The earlier five-minute estimate cannot be used as verification-only latency. Fi
 Date reported: 2026-10-27 (Asia/Seoul). Latest user account: entry-to-all-seated about 60 s; attendance verification about 120 s. Store as approximate user-reported timing, with observation date, measurement method and raw timestamps unknown. The target roster remains eight groups / 120, not a measured session turnout.
 
 The two phase estimates sum to 180 s, but any extra settling/handoff gap remains unknown. Do not claim an independently measured three-minute total or substitute entry-to-seated duration for deadline-to-check-start P. Record I (entry begins) and S (all seated) in addition to D/A/F. Do not split 120 s evenly across classes, infer per-person speed or change the locked synthetic model to appear calibrated. Machine-readable source record: data/reported-timings-2026-10-27.json.
+
+## ADR-012 — Clock-referenced observation and identifiability
+
+Date reported: 2026-10-27 (Asia/Seoul). User clarified that the chapel-room clock was consulted. Update the source record from unspecified timing method to clock-referenced approximate user-report. Do not infer stopwatch precision, clock resolution or raw event timestamps. Preserve reported durations, unknown observation date and interval-boundary limitations.
+
+With the existing verified engine, compare two explicitly synthetic eight-group workloads, each with serial total 120 s: (count=14 s, report=1 s) and (count=1 s, report=14 s) per group. Their parallel totals are 22 s and 113 s respectively. This is an identifiability counterexample, not calibration: aggregate verification duration alone does not determine the counterfactual benefit of parallel checking. Document it in IDENTIFIABILITY_KO.md and retain field validation as open.

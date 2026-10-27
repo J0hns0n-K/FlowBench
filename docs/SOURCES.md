@@ -11,6 +11,7 @@
 - Checking-method follow-up: user reported informal verification of seated students, without required individual name-calling. This does not specify a fixed counting algorithm or measured per-student latency.
 - Phase-timing follow-up: user reported a roughly ten-second countdown before a minute-25 deadline, one-to-two minutes for seating/settling and then one-to-two minutes for verification. The hour and exact boundaries were not supplied. This refines the earlier broad five-minute estimate; all durations remain user estimates, not measurements.
 - Refined timing follow-up: user reported entry-to-all-seated about one minute and verification about two minutes. Recorded as approximate user-reported timing (60 s / 120 s), without supplied observation date, stopwatch method or raw timestamps. The sum of reported phases is 180 s; an additional settling gap and deadline-relative offsets remain unknown. See data/reported-timings-2026-10-27.json.
+- Instrument follow-up: user said the chapel-room clock was consulted. Source is now explicitly clock-referenced approximate user-report; the clock's resolution, observation date and raw start/end readings remain unknown. No additional numerical precision is inferred.
 - Starter: user confirmed using the current handoff, without a separate Starter file.
 - Shared earlier chat: background proposal, superseded where it conflicts with the detailed current workflow.
 - Repository: https://github.com/J0hns0n-K/FlowBench — inspected via web, Git and authenticated API. No student identity inferred from access.

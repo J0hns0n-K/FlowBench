@@ -9,7 +9,7 @@
 1. Participants enter the study space and sit in their places without waiting at its entrance.
 2. Before the minute-25 deadline, a roughly ten-second countdown is given. The latest user report refines entry-to-all-seated time to approximately **60 seconds**. Whether additional settling occurs before verification, and the hour/deadline-relative boundaries, remain unknown.
 3. Class representatives check seated attendance, in lower-grade-first order, **one class at a time**. Representatives informally check seated students; there is **no required name-by-name roll call**. The exact visual-check strategy is not standardized by the user's account.
-4. Representatives report attendance to a student coordinator. The latest report refines this verification phase to approximately **120 seconds**. Observation date, instrument and raw timestamps were not supplied.
+4. Representatives report attendance to a student coordinator. The latest report refines this verification phase to approximately **120 seconds**, referencing the chapel-room clock. Observation date, clock resolution and exact start/end readings were not supplied.
 5. Penalty information is excluded from the analysis. No score or individual disciplinary data are used.
 6. The earlier approximate five-minute statement was a broad retrospective estimate. It must **not** be treated as five minutes of verification alone. The phase estimates are user-report, not timed samples; countdown/preparation overlap is unknown.
 
