@@ -6,6 +6,7 @@
 | 2026-10-27 | Codex (AI assistant) | Source audit, premise correction synthesis, model proposal, repository starter and initial implementation/tests. | Explicit AI-authored commits. This is assisted output, not Junmo's independent work. |
 | 2026-10-27 (reported; observation date unknown) | Unnamed peer, according to session user | Timed seating and eight class turns; user relayed the values. | Peer measurement is user-reported; instrument/raw timestamps not supplied. Not an independent implementation contribution. |
 | 2026-10-27 (reported) | Student committee collectively, according to session user | Discussed and decided to start study after seating while the committee checks attendance separately next time. | Planned change, not yet implemented. Junmo's sole proposal or individual role is not established. |
+| 2026-10-27 (reported) | Session user, self-reported committee member | Reported rotating checking duties, confirmed individual assigned seats, and suggested vacant-seat-focused exception checks as a faster method. | User-authored idea and intended role, not implemented or validated results. Exact individual committee-decision responsibilities remain distinct from this suggestion. |
 | Pending | Junmo | Confirm procedure; explain/revise model; hand-derive tests; author changes; conduct permitted measurements; analyze failures. | Not yet established. Fill with dated artifacts and actual commits. |
 | Pending | Teacher/mentor | Review feasibility, permission and feedback if involved. | No approval or participation inferred. |
 

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "recordId": "assigned-seat-exception-hypothesis-01",
+  "reportedOn": "2026-10-27",
+  "sourceKind": "user-reported-role-and-method-hypothesis",
+  "userCommitteeMember": true,
+  "checkingAssignment": "The user or another committee member will take turns checking attendance.",
+  "rotationCadence": null,
+  "concurrentCheckerCount": null,
+  "seatingPolicy": "individual-assigned-seats",
+  "methodIdeaSource": "Session user suggested checking vacant assigned seats because most seats are occupied.",
+  "methodStatus": "hypothesis-not-field-tested",
+  "observedVacantAssignedSeatCount": null,
+  "scanDurationSec": null,
+  "exceptionFollowupSec": null,
+  "recordingSec": null,
+  "measuredTotalVerificationSec": null,
+  "accuracyAgreement": null,
+  "limitations": [
+    "Individual fixed seating was confirmed by the user, not independently audited.",
+    "The separate-checking policy is collectively decided for future use; the vacant-seat optimization is a user-suggested hypothesis.",
+    "Mostly occupied is qualitative; no vacant-seat count or new timing was supplied.",
+    "Locating vacant seats still requires scanning the relevant seating area; exceptions are not found at zero cost.",
+    "A vacant assigned seat is a signal for follow-up, not by itself a verified individual absence.",
+    "No names, actual seat map, student registry, individual attendance records or duty roster are stored."
+  ]
+}

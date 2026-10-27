@@ -97,3 +97,11 @@ Date reported: 2026-10-27 (Asia/Seoul). User reported a student-committee joint 
 Pivot the working evaluation toward study-start latency, verification completion, committee person-time, accuracy and interruptions as separate outcomes. Preserve the old peer-timed snapshot as the previous process. Add a pure dependency-DAG model with explicit unknown durations: unknowns propagate only along their dependency paths and must not become zero. A zero-duration milestone is permitted. Detect invalid references and cycles. The graph assumes resources do not constrain otherwise independent tasks; new staffing/verification start/end remain unknown.
 
 For an explicitly conditional example, previous study starts after seating(103 s) then class verification(160 s); proposed study starts after seating(103 s), while an unknown dispatch/check branch remains unresolved. The 263/103 s result is a model calculation under stated assumptions, not observed policy benefit. Model version is separate from the legacy two-stage synthetic engine. Record the collective decision source and planned status in data/decoupled-attendance-decision-2026-10-27.json and DECOUPLED_ATTENDANCE_KO.md.
+
+## ADR-015 — Rotating duty and assigned-seat exception hypothesis
+
+Date reported: 2026-10-27 (Asia/Seoul). User reports committee membership and rotating checks by self or another member; cadence/concurrent staffing are unspecified. User confirmed individual assigned seats and suggested that checking vacant positions could be faster because seats are mostly occupied.
+
+Record assigned seating and planned role as user-report. Record faster vacant-seat checks as a user-suggested hypothesis, not a collective decision about a specific algorithm or measured effect. Preserve scanning/follow-up/recording cost and accuracy uncertainty. Do not treat an empty seat as an established absence or infer a zero scan cost, exact empty count, student registry or roster of duty dates.
+
+Add role-specific views to the dependency model. When the viewer is checking, the new study-start/advance remains unknown until the checking branch is known; when not checking, the existing conditional seating-to-study branch applies. No duty schedule or individual attendance data are stored. See ASSIGNED_SEAT_HYPOTHESIS_KO.md and the new source snapshot.
