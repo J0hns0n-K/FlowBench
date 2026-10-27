@@ -1,0 +1,1191 @@
+{
+  "schemaVersion": 1,
+  "modelVersion": "seated-verification-v1",
+  "sourceRevision": "2c9e8e1ef8c8fa1eee612c5a86c0d3b35a923380",
+  "generatedAt": "2026-10-27T06:27:54.853Z",
+  "provenance": "synthetic",
+  "units": "seconds",
+  "experiment": {
+    "schemaVersion": 1,
+    "modelVersion": "seated-verification-v1",
+    "provenance": "synthetic",
+    "units": "seconds",
+    "sourceRevision": "2c9e8e1ef8c8fa1eee612c5a86c0d3b35a923380",
+    "generatedAt": "2026-10-27T06:27:54.853Z",
+    "inputLabel": "ADR-002 locked fixture v1",
+    "generator": null,
+    "assumptions": [
+      "Group count/report durations are synthetic, not measured school data.",
+      "Serial variant waits for each report before starting the next group count.",
+      "Parallel variant starts all counts at t=0 and uses one FCFS reporting coordinator.",
+      "Equal-time reports follow original input order; all tasks are completed.",
+      "Target is an experimental completion-time threshold, not a lateness policy."
+    ],
+    "limitations": [
+      "Actual counting/reporting concurrency is not validated.",
+      "The approximate five-minute user estimate was not used to calibrate inputs.",
+      "No modelled attendance accuracy, interruptions, walking or communication failure.",
+      "This run establishes no measured school improvement or independent student authorship."
+    ],
+    "inputs": [
+      {
+        "id": "G01",
+        "countSec": 32,
+        "reportSec": 8
+      },
+      {
+        "id": "G02",
+        "countSec": 38,
+        "reportSec": 8
+      },
+      {
+        "id": "G03",
+        "countSec": 41,
+        "reportSec": 8
+      },
+      {
+        "id": "G04",
+        "countSec": 35,
+        "reportSec": 8
+      },
+      {
+        "id": "G05",
+        "countSec": 44,
+        "reportSec": 8
+      },
+      {
+        "id": "G06",
+        "countSec": 30,
+        "reportSec": 8
+      }
+    ],
+    "targetSec": 120,
+    "comparison": {
+      "baseline": {
+        "mode": "serial",
+        "targetSec": 120,
+        "events": [
+          {
+            "id": "G01",
+            "countSec": 32,
+            "reportSec": 8,
+            "countStartSec": 0,
+            "countEndSec": 32,
+            "reportStartSec": 32,
+            "reportEndSec": 40,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G02",
+            "countSec": 38,
+            "reportSec": 8,
+            "countStartSec": 40,
+            "countEndSec": 78,
+            "reportStartSec": 78,
+            "reportEndSec": 86,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G03",
+            "countSec": 41,
+            "reportSec": 8,
+            "countStartSec": 86,
+            "countEndSec": 127,
+            "reportStartSec": 127,
+            "reportEndSec": 135,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G04",
+            "countSec": 35,
+            "reportSec": 8,
+            "countStartSec": 135,
+            "countEndSec": 170,
+            "reportStartSec": 170,
+            "reportEndSec": 178,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G05",
+            "countSec": 44,
+            "reportSec": 8,
+            "countStartSec": 178,
+            "countEndSec": 222,
+            "reportStartSec": 222,
+            "reportEndSec": 230,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G06",
+            "countSec": 30,
+            "reportSec": 8,
+            "countStartSec": 230,
+            "countEndSec": 260,
+            "reportStartSec": 260,
+            "reportEndSec": 268,
+            "reportWaitSec": 0
+          }
+        ],
+        "metrics": {
+          "groups": 6,
+          "totalSec": 268,
+          "meanReportWaitSec": 0,
+          "p95ReportWaitSec": 0,
+          "maxReportWaitSec": 0,
+          "reportBusyFraction": 0.1791044776119403,
+          "beyondTarget": 4,
+          "beyondTargetFraction": 0.6666666666666666
+        }
+      },
+      "candidate": {
+        "mode": "parallel",
+        "targetSec": 120,
+        "events": [
+          {
+            "id": "G01",
+            "countSec": 32,
+            "reportSec": 8,
+            "countStartSec": 0,
+            "countEndSec": 32,
+            "reportStartSec": 38,
+            "reportEndSec": 46,
+            "reportWaitSec": 6
+          },
+          {
+            "id": "G02",
+            "countSec": 38,
+            "reportSec": 8,
+            "countStartSec": 0,
+            "countEndSec": 38,
+            "reportStartSec": 54,
+            "reportEndSec": 62,
+            "reportWaitSec": 16
+          },
+          {
+            "id": "G03",
+            "countSec": 41,
+            "reportSec": 8,
+            "countStartSec": 0,
+            "countEndSec": 41,
+            "reportStartSec": 62,
+            "reportEndSec": 70,
+            "reportWaitSec": 21
+          },
+          {
+            "id": "G04",
+            "countSec": 35,
+            "reportSec": 8,
+            "countStartSec": 0,
+            "countEndSec": 35,
+            "reportStartSec": 46,
+            "reportEndSec": 54,
+            "reportWaitSec": 11
+          },
+          {
+            "id": "G05",
+            "countSec": 44,
+            "reportSec": 8,
+            "countStartSec": 0,
+            "countEndSec": 44,
+            "reportStartSec": 70,
+            "reportEndSec": 78,
+            "reportWaitSec": 26
+          },
+          {
+            "id": "G06",
+            "countSec": 30,
+            "reportSec": 8,
+            "countStartSec": 0,
+            "countEndSec": 30,
+            "reportStartSec": 30,
+            "reportEndSec": 38,
+            "reportWaitSec": 0
+          }
+        ],
+        "metrics": {
+          "groups": 6,
+          "totalSec": 78,
+          "meanReportWaitSec": 13.333333333333334,
+          "p95ReportWaitSec": 26,
+          "maxReportWaitSec": 26,
+          "reportBusyFraction": 0.6153846153846154,
+          "beyondTarget": 0,
+          "beyondTargetFraction": 0
+        }
+      },
+      "savedSec": 190,
+      "savedFraction": 0.7089552238805971
+    }
+  },
+  "hypotheses": {
+    "H1": true,
+    "H2": true
+  },
+  "sensitivity": [
+    {
+      "multiplier": 0.5,
+      "inputs": [
+        {
+          "id": "G01",
+          "countSec": 32,
+          "reportSec": 4
+        },
+        {
+          "id": "G02",
+          "countSec": 38,
+          "reportSec": 4
+        },
+        {
+          "id": "G03",
+          "countSec": 41,
+          "reportSec": 4
+        },
+        {
+          "id": "G04",
+          "countSec": 35,
+          "reportSec": 4
+        },
+        {
+          "id": "G05",
+          "countSec": 44,
+          "reportSec": 4
+        },
+        {
+          "id": "G06",
+          "countSec": 30,
+          "reportSec": 4
+        }
+      ],
+      "comparison": {
+        "baseline": {
+          "mode": "serial",
+          "targetSec": 120,
+          "events": [
+            {
+              "id": "G01",
+              "countSec": 32,
+              "reportSec": 4,
+              "countStartSec": 0,
+              "countEndSec": 32,
+              "reportStartSec": 32,
+              "reportEndSec": 36,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G02",
+              "countSec": 38,
+              "reportSec": 4,
+              "countStartSec": 36,
+              "countEndSec": 74,
+              "reportStartSec": 74,
+              "reportEndSec": 78,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G03",
+              "countSec": 41,
+              "reportSec": 4,
+              "countStartSec": 78,
+              "countEndSec": 119,
+              "reportStartSec": 119,
+              "reportEndSec": 123,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G04",
+              "countSec": 35,
+              "reportSec": 4,
+              "countStartSec": 123,
+              "countEndSec": 158,
+              "reportStartSec": 158,
+              "reportEndSec": 162,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G05",
+              "countSec": 44,
+              "reportSec": 4,
+              "countStartSec": 162,
+              "countEndSec": 206,
+              "reportStartSec": 206,
+              "reportEndSec": 210,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G06",
+              "countSec": 30,
+              "reportSec": 4,
+              "countStartSec": 210,
+              "countEndSec": 240,
+              "reportStartSec": 240,
+              "reportEndSec": 244,
+              "reportWaitSec": 0
+            }
+          ],
+          "metrics": {
+            "groups": 6,
+            "totalSec": 244,
+            "meanReportWaitSec": 0,
+            "p95ReportWaitSec": 0,
+            "maxReportWaitSec": 0,
+            "reportBusyFraction": 0.09836065573770492,
+            "beyondTarget": 4,
+            "beyondTargetFraction": 0.6666666666666666
+          }
+        },
+        "candidate": {
+          "mode": "parallel",
+          "targetSec": 120,
+          "events": [
+            {
+              "id": "G01",
+              "countSec": 32,
+              "reportSec": 4,
+              "countStartSec": 0,
+              "countEndSec": 32,
+              "reportStartSec": 34,
+              "reportEndSec": 38,
+              "reportWaitSec": 2
+            },
+            {
+              "id": "G02",
+              "countSec": 38,
+              "reportSec": 4,
+              "countStartSec": 0,
+              "countEndSec": 38,
+              "reportStartSec": 42,
+              "reportEndSec": 46,
+              "reportWaitSec": 4
+            },
+            {
+              "id": "G03",
+              "countSec": 41,
+              "reportSec": 4,
+              "countStartSec": 0,
+              "countEndSec": 41,
+              "reportStartSec": 46,
+              "reportEndSec": 50,
+              "reportWaitSec": 5
+            },
+            {
+              "id": "G04",
+              "countSec": 35,
+              "reportSec": 4,
+              "countStartSec": 0,
+              "countEndSec": 35,
+              "reportStartSec": 38,
+              "reportEndSec": 42,
+              "reportWaitSec": 3
+            },
+            {
+              "id": "G05",
+              "countSec": 44,
+              "reportSec": 4,
+              "countStartSec": 0,
+              "countEndSec": 44,
+              "reportStartSec": 50,
+              "reportEndSec": 54,
+              "reportWaitSec": 6
+            },
+            {
+              "id": "G06",
+              "countSec": 30,
+              "reportSec": 4,
+              "countStartSec": 0,
+              "countEndSec": 30,
+              "reportStartSec": 30,
+              "reportEndSec": 34,
+              "reportWaitSec": 0
+            }
+          ],
+          "metrics": {
+            "groups": 6,
+            "totalSec": 54,
+            "meanReportWaitSec": 3.3333333333333335,
+            "p95ReportWaitSec": 6,
+            "maxReportWaitSec": 6,
+            "reportBusyFraction": 0.4444444444444444,
+            "beyondTarget": 0,
+            "beyondTargetFraction": 0
+          }
+        },
+        "savedSec": 190,
+        "savedFraction": 0.7786885245901639
+      },
+      "H1": "supported-for-this-fixture",
+      "H2": "supported-for-this-fixture"
+    },
+    {
+      "multiplier": 1,
+      "inputs": [
+        {
+          "id": "G01",
+          "countSec": 32,
+          "reportSec": 8
+        },
+        {
+          "id": "G02",
+          "countSec": 38,
+          "reportSec": 8
+        },
+        {
+          "id": "G03",
+          "countSec": 41,
+          "reportSec": 8
+        },
+        {
+          "id": "G04",
+          "countSec": 35,
+          "reportSec": 8
+        },
+        {
+          "id": "G05",
+          "countSec": 44,
+          "reportSec": 8
+        },
+        {
+          "id": "G06",
+          "countSec": 30,
+          "reportSec": 8
+        }
+      ],
+      "comparison": {
+        "baseline": {
+          "mode": "serial",
+          "targetSec": 120,
+          "events": [
+            {
+              "id": "G01",
+              "countSec": 32,
+              "reportSec": 8,
+              "countStartSec": 0,
+              "countEndSec": 32,
+              "reportStartSec": 32,
+              "reportEndSec": 40,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G02",
+              "countSec": 38,
+              "reportSec": 8,
+              "countStartSec": 40,
+              "countEndSec": 78,
+              "reportStartSec": 78,
+              "reportEndSec": 86,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G03",
+              "countSec": 41,
+              "reportSec": 8,
+              "countStartSec": 86,
+              "countEndSec": 127,
+              "reportStartSec": 127,
+              "reportEndSec": 135,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G04",
+              "countSec": 35,
+              "reportSec": 8,
+              "countStartSec": 135,
+              "countEndSec": 170,
+              "reportStartSec": 170,
+              "reportEndSec": 178,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G05",
+              "countSec": 44,
+              "reportSec": 8,
+              "countStartSec": 178,
+              "countEndSec": 222,
+              "reportStartSec": 222,
+              "reportEndSec": 230,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G06",
+              "countSec": 30,
+              "reportSec": 8,
+              "countStartSec": 230,
+              "countEndSec": 260,
+              "reportStartSec": 260,
+              "reportEndSec": 268,
+              "reportWaitSec": 0
+            }
+          ],
+          "metrics": {
+            "groups": 6,
+            "totalSec": 268,
+            "meanReportWaitSec": 0,
+            "p95ReportWaitSec": 0,
+            "maxReportWaitSec": 0,
+            "reportBusyFraction": 0.1791044776119403,
+            "beyondTarget": 4,
+            "beyondTargetFraction": 0.6666666666666666
+          }
+        },
+        "candidate": {
+          "mode": "parallel",
+          "targetSec": 120,
+          "events": [
+            {
+              "id": "G01",
+              "countSec": 32,
+              "reportSec": 8,
+              "countStartSec": 0,
+              "countEndSec": 32,
+              "reportStartSec": 38,
+              "reportEndSec": 46,
+              "reportWaitSec": 6
+            },
+            {
+              "id": "G02",
+              "countSec": 38,
+              "reportSec": 8,
+              "countStartSec": 0,
+              "countEndSec": 38,
+              "reportStartSec": 54,
+              "reportEndSec": 62,
+              "reportWaitSec": 16
+            },
+            {
+              "id": "G03",
+              "countSec": 41,
+              "reportSec": 8,
+              "countStartSec": 0,
+              "countEndSec": 41,
+              "reportStartSec": 62,
+              "reportEndSec": 70,
+              "reportWaitSec": 21
+            },
+            {
+              "id": "G04",
+              "countSec": 35,
+              "reportSec": 8,
+              "countStartSec": 0,
+              "countEndSec": 35,
+              "reportStartSec": 46,
+              "reportEndSec": 54,
+              "reportWaitSec": 11
+            },
+            {
+              "id": "G05",
+              "countSec": 44,
+              "reportSec": 8,
+              "countStartSec": 0,
+              "countEndSec": 44,
+              "reportStartSec": 70,
+              "reportEndSec": 78,
+              "reportWaitSec": 26
+            },
+            {
+              "id": "G06",
+              "countSec": 30,
+              "reportSec": 8,
+              "countStartSec": 0,
+              "countEndSec": 30,
+              "reportStartSec": 30,
+              "reportEndSec": 38,
+              "reportWaitSec": 0
+            }
+          ],
+          "metrics": {
+            "groups": 6,
+            "totalSec": 78,
+            "meanReportWaitSec": 13.333333333333334,
+            "p95ReportWaitSec": 26,
+            "maxReportWaitSec": 26,
+            "reportBusyFraction": 0.6153846153846154,
+            "beyondTarget": 0,
+            "beyondTargetFraction": 0
+          }
+        },
+        "savedSec": 190,
+        "savedFraction": 0.7089552238805971
+      },
+      "H1": "supported-for-this-fixture",
+      "H2": "supported-for-this-fixture"
+    },
+    {
+      "multiplier": 2,
+      "inputs": [
+        {
+          "id": "G01",
+          "countSec": 32,
+          "reportSec": 16
+        },
+        {
+          "id": "G02",
+          "countSec": 38,
+          "reportSec": 16
+        },
+        {
+          "id": "G03",
+          "countSec": 41,
+          "reportSec": 16
+        },
+        {
+          "id": "G04",
+          "countSec": 35,
+          "reportSec": 16
+        },
+        {
+          "id": "G05",
+          "countSec": 44,
+          "reportSec": 16
+        },
+        {
+          "id": "G06",
+          "countSec": 30,
+          "reportSec": 16
+        }
+      ],
+      "comparison": {
+        "baseline": {
+          "mode": "serial",
+          "targetSec": 120,
+          "events": [
+            {
+              "id": "G01",
+              "countSec": 32,
+              "reportSec": 16,
+              "countStartSec": 0,
+              "countEndSec": 32,
+              "reportStartSec": 32,
+              "reportEndSec": 48,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G02",
+              "countSec": 38,
+              "reportSec": 16,
+              "countStartSec": 48,
+              "countEndSec": 86,
+              "reportStartSec": 86,
+              "reportEndSec": 102,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G03",
+              "countSec": 41,
+              "reportSec": 16,
+              "countStartSec": 102,
+              "countEndSec": 143,
+              "reportStartSec": 143,
+              "reportEndSec": 159,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G04",
+              "countSec": 35,
+              "reportSec": 16,
+              "countStartSec": 159,
+              "countEndSec": 194,
+              "reportStartSec": 194,
+              "reportEndSec": 210,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G05",
+              "countSec": 44,
+              "reportSec": 16,
+              "countStartSec": 210,
+              "countEndSec": 254,
+              "reportStartSec": 254,
+              "reportEndSec": 270,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G06",
+              "countSec": 30,
+              "reportSec": 16,
+              "countStartSec": 270,
+              "countEndSec": 300,
+              "reportStartSec": 300,
+              "reportEndSec": 316,
+              "reportWaitSec": 0
+            }
+          ],
+          "metrics": {
+            "groups": 6,
+            "totalSec": 316,
+            "meanReportWaitSec": 0,
+            "p95ReportWaitSec": 0,
+            "maxReportWaitSec": 0,
+            "reportBusyFraction": 0.3037974683544304,
+            "beyondTarget": 4,
+            "beyondTargetFraction": 0.6666666666666666
+          }
+        },
+        "candidate": {
+          "mode": "parallel",
+          "targetSec": 120,
+          "events": [
+            {
+              "id": "G01",
+              "countSec": 32,
+              "reportSec": 16,
+              "countStartSec": 0,
+              "countEndSec": 32,
+              "reportStartSec": 46,
+              "reportEndSec": 62,
+              "reportWaitSec": 14
+            },
+            {
+              "id": "G02",
+              "countSec": 38,
+              "reportSec": 16,
+              "countStartSec": 0,
+              "countEndSec": 38,
+              "reportStartSec": 78,
+              "reportEndSec": 94,
+              "reportWaitSec": 40
+            },
+            {
+              "id": "G03",
+              "countSec": 41,
+              "reportSec": 16,
+              "countStartSec": 0,
+              "countEndSec": 41,
+              "reportStartSec": 94,
+              "reportEndSec": 110,
+              "reportWaitSec": 53
+            },
+            {
+              "id": "G04",
+              "countSec": 35,
+              "reportSec": 16,
+              "countStartSec": 0,
+              "countEndSec": 35,
+              "reportStartSec": 62,
+              "reportEndSec": 78,
+              "reportWaitSec": 27
+            },
+            {
+              "id": "G05",
+              "countSec": 44,
+              "reportSec": 16,
+              "countStartSec": 0,
+              "countEndSec": 44,
+              "reportStartSec": 110,
+              "reportEndSec": 126,
+              "reportWaitSec": 66
+            },
+            {
+              "id": "G06",
+              "countSec": 30,
+              "reportSec": 16,
+              "countStartSec": 0,
+              "countEndSec": 30,
+              "reportStartSec": 30,
+              "reportEndSec": 46,
+              "reportWaitSec": 0
+            }
+          ],
+          "metrics": {
+            "groups": 6,
+            "totalSec": 126,
+            "meanReportWaitSec": 33.333333333333336,
+            "p95ReportWaitSec": 66,
+            "maxReportWaitSec": 66,
+            "reportBusyFraction": 0.7619047619047619,
+            "beyondTarget": 1,
+            "beyondTargetFraction": 0.16666666666666666
+          }
+        },
+        "savedSec": 190,
+        "savedFraction": 0.6012658227848101
+      },
+      "H1": "supported-for-this-fixture",
+      "H2": "rejected-for-this-fixture"
+    },
+    {
+      "multiplier": 4,
+      "inputs": [
+        {
+          "id": "G01",
+          "countSec": 32,
+          "reportSec": 32
+        },
+        {
+          "id": "G02",
+          "countSec": 38,
+          "reportSec": 32
+        },
+        {
+          "id": "G03",
+          "countSec": 41,
+          "reportSec": 32
+        },
+        {
+          "id": "G04",
+          "countSec": 35,
+          "reportSec": 32
+        },
+        {
+          "id": "G05",
+          "countSec": 44,
+          "reportSec": 32
+        },
+        {
+          "id": "G06",
+          "countSec": 30,
+          "reportSec": 32
+        }
+      ],
+      "comparison": {
+        "baseline": {
+          "mode": "serial",
+          "targetSec": 120,
+          "events": [
+            {
+              "id": "G01",
+              "countSec": 32,
+              "reportSec": 32,
+              "countStartSec": 0,
+              "countEndSec": 32,
+              "reportStartSec": 32,
+              "reportEndSec": 64,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G02",
+              "countSec": 38,
+              "reportSec": 32,
+              "countStartSec": 64,
+              "countEndSec": 102,
+              "reportStartSec": 102,
+              "reportEndSec": 134,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G03",
+              "countSec": 41,
+              "reportSec": 32,
+              "countStartSec": 134,
+              "countEndSec": 175,
+              "reportStartSec": 175,
+              "reportEndSec": 207,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G04",
+              "countSec": 35,
+              "reportSec": 32,
+              "countStartSec": 207,
+              "countEndSec": 242,
+              "reportStartSec": 242,
+              "reportEndSec": 274,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G05",
+              "countSec": 44,
+              "reportSec": 32,
+              "countStartSec": 274,
+              "countEndSec": 318,
+              "reportStartSec": 318,
+              "reportEndSec": 350,
+              "reportWaitSec": 0
+            },
+            {
+              "id": "G06",
+              "countSec": 30,
+              "reportSec": 32,
+              "countStartSec": 350,
+              "countEndSec": 380,
+              "reportStartSec": 380,
+              "reportEndSec": 412,
+              "reportWaitSec": 0
+            }
+          ],
+          "metrics": {
+            "groups": 6,
+            "totalSec": 412,
+            "meanReportWaitSec": 0,
+            "p95ReportWaitSec": 0,
+            "maxReportWaitSec": 0,
+            "reportBusyFraction": 0.46601941747572817,
+            "beyondTarget": 5,
+            "beyondTargetFraction": 0.8333333333333334
+          }
+        },
+        "candidate": {
+          "mode": "parallel",
+          "targetSec": 120,
+          "events": [
+            {
+              "id": "G01",
+              "countSec": 32,
+              "reportSec": 32,
+              "countStartSec": 0,
+              "countEndSec": 32,
+              "reportStartSec": 62,
+              "reportEndSec": 94,
+              "reportWaitSec": 30
+            },
+            {
+              "id": "G02",
+              "countSec": 38,
+              "reportSec": 32,
+              "countStartSec": 0,
+              "countEndSec": 38,
+              "reportStartSec": 126,
+              "reportEndSec": 158,
+              "reportWaitSec": 88
+            },
+            {
+              "id": "G03",
+              "countSec": 41,
+              "reportSec": 32,
+              "countStartSec": 0,
+              "countEndSec": 41,
+              "reportStartSec": 158,
+              "reportEndSec": 190,
+              "reportWaitSec": 117
+            },
+            {
+              "id": "G04",
+              "countSec": 35,
+              "reportSec": 32,
+              "countStartSec": 0,
+              "countEndSec": 35,
+              "reportStartSec": 94,
+              "reportEndSec": 126,
+              "reportWaitSec": 59
+            },
+            {
+              "id": "G05",
+              "countSec": 44,
+              "reportSec": 32,
+              "countStartSec": 0,
+              "countEndSec": 44,
+              "reportStartSec": 190,
+              "reportEndSec": 222,
+              "reportWaitSec": 146
+            },
+            {
+              "id": "G06",
+              "countSec": 30,
+              "reportSec": 32,
+              "countStartSec": 0,
+              "countEndSec": 30,
+              "reportStartSec": 30,
+              "reportEndSec": 62,
+              "reportWaitSec": 0
+            }
+          ],
+          "metrics": {
+            "groups": 6,
+            "totalSec": 222,
+            "meanReportWaitSec": 73.33333333333333,
+            "p95ReportWaitSec": 146,
+            "maxReportWaitSec": 146,
+            "reportBusyFraction": 0.8648648648648649,
+            "beyondTarget": 4,
+            "beyondTargetFraction": 0.6666666666666666
+          }
+        },
+        "savedSec": 190,
+        "savedFraction": 0.46116504854368934
+      },
+      "H1": "supported-for-this-fixture",
+      "H2": "rejected-for-this-fixture"
+    }
+  ],
+  "counterexample": {
+    "inputs": [
+      {
+        "id": "G1",
+        "countSec": 1,
+        "reportSec": 60
+      },
+      {
+        "id": "G2",
+        "countSec": 1,
+        "reportSec": 60
+      },
+      {
+        "id": "G3",
+        "countSec": 1,
+        "reportSec": 60
+      },
+      {
+        "id": "G4",
+        "countSec": 1,
+        "reportSec": 60
+      },
+      {
+        "id": "G5",
+        "countSec": 1,
+        "reportSec": 60
+      },
+      {
+        "id": "G6",
+        "countSec": 1,
+        "reportSec": 60
+      }
+    ],
+    "comparison": {
+      "baseline": {
+        "mode": "serial",
+        "targetSec": 120,
+        "events": [
+          {
+            "id": "G1",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 0,
+            "countEndSec": 1,
+            "reportStartSec": 1,
+            "reportEndSec": 61,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G2",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 61,
+            "countEndSec": 62,
+            "reportStartSec": 62,
+            "reportEndSec": 122,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G3",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 122,
+            "countEndSec": 123,
+            "reportStartSec": 123,
+            "reportEndSec": 183,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G4",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 183,
+            "countEndSec": 184,
+            "reportStartSec": 184,
+            "reportEndSec": 244,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G5",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 244,
+            "countEndSec": 245,
+            "reportStartSec": 245,
+            "reportEndSec": 305,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G6",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 305,
+            "countEndSec": 306,
+            "reportStartSec": 306,
+            "reportEndSec": 366,
+            "reportWaitSec": 0
+          }
+        ],
+        "metrics": {
+          "groups": 6,
+          "totalSec": 366,
+          "meanReportWaitSec": 0,
+          "p95ReportWaitSec": 0,
+          "maxReportWaitSec": 0,
+          "reportBusyFraction": 0.9836065573770492,
+          "beyondTarget": 5,
+          "beyondTargetFraction": 0.8333333333333334
+        }
+      },
+      "candidate": {
+        "mode": "parallel",
+        "targetSec": 120,
+        "events": [
+          {
+            "id": "G1",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 0,
+            "countEndSec": 1,
+            "reportStartSec": 1,
+            "reportEndSec": 61,
+            "reportWaitSec": 0
+          },
+          {
+            "id": "G2",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 0,
+            "countEndSec": 1,
+            "reportStartSec": 61,
+            "reportEndSec": 121,
+            "reportWaitSec": 60
+          },
+          {
+            "id": "G3",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 0,
+            "countEndSec": 1,
+            "reportStartSec": 121,
+            "reportEndSec": 181,
+            "reportWaitSec": 120
+          },
+          {
+            "id": "G4",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 0,
+            "countEndSec": 1,
+            "reportStartSec": 181,
+            "reportEndSec": 241,
+            "reportWaitSec": 180
+          },
+          {
+            "id": "G5",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 0,
+            "countEndSec": 1,
+            "reportStartSec": 241,
+            "reportEndSec": 301,
+            "reportWaitSec": 240
+          },
+          {
+            "id": "G6",
+            "countSec": 1,
+            "reportSec": 60,
+            "countStartSec": 0,
+            "countEndSec": 1,
+            "reportStartSec": 301,
+            "reportEndSec": 361,
+            "reportWaitSec": 300
+          }
+        ],
+        "metrics": {
+          "groups": 6,
+          "totalSec": 361,
+          "meanReportWaitSec": 150,
+          "p95ReportWaitSec": 300,
+          "maxReportWaitSec": 300,
+          "reportBusyFraction": 0.997229916897507,
+          "beyondTarget": 5,
+          "beyondTargetFraction": 0.8333333333333334
+        }
+      },
+      "savedSec": 5,
+      "savedFraction": 0.01366120218579235
+    },
+    "H1": false,
+    "H2": false
+  },
+  "interpretation": "Synthetic model verification only. No measured school improvement, statistical confidence or student authorship claim."
+}

@@ -21,6 +21,8 @@ The working research question is now: **Under explicitly stated counting and rep
 
 ## Project records
 
+한국어 요약과 다음 학생 작업: [첫 세션 기록](docs/KICKOFF_KO.md).
+
 | Record | Purpose |
 | --- | --- |
 | [Problem and evidence](docs/PROBLEM_VALIDATION.md) | Current procedure, corrected premise, unknowns |
@@ -36,4 +38,33 @@ The working research question is now: **Under explicitly stated counting and rep
 | [Repository](docs/REPOSITORY.md) | Verified remote, owner, branch and initial SHA |
 | [Issues](docs/ISSUES.md) | Research and implementation work units |
 
-Run instructions and verification results will be added as the testable prototype is implemented. This repository is an assisted research starting point, not proof of a completed student EC.
+## Run the local workbench
+
+Requires Node.js >=24 and pnpm 11.25.0 (`npm install --global pnpm@11.25.0` if needed).
+
+```sh
+pnpm install --frozen-lockfile
+pnpm test
+pnpm build
+pnpm dev
+```
+
+Open http://127.0.0.1:4173/. To rerun the preregistered synthetic study, use `pnpm experiment`. It records the current source revision and overwrites the dated synthetic report with the new run; use Git to preserve earlier reports.
+
+If dependencies and `dist/` are already present, `node scripts/serve.mjs` starts the preview directly. Rebuild after source changes. The app runs locally with no external API, font or analytics dependency. No hosted deployment is claimed.
+
+## Implemented and verified
+
+- Pure deterministic FCFS engine plus explicit serial/parallel count-report workflows.
+- 22 passing numerical/invariant/export tests, with separate TypeScript checks.
+- Same-input comparisons, per-group timeline, P95 reporting wait and target-crossing metrics.
+- Seeded and editable synthetic inputs; JSON/CSV serializers include provenance, assumptions, raw events and model/source versions.
+- Browser checks of exact outputs, invalid ranges, reset, custom edits, 100 groups and a narrow mobile viewport.
+- [Synthetic study](docs/EVALUATION.md), [machine-readable report](experiments/2026-10-27-synthetic-v1.json), and [browser QA](docs/BROWSER_QA.md).
+- GitHub Actions repeats unit tests, typechecked build and the synthetic experiment.
+
+Actual browser file-download verification was blocked by the browser permission review; serializer tests passed. This limitation remains tracked in issue #4.
+
+![Desktop research workbench](docs/images/2026-10-27-desktop.png)
+
+This repository is an assisted research starting point, not proof of a completed student EC. Original-source audit, student-authored contribution and field validation remain open.

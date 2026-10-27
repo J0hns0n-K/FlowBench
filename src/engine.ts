@@ -5,6 +5,7 @@ export interface TaskEvent extends Task {
 }
 export const MAX_TASKS = 5000;
 export const MAX_DURATION_SEC = 86400;
+export const MIN_SERVICE_SEC = 0.000001;
 
 export function finiteInRange(value: number, name: string, min: number, max: number): void {
   if (!Number.isFinite(value) || value < min || value > max) {
@@ -24,7 +25,7 @@ export function validateTasks(tasks: readonly Task[], servers: number): void {
     }
     seen.add(task.id);
     finiteInRange(task.arrivalSec, 'arrivalSec', 0, MAX_DURATION_SEC);
-    finiteInRange(task.serviceSec, 'serviceSec', 0.001, MAX_DURATION_SEC);
+    finiteInRange(task.serviceSec, 'serviceSec', MIN_SERVICE_SEC, MAX_DURATION_SEC);
   }
 }
 

@@ -1,6 +1,6 @@
 # Architecture v1
 
-All application computation runs in the browser; runtime has no network dependency. Development uses Node >=24, TypeScript 5.9.3 and a lockfile. Native Node type stripping runs tests without transpilation; TypeScript separately checks types. There is no backend or application dependency to hide the algorithm.
+All application computation runs in the browser; runtime has no external network dependency. Development uses Node >=24, TypeScript 5.9.3 and a lockfile. Native Node type stripping runs tests without transpilation; TypeScript separately checks types. There is no backend or application dependency to hide the algorithm.
 
 ```
 scenario.ts  (fixed or seeded synthetic group workloads)

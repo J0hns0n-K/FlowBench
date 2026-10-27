@@ -14,3 +14,10 @@
 | C10 | DormSense/RoboMetrics are completed. | unverified | Separate RD proposals only. |
 
 Add achieved software capabilities only after tests/run evidence. A pushed source repository is not a hosted app or school deployment.
+
+| ID | Achieved software statement | Evidence | Limit |
+| --- | --- | --- | --- |
+| C11 | AI-assisted numerical engine initially passed 21 tests, then 22 after a sensitivity boundary regression was added. | EXPERIMENT_LOG.md; initial engine commit `2c9e8e1` and later workbench commit | No inference about empirical model validity or independent student authorship. |
+| C12 | Browser prototype displays serial/parallel synthetic experiments on desktop/mobile. | BROWSER_QA.md and screenshots | Local preview only; no school deployment. |
+| C13 | Locked synthetic fixture yields 268 s versus 78 s. | EVALUATION.md and raw event JSON | Not a measured reduction; five-minute user estimate not used for calibration. |
+| C14 | JSON/CSV serializers preserve provenance and raw results. | Export unit tests | Actual browser download completion blocked by permission review. |

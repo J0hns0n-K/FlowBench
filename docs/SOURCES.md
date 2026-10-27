@@ -21,3 +21,7 @@ EC spreadsheet, Common App, essays and WIS records are referenced by the handoff
 5. SimPy official time/scheduling documentation: https://simpy.readthedocs.io/en/4.0.2/topical_guides/time_and_scheduling.html — deterministic ordering reference, not a reused implementation.
 
 Search lead only: https://www.sciencedirect.com/science/article/pii/S2351978919300769 — direct retrieval returned HTTP 403. No full-text findings attributed to it.
+
+## Build tooling references
+
+- Official action repositories https://github.com/actions/checkout and https://github.com/actions/setup-node reviewed for current usage. CI pins the v7 tag SHAs verified with `git ls-remote`, rather than a floating major version.

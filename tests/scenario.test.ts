@@ -47,3 +47,10 @@ test('reporting-dominant counterexample rejects 30 percent improvement hypothesi
   assert.ok(result.savedFraction!<0.3);
   assert.equal(result.candidate.metrics.p95ReportWaitSec,300);
 });
+
+test('half-duration sensitivity remains valid at the minimum UI report duration',()=>{
+  const result=compareWorkflows([{id:'G01',countSec:0.001,reportSec:0.001*0.5}],1);
+  assert.equal(result.baseline.metrics.totalSec,0.0015);
+  assert.equal(result.candidate.metrics.totalSec,0.0015);
+  assert.equal(result.candidate.metrics.p95ReportWaitSec,0);
+});

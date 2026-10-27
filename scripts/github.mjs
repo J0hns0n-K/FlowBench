@@ -26,7 +26,7 @@ if (!response.ok) throw new Error(`GitHub ${response.status}: ${data.message ?? 
 function summary(item) {
   return Object.fromEntries(Object.entries(item).filter(([key]) => [
     'login', 'full_name', 'private', 'default_branch', 'permissions', 'html_url',
-    'number', 'title', 'state', 'sha', 'has_issues', 'name', 'status', 'conclusion', 'head_sha',
+    'number', 'title', 'state', 'sha', 'has_issues', 'name', 'status', 'conclusion', 'head_sha', 'id',
   ].includes(key)));
 }
 console.log(JSON.stringify(Array.isArray(data) ? data.map(summary) :

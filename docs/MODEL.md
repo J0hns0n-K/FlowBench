@@ -13,7 +13,7 @@ w_i = b_i - a_i            queue wait
 v_k = d_i                  next server availability
 ```
 
-The server pool starts idle at t=0. Tasks are all completed, including those finishing after the target. No fixed warm-up or steady-state M/M/c formula is used: this is a finite terminating workload. Complexity is O(N log N + Nc), chosen for bounded small school-scale scenarios; no claim of a novel event-queue algorithm.
+The server pool starts idle at t=0. Tasks are all completed, including those finishing after the target. Primitive service durations are bounded below by one microsecond; UI group durations start at one millisecond, allowing a half-duration sensitivity point without rejecting an otherwise valid input. No fixed warm-up or steady-state M/M/c formula is used: this is a finite terminating workload. Complexity is O(N log N + Nc), chosen for bounded small school-scale scenarios; no claim of a novel event-queue algorithm.
 
 ## Attendance process alternatives
 
