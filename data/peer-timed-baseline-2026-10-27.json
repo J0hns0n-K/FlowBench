@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "recordId": "peer-timed-session-01",
+  "sourceKind": "user-report-of-peer-timing",
+  "reportedOn": "2026-10-27",
+  "observedOn": null,
+  "timingInstrument": null,
+  "rawBoundaryReadings": null,
+  "actualSessionAttendance": null,
+  "units": "seconds",
+  "seatingSec": 103,
+  "turns": [
+    { "group": "G6", "rosterCount": 7, "turnSec": 10 },
+    { "group": "G7", "rosterCount": 19, "turnSec": 34 },
+    { "group": "G8", "rosterCount": 21, "turnSec": 29 },
+    { "group": "G9-A", "rosterCount": 17, "turnSec": 18 },
+    { "group": "G9-B", "rosterCount": 15, "turnSec": 19 },
+    { "group": "G10", "rosterCount": 23, "turnSec": 26 },
+    { "group": "G11", "rosterCount": 14, "turnSec": 20 },
+    { "group": "G12", "rosterCount": 4, "turnSec": 4 }
+  ],
+  "limitations": [
+    "One reported timing series, collected by a peer according to the user; not independently audited.",
+    "The timing instrument, actual observation date and exact event-boundary readings were not supplied.",
+    "Each class interval remains a combined turn; counting, reporting and transition components are not identified.",
+    "Roster sizes are target-list counts, not verified actual session attendance.",
+    "Cumulative values are sums of reported intervals; a gap-free continuous end-to-end recording is not independently established.",
+    "Seating is not automatically deadline-to-verification preparation; countdown and settling overlap remain unresolved.",
+    "No intervention, counterfactual improvement or independent student implementation is established."
+  ]
+}

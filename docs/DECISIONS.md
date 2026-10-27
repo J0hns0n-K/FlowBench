@@ -83,3 +83,9 @@ The two phase estimates sum to 180 s, but any extra settling/handoff gap remains
 Date reported: 2026-10-27 (Asia/Seoul). User clarified that the chapel-room clock was consulted. Update the source record from unspecified timing method to clock-referenced approximate user-report. Do not infer stopwatch precision, clock resolution or raw event timestamps. Preserve reported durations, unknown observation date and interval-boundary limitations.
 
 With the existing verified engine, compare two explicitly synthetic eight-group workloads, each with serial total 120 s: (count=14 s, report=1 s) and (count=1 s, report=14 s) per group. Their parallel totals are 22 s and 113 s respectively. This is an identifiability counterexample, not calibration: aggregate verification duration alone does not determine the counterfactual benefit of parallel checking. Document it in IDENTIFIABILITY_KO.md and retain field validation as open.
+
+## ADR-013 — Peer-timed combined-turn baseline
+
+Date reported: 2026-10-27 (Asia/Seoul). User supplied seating=103 s and class intervals in order `[10,34,29,18,19,26,20,4]` s, stating that a friend timed them. Store this as a new immutable source snapshot, separate from earlier coarse clock-referenced estimates. Instrument, observation date, raw boundary readings and actual attendance remain unknown. Do not assign the earlier clock method to the peer's new series.
+
+Class intervals sum to 160 s; seating plus intervals sum to 263 s. Treat per-class durations as combined turns, without splitting count/report components. Implement a separate baseline-accounting module/panel that validates inputs, sums intervals and retains source limitations, with exact tests. It must not generate a parallel counterfactual, a measured speedup, student authorship or a statistical confidence claim. Preserve existing synthetic engine/fixtures/exports. See PEER_TIMING_BASELINE_KO.md.
