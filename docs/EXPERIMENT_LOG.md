@@ -106,4 +106,3 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Added role-specific pure model and selector. Checker start/advance stay null; another member's checking turn uses the existing conditional non-checker branch. No new checking-time estimate is invented.
 - Full numerical suite: **37 passed, 0 failed**. Typechecked build and diff whitespace checks passed. Desktop/mobile behavior and source labels verified; details in BROWSER_QA.md.
 - Expanded blank observation sheet with duty role, aggregate vacant/uncertain counts, method and optional disjoint work stages. No actual intervention measurement or accuracy result recorded. Field issue #7 remains open.
-

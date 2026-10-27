@@ -56,4 +56,3 @@ Screenshots document software behavior only. They establish no school result or 
 - Desktop and 390x844 mobile checks passed; client/body widths both 375 px, no error-level console logs. Temporary viewport reset. Previous baseline and separate synthetic fixture remain intact.
 - [Desktop](images/2026-10-27-rotating-duty-desktop.png), [mobile](images/2026-10-27-rotating-duty-mobile.png), captured from modified source based on research snapshot `3b62616`.
 - Existing tab was stranded on an earlier connection-refused error page; a fresh IAB tab loaded the running local preview. No browser download attempted.
-
