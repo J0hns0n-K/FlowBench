@@ -64,3 +64,10 @@ Subsequent verification commands and observed outputs will be appended after exe
 - User clarified informal checking of seated students without individual name-calling. Added ADR-009 and C17; kept this as user-report rather than independently observed method or accuracy.
 - Updated the observation protocol to allow unobservable count stages to remain missing; combined class-turn timing must not be split into fabricated component durations. No fixed seconds-per-student formula introduced.
 - Documentation-only change. Numerical engine, locked synthetic data and published experiment outcomes are unchanged.
+
+### Follow-up — preparation is a separate phase
+
+- User refined timing: roughly ten-second countdown before a minute-25 deadline, seating/settling about one-to-two minutes, then verification about one-to-two minutes. Settling was emphasized. All are unmeasured estimates; hour, overlap and precise interval boundaries are unknown.
+- Added ADR-010 and SESSION_PHASES_KO.md. Earlier five-minute context is not verification-only latency. Existing engine remains scoped to verification V, not preparation P or total T=P+V.
+- Updated observation sheet with countdown, deadline, first-check and last-report markers on one clock. Qualified current browser and export scope without fitting timings or altering scheduling/locked fixtures.
+- Checks: four export tests passed; typechecked browser build passed; whitespace/diff check passed. The numerical scheduling engine is unchanged.

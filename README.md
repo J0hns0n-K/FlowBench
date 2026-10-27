@@ -6,7 +6,7 @@ Browser-native TypeScript research workbench for **seated attendance verificatio
 
 ## What changed at kickoff
 
-The initial handoff proposed a check-in queue simulator. Follow-up descriptions establish a different workflow: participants enter without an entrance queue, sit down, and class representatives check attendance in lower-grade-first order and report to a student coordinator. The overall process is estimated at about five minutes; this is **user self-report, not a measured baseline**. There is no individual check-in device. Consequently, “reducing an existing check-in queue” is not an evidence-supported project claim.
+The initial handoff proposed a check-in queue simulator. Follow-up descriptions establish a different workflow: participants enter without an entrance queue, sit/settle, and class representatives check attendance in lower-grade-first order and report to a student coordinator. The latest user estimate separates preparation (about 1–2 minutes) and verification (about 1–2 minutes), with a roughly ten-second countdown before a minute-25 deadline. These are **unmeasured estimates**, refining an earlier broad five-minute description. There is no individual check-in device. Consequently, “reducing an existing check-in queue” is not an evidence-supported project claim.
 
 The working research question is now: **Under explicitly stated counting and reporting assumptions, how does the organization of attendance verification affect total completion time and the coordinator's reporting bottleneck?** Whether changing the real process is useful remains an empirical question.
 
@@ -31,6 +31,7 @@ The working research question is now: **Under explicitly stated counting and rep
 | [Related work](docs/RELATED_WORK.md) | Primary-source competitor and research audit |
 | [Validation protocol](docs/VALIDATION.md) | Numerical verification versus field validation |
 | [Observation sheet](docs/OBSERVATION_SHEET_KO.md) | Blank anonymous timing record and model-gap check |
+| [Session phase boundaries](docs/SESSION_PHASES_KO.md) | Preparation versus verification; current engine covers verification only |
 | [Image-derived group sizes](docs/GROUP_COUNTS_KO.md) | Provisional aggregate counts only; no names or scores |
 | [Experiment log](docs/EXPERIMENT_LOG.md) | Dated commands and observed results |
 | [Claim ledger](docs/CLAIM_LEDGER.md) | Permitted and unsupported claims |

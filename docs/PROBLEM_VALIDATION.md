@@ -7,10 +7,11 @@
 ## Current workflow (user-report)
 
 1. Participants enter the study space and sit in their places without waiting at its entrance.
-2. At the scheduled time, class representatives check seated attendance, in lower-grade-first order, **one class at a time** (subsequent explicit user clarification). Representatives informally check the seated students; there is **no required name-by-name roll call**. The exact visual-check strategy is not standardized by the user's account.
-3. Representatives report attendance to a student coordinator.
-4. The handoff/session previously described a separate late-entry process; the user subsequently excluded penalty information from this project's analysis. No score or individual disciplinary data are used.
-5. The whole attendance check takes approximately **five minutes**, a retrospective estimate, not a timed sample.
+2. Before the minute-25 deadline, a roughly ten-second countdown is given. Seating and settling take an estimated one to two minutes before class-by-class verification begins. The hour and exact interval boundaries were not supplied.
+3. Class representatives check seated attendance, in lower-grade-first order, **one class at a time**. Representatives informally check seated students; there is **no required name-by-name roll call**. The exact visual-check strategy is not standardized by the user's account.
+4. Representatives report attendance to a student coordinator. This verification phase takes an estimated one to two minutes according to the more detailed follow-up.
+5. Penalty information is excluded from the analysis. No score or individual disciplinary data are used.
+6. The earlier approximate five-minute statement was a broad retrospective estimate. It must **not** be treated as five minutes of verification alone. The phase estimates are user-report, not timed samples; countdown/preparation overlap is unknown.
 
 No individual check-in step, scanning device or entrance queue is reported. The user selected the sequential-class description when asked to distinguish it from simultaneous counting. This supports serial ordering as self-report, not an independently observed process. Actual late-entry rules, handoff gaps, reporting medium, handling of absences and interruptions are not yet established. The model must not infer those rules from queueing mathematics.
 
@@ -18,11 +19,11 @@ No individual check-in step, scanning device or entrance queue is reported. The 
 
 An earlier brief reply said a queue existed. A later, more specific account explicitly says there is no entrance queue and verification happens after seating. That correction supersedes the earlier reply. The original check-in-completion versus arrival-time hypothesis is **rejected as a description of the present system**.
 
-The identified inconvenience is attendance-verification duration. No miscount, penalty error, student dissatisfaction, or measured loss of study time has been verified. Five minutes alone does not establish that a new system is worth adopting.
+The identified inconvenience includes time spent seating/settling before verification, which the user specifically emphasized. No measured phase duration, miscount, student dissatisfaction, or loss of study time has been verified. The reported one-to-two-minute ranges do not establish that preparation is always longer than verification, nor that a new system is worth adopting.
 
 ## Working problem
 
-Investigate what determines total seated-verification time, and whether reorganizing counting and reporting could reduce completion time without increasing errors. The prototype isolates timing only; accuracy and practical adoption require separate evidence.
+First distinguish post-deadline preparation from verification, then investigate which phase an intervention could realistically change. The existing prototype isolates count/report timing **after verification starts**. It does not simulate settling, crowd behavior or time from the deadline to the first class's check. See [session phases](SESSION_PHASES_KO.md). Accuracy and practical adoption require separate evidence.
 
 Two synthetic process variants are offered:
 

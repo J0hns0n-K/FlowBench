@@ -5,7 +5,7 @@
 | C01 | Existing GitHub repository has a main branch and README start commit. | verified-artifact | Repository metadata and starting SHA in REPOSITORY.md. |
 | C02 | There is an entrance check-in queue. | superseded user-report | Rejected by the later detailed correction; do not use. |
 | C03 | Participants enter freely, sit, and representatives count/report lower grades first, one class at a time. | user-report | Serial class structure explicitly clarified after kickoff; exact durations, gaps and independent observation remain unverified. |
-| C04 | Verification takes approximately five minutes. | user-report, estimate | Not a measured baseline, calibration parameter or intervention outcome. |
+| C04 | An earlier broad process estimate was approximately five minutes. | superseded coarse user-report | Later phase breakdown distinguishes preparation from verification; do not call this five minutes of verification or use it as calibration. |
 | C05 | FlowBench reduces school attendance-check time. | unverified | No field comparison or measured effect. |
 | C06 | Numerical model and browser code are independently student-authored. | unverified / false for initial assisted scaffold | AI contribution explicitly recorded; student contributions pending. |
 | C07 | Browser queue simulation is a novel invention. | contradicted by related work | Do not claim. Application-specific validation may become a contribution. |
@@ -15,6 +15,7 @@
 | C15 | The supplied screenshot visibly contains eight group labels and 119 nonempty name rows. | image-derived historical aggregate | Superseded as current roster size by C16; not an attendance measurement. No names or scores retained. |
 | C16 | The listed groups are evening-study participants; one newcomer brings G9-B to 15 and the roster total to 120 across eight groups. | image-derived aggregate + explicit user confirmation/correction | Target roster scope confirmed by user; actual session attendance and timings not measured. No individual name retained. |
 | C17 | Class representatives check seated students informally without required individual name-calling. | explicit user-report | No fixed per-person algorithm, checking speed, observed accuracy or independent field verification established. |
+| C18 | A roughly ten-second countdown precedes the minute-25 deadline; seating/settling and subsequent class verification each take approximately one to two minutes. | user-report, unmeasured estimates | Hour, overlap and interval boundaries unknown; no exact sum, fitted distributions or demonstrated dominant phase. Existing engine models verification only. |
 
 Add achieved software capabilities only after tests/run evidence. A pushed source repository is not a hosted app or school deployment.
 

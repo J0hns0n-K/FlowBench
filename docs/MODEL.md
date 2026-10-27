@@ -1,6 +1,6 @@
 # Mathematical and computational model v1
 
-Units: seconds. The time origin is the scheduled start of an attendance check, **not** an individual student's school arrival timestamp. This model has no student lateness or disciplinary-policy output.
+Units: seconds. The engine's time origin is the first modelled verification activity (A in the field protocol), **not** the minute-25 deadline D or an individual student's arrival timestamp. Preparation before A is not included in v1 outputs. This model has no student lateness or disciplinary-policy output.
 
 ## FCFS service primitive
 
@@ -43,3 +43,5 @@ The fixed fixture is in ADR-002. A documented unsigned-32-bit seeded generator c
 A five-minute overall estimate cannot identify group count, per-group count durations, report durations, concurrency or interruptions. No numeric calibration from that single estimate is defensible. Accuracy of attendance counts is outside this time-only model. Use paired independent sessions and report distributions/intervals if empirical data become available. Synthetic single-run differences contain no statistical confidence claim.
 
 Follow-up context (ADR-009): verification is informal inspection of seated students, not individual roll call. Roster size alone therefore does not establish a linear counting-time rule. Some checking may be cognitively unobservable or done in advance; separate count/report durations must not be invented from a combined class-turn interval. Confirm stage identifiability before using the two-stage model for field predictions.
+
+ADR-010 separates preparation and verification: user-reported seating/settling and verification each take roughly one to two minutes; a roughly ten-second countdown occurs before the minute-25 deadline. These are unmeasured ranges with unresolved interval boundaries. For observed D<=A<=F, total post-deadline time is `(A-D)+(F-A)=P+V`. The current engine models V only. A common P preserves the absolute difference between alternatives but reduces their relative end-to-end improvement. See SESSION_PHASES_KO.md; do not add the pre-deadline countdown twice or reclassify old synthetic results as total session predictions.

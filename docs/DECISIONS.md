@@ -65,3 +65,9 @@ Date: 2026-10-27 (Asia/Seoul). The user confirmed that the supplied list covers 
 Date: 2026-10-27 (Asia/Seoul). User clarified that representatives check the seated students themselves without calling each student individually. Record this as user-report, without inventing a fixed head-counting, face-recognition, seat-scanning or checklist algorithm.
 
 Keep measured group-level checking duration as the input. Do not derive duration by multiplying roster size by an assumed name-calling time. The model's serial service recurrence is unchanged. If visual checking begins before a class's reporting turn, or if checking start/end cannot be observed separately, document that limitation rather than fabricating separate stage durations. Aggregate turn-start-to-report-end timing can be collected first; it cannot identify checking and reporting components on its own.
+
+## ADR-010 — Separate preparation from verification
+
+Date: 2026-10-27 (Asia/Seoul). User explained a roughly ten-second countdown before the minute-25 deadline, roughly one-to-two minutes to sit/settle, then roughly one-to-two minutes for class-by-class verification. Settling time was specifically identified as an inconvenience. Hour, exact phase boundaries and overlap are unconfirmed.
+
+The earlier five-minute estimate cannot be used as verification-only latency. First measure deadline D, first verification activity A and final report F on the same clock. Model v1 continues to represent V=F-A only; it does not represent preparation P=A-D or behavior. Document T=P+V conditionally on the observed order, and qualify current UI/export scope. Preserve numerical engine and preregistered synthetic data. Do not assume uniform durations within reported ranges, sum overlapping estimates, infer an hour or claim preparation is always dominant. Any proposed preparation intervention needs its own mechanism and evidence.

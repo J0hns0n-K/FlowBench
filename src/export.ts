@@ -31,7 +31,8 @@ export function makeExperiment(groups: readonly Group[], targetSec: number, meta
     ],
     limitations: [
       'One-class-at-a-time ordering is user-reported; durations and zero-gap handoffs are not field-validated.',
-      'The approximate five-minute user estimate was not used to calibrate inputs.',
+      'The current engine covers verification only; preparation/settling before verification is excluded.',
+      'User-reported preparation/verification ranges and the earlier broad five-minute estimate were not used to calibrate inputs.',
       'No modelled attendance accuracy, interruptions, walking or communication failure.',
       'This run establishes no measured school improvement or independent student authorship.',
     ],

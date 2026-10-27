@@ -25,7 +25,7 @@
     </section>
     <section class="context-strip" aria-label="확인된 현재 절차">
       <div class="context-icon" aria-hidden="true">i</div><div><strong>출발점은 대기줄이 아닌, 착석 후 인원 확인입니다.</strong>
-      <p>바로 입실·착석 → 저학년부터 한 반씩 확인·보고. 전체 약 5분은 사용자 추정이며 실측값이 아닙니다.</p></div>
+      <p>착석·진정 약 1~2분 → 반별 확인 약 1~2분이라는 사용자 추정입니다. 아래 실험은 확인 시작 이후만 다룹니다.</p></div>
       <span class="source-tag">사용자 자기보고</span>
     </section>
     <div class="workspace">
@@ -42,7 +42,7 @@
             <div class="field-group"><span class="field-label">그룹별 확인시간 범위 (초)</span><div class="field-pair"><input id="count-min" aria-label="최소 확인시간 (초)" type="number" min="0.001" max="3600" step="0.001" value="25" required><input id="count-max" aria-label="최대 확인시간 (초)" type="number" min="0.001" max="3600" step="0.001" value="50" required></div></div>
             <div class="field-group"><span class="field-label">그룹별 보고시간 범위 (초)</span><div class="field-pair"><input id="report-min" aria-label="최소 보고시간 (초)" type="number" min="0.001" max="3600" step="0.001" value="5" required><input id="report-max" aria-label="최대 보고시간 (초)" type="number" min="0.001" max="3600" step="0.001" value="12" required></div></div>
           </fieldset>
-          <div class="target-field"><label for="target">전체 완료 목표 (초)</label><input id="target" type="number" min="0" max="86400" step="0.001" value="120" required><p class="field-note">실험용 목표입니다. 학교 지각 기준과 무관합니다.</p></div>
+          <div class="target-field"><label for="target">확인 단계 완료 목표 (초)</label><input id="target" type="number" min="0" max="86400" step="0.001" value="120" required><p class="field-note">준비시간은 미포함입니다. 학교 지각 기준과 무관합니다.</p></div>
           <button class="primary-button" type="submit"><span aria-hidden="true">▷</span> 시뮬레이션 실행</button>
           <button id="reset-scenario" class="text-button" type="button">사전등록 예제로 초기화 ↺</button>
           <p id="run-status" class="run-status" role="status" aria-live="polite">실험을 준비하고 있습니다.</p>
@@ -80,7 +80,7 @@
           <div class="table-wrap bounded-table"><table><caption class="sr-only">합성 그룹별 입력과 동시 확인 시나리오 결과</caption><thead><tr><th>그룹</th><th>확인시간 (초)</th><th>보고시간 (초)</th><th>동시 보고 대기</th><th>동시 보고 완료</th></tr></thead><tbody id="input-table"></tbody></table></div>
         </section>
         <section class="export-panel" aria-labelledby="export-title"><div><p class="eyebrow">REPRODUCIBLE BY DESIGN</p><h2 id="export-title">결과와 가정을 함께 저장</h2><p>입력 · 이벤트 · 지표 · 출처 · 모델 버전을 함께 내보냅니다.</p></div><div class="export-actions"><button id="export-json" type="button">JSON 내보내기 ↓</button><button id="export-csv" type="button">CSV 내보내기 ↓</button></div></section>
-        <details class="limitations"><summary>해석하기 전에: 모델의 한계와 다음 검증</summary><div><p>한 반씩 순차 진행한다는 사용자 설명을 반영했습니다. 반별 시간과 전달·전환 공백은 실측하지 않았습니다. 입력은 모두 합성값이며 약 5분이라는 추정에 맞춰 보정하지 않았습니다. 보고 대기는 학생의 입실 대기나 지각을 의미하지 않습니다.</p><p>현장 관찰로 절차를 확인하고, 별도 검증 세션에서 예측 오차를 평가해야 합니다. 인원 확인의 정확성을 유지하지 못한다면 시간 감소만으로 개선을 주장할 수 없습니다.</p><p>초기 모델·코드·문서는 AI 도움으로 작성했습니다. 학생 본인의 설계·수정·검증 기여는 별도 증거가 필요합니다.</p><a href="https://github.com/J0hns0n-K/FlowBench/blob/main/docs/VALIDATION.md" target="_blank" rel="noreferrer">검증 계획 읽기 ↗</a></div></details>
+        <details class="limitations"><summary>해석하기 전에: 모델의 한계와 다음 검증</summary><div><p>한 반씩 순차 진행한다는 사용자 설명을 반영했습니다. 반별 시간과 전달·전환 공백은 실측하지 않았습니다. 이 실험은 확인 시작 이후만 다루며, 그 전의 착석·진정·진행 대기는 계산하지 않습니다. 준비 약 1~2분, 확인 약 1~2분이라는 사용자 추정이나 앞선 약 5분에 맞춰 입력을 보정하지 않았습니다. 보고 대기는 학생의 입실 대기나 지각을 의미하지 않습니다.</p><p>현장 관찰로 절차를 확인하고, 별도 검증 세션에서 예측 오차를 평가해야 합니다. 인원 확인의 정확성을 유지하지 못한다면 시간 감소만으로 개선을 주장할 수 없습니다.</p><p>초기 모델·코드·문서는 AI 도움으로 작성했습니다. 학생 본인의 설계·수정·검증 기여는 별도 증거가 필요합니다.</p><a href="https://github.com/J0hns0n-K/FlowBench/blob/main/docs/VALIDATION.md" target="_blank" rel="noreferrer">검증 계획 읽기 ↗</a></div></details>
       </div>
     </div>
     <footer><span>FlowBench <span class="footer-separator">/</span> 설계하고, 반증하고, 검증하기.</span><span id="source-revision">모델 seated-verification-v1</span></footer>
