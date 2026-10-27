@@ -6,6 +6,8 @@
 - Current session: detailed seated-verification description and approximate five-minute estimate; explicitly user-reported. The later no-queue correction supersedes the earlier brief affirmative answer.
 - Follow-up after kickoff: user explicitly answered “한 반씩 해” to distinguish sequential classes from simultaneous counting. This resolves reported serial class structure, not timing measurements or independent process verification.
 - Subsequent roster screenshot: visually counted only group labels and nonempty name rows, yielding eight visible groups and 119 rows. User explicitly excluded penalty analysis. Only the aggregate table in GROUP_COUNTS_KO.md is retained; no names, individual scores or source image copied. Completeness and actual verification scope remain unconfirmed.
+- Subsequent roster screenshot: visually counted only group labels and nonempty name rows, initially yielding eight groups and 119 rows. User explicitly excluded penalty analysis. No names, individual scores or source image copied.
+- Roster follow-up: the user confirmed the listed groups are evening-study participants and reported one newcomer in G9-B. Current aggregate is G9-B=15, eight groups, total=120. The name is omitted from repository records. Scope is user-confirmed; actual attendance and timings remain unmeasured.
 - Starter: user confirmed using the current handoff, without a separate Starter file.
 - Shared earlier chat: background proposal, superseded where it conflicts with the detailed current workflow.
 - Repository: https://github.com/J0hns0n-K/FlowBench — inspected via web, Git and authenticated API. No student identity inferred from access.

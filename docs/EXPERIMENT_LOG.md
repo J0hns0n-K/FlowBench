@@ -52,3 +52,9 @@ Subsequent verification commands and observed outputs will be appended after exe
 - User supplied a roster image and requested excluding penalty information. Counted only visible nonempty name rows by group: G6=7, G7=19, G8=21, G9-A=17, G9-B=14, G10=23, G11=14, G12=4; total 119 across eight groups.
 - Classification: provisional image-derived roster-size aggregate, not independently verified session attendance or complete population. Actual verification scope remains to be confirmed.
 - No names, individual scores or source image copied into the repository. No timing values inferred; no simulation input or historical synthetic result changed. Documentation-only update, so numerical tests were not rerun.
+
+### Follow-up — roster scope confirmed, one additional participant
+
+- User confirmed the listed groups are evening-study participants and reported one newcomer in G9-B. Updated current roster aggregate from G9-B=14 / total=119 to **G9-B=15 / total=120**, still eight groups.
+- Stored only the aggregate correction, not the individual's name. Scope is now explicitly user-confirmed; actual session attendance and timing remain unmeasured.
+- Retained the original 119-row image observation in history. No algorithm, synthetic fixture or earlier numerical outcome changed. Documentation-only consistency/diff checks; no repeated numerical tests needed.

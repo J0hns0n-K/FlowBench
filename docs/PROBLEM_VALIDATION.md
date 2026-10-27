@@ -33,11 +33,11 @@ Neither is labelled a measured reproduction of the school. Serial ordering is no
 
 ## Open validation gate
 
-A subsequent user-provided image shows eight group labels and 119 visible named rows, counted without copying names or scores. This is a provisional image-derived roster-size aggregate, not observed attendance. See [group counts](GROUP_COUNTS_KO.md). Whether every listed group belongs to the same verification session remains unconfirmed.
+A user-provided image initially yielded eight groups and 119 visible named rows. The user then confirmed these are the evening-study participants and added one newcomer to G9-B. Current roster-size aggregate: **eight groups, 120 participants; G9-B=15**. Sources are image-derived counts plus user confirmation/correction, not observed attendance. No names or scores are retained. See [group counts](GROUP_COUNTS_KO.md).
 
 Before recommending or describing a school improvement, the student must establish:
 
-- Confirm the image-derived group count/sizes against the actual verification scope and establish who counts each group.
+- Maintain the user-confirmed target roster (eight groups, 120) as roster size, distinguish actual session attendance, and establish the precise counting method for each group.
 - Count start/end times, report start/end times and the definition of “finished”.
 - Independently check the reported serial order, quantify gaps between count/report/class transitions, and establish how results are aggregated.
 - Frequency of absences, recounts, late entrants and incomplete reports, using only approved aggregate observation.

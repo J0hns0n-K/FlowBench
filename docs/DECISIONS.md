@@ -55,3 +55,7 @@ Update live documentation, display and export limitations accordingly. Preserve 
 Date: 2026-10-27 (Asia/Seoul). User supplied a roster screenshot and explicitly requested disregarding penalty information.
 
 Record only visible group labels and counts of nonempty name rows: eight groups, 119 rows. Treat these as provisional image-derived counts, pending scope/completeness confirmation. Do not copy names, individual scores, the screenshot or disciplinary interpretations into the repository. Do not use roster size as observed attendance, processing-time data or evidence of an improvement. Preserve the locked six-group synthetic fixture; any new scenario must explicitly distinguish roster-size provenance from synthetic timing assumptions.
+
+## ADR-008 — Roster scope confirmed and G9-B incremented
+
+Date: 2026-10-27 (Asia/Seoul). The user confirmed that the supplied list covers evening-study participants and reported one additional newcomer in G9-B. Update the live aggregate to G9-B=15 and total=120 across eight groups. Store no newcomer name. The earlier 119-row image count remains a historical source observation, not an error to silently rewrite in the experiment history. Distinguish this user-confirmed target roster from actual session attendance and measured timing. Scheduling and locked synthetic examples do not change.
