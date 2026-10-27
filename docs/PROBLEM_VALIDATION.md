@@ -7,9 +7,9 @@
 ## Current workflow (user-report)
 
 1. Participants enter the study space and sit in their places without waiting at its entrance.
-2. Before the minute-25 deadline, a roughly ten-second countdown is given. The latest user report refines entry-to-all-seated time to approximately **60 seconds**. Whether additional settling occurs before verification, and the hour/deadline-relative boundaries, remain unknown.
+2. Before the minute-25 deadline, a roughly ten-second countdown is given. The latest peer-timed series relayed by the user reports seating as **103 seconds**. Whether additional settling occurs before verification, and the hour/deadline-relative boundaries, remain unknown.
 3. Class representatives check seated attendance, in lower-grade-first order, **one class at a time**. Representatives informally check seated students; there is **no required name-by-name roll call**. The exact visual-check strategy is not standardized by the user's account.
-4. Representatives report attendance to a student coordinator. The latest report refines this verification phase to approximately **120 seconds**, referencing the chapel-room clock. Observation date, clock resolution and exact start/end readings were not supplied.
+4. Representatives report attendance to a student coordinator. Latest reported class-turn intervals in order are **10, 34, 29, 18, 19, 26, 20, 4 seconds**, totalling **160 seconds**. A friend timed these according to the user. The friend's instrument, actual observation date and raw boundary readings were not supplied; do not assign the earlier coarse clock method to this series.
 5. Penalty information is excluded from the analysis. No score or individual disciplinary data are used.
 6. The earlier approximate five-minute statement was a broad retrospective estimate. It must **not** be treated as five minutes of verification alone. The phase estimates are user-report, not timed samples; countdown/preparation overlap is unknown.
 
@@ -19,7 +19,7 @@ No individual check-in step, scanning device or entrance queue is reported. The 
 
 An earlier brief reply said a queue existed. A later, more specific account explicitly says there is no entrance queue and verification happens after seating. That correction supersedes the earlier reply. The original check-in-completion versus arrival-time hypothesis is **rejected as a description of the present system**.
 
-The identified inconvenience includes seating/settling before verification. Latest reported durations are 60 seconds entry-to-seated and 120 seconds verification; these are approximate user reports, not independently verified stopwatch records. They sum to 180 seconds for the reported phases; actual end-to-end time depends on any additional gap. No miscount, participant benefit or intervention effect has been verified.
+The identified inconvenience includes seating/settling before verification. Latest reported intervals sum to 103 seconds seating and 160 seconds verification, superseding earlier rough 60/120 estimates as the current reference series. Their sum, 263 seconds, is not an independently established deadline-relative end-to-end duration. No miscount, participant benefit or intervention effect has been verified. See PEER_TIMING_BASELINE_KO.md.
 
 ## Working problem
 

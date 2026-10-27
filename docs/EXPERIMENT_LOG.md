@@ -84,3 +84,10 @@ Subsequent verification commands and observed outputs will be appended after exe
 - User confirmed consulting the chapel-room clock. Updated timing provenance and measurement method, retaining unknown clock resolution, raw readings and observation date. The 60 s / 120 s values remain approximate, user-reported durations.
 - Executed existing `compareWorkflows` on two synthetic eight-group examples: (count=14 s, report=1 s) gives serial 120 s / parallel 22 s; (count=1 s, report=14 s) gives serial 120 s / parallel 113 s. This demonstrates non-identifiability from aggregate time, not a fitted school prediction.
 - Documented inputs, hand calculations and limitations in IDENTIFIABILITY_KO.md. No engine, locked fixture or timing value changed; field validation and student-authorship evidence remain open.
+
+### First peer-timed combined-turn series and baseline display
+
+- Preserved source snapshot and ADR-013 in commit `8ea6825e5f308506010c0acfa9f44f6225cae1c0` before display implementation. User reported a friend timed seating=103 s and class turns `[10,34,29,18,19,26,20,4]` s. Sum=160 s; reported phase sum=263 s. Instrument/date/raw boundaries/turnout remain unknown.
+- Added a pure, validated accounting module and a separately labelled baseline panel. No count/report split, counterfactual candidate or improvement claim is generated from the record. Original synthetic engine and fixtures are preserved.
+- `node --test tests/engine.test.ts tests/workflow.test.ts tests/scenario.test.ts tests/export.test.ts tests/observed.test.ts`: **27 passed, 0 failed**, including five baseline tests for arithmetic, cumulative sums, provenance, copying and invalid input.
+- Typechecked browser build and whitespace/diff check passed. Desktop/mobile QA verified 103/160/263, eight rows and preserved synthetic result; no horizontal overflow or console errors. Screenshots and detail in BROWSER_QA.md.

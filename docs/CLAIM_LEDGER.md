@@ -16,7 +16,8 @@
 | C16 | The listed groups are evening-study participants; one newcomer brings G9-B to 15 and the roster total to 120 across eight groups. | image-derived aggregate + explicit user confirmation/correction | Target roster scope confirmed by user; actual session attendance and timings not measured. No individual name retained. |
 | C17 | Class representatives check seated students informally without required individual name-calling. | explicit user-report | No fixed per-person algorithm, checking speed, observed accuracy or independent field verification established. |
 | C18 | An earlier account gave one-to-two minutes each for seating/settling and verification, with a pre-deadline countdown. | earlier coarse user-report | Phase durations refined by C19; countdown/hour and interval-boundary caveats remain. |
-| C19 | Entry-to-all-seated about 60 s; verification about 120 s, referencing the chapel-room clock. | clock-referenced approximate user-report | Sum=180 s for these phases; clock resolution, raw readings, observation date and extra settling gap unknown. Not stopwatch precision, deadline-relative total, per-class calibration or improvement evidence. |
+| C19 | Earlier report: entry-to-all-seated about 60 s; verification about 120 s, referencing the chapel-room clock. | historical clock-referenced approximate user-report | Current reference series is C20. Retain this coarse report's provenance; do not rewrite it as peer timing. |
+| C20 | User relayed peer-timed seating 103 s and eight combined class turns summing to 160 s; reported phase sum 263 s. | user-report-of-peer-timing | First reported series only; instrument, observation date, raw boundaries and actual turnout unverified. No split count/report inputs, counterfactual benefit or gap-free end-to-end proof. |
 
 Add achieved software capabilities only after tests/run evidence. A pushed source repository is not a hosted app or school deployment.
 

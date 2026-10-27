@@ -33,3 +33,11 @@ Captured from the local synthetic fixture after fixes. Source was an explicitly 
 - [Mobile comparison and timeline](images/2026-10-27-mobile-results.png)
 
 Screenshots document software behavior only. They establish no school result or independent student authorship.
+
+## Peer-timed baseline panel follow-up
+
+- Local page reloaded to replace a cached earlier prototype. Verified displayed seating=1 min 43 s, class sum=2 min 40 s, phase sum=4 min 23 s, eight rows, G12 cumulative=160 s. Synthetic serial total remains 268 s and is shown in a separate section.
+- Verified source labels: peer measurement relayed by user; one series; instrument/date/raw timestamps unknown; combined turns not split. Roster 120 is distinguished from actual session attendance.
+- At a 390x844 override, client width and body scroll width both 375 px; eight baseline rows preserved. Viewport reset after checks. No error-level browser logs.
+- [Desktop baseline](images/2026-10-27-peer-baseline-desktop.png), [mobile baseline](images/2026-10-27-peer-baseline-mobile.png). Captured from the working implementation based on source snapshot commit `8ea6825`; no clean-release SHA inferred from screenshots.
+- Did not retry the previously denied browser download action. Existing serializer verification and its documented end-to-end download limitation are unchanged.

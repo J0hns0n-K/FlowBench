@@ -23,3 +23,5 @@ JSON exports preserve complete results and input configuration. CSV includes one
 Build: typecheck -> compile TypeScript -> copy static HTML/CSS -> stamp source metadata. Preview serves only `dist/` over loopback. No external fonts, analytics, APIs or asset downloads at runtime.
 
 Manual source evidence and field measurements remain separate from browser output. A correct engine cannot validate an incorrect process graph.
+
+The peer-timed field baseline uses a separate `observed.ts` accounting module, not the two-stage synthetic engine. It accepts only the explicit peer-report source schema, validates combined intervals/roster data, preserves unknown metadata and computes sums/cumulative values. `data/peer-timed-baseline-2026-10-27.json` is the only source data copied into the browser build and is included in its content fingerprint. No names, scores or private source artifacts are bundled. Synthetic JSON/CSV exports remain synthetic-only and do not silently mix this record into their results.

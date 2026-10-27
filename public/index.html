@@ -21,12 +21,21 @@
     <section class="intro" aria-labelledby="page-title">
       <div><p class="eyebrow">01 / ATTENDANCE VERIFICATION</p><h1 id="page-title">인원 확인의 병목을 찾다.</h1>
       <p class="intro-copy">확인하는 순서가 달라지면, 모두의 시간이 어떻게 달라질까요?<br class="desktop-break">같은 작업량으로 두 가지 절차를 비교합니다.</p></div>
-      <div class="study-status"><span class="status-dot"></span><span>합성 데이터 실험<strong>현장 검증 전 · 초기 연구</strong></span></div>
+      <div class="study-status"><span class="status-dot"></span><span>현장 보고 + 합성 실험<strong>반별 시간 1회 보고 · 반복 검증 전</strong></span></div>
     </section>
     <section class="context-strip" aria-label="확인된 현재 절차">
       <div class="context-icon" aria-hidden="true">i</div><div><strong>출발점은 대기줄이 아닌, 착석 후 인원 확인입니다.</strong>
-      <p>사용자 보고: 입실·착석 약 60초, 반별 확인 약 120초. 추가 진정 공백은 미확인입니다. 아래 실험은 합성 입력입니다.</p></div>
-      <span class="source-tag">사용자 자기보고</span>
+      <p>최신 동료 측정 보고: 착석 103초, 반별 구간 합 160초. 기준선과 합성 시뮬레이션을 나누어 표시합니다.</p></div>
+      <span class="source-tag">사용자가 전달한 측정</span>
+    </section>
+    <section class="panel observed-panel" aria-labelledby="baseline-title">
+      <div class="panel-heading"><div><p class="eyebrow">FIRST FIELD REPORT</p><h2 id="baseline-title">첫 기준선: 실제로 보고된 시간</h2></div><span class="data-badge">동료 측정 보고 · 1회</span></div>
+      <p class="section-copy">친구가 재준 시간을 사용자가 전달했습니다. 측정 기기·관찰일·원시 시각은 미확인이며, 반별 구간은 확인과 보고를 나누지 않았습니다.</p>
+      <p id="baseline-error" class="error" role="status" hidden></p>
+      <div id="baseline-summary" class="baseline-summary" aria-live="polite">기준선 자료를 읽고 있습니다.</div>
+      <div class="table-wrap"><table><caption class="sr-only">보고된 반별 확인·보고 구간과 누적 합계</caption><thead><tr><th>반</th><th>명단 인원</th><th>보고된 구간</th><th>확인 단계 누적</th></tr></thead><tbody id="baseline-table"></tbody></table></div>
+      <p class="field-note" id="baseline-note">누적값은 보고 구간의 산술 합계이며 실제 시계 시각이나 대안 예측값이 아닙니다.</p>
+      <a class="baseline-source" href="https://github.com/J0hns0n-K/FlowBench/blob/main/data/peer-timed-baseline-2026-10-27.json" target="_blank" rel="noreferrer">집계·출처 원본 보기 ↗</a>
     </section>
     <div class="workspace">
       <aside class="sidebar">
@@ -55,7 +64,7 @@
       </aside>
       <div id="results" class="results" tabindex="-1">
         <section class="panel comparison-panel" aria-labelledby="comparison-title">
-          <div class="panel-heading"><div><p class="eyebrow">CONTROLLED COMPARISON</p><h2 id="comparison-title">같은 작업, 다른 흐름</h2></div><span class="data-badge">SYNTHETIC</span></div>
+          <div class="panel-heading"><div><p class="eyebrow">SEPARATE SYNTHETIC EXPERIMENT</p><h2 id="comparison-title">가정을 비교하는 별도의 합성 실험</h2></div><span class="data-badge">SYNTHETIC</span></div>
           <div class="scenario-cards">
             <article class="scenario-card serial"><p class="scenario-kicker"><span class="key serial-key"></span>현행 구조 A · 자기보고</p><h3>순차 확인 · 순차 보고</h3><p>한 그룹이 보고까지 마친 뒤<br>다음 그룹 확인을 시작합니다.</p><div class="time-value" id="serial-total">—</div><span class="metric-unit">전체 확인 완료시간 · 합성 입력</span></article>
             <article class="scenario-card parallel"><p class="scenario-kicker"><span class="key parallel-key"></span>비교 가정 B</p><h3>동시 확인 · 보고 1명</h3><p>모든 그룹이 함께 확인하고<br>끝나는 순서대로 한 명에게 보고합니다.</p><div class="time-value" id="parallel-total">—</div><span class="metric-unit">전체 확인 완료시간</span></article>
@@ -79,7 +88,7 @@
           <p class="section-copy">그룹별 작업시간을 직접 바꿔 볼 수 있습니다. 편집 후 시뮬레이션을 다시 실행하세요.</p>
           <div class="table-wrap bounded-table"><table><caption class="sr-only">합성 그룹별 입력과 동시 확인 시나리오 결과</caption><thead><tr><th>그룹</th><th>확인시간 (초)</th><th>보고시간 (초)</th><th>동시 보고 대기</th><th>동시 보고 완료</th></tr></thead><tbody id="input-table"></tbody></table></div>
         </section>
-        <section class="export-panel" aria-labelledby="export-title"><div><p class="eyebrow">REPRODUCIBLE BY DESIGN</p><h2 id="export-title">결과와 가정을 함께 저장</h2><p>입력 · 이벤트 · 지표 · 출처 · 모델 버전을 함께 내보냅니다.</p></div><div class="export-actions"><button id="export-json" type="button">JSON 내보내기 ↓</button><button id="export-csv" type="button">CSV 내보내기 ↓</button></div></section>
+        <section class="export-panel" aria-labelledby="export-title"><div><p class="eyebrow">REPRODUCIBLE BY DESIGN</p><h2 id="export-title">합성 실험 결과와 가정을 저장</h2><p>합성 입력 · 이벤트 · 지표 · 출처 · 모델 버전을 내보냅니다. 위 현장 기준선 자료는 포함하지 않습니다.</p></div><div class="export-actions"><button id="export-json" type="button">JSON 내보내기 ↓</button><button id="export-csv" type="button">CSV 내보내기 ↓</button></div></section>
         <details class="limitations"><summary>해석하기 전에: 모델의 한계와 다음 검증</summary><div><p>한 반씩 순차 진행한다는 사용자 설명을 반영했습니다. 반별 시간과 전달·전환 공백은 실측하지 않았습니다. 이 실험은 확인 시작 이후만 다루며, 그 전의 착석·진정·진행 대기는 계산하지 않습니다. 준비 약 1~2분, 확인 약 1~2분이라는 사용자 추정이나 앞선 약 5분에 맞춰 입력을 보정하지 않았습니다. 보고 대기는 학생의 입실 대기나 지각을 의미하지 않습니다.</p><p>현장 관찰로 절차를 확인하고, 별도 검증 세션에서 예측 오차를 평가해야 합니다. 인원 확인의 정확성을 유지하지 못한다면 시간 감소만으로 개선을 주장할 수 없습니다.</p><p>초기 모델·코드·문서는 AI 도움으로 작성했습니다. 학생 본인의 설계·수정·검증 기여는 별도 증거가 필요합니다.</p><a href="https://github.com/J0hns0n-K/FlowBench/blob/main/docs/VALIDATION.md" target="_blank" rel="noreferrer">검증 계획 읽기 ↗</a></div></details>
       </div>
     </div>

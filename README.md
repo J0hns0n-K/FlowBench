@@ -6,7 +6,7 @@ Browser-native TypeScript research workbench for **seated attendance verificatio
 
 ## What changed at kickoff
 
-The initial handoff proposed a check-in queue simulator. Follow-up descriptions establish a different workflow: participants enter without an entrance queue, sit/settle, and class representatives check attendance in lower-grade-first order and report to a student coordinator. The latest user report gives **entry-to-seated about 60 s and verification about 120 s**; any extra settling gap and deadline-relative offsets are unknown. A roughly ten-second countdown precedes a minute-25 deadline. These are approximate user reports without raw timing records, refining earlier coarse estimates. There is no individual check-in device. Consequently, “reducing an existing check-in queue” is not an evidence-supported project claim.
+The initial handoff proposed a check-in queue simulator. Follow-up descriptions establish a different workflow: participants enter without an entrance queue, sit/settle, and representatives check seated attendance class by class and report to a student coordinator. The latest series, **timed by a peer according to the user**, gives seating **103 s** and eight combined class turns totalling **160 s**. Their arithmetic sum is **263 s**. This refines earlier coarse estimates; instrument, observation date, raw event boundaries and a gap-free recording remain unverified. There is no individual check-in device. “Reducing an existing check-in queue” is not an evidence-supported project claim.
 
 The working research question is now: **Under explicitly stated counting and reporting assumptions, how does the organization of attendance verification affect total completion time and the coordinator's reporting bottleneck?** Whether changing the real process is useful remains an empirical question.
 
@@ -32,6 +32,7 @@ The working research question is now: **Under explicitly stated counting and rep
 | [Validation protocol](docs/VALIDATION.md) | Numerical verification versus field validation |
 | [Observation sheet](docs/OBSERVATION_SHEET_KO.md) | Blank anonymous timing record and model-gap check |
 | [Session phase boundaries](docs/SESSION_PHASES_KO.md) | Preparation versus verification; current engine covers verification only |
+| [Peer-timed baseline](docs/PEER_TIMING_BASELINE_KO.md) | Eight reported combined class turns; 103/160/263-second accounting |
 | [Image-derived group sizes](docs/GROUP_COUNTS_KO.md) | Provisional aggregate counts only; no names or scores |
 | [Experiment log](docs/EXPERIMENT_LOG.md) | Dated commands and observed results |
 | [Claim ledger](docs/CLAIM_LEDGER.md) | Permitted and unsupported claims |
@@ -59,7 +60,8 @@ If dependencies and `dist/` are already present, `node scripts/serve.mjs` starts
 ## Implemented and verified
 
 - Pure deterministic FCFS engine plus explicit serial/parallel count-report workflows.
-- 22 passing numerical/invariant/export tests, with separate TypeScript checks.
+- 27 passing numerical/invariant/export/baseline-accounting tests, with separate TypeScript checks.
+- Peer-timed baseline panel with source labels, roster counts, combined turn durations and cumulative sums; it generates no intervention prediction.
 - Same-input comparisons, per-group timeline, P95 reporting wait and target-crossing metrics.
 - Seeded and editable synthetic inputs; JSON/CSV serializers include provenance, assumptions, raw events and model/source versions.
 - Browser checks of exact outputs, invalid ranges, reset, custom edits, 100 groups and a narrow mobile viewport.

@@ -4,6 +4,7 @@ import { MODEL_VERSION, compareWorkflows } from './workflow.ts';
 import type { Group, Comparison, WorkflowResult } from './workflow.ts';
 import { makeExperiment, jsonExport, csvExport } from './export.ts';
 import type { Experiment } from './export.ts';
+import { summarizePeerTiming } from './observed.ts';
 
 function element<T extends HTMLElement>(id: string): T {
   const value=document.getElementById(id);
@@ -22,6 +23,31 @@ let currentGenerator:GeneratorConfig|null=null;
 const number=(id:string)=>element<HTMLInputElement>(id).valueAsNumber;
 const fmt=(value:number,digits=value>0&&value<1?3:1)=>new Intl.NumberFormat('en-US',{maximumFractionDigits:digits}).format(value);
 const percent=(value:number)=>`${fmt(value*100,1)}%`;
+
+function duration(value:number):string{
+  const minutes=Math.floor(value/60), seconds=value%60;
+  return minutes?`${minutes}분 ${fmt(seconds)}초`:`${fmt(seconds)}초`;
+}
+
+async function loadObservedBaseline():Promise<void>{
+  try{
+    const response=await fetch('/data/peer-timed-baseline-2026-10-27.json');
+    if(!response.ok)throw new Error('기준선 파일을 읽지 못했습니다.');
+    const baseline=summarizePeerTiming(await response.json());
+    element('baseline-summary').innerHTML=[
+      ['착석 구간',duration(baseline.seatingSec),`${baseline.seatingSec}초 · 보고된 값`],
+      ['반별 확인·보고 합',duration(baseline.verificationSec),`${baseline.groupCount}개 반의 구간 합계`],
+      ['착석 포함 구간 합',duration(baseline.reportedPhaseSumSec),'연속 기록 여부는 별도 확인 필요'],
+    ].map(([title,value,note])=>`<div class="baseline-stat"><span>${title}</span><strong>${value}</strong><small>${note}</small></div>`).join('');
+    const maxTurn=Math.max(...baseline.rows.map(row=>row.turnSec));
+    element('baseline-table').innerHTML=baseline.rows.map(row=>`<tr><td>${row.group}</td><td>${row.rosterCount}명</td><td><div class="baseline-duration"><span>${row.turnSec}초</span><span class="baseline-bar" aria-hidden="true"><i style="width:${row.turnSec/maxTurn*100}%"></i></span></div></td><td>${row.cumulativeVerificationSec}초</td></tr>`).join('');
+    element('baseline-note').textContent=`명단 ${baseline.targetRosterCount}명 · 실제 당일 출석 인원은 미확인. 누적값은 구간의 산술 합이며, 시계 시각이나 대안 예측이 아닙니다.`;
+  }catch{
+    element('baseline-summary').textContent='기준선 표시를 완료하지 못했습니다.';
+    element('baseline-error').textContent='현장 보고 데이터를 읽거나 검증하지 못했습니다. 아래 합성 실험을 현장 자료로 해석하지 마세요.';
+    element('baseline-error').hidden=false;
+  }
+}
 
 function markDirty():void{
   jsonButton.disabled=true;csvButton.disabled=true;
@@ -167,5 +193,6 @@ async function initialize():Promise<void>{
   // Restore known defaults even if a browser restores form values from an earlier visit.
   element<HTMLInputElement>('seed').value=String(DEFAULT_CONFIG.seed);
   source.value='locked';updateSource();run();
+  await loadObservedBaseline();
 }
 void initialize();
