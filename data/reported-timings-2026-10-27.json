@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "recordId": "reported-timings-2026-10-27-01",
+  "reportedOn": "2026-10-27",
+  "observedOn": null,
+  "provenance": "user-reported-approximate-timing",
+  "measurementMethod": null,
+  "rawTimestamps": null,
+  "targetRoster": { "groups": 8, "participants": 120 },
+  "actualSessionAttendance": null,
+  "entryToAllSeatedApproxSec": 60,
+  "verificationApproxSec": 120,
+  "sumOfReportedPhaseEstimatesSec": 180,
+  "settlingOrTransitionGapSec": null,
+  "entryToFinalReportTotalSec": null,
+  "postDeadlinePreparationSec": null,
+  "postDeadlineTotalSec": null,
+  "limitations": [
+    "The user reported approximate durations; observation date, instrument and raw timestamps were not supplied.",
+    "Sixty seconds describes entry to all-seated, not necessarily deadline to verification-start.",
+    "Whether a settling or transition gap remains between seating and verification is unknown.",
+    "One hundred eighty seconds is a sum of two reported phase estimates, not an independently measured end-to-end duration.",
+    "No per-class count/report duration or intervention outcome is inferred."
+  ]
+}

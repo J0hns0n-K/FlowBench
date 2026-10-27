@@ -71,3 +71,10 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Added ADR-010 and SESSION_PHASES_KO.md. Earlier five-minute context is not verification-only latency. Existing engine remains scoped to verification V, not preparation P or total T=P+V.
 - Updated observation sheet with countdown, deadline, first-check and last-report markers on one clock. Qualified current browser and export scope without fitting timings or altering scheduling/locked fixtures.
 - Checks: four export tests passed; typechecked browser build passed; whitespace/diff check passed. The numerical scheduling engine is unchanged.
+
+### Follow-up — reported 60-second entry/seating and 120-second verification
+
+- User refined phase estimates to entry-to-all-seated approximately 60 s and verification approximately 120 s. Added ADR-011/C19 and a provenance-labelled JSON record; observation date, instrument and raw timestamps remain unknown.
+- The reported phase sum is 180 s, not an independently measured whole-session total; extra settling gap and deadline-relative offsets are unresolved. Observation sheet now records entry I and seated S as well as D/A/F.
+- Updated live context without allocating aggregate verification time to individual classes or recalibrating synthetic fixtures. Scheduling code and earlier numerical outcomes remain unchanged.
+- Checks: typechecked browser build and `git diff --check` passed. No new numeric behavior was introduced, so numerical tests were not repeated.

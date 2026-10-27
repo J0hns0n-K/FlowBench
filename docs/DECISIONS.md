@@ -71,3 +71,9 @@ Keep measured group-level checking duration as the input. Do not derive duration
 Date: 2026-10-27 (Asia/Seoul). User explained a roughly ten-second countdown before the minute-25 deadline, roughly one-to-two minutes to sit/settle, then roughly one-to-two minutes for class-by-class verification. Settling time was specifically identified as an inconvenience. Hour, exact phase boundaries and overlap are unconfirmed.
 
 The earlier five-minute estimate cannot be used as verification-only latency. First measure deadline D, first verification activity A and final report F on the same clock. Model v1 continues to represent V=F-A only; it does not represent preparation P=A-D or behavior. Document T=P+V conditionally on the observed order, and qualify current UI/export scope. Preserve numerical engine and preregistered synthetic data. Do not assume uniform durations within reported ranges, sum overlapping estimates, infer an hour or claim preparation is always dominant. Any proposed preparation intervention needs its own mechanism and evidence.
+
+## ADR-011 — Refined reported timings, preserving interval boundaries
+
+Date reported: 2026-10-27 (Asia/Seoul). Latest user account: entry-to-all-seated about 60 s; attendance verification about 120 s. Store as approximate user-reported timing, with observation date, measurement method and raw timestamps unknown. The target roster remains eight groups / 120, not a measured session turnout.
+
+The two phase estimates sum to 180 s, but any extra settling/handoff gap remains unknown. Do not claim an independently measured three-minute total or substitute entry-to-seated duration for deadline-to-check-start P. Record I (entry begins) and S (all seated) in addition to D/A/F. Do not split 120 s evenly across classes, infer per-person speed or change the locked synthetic model to appear calibrated. Machine-readable source record: data/reported-timings-2026-10-27.json.

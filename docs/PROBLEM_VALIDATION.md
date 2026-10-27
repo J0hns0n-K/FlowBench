@@ -7,9 +7,9 @@
 ## Current workflow (user-report)
 
 1. Participants enter the study space and sit in their places without waiting at its entrance.
-2. Before the minute-25 deadline, a roughly ten-second countdown is given. Seating and settling take an estimated one to two minutes before class-by-class verification begins. The hour and exact interval boundaries were not supplied.
+2. Before the minute-25 deadline, a roughly ten-second countdown is given. The latest user report refines entry-to-all-seated time to approximately **60 seconds**. Whether additional settling occurs before verification, and the hour/deadline-relative boundaries, remain unknown.
 3. Class representatives check seated attendance, in lower-grade-first order, **one class at a time**. Representatives informally check seated students; there is **no required name-by-name roll call**. The exact visual-check strategy is not standardized by the user's account.
-4. Representatives report attendance to a student coordinator. This verification phase takes an estimated one to two minutes according to the more detailed follow-up.
+4. Representatives report attendance to a student coordinator. The latest report refines this verification phase to approximately **120 seconds**. Observation date, instrument and raw timestamps were not supplied.
 5. Penalty information is excluded from the analysis. No score or individual disciplinary data are used.
 6. The earlier approximate five-minute statement was a broad retrospective estimate. It must **not** be treated as five minutes of verification alone. The phase estimates are user-report, not timed samples; countdown/preparation overlap is unknown.
 
@@ -19,7 +19,7 @@ No individual check-in step, scanning device or entrance queue is reported. The 
 
 An earlier brief reply said a queue existed. A later, more specific account explicitly says there is no entrance queue and verification happens after seating. That correction supersedes the earlier reply. The original check-in-completion versus arrival-time hypothesis is **rejected as a description of the present system**.
 
-The identified inconvenience includes time spent seating/settling before verification, which the user specifically emphasized. No measured phase duration, miscount, student dissatisfaction, or loss of study time has been verified. The reported one-to-two-minute ranges do not establish that preparation is always longer than verification, nor that a new system is worth adopting.
+The identified inconvenience includes seating/settling before verification. Latest reported durations are 60 seconds entry-to-seated and 120 seconds verification; these are approximate user reports, not independently verified stopwatch records. They sum to 180 seconds for the reported phases; actual end-to-end time depends on any additional gap. No miscount, participant benefit or intervention effect has been verified.
 
 ## Working problem
 
