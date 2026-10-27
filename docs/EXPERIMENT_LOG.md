@@ -46,3 +46,9 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Updated current context in the browser and export limitations. Numerical scheduling and existing synthetic results are unchanged. Historical experiment JSON and screenshots are preserved.
 - Prepared a blank anonymous observation sheet, including counting/reporting timestamps and handoff-gap residuals. No observation, permission or measurement is represented as completed.
 - Follow-up checks: `node --test tests/export.test.ts` — 4 passed; `node scripts/build.mjs` — typecheck/build passed; `git diff --check` — passed. Scheduling code was not changed and historical numerical results were not regenerated.
+
+### Follow-up — image-derived group sizes
+
+- User supplied a roster image and requested excluding penalty information. Counted only visible nonempty name rows by group: G6=7, G7=19, G8=21, G9-A=17, G9-B=14, G10=23, G11=14, G12=4; total 119 across eight groups.
+- Classification: provisional image-derived roster-size aggregate, not independently verified session attendance or complete population. Actual verification scope remains to be confirmed.
+- No names, individual scores or source image copied into the repository. No timing values inferred; no simulation input or historical synthetic result changed. Documentation-only update, so numerical tests were not rerun.

@@ -9,7 +9,7 @@
 1. Participants enter the study space and sit in their places without waiting at its entrance.
 2. At the scheduled time, class representatives check seated attendance, in lower-grade-first order, **one class at a time** (subsequent explicit user clarification).
 3. Representatives report attendance to a student coordinator.
-4. A student committee observes late entrants and records penalties separately.
+4. The handoff/session previously described a separate late-entry process; the user subsequently excluded penalty information from this project's analysis. No score or individual disciplinary data are used.
 5. The whole attendance check takes approximately **five minutes**, a retrospective estimate, not a timed sample.
 
 No individual check-in step, scanning device or entrance queue is reported. The user selected the sequential-class description when asked to distinguish it from simultaneous counting. This supports serial ordering as self-report, not an independently observed process. Actual late-entry rules, handoff gaps, reporting medium, handling of absences and interruptions are not yet established. The model must not infer those rules from queueing mathematics.
@@ -33,9 +33,11 @@ Neither is labelled a measured reproduction of the school. Serial ordering is no
 
 ## Open validation gate
 
+A subsequent user-provided image shows eight group labels and 119 visible named rows, counted without copying names or scores. This is a provisional image-derived roster-size aggregate, not observed attendance. See [group counts](GROUP_COUNTS_KO.md). Whether every listed group belongs to the same verification session remains unconfirmed.
+
 Before recommending or describing a school improvement, the student must establish:
 
-- Actual group count, approximate sizes, and who counts each group.
+- Confirm the image-derived group count/sizes against the actual verification scope and establish who counts each group.
 - Count start/end times, report start/end times and the definition of “finished”.
 - Independently check the reported serial order, quantify gaps between count/report/class transitions, and establish how results are aggregated.
 - Frequency of absences, recounts, late entrants and incomplete reports, using only approved aggregate observation.

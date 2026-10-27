@@ -49,3 +49,9 @@ Date: 2026-10-27 (Asia/Seoul), after the kickoff commits. Source: direct user re
 Promote serial class ordering from an unresolved model assumption to **explicit user-report**. Do not promote durations or effectiveness to measured evidence. The serial workflow already computes this ordering, so its equations, model version and previous synthetic outcomes do not change. The model's zero-gap transitions remain unverified: one-class-at-a-time does not establish instantaneous reporting or class handoffs.
 
 Update live documentation, display and export limitations accordingly. Preserve the historical synthetic report and screenshots as dated records. Prepare a blank observation sheet separating counting, reporting and gaps; use the residual between observed total time and summed count/report durations to test whether omitted transitions matter. This is a proposed measurement protocol, not collected evidence or an approved school intervention.
+
+## ADR-007 — Aggregate roster size, excluding penalties
+
+Date: 2026-10-27 (Asia/Seoul). User supplied a roster screenshot and explicitly requested disregarding penalty information.
+
+Record only visible group labels and counts of nonempty name rows: eight groups, 119 rows. Treat these as provisional image-derived counts, pending scope/completeness confirmation. Do not copy names, individual scores, the screenshot or disciplinary interpretations into the repository. Do not use roster size as observed attendance, processing-time data or evidence of an improvement. Preserve the locked six-group synthetic fixture; any new scenario must explicitly distinguish roster-size provenance from synthetic timing assumptions.

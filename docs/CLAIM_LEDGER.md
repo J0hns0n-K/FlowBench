@@ -12,6 +12,7 @@
 | C08 | Synthetic serial/parallel results predict the school's process accurately. | unverified | Software verification is not empirical validation. |
 | C09 | Prior EC/WIS/website details are independently verified here. | unverified | Handoff-only until originals inspected. |
 | C10 | DormSense/RoboMetrics are completed. | unverified | Separate RD proposals only. |
+| C15 | The supplied screenshot visibly contains eight group labels and 119 nonempty name rows. | provisional image-derived aggregate | Screen extent only; not verified complete roster, session scope or actual attendance. No names or scores retained. |
 
 Add achieved software capabilities only after tests/run evidence. A pushed source repository is not a hosted app or school deployment.
 

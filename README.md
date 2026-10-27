@@ -31,6 +31,7 @@ The working research question is now: **Under explicitly stated counting and rep
 | [Related work](docs/RELATED_WORK.md) | Primary-source competitor and research audit |
 | [Validation protocol](docs/VALIDATION.md) | Numerical verification versus field validation |
 | [Observation sheet](docs/OBSERVATION_SHEET_KO.md) | Blank anonymous timing record and model-gap check |
+| [Image-derived group sizes](docs/GROUP_COUNTS_KO.md) | Provisional aggregate counts only; no names or scores |
 | [Experiment log](docs/EXPERIMENT_LOG.md) | Dated commands and observed results |
 | [Claim ledger](docs/CLAIM_LEDGER.md) | Permitted and unsupported claims |
 | [Admissions evidence](docs/ADMISSIONS_EVIDENCE.md) | Prior activities, source status and attribution limits |

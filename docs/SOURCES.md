@@ -5,6 +5,7 @@
 - `Junmo_FlowBench_HANDOFF_2026-10-27.md`: read in full from the supplied local file. It is a starting specification, not original field evidence. The user subsequently authorized it as kickoff context.
 - Current session: detailed seated-verification description and approximate five-minute estimate; explicitly user-reported. The later no-queue correction supersedes the earlier brief affirmative answer.
 - Follow-up after kickoff: user explicitly answered “한 반씩 해” to distinguish sequential classes from simultaneous counting. This resolves reported serial class structure, not timing measurements or independent process verification.
+- Subsequent roster screenshot: visually counted only group labels and nonempty name rows, yielding eight visible groups and 119 rows. User explicitly excluded penalty analysis. Only the aggregate table in GROUP_COUNTS_KO.md is retained; no names, individual scores or source image copied. Completeness and actual verification scope remain unconfirmed.
 - Starter: user confirmed using the current handoff, without a separate Starter file.
 - Shared earlier chat: background proposal, superseded where it conflicts with the detailed current workflow.
 - Repository: https://github.com/J0hns0n-K/FlowBench — inspected via web, Git and authenticated API. No student identity inferred from access.
