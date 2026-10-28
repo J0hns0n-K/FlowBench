@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "recordId": "committee-session-02",
+  "sourceKind": "user-reported-direct-performance",
+  "reportedOn": "2026-10-29",
+  "observedOn": null,
+  "units": "seconds",
+  "seatingSec": 72,
+  "verificationSec": 78,
+  "checkerRole": "session-user-committee-member",
+  "method": "Assigned-seat checking with prior knowledge of user-authorized cafe attendance and two grade-level enquiries about a separate class.",
+  "timingInstrument": null,
+  "timingRecorder": null,
+  "rawBoundaryReadings": null,
+  "actualSessionAttendance": null,
+  "vacantSeatCount": null,
+  "concurrentCheckerCount": null,
+  "committeePersonSeconds": null,
+  "studyStart": {
+    "nonCheckingStudents": "immediately-after-seating-user-reported",
+    "waitedForVerification": false,
+    "exactStartTimestampSec": null,
+    "seatingToStudyLatencySec": null,
+    "checkerStudyStartSec": null
+  },
+  "exceptionContext": {
+    "offCampusOutingCount": 0,
+    "cafeStudentCount": 6,
+    "cafeInformationSource": "prior-authorization-by-user",
+    "cafeInquiryEvents": 0,
+    "separateClassDescription": "User-described nurturing class",
+    "separateClassGroups": [
+      { "group": "G10", "studentCount": 20, "inquiryEvents": 1 },
+      { "group": "G11", "studentCount": 4, "inquiryEvents": 1 }
+    ],
+    "cafeAndClassDisjoint": true,
+    "inquiryEventCount": 2,
+    "inquiryDurationSec": null,
+    "inquiryDurationDescription": "User reports enquiries took little time; no duration supplied."
+  },
+  "accuracy": {
+    "userReportedMissedStudents": null,
+    "auditMethod": null,
+    "auditedStudentCount": null,
+    "independentlyVerifiedMissedStudents": null,
+    "falseAbsenceCount": null
+  },
+  "interruptions": { "count": null, "durationSec": null },
+  "limitations": [
+    "Second user-reported direct-performance record; exact observation date, instrument, timer operator and raw boundaries not supplied.",
+    "The user confirms cafe and class participants are distinct and non-checkers started study after seating.",
+    "School cafe attendance is separate from the user's zero off-campus-outing report; class location was not specified.",
+    "Six cafe students plus 24 class students gives 30 distinct reported context students, not a measured vacant-seat count or a verified attendance denominator.",
+    "Cafe attendance was already known through the user's prior authorization; preknowledge may affect timing comparability across checkers and sessions.",
+    "Two enquiries are grade-level events, not 30 individual enquiries. Their duration and interruptions were not timed.",
+    "No missed-student result or independently audited accuracy supplied for this session; the previous session's zero-missed claim is not transferred.",
+    "Checking elapsed time is not automatically total person-time or study-time gained. No personal names, signed records or individual attendance stored."
+  ]
+}
