@@ -9,6 +9,8 @@
   "scripts": {
     "test": "node --test tests/engine.test.ts tests/workflow.test.ts tests/scenario.test.ts tests/export.test.ts tests/observed.test.ts tests/dependencies.test.ts",
     "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
+    "docs:sync": "node scripts/project-overview.mjs --write",
+    "docs:check": "node scripts/project-overview.mjs --check",
     "build": "node scripts/build.mjs",
     "dev": "node scripts/serve.mjs",
     "experiment": "node scripts/experiment.ts"

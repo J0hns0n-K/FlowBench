@@ -13,3 +13,5 @@
 | Pending | Teacher/mentor | Review feasibility, permission and feedback if involved. | No approval or participation inferred. |
 
 Each future entry should link an issue, commit or approved aggregate experiment record and specify whether the student wrote, reviewed, modified or merely ran an artifact. Running AI-generated code alone does not establish independent engineering design. Do not backdate work, invent debugging stories, or assign AI-authored code to the student.
+
+2026-10-28 overview maintenance: Codex rewrote the project overview from linked project evidence and implemented its generated evidence block and freshness checks. This documentation/tooling work is AI-assisted; the field contributions above remain separately attributed.

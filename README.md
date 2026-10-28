@@ -1,53 +1,68 @@
 # FlowBench
 
-Browser-native TypeScript research workbench for **seated attendance verification workflows**.
+**What should have to finish before students can start studying?**
 
-**Kickoff: 2026-10-27, Asia/Seoul.** Research validity comes before feature count.
+[![Verify research workbench](https://github.com/J0hns0n-K/FlowBench/actions/workflows/verify.yml/badge.svg)](https://github.com/J0hns0n-K/FlowBench/actions/workflows/verify.yml)
 
-## What changed at kickoff
+FlowBench is a browser-native TypeScript workbench for investigating seated attendance verification. It connects a real operational problem with explicit process models, reproducible experiments and field reports. Its central question is whether attendance verification needs to block the start of study—and what happens to the people doing the checking when that dependency changes.
 
-The initial handoff proposed a check-in queue simulator. Follow-up descriptions establish a different workflow: participants enter without an entrance queue, sit/settle, and representatives check seated attendance class by class and report to a student coordinator. The latest series, **timed by a peer according to the user**, gives seating **103 s** and eight combined class turns totalling **160 s**. Their arithmetic sum is **263 s**. This refines earlier coarse estimates; instrument, observation date, raw event boundaries and a gap-free recording remain unverified. There is no individual check-in device. “Reducing an existing check-in queue” is not an evidence-supported project claim.
+## The problem changed before the solution did
 
-The current working question is: **If attendance verification no longer gates the start of study, what changes in study-start latency, verification completion, committee workload, accuracy and interruptions?** On 2026-10-28 the user reported directly checking assigned seats and asking peers about late/out students: seating **101 s**, checking **102 s**, with other students starting study after seating. Checking is 58 s (36.25%) shorter than the previous 160 s report, a descriptive single-session difference with different methods/boundaries and unknown exception counts. Actual study-start timestamps, causal benefit and independently audited accuracy remain unknown. The user reports all non-out students were in the chapel. See the [first new-procedure record](docs/FIRST_COMMITTEE_OBSERVATION_KO.md). Legacy count/report scenarios remain separate synthetic method exercises.
+The initial proposal assumed an entrance check-in queue. Follow-up accounts established that students entered freely, sat in assigned seats, and were checked one class at a time. There was no entrance queue to optimize. The investigation shifted to the sequence of seating, verification, reporting and study start.
 
-## Evidence and scope
+The student committee collectively decided to start study after seating and verify attendance separately. Junmo proposed checking vacant assigned seats as exceptions, then personally performed a trial, asking friends and same-grade students about late or out students. FlowBench now examines two distinct questions: **how soon non-checkers can begin studying**, and **how much time, follow-up and interruption verification still requires**.
 
-- Simulations use anonymous, **synthetic group tasks**, not student records.
-- The user subsequently clarified that verification is performed **one class at a time**. Serial class ordering is now user-reported context; exact handoff gaps, durations and field validation remain unknown. Parallel verification is a proposed alternative.
-- First direct field-performance/timing report is recorded. Causal speedup, independently audited error reduction, hosted app deployment and independent student software implementation are not established.
-- The initial code and documentation are authored with Codex assistance. See [contributions](docs/CONTRIBUTIONS.md).
-- Current scope: browser-local TypeScript, no server, login, biometrics, IoT, hardware, or school system integration.
+This progression—from correcting the premise to changing the dependency—is documented in the [decision register](docs/DECISIONS.md), rather than reconstructed from a favorable result.
 
-## Project records
+## Current evidence
 
-한국어 요약과 다음 학생 작업: [첫 세션 기록](docs/KICKOFF_KO.md).
+<!-- FLOWBENCH:CURRENT:START -->
+<!-- Evidence fingerprint: f850d96c314f8e7c3ecd2b7e6c8012762ff221badf45ecfc679239f567a0fe2e -->
+Evidence reviewed through the latest linked report received **2026-10-28**. New-procedure reports recorded: **1**. Report dates are not independently confirmed observation dates.
 
-| Record | Purpose |
-| --- | --- |
-| [Problem and evidence](docs/PROBLEM_VALIDATION.md) | Current procedure, corrected premise, unknowns |
-| [Model contract](docs/MODEL.md) | Equations, event ordering, metric definitions |
-| [Decisions](docs/DECISIONS.md) | Versioned research questions, hypotheses and decisions |
-| [Related work](docs/RELATED_WORK.md) | Primary-source competitor and research audit |
-| [Validation protocol](docs/VALIDATION.md) | Numerical verification versus field validation |
-| [Observation sheet](docs/OBSERVATION_SHEET_KO.md) | Blank anonymous timing record and model-gap check |
-| [Session phase boundaries](docs/SESSION_PHASES_KO.md) | Preparation versus verification; current engine covers verification only |
-| [Peer-timed baseline](docs/PEER_TIMING_BASELINE_KO.md) | Eight reported combined class turns; 103/160/263-second accounting |
-| [Planned independent start](docs/DECOUPLED_ATTENDANCE_KO.md) | Collective decision, separate outcomes and explicit assumptions |
-| [Dependency model](docs/DEPENDENCY_MODEL.md) | DAG scheduling with unknown durations, distinct from measured impact |
-| [New-procedure observation](docs/NEW_PROCEDURE_OBSERVATION_KO.md) | Blank event/workload/accuracy record for actual future use |
-| [Assigned-seat hypothesis](docs/ASSIGNED_SEAT_HYPOTHESIS_KO.md) | User-proposed exception checks and rotating-duty roles; effects untested |
-| [First direct performance](docs/FIRST_COMMITTEE_OBSERVATION_KO.md) | New-procedure report, descriptive difference, accuracy clarification and unknowns |
-| [Image-derived group sizes](docs/GROUP_COUNTS_KO.md) | Provisional aggregate counts only; no names or scores |
-| [Experiment log](docs/EXPERIMENT_LOG.md) | Dated commands and observed results |
-| [Claim ledger](docs/CLAIM_LEDGER.md) | Permitted and unsupported claims |
-| [Student workbook](docs/STUDENT_WORKBOOK.md) | Student decisions, derivations and observations still needed |
-| [Sources](docs/SOURCES.md) | Source scope and retrieval limitations |
-| [Repository](docs/REPOSITORY.md) | Verified remote, owner, branch and initial SHA |
-| [Issues](docs/ISSUES.md) | Research and implementation work units |
+| Report | Seating | Attendance verification | Source |
+| --- | --- | --- | --- |
+| Earlier class-by-class procedure · received 2026-10-27 | 103 s | 160 s, summed across 8 class turns | [Peer timing relayed by Junmo](data/peer-timed-baseline-2026-10-27.json) |
+| Latest committee-check procedure · received 2026-10-28 | 101 s | 102 s | [Direct performance reported by Junmo](data/committee-observation-2026-10-28.json) |
 
-## Run the local workbench
+The latest checking duration is **58 s (36.25%) shorter** than the earlier combined-turn sum. This is a descriptive comparison of different sessions and methods. Exceptions, timer metadata and completion boundaries remain incompletely documented; it is not a causal estimate or an average improvement.
 
-Requires Node.js >=24 and pnpm 11.25.0 (`npm install --global pnpm@11.25.0` if needed).
+Non-checkers reportedly began study after seating. Exact study-start latency and the checker's study start remain unknown. Junmo reports no missed students; an independently audited error rate has not been established. [Full report](docs/FIRST_COMMITTEE_OBSERVATION_KO.md).
+<!-- FLOWBENCH:CURRENT:END -->
+
+The first trial makes the next question more specific: how much checking time comes from scanning the room, and how much comes from investigating exceptions? Repeated observations with vacancy counts, enquiry counts, consistent completion boundaries and independent accuracy checks will test whether the method remains useful when conditions change. [Read the field report and its limits](docs/FIRST_COMMITTEE_OBSERVATION_KO.md).
+
+![Workbench showing the first committee-check report, with source labels and a descriptive comparison](docs/images/2026-10-28-first-committee-report.png)
+
+## Engineering that makes the investigation inspectable
+
+The workbench separates three kinds of reasoning:
+
+| Component | Engineering purpose | Inspect it |
+| --- | --- | --- |
+| Deterministic FCFS and count/report workflows | Compare identical synthetic workloads with explicit task ordering, server ties and reporting bottlenecks. | [Engine](src/engine.ts) · [workflow model](docs/MODEL.md) |
+| Dependency graph with unknown durations | Compute earliest milestones in O(V+E). Unknown checking time propagates only through dependent paths; it never becomes zero. Role views keep the checker distinct from non-checkers. | [DAG scheduler](src/dependencies.ts) · [dependency contract](docs/DEPENDENCY_MODEL.md) |
+| Field-report accounting | Validate provenance and intervals, preserve missing metadata, and calculate descriptive differences separately from simulated predictions. | [Accounting code](src/observed.ts) · [source records](data/) |
+
+Pure functions are shared by the browser, tests and experiment runner. Verification covers hand-calculated fixtures, simultaneous events, conservation, invalid inputs, reproducible seeds, unknown propagation and adverse outcomes. JSON/CSV serializers retain synthetic inputs, raw events, assumptions and source versions; charts visualize the same calculations.
+
+The [locked synthetic study](docs/EVALUATION.md) includes a favorable 268 s versus 78 s fixture **and** a reporting-dominated counterexample with only a 1.37% difference. Longer reporting times also reject the waiting-time hypothesis. These results expose the model's limits; they are separate from school observations.
+
+## A focused contribution
+
+Browser simulation and queueing algorithms have established [prior work](docs/RELATED_WORK.md). FlowBench's project-specific investigation concerns the fit between an actual seated workflow, its dependencies and the evidence needed to evaluate a change. It keeps rejected premises, failed hypotheses and unresolved quantities visible alongside working software.
+
+The current prototype runs locally in the browser using anonymous group workloads and aggregate timing reports. Its analytical records exclude names, seat maps and individual attendance histories. This keeps the engineering question focused on process structure, verification effort and the quality of the evidence.
+
+## People and responsibility
+
+Junmo's reported contributions include explaining and correcting the real workflow, proposing vacant-seat exception checking, personally performing the new check, and supplying observations. The procedure decision belongs to the committee collectively; a peer supplied the earlier timing series.
+
+The initial model formalization, code, tests and documentation were produced with Codex assistance. Individually authored model revisions and software changes will be linked as they occur. The [contribution ledger](docs/CONTRIBUTIONS.md) distinguishes field execution, measurement, design and implementation, with dated evidence for each.
+
+## Reproduce and follow the work
+
+Requires Node.js 24+ and pnpm 11.25.0.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -56,26 +71,6 @@ pnpm build
 pnpm dev
 ```
 
-Open http://127.0.0.1:4173/. To rerun the preregistered synthetic study, use `pnpm experiment`. It records the current source revision and overwrites the dated synthetic report with the new run; use Git to preserve earlier reports.
+Open http://127.0.0.1:4173/. `pnpm experiment` reproduces the synthetic study. GitHub Actions runs the tests, typechecked build, experiment and overview freshness check. Browser export serializers are tested; actual browser download completion remains an open check in [issue #4](https://github.com/J0hns0n-K/FlowBench/issues/4). The workbench is a local prototype.
 
-If dependencies and `dist/` are already present, `node scripts/serve.mjs` starts the preview directly. Rebuild after source changes. The app runs locally with no external API, font or analytics dependency. No hosted deployment is claimed.
-
-## Implemented and verified
-
-- Pure deterministic FCFS engine plus explicit serial/parallel count-report workflows.
-- 40 passing numerical/invariant/export/accounting/dependency tests, with separate TypeScript checks.
-- Peer-timed baseline panel with source labels, roster counts, combined turn durations and cumulative sums; it generates no intervention prediction.
-- First direct committee-check report panel: 101 s seating, 102 s verification, descriptive 58 s difference. Qualitative study start and self-reported presence are distinct from exact timing and audited accuracy.
-- Separate conditional study-start dependency model. Unknown committee completion/workload stay unknown; planned status is displayed explicitly.
-- Prior conditional-model role selector distinguishes another member's duty from the user's own checking turn. A checking member's study start and benefit remain unknown. Assigned-seat checking has a first user-reported performance; generalized effects remain unvalidated.
-- Same-input comparisons, per-group timeline, P95 reporting wait and target-crossing metrics.
-- Seeded and editable synthetic inputs; JSON/CSV serializers include provenance, assumptions, raw events and model/source versions.
-- Browser checks of exact outputs, invalid ranges, reset, custom edits, 100 groups and a narrow mobile viewport.
-- [Synthetic study](docs/EVALUATION.md), [machine-readable report](experiments/2026-10-27-synthetic-v1.json), and [browser QA](docs/BROWSER_QA.md).
-- GitHub Actions repeats unit tests, typechecked build and the synthetic experiment.
-
-Actual browser file-download verification was blocked by the browser permission review; serializer tests passed. This limitation remains tracked in issue #4.
-
-![Desktop research workbench](docs/images/2026-10-27-desktop.png)
-
-This repository is an assisted research prototype. Further model review, independently authored engineering changes and field validation remain open.
+Explore the [research and development records](docs/INDEX.md), [validation protocol](docs/VALIDATION.md) and [open work](docs/ISSUES.md). The overview is maintained with the evidence using the [update protocol](docs/OVERVIEW_MAINTENANCE.md).

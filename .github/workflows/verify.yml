@@ -23,6 +23,8 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Exact numerical tests
         run: pnpm test
+      - name: Project overview matches current evidence
+        run: pnpm docs:check
       - name: Typecheck and browser build
         run: pnpm build
       - name: Reproduce synthetic sensitivity experiment
