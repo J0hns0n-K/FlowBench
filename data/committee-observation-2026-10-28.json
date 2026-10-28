@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "recordId": "committee-session-01",
+  "sourceKind": "user-reported-direct-performance",
+  "reportedOn": "2026-10-28",
+  "observedOn": null,
+  "units": "seconds",
+  "seatingSec": 101,
+  "verificationSec": 102,
+  "checkerRole": "session-user-committee-member",
+  "method": "Scan assigned seats, then ask friends or same-grade students whether unoccupied-seat occupants are late or out.",
+  "timingInstrument": null,
+  "timingRecorder": null,
+  "rawBoundaryReadings": null,
+  "actualSessionAttendance": null,
+  "vacantSeatCount": null,
+  "exceptionCount": null,
+  "exceptionFrequencyDescription": "User reports relatively few such cases; no numeric count supplied.",
+  "concurrentCheckerCount": null,
+  "committeePersonSeconds": null,
+  "studyStart": {
+    "nonCheckingStudents": "immediately-after-seating-user-reported",
+    "waitedForVerification": false,
+    "exactStartTimestampSec": null,
+    "seatingToStudyLatencySec": null,
+    "checkerStudyStartSec": null
+  },
+  "accuracy": {
+    "userReportedMissedStudents": 0,
+    "auditMethod": null,
+    "auditedStudentCount": null,
+    "independentlyVerifiedMissedStudents": null,
+    "falseAbsenceCount": null
+  },
+  "interruptions": { "count": null, "durationSec": null },
+  "limitations": [
+    "First user-reported direct performance of the new procedure, not an independent audit or repeated experiment.",
+    "Reported date is not asserted as the exact observation date; instrument, timer operator and raw boundaries were not supplied.",
+    "102 seconds is reported checking elapsed time, not established total person-time; recording/reporting completion boundary is unspecified.",
+    "Immediate study start is a qualitative user confirmation, not a measured zero-second latency or measured learning outcome.",
+    "Zero missed students is the user's claim; audit method and denominator remain unknown.",
+    "Peer consultation may interrupt others; interruption time and count were not measured.",
+    "Comparison with the previous 160-second sum is descriptive: method, checker, exceptions and timing boundaries may differ.",
+    "No personal attendance, names, seat map or disciplinary records stored."
+  ]
+}
