@@ -20,6 +20,8 @@
 - Shared earlier chat: background proposal, superseded where it conflicts with the detailed current workflow.
 - Repository: https://github.com/J0hns0n-K/FlowBench — inspected via web, Git and authenticated API. No student identity inferred from access.
 
+Second direct-performance report received 2026-10-29: seating 72 s, checking 78 s; no off-campus outings according to user; school-cafe participants 6 were known through user's prior authorization. Separate class: G10 20, G11 4. Two grade-level enquiries, described as short without measured duration. Follow-ups confirmed cafe/class groups disjoint and immediate study after seating for non-checkers. Snapshot: data/committee-observation-2026-10-29.json. No new accuracy result, instrument/raw boundaries or verified actual turnout supplied.
+
 ## Primary external sources
 
 1. MySolvers official product page: https://www.mysolvers.com/ — capabilities described by vendor, not independently benchmarked.

@@ -17,22 +17,25 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: f850d96c314f8e7c3ecd2b7e6c8012762ff221badf45ecfc679239f567a0fe2e -->
-Evidence reviewed through the latest linked report received **2026-10-28**. New-procedure reports recorded: **1**. Report dates are not independently confirmed observation dates.
+<!-- Evidence fingerprint: 308fc5d88c8fd3244bc768aa5b5b29a06df6dfa93aeb8941d8b04e3097d08893 -->
+Evidence reviewed through the latest linked report received **2026-10-29**. New-procedure reports recorded: **2**. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
 | --- | --- | --- | --- |
 | Earlier class-by-class procedure · received 2026-10-27 | 103 s | 160 s, summed across 8 class turns | [Peer timing relayed by Junmo](data/peer-timed-baseline-2026-10-27.json) |
-| Latest committee-check procedure · received 2026-10-28 | 101 s | 102 s | [Direct performance reported by Junmo](data/committee-observation-2026-10-28.json) |
+| Committee-check report 1 · received 2026-10-28 | 101 s | 102 s | [Direct performance reported by Junmo](data/committee-observation-2026-10-28.json) |
+| Committee-check report 2 · received 2026-10-29 | 72 s | 78 s | [Direct performance reported by Junmo](data/committee-observation-2026-10-29.json) |
 
-The latest checking duration is **58 s (36.25%) shorter** than the earlier combined-turn sum. This is a descriptive comparison of different sessions and methods. Exceptions, timer metadata and completion boundaries remain incompletely documented; it is not a causal estimate or an average improvement.
+The latest checking duration is **82 s (51.25%) shorter** than the earlier combined-turn sum. Relative to the preceding direct-performance report, checking was 24 s (23.53%) shorter. These are descriptive comparisons of different sessions and methods. Timer metadata and completion boundaries remain incompletely documented; they are not causal estimates or average improvements.
 
-Non-checkers reportedly began study after seating. Exact study-start latency and the checker's study start remain unknown. Junmo reports no missed students; an independently audited error rate has not been established. [Full report](docs/FIRST_COMMITTEE_OBSERVATION_KO.md).
+Latest context: 6 students at the school cafe and 24 in a separate class, 30 distinct students by explicit confirmation; 2 grade-level enquiry events. These counts are not a measured vacant-seat count or verified attendance denominator. Cafe attendance was already known through Junmo's prior authorization; Information availability is a possible confounding factor, not a demonstrated cause of the timing difference.
+
+Non-checkers reportedly began study after seating. Exact study-start latency and the checker's study start remain unknown. No missed-student result was supplied for the latest session. An independently audited error rate has not been established. [Full report](docs/SECOND_COMMITTEE_OBSERVATION_KO.md).
 <!-- FLOWBENCH:CURRENT:END -->
 
-The first trial makes the next question more specific: how much checking time comes from scanning the room, and how much comes from investigating exceptions? Repeated observations with vacancy counts, enquiry counts, consistent completion boundaries and independent accuracy checks will test whether the method remains useful when conditions change. [Read the field report and its limits](docs/FIRST_COMMITTEE_OBSERVATION_KO.md).
+The second report introduces a new experimental variable: **what the checker already knows**. Junmo already knew the cafe participants because he had authorized them; two grade-level enquiries addressed the separate class. The investigation now distinguishes seat occupancy, known reasons and unresolved exceptions. Whether prior information reduces checking work—and what it costs to obtain, share and maintain that information—needs comparison across sessions and rotating checkers. [Read the latest field report](docs/SECOND_COMMITTEE_OBSERVATION_KO.md).
 
-![Workbench showing the first committee-check report, with source labels and a descriptive comparison](docs/images/2026-10-28-first-committee-report.png)
+![Workbench showing two committee-check reports, prior-information context and descriptive comparisons](docs/images/2026-10-29-second-committee-report.png)
 
 ## Engineering that makes the investigation inspectable
 

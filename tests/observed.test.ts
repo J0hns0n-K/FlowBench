@@ -1,13 +1,50 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { summarizePeerTiming, compareCommitteeObservation } from '../src/observed.ts';
+import { summarizePeerTiming, summarizeCommitteeObservation, compareCommitteeObservation } from '../src/observed.ts';
 import type { PeerTimingRecord } from '../src/observed.ts';
 
 const fixture = (): PeerTimingRecord => JSON.parse(readFileSync(
   new URL('../data/peer-timed-baseline-2026-10-27.json', import.meta.url), 'utf8')) as PeerTimingRecord;
 
 const committeeFixture=()=>JSON.parse(readFileSync(new URL('../data/committee-observation-2026-10-28.json',import.meta.url),'utf8'));
+const secondFixture=()=>JSON.parse(readFileSync(new URL('../data/committee-observation-2026-10-29.json',import.meta.url),'utf8'));
+
+test('second report compares with both the prior direct report and original class-turn baseline',()=>{
+  const recent=compareCommitteeObservation(committeeFixture(),secondFixture());
+  assert.equal(recent.seatingSec,72);assert.equal(recent.verificationSec,78);
+  assert.equal(recent.checkingDifferenceSec,24);assert.equal(recent.checkingDifferenceFraction,24/102);
+  assert.equal(recent.seatingDifferenceSec,29);
+  const original=compareCommitteeObservation(fixture(),secondFixture());
+  assert.equal(original.checkingDifferenceSec,82);assert.equal(original.checkingDifferenceFraction,0.5125);
+});
+
+test('context counts distinct students only after explicit disjoint confirmation and keeps enquiries as events',()=>{
+  const input=secondFixture(), result=summarizeCommitteeObservation(input);
+  assert.deepEqual(result.exceptionSummary,{cafeStudents:6,classStudents:24,distinctContextStudents:30,inquiryEvents:2,inquiryDurationSec:null,cafeKnownThroughUserAuthorization:true});
+  assert.equal(result.source.actualSessionAttendance,null);assert.equal(result.source.vacantSeatCount,null);
+  input.exceptionContext.cafeAndClassDisjoint=null;
+  assert.equal(summarizeCommitteeObservation(input).exceptionSummary!.distinctContextStudents,null);
+  input.exceptionContext.cafeInformationSource='not-reported';
+  assert.equal(summarizeCommitteeObservation(input).exceptionSummary!.cafeKnownThroughUserAuthorization,false);
+});
+
+test('missing session accuracy is unknown and qualitative immediate start never becomes zero latency',()=>{
+  const result=compareCommitteeObservation(committeeFixture(),secondFixture());
+  assert.equal(result.reportedMissedStudents,null);assert.equal(result.verifiedAccuracy,null);
+  assert.equal(result.studyStartLatencySec,null);assert.equal(result.measuredStudyAdvanceSec,null);
+  const input=secondFixture();input.studyStart.nonCheckingStudents='not-reported';input.studyStart.waitedForVerification=null;
+  assert.equal(summarizeCommitteeObservation(input).studyStartReport,'not-reported');
+});
+
+test('reject inconsistent inquiry counts and invalid/duplicate class context',()=>{
+  for(const mutate of [(x:ReturnType<typeof secondFixture>)=>x.exceptionContext.inquiryEventCount=30,
+    (x:ReturnType<typeof secondFixture>)=>x.exceptionContext.separateClassGroups[0].studentCount=-1,
+    (x:ReturnType<typeof secondFixture>)=>x.exceptionContext.separateClassGroups[1].group='G10',
+    (x:ReturnType<typeof secondFixture>)=>x.exceptionContext.inquiryDurationSec=-1]){
+    const input=secondFixture();mutate(input);assert.throws(()=>summarizeCommitteeObservation(input));
+  }
+});
 
 test('first committee report yields descriptive 58-second difference without invented study gain or accuracy',()=>{
   const result=compareCommitteeObservation(fixture(),committeeFixture());

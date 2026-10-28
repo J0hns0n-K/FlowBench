@@ -6,11 +6,14 @@ execFileSync(process.execPath,['node_modules/typescript/bin/tsc','--noEmit'],{st
 execFileSync(process.execPath,['node_modules/typescript/bin/tsc','--project','tsconfig.build.json'],{stdio:'inherit',windowsHide:true});
 await mkdir('dist',{recursive:true});
 await Promise.all(['index.html','styles.css'].map(file=>copyFile(`public/${file}`,`dist/${file}`)));
-const dataFiles=['data/peer-timed-baseline-2026-10-27.json','data/decoupled-attendance-decision-2026-10-27.json','data/committee-observation-2026-10-28.json'];
+const overview=JSON.parse(await readFile('docs/overview-state.json','utf8'));
+if(!Array.isArray(overview.fieldReports)||!overview.fieldReports.length||overview.fieldReports.some(file=>typeof file!=='string'||!/^data\/[A-Za-z0-9_-]+\.json$/.test(file)))throw new Error('Invalid reviewed field-report index.');
+const dataFiles=[...new Set(['data/peer-timed-baseline-2026-10-27.json','data/decoupled-attendance-decision-2026-10-27.json',...overview.fieldReports])];
 await mkdir('dist/data',{recursive:true});
 await Promise.all(dataFiles.map(file=>copyFile(file,`dist/${file}`)));
+await copyFile('docs/overview-state.json','dist/data/field-report-index.json');
 const revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim();
-const dirty=execFileSync('git',['status','--porcelain','--','src','public',...dataFiles,'scripts/build.mjs','package.json','pnpm-lock.yaml','tsconfig.json','tsconfig.build.json'],
+const dirty=execFileSync('git',['status','--porcelain','--','src','public',...dataFiles,'docs/overview-state.json','scripts/build.mjs','package.json','pnpm-lock.yaml','tsconfig.json','tsconfig.build.json'],
   {encoding:'utf8',windowsHide:true}).trim().length>0;
 const hash=createHash('sha256');
 async function fingerprint(directory){
@@ -21,7 +24,7 @@ async function fingerprint(directory){
   }
 }
 await fingerprint('src');await fingerprint('public');
-for(const file of ['package.json','pnpm-lock.yaml','tsconfig.json','tsconfig.build.json','scripts/build.mjs',...dataFiles]){
+for(const file of ['package.json','pnpm-lock.yaml','tsconfig.json','tsconfig.build.json','scripts/build.mjs','docs/overview-state.json',...dataFiles]){
   hash.update(file);hash.update(await readFile(file));
 }
 const sourceFingerprint=hash.digest('hex');

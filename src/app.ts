@@ -4,7 +4,7 @@ import { MODEL_VERSION, compareWorkflows } from './workflow.ts';
 import type { Group, Comparison, WorkflowResult } from './workflow.ts';
 import { makeExperiment, jsonExport, csvExport } from './export.ts';
 import type { Experiment } from './export.ts';
-import { summarizePeerTiming, compareCommitteeObservation } from './observed.ts';
+import { summarizePeerTiming, summarizeCommitteeObservation, compareCommitteeObservation } from './observed.ts';
 import { studyStartForRole } from './study-start.ts';
 import type { CheckingRole } from './study-start.ts';
 
@@ -77,14 +77,31 @@ async function loadObservedBaseline():Promise<void>{
     element('baseline-note').textContent=`명단 ${baseline.targetRosterCount}명 · 실제 당일 출석 인원은 미확인. 누적값은 구간의 산술 합이며, 시계 시각이나 대안 예측이 아닙니다.`;
     await loadStudyStartDecision(baseline.seatingSec,baseline.verificationSec);
     try{
-      const latestResponse=await fetch('/data/committee-observation-2026-10-28.json');
-      if(!latestResponse.ok)throw new Error('New observation unavailable.');
-      const latest=compareCommitteeObservation(baselineInput,await latestResponse.json());
+      const indexResponse=await fetch('/data/field-report-index.json');
+      if(!indexResponse.ok)throw new Error('Report index unavailable.');
+      const index:unknown=await indexResponse.json();
+      if(!index||typeof index!=='object'||!('fieldReports' in index)||!Array.isArray(index.fieldReports)||!index.fieldReports.length||
+        index.fieldReports.some(path=>typeof path!=='string'||!/^data\/[A-Za-z0-9_-]+\.json$/.test(path))||
+        !('latestReportDocument' in index)||typeof index.latestReportDocument!=='string'||!/^docs\/[A-Za-z0-9_-]+\.md$/.test(index.latestReportDocument))throw new Error('Invalid report index.');
+      const records:unknown[]=await Promise.all(index.fieldReports.map(async(path:string)=>{
+        const response=await fetch(`/${path}`);if(!response.ok)throw new Error('Report unavailable.');return response.json() as Promise<unknown>;
+      }));
+      const latest=compareCommitteeObservation(records.length>1?records.at(-2):baselineInput,records.at(-1));
+      const original=compareCommitteeObservation(baselineInput,records.at(-1));
+      const summaries=records.map(summarizeCommitteeObservation);
       element('latest-summary').innerHTML=[
-        ['이번 착석',duration(latest.seatingSec),'사용자 보고 · 첫 수행 기록'],
+        ['이번 착석',duration(latest.seatingSec),`${latest.reportedOn} 보고 · ${records.length}번째 기록`],
         ['본인 직접 출석 확인',duration(latest.verificationSec),`${fmt(latest.verificationSec)}초 · 빈자리 확인과 질문`],
-        ['이전 확인 구간과 차이',`${fmt(Math.abs(latest.checkingDifferenceSec))}초`,latest.checkingDifferenceSec===0?'차이 없음 · 1회 비교':`${percent(Math.abs(latest.checkingDifferenceFraction))} ${latest.checkingDifferenceSec>0?'짧은':'긴'} 보고값 · 1회 비교`],
+        ['직전 확인 기록과 차이',`${fmt(Math.abs(latest.checkingDifferenceSec))}초`,latest.checkingDifferenceSec===0?'차이 없음':`${percent(Math.abs(latest.checkingDifferenceFraction))} ${latest.checkingDifferenceSec>0?'짧은':'긴'} 보고값 · 인과 효과 미확정`],
       ].map(([title,value,note])=>`<div class="baseline-stat"><span>${title}</span><strong>${value}</strong><small>${note}</small></div>`).join('');
+      element('latest-history').innerHTML=summaries.map(row=>`<tr><td>${row.reportedOn}</td><td>${row.seatingSec}초</td><td>${row.verificationSec}초</td><td>${row.exceptionSummary?`${row.exceptionSummary.inquiryEvents}회`:'미확인'}</td></tr>`).join('');
+      element('latest-badge').textContent=`직접 수행 보고 ${records.length}회`;
+      element('latest-original-note').textContent=`최초 반별 확인 구간 합 ${original.previousVerificationSec}초와는 ${Math.abs(original.checkingDifferenceSec)}초 차이입니다. 담당자·사전 정보·질문·완료 경계가 달라질 수 있어 인과적 개선율로 단정하지 않습니다.`;
+      element('latest-study-note').textContent=latest.studyStartReport==='immediately-after-seating-user-reported'?'이번에도 비담당 학생은 착석 후 바로 야자를 시작했다고 확인했습니다. 정확한 시작 지연과 공부 시간 증가량은 미측정입니다.':'이번 공부 시작 순서는 별도 보고 기록을 확인해야 합니다.';
+      element('latest-accuracy-note').textContent=latest.reportedMissedStudents===null?'이번 누락 결과와 독립 대조는 미보고입니다. 이전 기록의 ‘놓친 학생 없음’을 이번 결과로 옮기지 않습니다.':`이번 누락 ${latest.reportedMissedStudents}명은 사용자 보고입니다. 독립 대조 정확도는 미확인입니다.`;
+      const context=latest.exceptionSummary;
+      element('latest-context').textContent=context?`학교 카페 ${context.cafeStudents}명 · 별도 수업 ${context.classStudents}명 · 서로 다른 사유 보고 인원 ${context.distinctContextStudents??'미확인'}명. 질문은 학년 단위 ${context.inquiryEvents}회이며 시간은 ${context.inquiryDurationSec===null?'미측정':`${context.inquiryDurationSec}초`}입니다. ${context.cafeKnownThroughUserAuthorization?'카페 학생은 직접 사인해 이미 알고 있었으므로 사전 정보의 영향을 따로 살펴봅니다.':'사전 정보의 출처는 개별 기록을 확인하세요.'} 실제 빈자리·출석 인원은 이 합계로 산출하지 않습니다.`:'사전 정보와 추가 질문 조건은 개별 기록을 확인하세요.';
+      element<HTMLAnchorElement>('latest-source').href=`https://github.com/J0hns0n-K/FlowBench/blob/main/${index.latestReportDocument}`;
     }catch{element('latest-summary').textContent='새 관찰 기록을 검증하지 못해 비교값을 표시하지 않습니다.';}
   }catch{
     element('baseline-summary').textContent='기준선 표시를 완료하지 못했습니다.';

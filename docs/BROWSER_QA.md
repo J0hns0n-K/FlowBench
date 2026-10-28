@@ -61,3 +61,8 @@ Screenshots document software behavior only. They establish no school result or 
 - Verified latest panel displays 101 s seating, 102 s checking, 58 s / rounded 36.3% descriptive difference and first-report status. Presence is user-reported; independent accuracy/denominator remain unknown. Immediate study start remains qualitative.
 - Previous eight baseline rows and synthetic serial 268 s remain unchanged. Prior 103/160 dependency model explicitly labelled 10월 27일 사전 모델, not updated into a measured study gain. No error-level console logs.
 - [Screenshot](images/2026-10-28-first-committee-report.png) captured from working source based on report snapshot `c1eed13`. No new layout styles or browser downloads introduced.
+## Second direct report and context — 2026-10-29
+
+- Latest display: seating 72 s, checking 78 s, 24 s / rounded 23.5% shorter than the preceding 102 s report. History retains both direct records; original peer table retains eight rows.
+- Context: cafe 6, separate class 24, disjoint total 30 context students, two grade-level enquiries. Prior authorization is shown as a condition; no attendance denominator or zero enquiry time derived. Latest accuracy is unknown rather than copied from the earlier report.
+- Desktop screenshot: [second report](images/2026-10-29-second-committee-report.png), working source based on snapshot `5ec84f7`. At 390x844 override client/body widths both 375 px; no overflow or error-level browser logs. Viewport reset after checking. No download attempted.

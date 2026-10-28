@@ -19,28 +19,59 @@ function object(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
-/** Descriptive difference between two reports; does not estimate intervention effects. */
-export function compareCommitteeObservation(previousInput:unknown, input:unknown) {
-  const previous=summarizePeerTiming(previousInput);
+/** Validate a direct report without carrying forward another session's accuracy claim. */
+export function summarizeCommitteeObservation(input:unknown) {
+  const count=(value:unknown)=>typeof value==='number'&&Number.isInteger(value)&&value>=0&&value<=10000;
   if(!object(input)||input.schemaVersion!==1||input.sourceKind!=='user-reported-direct-performance'||
     typeof input.recordId!=='string'||!input.recordId.trim()||typeof input.reportedOn!=='string'||!Number.isFinite(Date.parse(input.reportedOn))||
     input.units!=='seconds'||typeof input.seatingSec!=='number'||typeof input.verificationSec!=='number'||
-    !object(input.studyStart)||input.studyStart.nonCheckingStudents!=='immediately-after-seating-user-reported'||
-    input.studyStart.waitedForVerification!==false||input.studyStart.exactStartTimestampSec!==null||
+    !object(input.studyStart)||!['immediately-after-seating-user-reported','after-verification-user-reported','not-reported'].includes(String(input.studyStart.nonCheckingStudents))||
+    input.studyStart.waitedForVerification!==(input.studyStart.nonCheckingStudents==='not-reported'?null:input.studyStart.nonCheckingStudents==='after-verification-user-reported')||input.studyStart.exactStartTimestampSec!==null||
     input.studyStart.seatingToStudyLatencySec!==null||!object(input.accuracy)||
-    input.accuracy.userReportedMissedStudents!==0||input.accuracy.auditMethod!==null||
+    !(input.accuracy.userReportedMissedStudents===null||count(input.accuracy.userReportedMissedStudents))||input.accuracy.auditMethod!==null||
     input.accuracy.auditedStudentCount!==null||input.accuracy.independentlyVerifiedMissedStudents!==null||
     !Array.isArray(input.limitations)||input.limitations.length===0||input.limitations.some(note=>typeof note!=='string'||!note.trim()))throw new TypeError('Unsupported committee observation or evidence status.');
   finiteInRange(input.seatingSec,'seatingSec',0,MAX_DURATION_SEC);
   finiteInRange(input.verificationSec,'verificationSec',0.001,MAX_DURATION_SEC);
-  const checkingDifferenceSec=previous.verificationSec-input.verificationSec;
+  let exceptionSummary:{cafeStudents:number;classStudents:number;distinctContextStudents:number|null;inquiryEvents:number;inquiryDurationSec:number|null;cafeKnownThroughUserAuthorization:boolean}|null=null;
+  if(input.exceptionContext!==undefined){
+    const context=input.exceptionContext;
+    if(!object(context)||!count(context.offCampusOutingCount)||!count(context.cafeStudentCount)||!count(context.cafeInquiryEvents)||
+      !count(context.inquiryEventCount)||!Array.isArray(context.separateClassGroups)||
+      context.separateClassGroups.length>100||![true,false,null].includes(context.cafeAndClassDisjoint as boolean|null)||
+      !(context.inquiryDurationSec===null||typeof context.inquiryDurationSec==='number'))throw new TypeError('Invalid exception context.');
+    let classStudents=0,questions=context.cafeInquiryEvents as number;
+    const groups=new Set<string>();
+    for(const group of context.separateClassGroups){
+      if(!object(group)||typeof group.group!=='string'||!group.group.trim()||groups.has(group.group)||
+        !count(group.studentCount)||!count(group.inquiryEvents))throw new TypeError('Invalid class context.');
+      groups.add(group.group);classStudents+=group.studentCount as number;questions+=group.inquiryEvents as number;
+    }
+    if(questions!==context.inquiryEventCount)throw new TypeError('Inquiry event totals do not match.');
+    if(context.inquiryDurationSec!==null)finiteInRange(context.inquiryDurationSec,'inquiryDurationSec',0,MAX_DURATION_SEC);
+    const cafeStudents=context.cafeStudentCount as number;
+    exceptionSummary={cafeStudents,classStudents,distinctContextStudents:context.cafeAndClassDisjoint===true?cafeStudents+classStudents:null,
+      inquiryEvents:questions,inquiryDurationSec:context.inquiryDurationSec,cafeKnownThroughUserAuthorization:context.cafeInformationSource==='prior-authorization-by-user'};
+  }
+  return {reportedOn:input.reportedOn,recordId:input.recordId,seatingSec:input.seatingSec,verificationSec:input.verificationSec,
+    studyStartReport:input.studyStart.nonCheckingStudents as string,
+    reportedMissedStudents:input.accuracy.userReportedMissedStudents as number|null,
+    exceptionSummary,source:structuredClone(input)};
+}
+
+/** Descriptive comparison with a peer baseline or a previous direct-performance report. */
+export function compareCommitteeObservation(previousInput:unknown, input:unknown) {
+  const previous=object(previousInput)&&previousInput.sourceKind==='user-report-of-peer-timing'?
+    summarizePeerTiming(previousInput):summarizeCommitteeObservation(previousInput);
+  const latest=summarizeCommitteeObservation(input);
+  const checkingDifferenceSec=previous.verificationSec-latest.verificationSec;
   return {provenance:'descriptive-report-comparison' as const,
-    seatingSec:input.seatingSec,verificationSec:input.verificationSec,
+    ...latest,
     previousVerificationSec:previous.verificationSec,checkingDifferenceSec,
     checkingDifferenceFraction:checkingDifferenceSec/previous.verificationSec,
-    seatingDifferenceSec:previous.seatingSec-input.seatingSec,
+    seatingDifferenceSec:previous.seatingSec-latest.seatingSec,
     studyStartLatencySec:null,measuredStudyAdvanceSec:null,verifiedAccuracy:null,
-    source:structuredClone(input)};
+  };
 }
 
 /** Accounting of reported combined intervals, not a counterfactual simulation. */

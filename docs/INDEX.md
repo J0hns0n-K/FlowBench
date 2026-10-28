@@ -26,6 +26,7 @@
 - [Independent study-start procedure](DECOUPLED_ATTENDANCE_KO.md)
 - [Assigned-seat checking hypothesis](ASSIGNED_SEAT_HYPOTHESIS_KO.md)
 - [First direct committee-check report](FIRST_COMMITTEE_OBSERVATION_KO.md)
+- [Second report and prior-information context](SECOND_COMMITTEE_OBSERVATION_KO.md)
 - [Next-observation form](NEW_PROCEDURE_OBSERVATION_KO.md)
 - [Original class-turn observation form](OBSERVATION_SHEET_KO.md)
 - [Why aggregate time does not identify the process](IDENTIFIABILITY_KO.md)
