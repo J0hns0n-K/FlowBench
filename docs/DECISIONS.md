@@ -36,7 +36,7 @@ Seeded synthetic generation is optional; paired comparisons always reuse the exa
 
 The initial scaffold, model proposal, tests and implementation are Codex-authored assistance. They are not independent student engineering output. Junmo must review assumptions, derive tests, propose decisions, perform permitted observations and record his own modifications before making a student contribution claim.
 
-No backend, auth, personal attendance records, biometrics, school registry, AI API, hardware or IoT in Early. No hosting or school deployment claim. RD candidates remain separate.
+The current prototype has no backend, auth, personal attendance records, biometrics, school registry, AI API, hardware or IoT. No hosting or school deployment claim.
 
 ## ADR-005 — Validation hierarchy
 

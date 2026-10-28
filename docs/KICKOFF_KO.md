@@ -36,6 +36,4 @@
 4. 허용된 범위의 익명 집계 시간 관찰을 계획합니다. 실제 관찰 전에는 동의나 승인이 있었다고 쓰지 않습니다.
 5. 본인이 고른 반례·테스트·모델 수정 중 하나를 직접 작성하고, 이유와 커밋을 기록합니다.
 
-활동 원본·Common App·WIS 자료는 이번에 열어 검증하지 못했습니다. 해당 내용은 인계 문서의 설명으로만 남겨 두었습니다. 목표 대학과 실제 마감일도 미확인입니다. DormSense와 RoboMetrics는 별도의 RD 연구 후보로 유지합니다.
-
-자세한 실행 방법은 README, 연구 판정은 PROBLEM_VALIDATION / DECISIONS / VALIDATION, 성과 문구의 허용 범위는 CLAIM_LEDGER / CONTRIBUTIONS를 참조합니다.
+자세한 실행 방법은 README, 연구 판정은 PROBLEM_VALIDATION / DECISIONS / VALIDATION, 결과의 근거와 기여 기록은 CLAIM_LEDGER / CONTRIBUTIONS를 참조합니다.

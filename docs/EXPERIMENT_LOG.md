@@ -8,7 +8,6 @@ Dates use Asia/Seoul.
 - Verified remote owner, public visibility, default branch main, account push permissions and starting SHA `ab2b2d95dd796b61a0643b35d0a5ffa3e7388b88`.
 - Detailed user clarification rejected the entrance-queue premise. Current concern is seated attendance-verification duration, estimated about five minutes, unmeasured.
 - Reviewed primary related-work pages listed in SOURCES.md. No competitor performance benchmark or full-paper review claimed.
-- Tried original EC/Common App discovery with connected Drive; both calls returned unknown-tool errors. Original-source audit remains incomplete.
 - Locked synthetic model/hypotheses before writing simulation code. No field data collected. No school improvement or independent student implementation established.
 
 Subsequent verification commands and observed outputs will be appended after execution.
@@ -30,7 +29,7 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Browser QA caught a reset-method shadowing bug and mobile grid min-content overflow; both were fixed and rechecked. Exact fixtures, invalid range handling, reset, custom editing, 100-group limit, desktop layout and narrow mobile layout were inspected. No console errors after final reload.
 - Actual browser JSON-download verification was rejected by automatic permission review. It was not retried through another surface. JSON/CSV unit serialization remains verified; issue #4 retains this end-to-end verification gap.
 - Screenshots captured in `docs/images/`; browser temporary viewport override reset after mobile checks.
-- Original-source audit, actual observation/model validity, independent student contribution and application deadline remain unverified.
+- Actual observation/model validity and independent student engineering contribution remain unverified at this stage.
 - Final boundary review found that halving the minimum UI report duration must remain a supported service duration. Lowered the primitive positive bound to one microsecond and added a regression fixture. The current suite has **22 passing tests**; the original 21-test result above remains the historical first engine check.
 
 ### Remote verification

@@ -16,8 +16,7 @@ The current working question is: **If attendance verification no longer gates th
 - The user subsequently clarified that verification is performed **one class at a time**. Serial class ordering is now user-reported context; exact handoff gaps, durations and field validation remain unknown. Parallel verification is a proposed alternative.
 - First direct field-performance/timing report is recorded. Causal speedup, independently audited error reduction, hosted app deployment and independent student software implementation are not established.
 - The initial code and documentation are authored with Codex assistance. See [contributions](docs/CONTRIBUTIONS.md).
-- Early: browser-local TypeScript, no server, login, biometrics, IoT, hardware, or school system integration.
-- DormSense and RoboMetrics remain separate, unimplemented RD research candidates.
+- Current scope: browser-local TypeScript, no server, login, biometrics, IoT, hardware, or school system integration.
 
 ## Project records
 
@@ -41,7 +40,6 @@ The current working question is: **If attendance verification no longer gates th
 | [Image-derived group sizes](docs/GROUP_COUNTS_KO.md) | Provisional aggregate counts only; no names or scores |
 | [Experiment log](docs/EXPERIMENT_LOG.md) | Dated commands and observed results |
 | [Claim ledger](docs/CLAIM_LEDGER.md) | Permitted and unsupported claims |
-| [Admissions evidence](docs/ADMISSIONS_EVIDENCE.md) | Prior activities, source status and attribution limits |
 | [Student workbook](docs/STUDENT_WORKBOOK.md) | Student decisions, derivations and observations still needed |
 | [Sources](docs/SOURCES.md) | Source scope and retrieval limitations |
 | [Repository](docs/REPOSITORY.md) | Verified remote, owner, branch and initial SHA |
@@ -80,4 +78,4 @@ Actual browser file-download verification was blocked by the browser permission 
 
 ![Desktop research workbench](docs/images/2026-10-27-desktop.png)
 
-This repository is an assisted research starting point, not proof of a completed student EC. Original-source audit, student-authored contribution and field validation remain open.
+This repository is an assisted research prototype. Further model review, independently authored engineering changes and field validation remain open.

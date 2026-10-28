@@ -13,7 +13,7 @@ Verified on 2026-10-27 (Asia/Seoul):
 
 Initial project documentation is committed before implementation, on top of the existing initial commit. AI-created commits use an explicit Codex author identity. `git log` and GitHub are the authority for later commit SHAs; do not treat an unpushed local commit as remotely published.
 
-Original admissions documents and personal records are not copied into this public repository. Private working files, if needed, belong in ignored `.local/`.
+Personal records are not copied into this public repository. Private working files, if needed, belong in ignored `.local/`.
 
 ## Published kickoff milestones
 

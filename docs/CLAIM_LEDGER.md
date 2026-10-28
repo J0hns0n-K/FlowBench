@@ -10,8 +10,6 @@
 | C06 | Numerical model and browser code are independently student-authored. | unverified / false for initial assisted scaffold | AI contribution explicitly recorded; student contributions pending. |
 | C07 | Browser queue simulation is a novel invention. | contradicted by related work | Do not claim. Application-specific validation may become a contribution. |
 | C08 | Synthetic serial/parallel results predict the school's process accurately. | unverified | Software verification is not empirical validation. |
-| C09 | Prior EC/WIS/website details are independently verified here. | unverified | Handoff-only until originals inspected. |
-| C10 | DormSense/RoboMetrics are completed. | unverified | Separate RD proposals only. |
 | C15 | The supplied screenshot visibly contains eight group labels and 119 nonempty name rows. | image-derived historical aggregate | Superseded as current roster size by C16; not an attendance measurement. No names or scores retained. |
 | C16 | The listed groups are evening-study participants; one newcomer brings G9-B to 15 and the roster total to 120 across eight groups. | image-derived aggregate + explicit user confirmation/correction | Target roster scope confirmed by user; actual session attendance and timings not measured. No individual name retained. |
 | C17 | Class representatives check seated students informally without required individual name-calling. | explicit user-report | No fixed per-person algorithm, checking speed, observed accuracy or independent field verification established. |

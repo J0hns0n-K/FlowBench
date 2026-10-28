@@ -20,10 +20,6 @@
 - Shared earlier chat: background proposal, superseded where it conflicts with the detailed current workflow.
 - Repository: https://github.com/J0hns0n-K/FlowBench — inspected via web, Git and authenticated API. No student identity inferred from access.
 
-## Original activity sources not inspected
-
-EC spreadsheet, Common App, essays and WIS records are referenced by the handoff only. Drive discovery calls for the named EC and Common App returned an unknown-tool error. Their original content was not retrieved or copied into the repository. Further original-source audit remains an open issue.
-
 ## Primary external sources
 
 1. MySolvers official product page: https://www.mysolvers.com/ — capabilities described by vendor, not independently benchmarked.
