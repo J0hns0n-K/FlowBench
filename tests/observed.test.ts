@@ -1,11 +1,40 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { summarizePeerTiming } from '../src/observed.ts';
+import { summarizePeerTiming, compareCommitteeObservation } from '../src/observed.ts';
 import type { PeerTimingRecord } from '../src/observed.ts';
 
 const fixture = (): PeerTimingRecord => JSON.parse(readFileSync(
   new URL('../data/peer-timed-baseline-2026-10-27.json', import.meta.url), 'utf8')) as PeerTimingRecord;
+
+const committeeFixture=()=>JSON.parse(readFileSync(new URL('../data/committee-observation-2026-10-28.json',import.meta.url),'utf8'));
+
+test('first committee report yields descriptive 58-second difference without invented study gain or accuracy',()=>{
+  const result=compareCommitteeObservation(fixture(),committeeFixture());
+  assert.equal(result.seatingSec,101);assert.equal(result.verificationSec,102);
+  assert.equal(result.checkingDifferenceSec,58);assert.equal(result.checkingDifferenceFraction,0.3625);
+  assert.equal(result.seatingDifferenceSec,2);
+  assert.equal(result.studyStartLatencySec,null);assert.equal(result.measuredStudyAdvanceSec,null);
+  assert.equal(result.verifiedAccuracy,null);assert.equal(result.provenance,'descriptive-report-comparison');
+});
+
+test('report comparison rejects wrong provenance, unsupported accuracy claims and invalid durations',()=>{
+  const input=committeeFixture();
+  for(const override of [{sourceKind:'synthetic'},{reportedOn:'unknown'},{limitations:[null]},{verificationSec:0},{seatingSec:NaN},
+    {accuracy:{...input.accuracy,auditMethod:'independently-verified'}},
+    {studyStart:{...input.studyStart,seatingToStudyLatencySec:0}}]){
+    assert.throws(()=>compareCommitteeObservation(fixture(),{...input,...override}));
+  }
+});
+
+test('descriptive comparison preserves slower outcomes and owns its source snapshot',()=>{
+  const input=committeeFixture(), before=structuredClone(input);
+  const result=compareCommitteeObservation(fixture(),{...input,verificationSec:200});
+  assert.equal(result.checkingDifferenceSec,-40);assert.equal(result.checkingDifferenceFraction,-0.25);
+  assert.deepEqual(input,before);
+  const copy=compareCommitteeObservation(fixture(),input);input.method='changed';
+  assert.notEqual(copy.source.method,'changed');
+});
 
 test('peer timing snapshot has independently calculated 103/160/263 totals and 120 roster places', () => {
   const result = summarizePeerTiming(fixture());

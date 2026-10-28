@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "recordId": "committee-session-01-followup-01",
+  "supplementsRecordId": "committee-session-01",
+  "reportedOn": "2026-10-28",
+  "sourceKind": "user-reported-accuracy-clarification",
+  "presenceClaim": "All students except those out were in the chapel, according to the user.",
+  "officialOutingRecordCrossCheck": null,
+  "independentAuditMethod": null,
+  "auditedStudentCount": null,
+  "limitations": [
+    "This clarifies the user's no-missed-students claim; it is not an independent attendance audit.",
+    "No official outing-record comparison, numeric denominator or false-status count supplied.",
+    "Do not derive 100% accuracy or zero error rate from this statement."
+  ]
+}

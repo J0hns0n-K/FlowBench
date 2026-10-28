@@ -51,3 +51,6 @@ Before recommending or describing a school improvement, the student must establi
 - Whether any operational change is allowed, and whether its accuracy remains acceptable.
 
 Current gate: **serial class structure supported by explicit user-report; durations, zero-gap handoffs and empirical model validity unvalidated**. Use the blank [observation sheet](OBSERVATION_SHEET_KO.md). Software verification can proceed with synthetic inputs. Field validation cannot be replaced by a passing unit test.
+## 2026-10-28 — first direct field-performance report
+
+User reports personally scanning assigned seats and asking friends/same-grade students about late/out occupants: seating 101 s, checking 102 s, few such exceptions (no count). Non-checkers started study after seating. User clarifies all non-out students were in the chapel; independent audit/official outing cross-check not established. This advances the procedure from a next-time plan to first user-reported performance. Timing instrument/operator, actual date, exact event boundaries and interruptions/person-time are still unknown. The 58 s difference from the earlier 160 s turn sum is descriptive, not causal or an exact study-time gain. See FIRST_COMMITTEE_OBSERVATION_KO.md and source snapshots. Earlier dated plans are preserved as historical context.

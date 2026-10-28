@@ -19,6 +19,30 @@ function object(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
+/** Descriptive difference between two reports; does not estimate intervention effects. */
+export function compareCommitteeObservation(previousInput:unknown, input:unknown) {
+  const previous=summarizePeerTiming(previousInput);
+  if(!object(input)||input.schemaVersion!==1||input.sourceKind!=='user-reported-direct-performance'||
+    typeof input.recordId!=='string'||!input.recordId.trim()||typeof input.reportedOn!=='string'||!Number.isFinite(Date.parse(input.reportedOn))||
+    input.units!=='seconds'||typeof input.seatingSec!=='number'||typeof input.verificationSec!=='number'||
+    !object(input.studyStart)||input.studyStart.nonCheckingStudents!=='immediately-after-seating-user-reported'||
+    input.studyStart.waitedForVerification!==false||input.studyStart.exactStartTimestampSec!==null||
+    input.studyStart.seatingToStudyLatencySec!==null||!object(input.accuracy)||
+    input.accuracy.userReportedMissedStudents!==0||input.accuracy.auditMethod!==null||
+    input.accuracy.auditedStudentCount!==null||input.accuracy.independentlyVerifiedMissedStudents!==null||
+    !Array.isArray(input.limitations)||input.limitations.length===0||input.limitations.some(note=>typeof note!=='string'||!note.trim()))throw new TypeError('Unsupported committee observation or evidence status.');
+  finiteInRange(input.seatingSec,'seatingSec',0,MAX_DURATION_SEC);
+  finiteInRange(input.verificationSec,'verificationSec',0.001,MAX_DURATION_SEC);
+  const checkingDifferenceSec=previous.verificationSec-input.verificationSec;
+  return {provenance:'descriptive-report-comparison' as const,
+    seatingSec:input.seatingSec,verificationSec:input.verificationSec,
+    previousVerificationSec:previous.verificationSec,checkingDifferenceSec,
+    checkingDifferenceFraction:checkingDifferenceSec/previous.verificationSec,
+    seatingDifferenceSec:previous.seatingSec-input.seatingSec,
+    studyStartLatencySec:null,measuredStudyAdvanceSec:null,verifiedAccuracy:null,
+    source:structuredClone(input)};
+}
+
 /** Accounting of reported combined intervals, not a counterfactual simulation. */
 export function summarizePeerTiming(input: unknown): BaselineSummary {
   if (!object(input) || input.schemaVersion !== 1 || input.sourceKind !== 'user-report-of-peer-timing' ||

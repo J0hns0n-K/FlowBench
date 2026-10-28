@@ -106,3 +106,8 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Added role-specific pure model and selector. Checker start/advance stay null; another member's checking turn uses the existing conditional non-checker branch. No new checking-time estimate is invented.
 - Full numerical suite: **37 passed, 0 failed**. Typechecked build and diff whitespace checks passed. Desktop/mobile behavior and source labels verified; details in BROWSER_QA.md.
 - Expanded blank observation sheet with duty role, aggregate vacant/uncertain counts, method and optional disjoint work stages. No actual intervention measurement or accuracy result recorded. Field issue #7 remains open.
+### First directly performed committee check — 2026-10-28
+
+- Preserved initial report before display work in commit `c1eed13d75f81f30fe27013910b312de1a80a0e8`: seating 101 s, user's own checking 102 s, scanning assigned seats plus peer enquiries; qualitative immediate study start confirmed. Accuracy follow-up stored separately: user says all non-out students were in the chapel, without official cross-check/denominator supplied.
+- Descriptive report comparison gives 58 s / 36.25% checking difference, 2 s seating difference. Keeps measured study advance, exact study latency and verified accuracy null; negative checking differences remain negative. No causal or person-time calculation.
+- Full suite **40 passed, 0 failed** with typechecked build. New tests cover arithmetic/unknowns, unsupported provenance/status/values and slower outcomes/source isolation. Browser display verified, eight previous baseline rows and synthetic result preserved. Evidence details in BROWSER_QA.md. Field validation issue #7 remains open.

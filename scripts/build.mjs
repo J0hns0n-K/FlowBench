@@ -6,7 +6,7 @@ execFileSync(process.execPath,['node_modules/typescript/bin/tsc','--noEmit'],{st
 execFileSync(process.execPath,['node_modules/typescript/bin/tsc','--project','tsconfig.build.json'],{stdio:'inherit',windowsHide:true});
 await mkdir('dist',{recursive:true});
 await Promise.all(['index.html','styles.css'].map(file=>copyFile(`public/${file}`,`dist/${file}`)));
-const dataFiles=['data/peer-timed-baseline-2026-10-27.json','data/decoupled-attendance-decision-2026-10-27.json'];
+const dataFiles=['data/peer-timed-baseline-2026-10-27.json','data/decoupled-attendance-decision-2026-10-27.json','data/committee-observation-2026-10-28.json'];
 await mkdir('dist/data',{recursive:true});
 await Promise.all(dataFiles.map(file=>copyFile(file,`dist/${file}`)));
 const revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim();

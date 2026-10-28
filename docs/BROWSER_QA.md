@@ -56,3 +56,8 @@ Screenshots document software behavior only. They establish no school result or 
 - Desktop and 390x844 mobile checks passed; client/body widths both 375 px, no error-level console logs. Temporary viewport reset. Previous baseline and separate synthetic fixture remain intact.
 - [Desktop](images/2026-10-27-rotating-duty-desktop.png), [mobile](images/2026-10-27-rotating-duty-mobile.png), captured from modified source based on research snapshot `3b62616`.
 - Existing tab was stranded on an earlier connection-refused error page; a fresh IAB tab loaded the running local preview. No browser download attempted.
+## First direct committee-check report — 2026-10-28
+
+- Verified latest panel displays 101 s seating, 102 s checking, 58 s / rounded 36.3% descriptive difference and first-report status. Presence is user-reported; independent accuracy/denominator remain unknown. Immediate study start remains qualitative.
+- Previous eight baseline rows and synthetic serial 268 s remain unchanged. Prior 103/160 dependency model explicitly labelled 10월 27일 사전 모델, not updated into a measured study gain. No error-level console logs.
+- [Screenshot](images/2026-10-28-first-committee-report.png) captured from working source based on report snapshot `c1eed13`. No new layout styles or browser downloads introduced.

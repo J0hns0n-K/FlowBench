@@ -4,7 +4,7 @@ import { MODEL_VERSION, compareWorkflows } from './workflow.ts';
 import type { Group, Comparison, WorkflowResult } from './workflow.ts';
 import { makeExperiment, jsonExport, csvExport } from './export.ts';
 import type { Experiment } from './export.ts';
-import { summarizePeerTiming } from './observed.ts';
+import { summarizePeerTiming, compareCommitteeObservation } from './observed.ts';
 import { studyStartForRole } from './study-start.ts';
 import type { CheckingRole } from './study-start.ts';
 
@@ -65,7 +65,8 @@ async function loadObservedBaseline():Promise<void>{
   try{
     const response=await fetch('/data/peer-timed-baseline-2026-10-27.json');
     if(!response.ok)throw new Error('기준선 파일을 읽지 못했습니다.');
-    const baseline=summarizePeerTiming(await response.json());
+    const baselineInput:unknown=await response.json();
+    const baseline=summarizePeerTiming(baselineInput);
     element('baseline-summary').innerHTML=[
       ['착석 구간',duration(baseline.seatingSec),`${baseline.seatingSec}초 · 보고된 값`],
       ['반별 확인·보고 합',duration(baseline.verificationSec),`${baseline.groupCount}개 반의 구간 합계`],
@@ -75,6 +76,16 @@ async function loadObservedBaseline():Promise<void>{
     element('baseline-table').innerHTML=baseline.rows.map(row=>`<tr><td>${row.group}</td><td>${row.rosterCount}명</td><td><div class="baseline-duration"><span>${row.turnSec}초</span><span class="baseline-bar" aria-hidden="true"><i style="width:${row.turnSec/maxTurn*100}%"></i></span></div></td><td>${row.cumulativeVerificationSec}초</td></tr>`).join('');
     element('baseline-note').textContent=`명단 ${baseline.targetRosterCount}명 · 실제 당일 출석 인원은 미확인. 누적값은 구간의 산술 합이며, 시계 시각이나 대안 예측이 아닙니다.`;
     await loadStudyStartDecision(baseline.seatingSec,baseline.verificationSec);
+    try{
+      const latestResponse=await fetch('/data/committee-observation-2026-10-28.json');
+      if(!latestResponse.ok)throw new Error('New observation unavailable.');
+      const latest=compareCommitteeObservation(baselineInput,await latestResponse.json());
+      element('latest-summary').innerHTML=[
+        ['이번 착석',duration(latest.seatingSec),'사용자 보고 · 첫 수행 기록'],
+        ['본인 직접 출석 확인',duration(latest.verificationSec),`${fmt(latest.verificationSec)}초 · 빈자리 확인과 질문`],
+        ['이전 확인 구간과 차이',`${fmt(Math.abs(latest.checkingDifferenceSec))}초`,latest.checkingDifferenceSec===0?'차이 없음 · 1회 비교':`${percent(Math.abs(latest.checkingDifferenceFraction))} ${latest.checkingDifferenceSec>0?'짧은':'긴'} 보고값 · 1회 비교`],
+      ].map(([title,value,note])=>`<div class="baseline-stat"><span>${title}</span><strong>${value}</strong><small>${note}</small></div>`).join('');
+    }catch{element('latest-summary').textContent='새 관찰 기록을 검증하지 못해 비교값을 표시하지 않습니다.';}
   }catch{
     element('baseline-summary').textContent='기준선 표시를 완료하지 못했습니다.';
     element('baseline-error').textContent='현장 보고 데이터를 읽거나 검증하지 못했습니다. 아래 합성 실험을 현장 자료로 해석하지 마세요.';
