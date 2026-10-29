@@ -10,14 +10,14 @@ FlowBench is a browser-native TypeScript workbench for investigating seated atte
 
 The initial proposal assumed an entrance check-in queue. Follow-up accounts established that students entered freely, sat in assigned seats, and were checked one class at a time. There was no entrance queue to optimize. The investigation shifted to the sequence of seating, verification, reporting and study start.
 
-The student committee collectively decided to start study after seating and verify attendance separately. Junmo proposed checking vacant assigned seats as exceptions, then personally performed a trial, asking friends and same-grade students about late or out students. FlowBench now examines two distinct questions: **how soon non-checkers can begin studying**, and **how much time, follow-up and interruption verification still requires**.
+The student committee collectively decided to start study after seating and verify attendance separately. Junmo proposed trying vacant-seat exception checks in the current workflow, then personally performed trials, asking friends and same-grade students about late or out students. FlowBench now examines two distinct questions: **how soon non-checkers can begin studying**, and **how much time, follow-up and interruption verification still requires**.
 
 This progression—from correcting the premise to changing the dependency—is documented in the [decision register](docs/DECISIONS.md), rather than reconstructed from a favorable result.
 
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 308fc5d88c8fd3244bc768aa5b5b29a06df6dfa93aeb8941d8b04e3097d08893 -->
+<!-- Evidence fingerprint: 87f5f80090a5818010a7ba2c245de45f9e02211ee133fb24e573adf00f160fe6 -->
 Evidence reviewed through the latest linked report received **2026-10-29**. New-procedure reports recorded: **2**. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -55,11 +55,13 @@ The [locked synthetic study](docs/EVALUATION.md) includes a favorable 268 s vers
 
 Browser simulation and queueing algorithms have established [prior work](docs/RELATED_WORK.md). FlowBench's project-specific investigation concerns the fit between an actual seated workflow, its dependencies and the evidence needed to evaluate a change. It keeps rejected premises, failed hypotheses and unresolved quantities visible alongside working software.
 
+A graduate's recollection, relayed by Junmo, also identifies earlier local use of what was described as the same checking approach. The graduate recalled roughly 2–3 minutes **including seating**, with about 70–80 students; no recorded average or detailed protocol was supplied. This [local precedent](docs/LOCAL_PRECEDENT_KO.md) places the investigation in a history of practice. Junmo's contribution concerns current application, explicit modeling and validation; origination of the checking method is not established. The recalled whole-process range is kept separate from current verification-only timings.
+
 The current prototype runs locally in the browser using anonymous group workloads and aggregate timing reports. Its analytical records exclude names, seat maps and individual attendance histories. This keeps the engineering question focused on process structure, verification effort and the quality of the evidence.
 
 ## People and responsibility
 
-Junmo's reported contributions include explaining and correcting the real workflow, proposing vacant-seat exception checking, personally performing the new check, and supplying observations. The procedure decision belongs to the committee collectively; a peer supplied the earlier timing series.
+Junmo's reported contributions include explaining and correcting the real workflow, proposing its current trial, personally performing checks, supplying observations and seeking prior users' experience. The procedure decision belongs to the committee collectively; a peer supplied the earlier timing series, and a graduate's recalled prior use is credited separately.
 
 The initial model formalization, code, tests and documentation were produced with Codex assistance. Individually authored model revisions and software changes will be linked as they occur. The [contribution ledger](docs/CONTRIBUTIONS.md) distinguishes field execution, measurement, design and implementation, with dated evidence for each.
 

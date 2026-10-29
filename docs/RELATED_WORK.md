@@ -14,6 +14,8 @@ The 2019 paper “Impact of Passenger-Arrival Patterns in Outbound Processes of 
 
 ## Defensible contribution, if completed by the student
 
+Local practice is also relevant. A graduate's account relayed by the user reports brief prior use of this checking approach for approximately 70–80 students, recalling 2–3 minutes **including seating**. Exact protocol/date, recorded mean, question burden and accuracy are unknown. This is an oral contextual source, distinct from the primary external sources above and from current direct-performance records. Credit the reported precedent; do not attribute origination of the checking method to Junmo or treat recalled whole-process duration as a verification-only benchmark. See [local precedent](LOCAL_PRECEDENT_KO.md).
+
 An evidence-grounded model of seated attendance-checking dependencies, reproducible timing experiments, an explicit coordinator bottleneck test, and validation against approved anonymous observations. The correction of an attractive but false entrance-queue premise is part of the research record.
 
 This is an **application and validation contribution**, not a new queueing method. It is not yet established as student-original work or as a validated improvement. A parallel workflow could be infeasible, raise error rates, or provide little benefit if reporting dominates. Those are reasons to test the idea rather than assume adoption.

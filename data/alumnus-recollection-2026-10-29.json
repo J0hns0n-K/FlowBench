@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "recordId": "local-precedent-01",
+  "sourceKind": "user-report-of-alumnus-recollection",
+  "reportedOn": "2026-10-29",
+  "historicalPeriod": null,
+  "priorUse": "User reports a graduate briefly used what the user describes as this checking method when student numbers were relatively high at that time.",
+  "approximatePopulationRange": [70, 80],
+  "recalledTypicalDurationMinutesRange": [2, 3],
+  "durationScope": "includes-seating-and-attendance-checking-user-clarified",
+  "durationDescription": "Approximate recollection in response to a question about usual/average duration; no recorded sample or calculated mean supplied.",
+  "recordedMeanSec": null,
+  "sampleCount": null,
+  "timingInstrument": null,
+  "rawBoundaryReadings": null,
+  "exactMethodEquivalence": null,
+  "historicalQuestionCount": null,
+  "historicalAccuracyAudit": null,
+  "limitations": [
+    "Graduate's oral recollection relayed by the user, not a direct observation or an inspected source artifact.",
+    "The user clarified that 2–3 minutes includes seating; it is not verification-only time.",
+    "Historical date, actual sample sizes, event boundaries, seat layout, information availability and precise method equivalence are unknown.",
+    "Do not use the range midpoint as a measured mean, fit per-student rates, or compare it directly with current 78-second checking time.",
+    "Current roster scope and historical population estimates do not establish comparable actual turnout.",
+    "Prior local use prevents a supported claim that Junmo originated the checking method; original inventor remains unknown.",
+    "This is contextual precedent, not an additional direct-performance session in the current experiment."
+  ]
+}

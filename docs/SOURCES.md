@@ -22,7 +22,12 @@
 
 Second direct-performance report received 2026-10-29: seating 72 s, checking 78 s; no off-campus outings according to user; school-cafe participants 6 were known through user's prior authorization. Separate class: G10 20, G11 4. Two grade-level enquiries, described as short without measured duration. Follow-ups confirmed cafe/class groups disjoint and immediate study after seating for non-checkers. Snapshot: data/committee-observation-2026-10-29.json. No new accuracy result, instrument/raw boundaries or verified actual turnout supplied.
 
+## Local historical account and current practitioner judgement
+
+Received 2026-10-29: user relayed a graduate's account of briefly using this checking method with about 70–80 students and a recalled usual duration of 2–3 minutes. Follow-up explicitly confirmed **seating is included**. This is oral historical recollection, not a recorded average or a matched verification-only benchmark. Exact period/protocol/boundaries and accuracy are unknown. Snapshot: data/alumnus-recollection-2026-10-29.json; interpretation: LOCAL_PRECEDENT_KO.md. The same user message expressed the judgement that enquiry count matters more to checking duration; that is recorded separately as an untested practitioner hypothesis. Neither changes the count of current direct-performance reports (2).
+
 ## Primary external sources
+
 
 1. MySolvers official product page: https://www.mysolvers.com/ — capabilities described by vendor, not independently benchmarked.
 2. Alexander Herzog MiniSimulator author repository: https://github.com/A-Herzog/MiniSimulator — README and project metadata reviewed; code not copied.

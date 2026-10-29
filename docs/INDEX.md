@@ -5,6 +5,7 @@
 - [Problem and evidence](PROBLEM_VALIDATION.md)
 - [Decision and hypothesis register](DECISIONS.md)
 - [Related work](RELATED_WORK.md)
+- [Local precedent and enquiry-burden hypothesis](LOCAL_PRECEDENT_KO.md)
 - [Sources and retrieval scope](SOURCES.md)
 - [Historical kickoff record](KICKOFF_KO.md)
 
