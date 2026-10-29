@@ -30,7 +30,12 @@ Received 2026-10-29: user relayed a graduate's account of briefly using this che
 
 Received 2026-10-29: in a guided synthetic exercise the user submitted A=60+30+30=120 s and B=60+45+30=135 s, and reasoned that the more-question case would need quicker responses when other stage times are fixed. The prompt supplied question counts A=1/B=2; the user supplied duration choices, totals and explanation. Data: data/student-reasoning-2026-10-29.json; review: STUDENT_REASONING_01_KO.md. Formal average thresholds, a completed 110 s example and regression code are assisted additions. This is not a field record; direct-performance count remains two.
 
+## Separate-session enquiry timing
+
+Received 2026-10-29: user said today's first/next enquiry took 14 s and 13 s. Explicit follow-up confirmed a different session from committee-session-02 (72 s seating / 78 s checking). Date resolved from ‘today’ and client Asia/Seoul context; instrument, timer operator, interval boundaries and whole-session duration unknown. Snapshot: data/inquiry-intervals-2026-10-29.json; discussion: INQUIRY_TIMING_01_KO.md. Sum 27 s and mean 13.5 s are arithmetic of the two reported intervals, not a general rate. No grades or previous context transferred; no cross-session residual calculated.
+
 ## Primary external sources
+
 
 
 

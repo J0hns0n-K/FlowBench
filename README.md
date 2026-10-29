@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: edbee1fcec6e87034b8e4ef8c7e17c301d6a85e8d047574073a48e66ce647288 -->
+<!-- Evidence fingerprint: 355057513a053cdd87a6deb422d0b6542c3018b6fbcf9f0648145f907c4bb811 -->
 Evidence reviewed through the latest linked report received **2026-10-29**. New-procedure reports recorded: **2**. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -34,6 +34,8 @@ Non-checkers reportedly began study after seating. Exact study-start latency and
 <!-- FLOWBENCH:CURRENT:END -->
 
 The second report introduces a new experimental variable: **what the checker already knows**. Junmo already knew the cafe participants because he had authorized them; two grade-level enquiries addressed the separate class. The investigation now distinguishes seat occupancy, known reasons and unresolved exceptions. Whether prior information reduces checking work—and what it costs to obtain, share and maintain that information—needs comparison across sessions and rotating checkers. [Read the latest field report](docs/SECOND_COMMITTEE_OBSERVATION_KO.md).
+
+A later, explicitly **different session** supplied two enquiry intervals of 14 s and 13 s: a reported sum of 27 s and a two-event mean of 13.5 s. Its whole-session duration is unknown. This [partial field record](docs/INQUIRY_TIMING_01_KO.md) remains separate from the two complete seating/checking reports; it cannot be subtracted from the earlier 78 s. The next observation pairs whole-session and enquiry timing within the same session.
 
 ![Workbench showing two committee-check reports, prior-information context and descriptive comparisons](docs/images/2026-10-29-second-committee-report.png)
 

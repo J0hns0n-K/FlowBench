@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "recordId": "inquiry-only-session-01",
+  "sourceKind": "user-reported-inquiry-intervals",
+  "reportedOn": "2026-10-29",
+  "observedOn": "2026-10-29",
+  "observedDateBasis": "User said today; date resolved with client Asia/Seoul context.",
+  "differentFromRecordId": "committee-session-02",
+  "linkedCompleteSessionRecordId": null,
+  "units": "seconds",
+  "inquiryEvents": [
+    { "order": 1, "durationSec": 14 },
+    { "order": 2, "durationSec": 13 }
+  ],
+  "seatingSec": null,
+  "verificationSec": null,
+  "scanSec": null,
+  "recordingSec": null,
+  "timingInstrument": null,
+  "timingRecorder": null,
+  "rawBoundaryReadings": null,
+  "overlapIndependentlyVerified": null,
+  "actualSessionAttendance": null,
+  "accuracyAudit": null,
+  "limitations": [
+    "User explicitly confirmed this is a different session from the earlier 72-second seating / 78-second checking report.",
+    "Only two inquiry interval durations were supplied; no whole-session checking, scanning or recording duration supplied.",
+    "27 seconds is the sum of reported intervals; 13.5 seconds is their arithmetic mean, not an established general service-time parameter.",
+    "Do not compute 78 minus 27, a 27/78 share or residual task durations by joining different sessions.",
+    "No grade mapping, cafe/class counts, study-start order or prior session accuracy carried forward.",
+    "This is an additional partial field record, not a third complete seating/checking observation."
+  ]
+}

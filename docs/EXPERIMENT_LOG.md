@@ -131,3 +131,7 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Preserved the user's synthetic duration choices, correct A=120/B=135 totals and response-speed observation. Prompt structure and question counts were assistant-provided. Updated workbook from no submitted entry to a specifically attributed first reasoning entry.
 - Assisted clarification separates total enquiry time from per-event mean and gives a strict 15 s mean threshold for two questions under fixed disjoint scan/record costs. Added a single DAG regression fixture for the submitted aggregate cases, tie boundary, assisted 110 s counterexample and unknown question duration. No individual durations inferred from the submitted aggregate 45 s.
 - Focused dependency suite: **11 passed, 0 failed**; typechecked browser build passed. No runtime implementation or field timing changed. Current direct-performance records remain two; synthetic reasoning is indexed separately.
+### Separate-session enquiry intervals — 2026-10-29
+
+- User supplied 14 s and 13 s; clarified they belong to another session than the existing 72/78 s report. Preserved as a separate enquiry-only source with unknown whole-session duration and timing metadata. Arithmetic: sum 27 s / mean 13.5 s. No residual/subgroup data transferred from other sessions.
+- README, source/claim/contribution records and observation form distinguish two complete reports plus a separate partial record. Runtime model and tests unchanged; document-link and overview freshness checks used for this record update.
