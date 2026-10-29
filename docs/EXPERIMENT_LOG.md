@@ -135,3 +135,8 @@ Subsequent verification commands and observed outputs will be appended after exe
 
 - User supplied 14 s and 13 s; clarified they belong to another session than the existing 72/78 s report. Preserved as a separate enquiry-only source with unknown whole-session duration and timing metadata. Arithmetic: sum 27 s / mean 13.5 s. No residual/subgroup data transferred from other sessions.
 - README, source/claim/contribution records and observation form distinguish two complete reports plus a separate partial record. Runtime model and tests unchanged; document-link and overview freshness checks used for this record update.
+### Linked checking total for the enquiry session — 2026-10-29
+
+- User added total checking 103 s and reported no other work while waiting for answers. Preserved a follow-up linked to inquiry-only-session-01; the original interval-only snapshot remains intact. This is the same separate session, not an additional observation.
+- Under contained/disjoint reported intervals: 14+13=27 s, mean=13.5 s, residual=103-27=76 s, enquiry share=26.21%. Do not split residual into scan/record time or interpret it as recoverable person-time. No prior session contexts transferred.
+- Updated README/table-scope labels, source/claim/contribution records, issue scope and field report. No numerical engine or tests changed; overview freshness and local-link checks used for this evidence/document update.

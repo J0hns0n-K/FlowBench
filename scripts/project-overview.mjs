@@ -28,8 +28,8 @@ const comparison=compareCommitteeObservation(baseline,latest);
 const baselineSec=baseline.turns.reduce((sum,turn)=>sum+turn.turnSec,0);
 const delta=comparison.checkingDifferenceSec;
 const pct=Number((Math.abs(comparison.checkingDifferenceFraction)*100).toFixed(2));
-const difference=delta===0?'The reported checking durations are equal.':
-  `The latest checking duration is **${Math.abs(delta)} s (${pct}%) ${delta>0?'shorter':'longer'}** than the earlier combined-turn sum.`;
+const difference=delta===0?'The latest checking duration in this seating/checking series equals the earlier combined-turn sum.':
+  `The latest checking duration in this seating/checking series is **${Math.abs(delta)} s (${pct}%) ${delta>0?'shorter':'longer'}** than the earlier combined-turn sum.`;
 const prior=reports.length>1?compareCommitteeObservation(reports.at(-2),latest):null;
 const priorDifference=prior?` Relative to the preceding direct-performance report, checking was ${Math.abs(prior.checkingDifferenceSec)} s (${Number((Math.abs(prior.checkingDifferenceFraction)*100).toFixed(2))}%) ${prior.checkingDifferenceSec>0?'shorter':prior.checkingDifferenceSec<0?'longer':'unchanged'}.`:'';
 const rows=reports.map((record,i)=>`| Committee-check report ${i+1} · received ${record.reportedOn} | ${record.seatingSec} s | ${record.verificationSec} s | [Direct performance reported by Junmo](${state.fieldReports[i]}) |`).join('\n');
@@ -48,7 +48,7 @@ for(const file of [...new Set(evidenceFiles)].sort()){
 }
 const generated=`<!-- FLOWBENCH:CURRENT:START -->
 <!-- Evidence fingerprint: ${fingerprint.digest('hex')} -->
-Evidence reviewed through the latest linked report received **${latest.reportedOn}**. New-procedure reports recorded: **${reports.length}**. Report dates are not independently confirmed observation dates.
+This series contains reports with both seating and checking durations, through the linked report received **${latest.reportedOn}**: **${reports.length}** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
 | --- | --- | --- | --- |

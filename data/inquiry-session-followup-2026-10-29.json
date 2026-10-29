@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "recordId": "inquiry-session-01-followup-01",
+  "sourceKind": "user-reported-inquiry-session-followup",
+  "reportedOn": "2026-10-29",
+  "supplementsRecordId": "inquiry-only-session-01",
+  "differentFromRecordId": "committee-session-02",
+  "units": "seconds",
+  "verificationSec": 103,
+  "verificationScopeBasis": "Follow-up to the request for whole checking time in the same inquiry session.",
+  "noConcurrentWorkWhileWaitingForAnswers": true,
+  "seatingSec": null,
+  "scanSec": null,
+  "recordingSec": null,
+  "timingInstrument": null,
+  "timingRecorder": null,
+  "rawBoundaryReadings": null,
+  "intervalContainmentIndependentlyVerified": null,
+  "accuracyAudit": null,
+  "limitations": [
+    "User adds whole checking duration 103 seconds to the separate session with inquiry intervals 14 and 13 seconds.",
+    "User reports doing no other work while waiting for answers; raw boundaries and interval nesting remain unaudited.",
+    "Under the reported intervals being contained and non-overlapping within 103 seconds, residual non-inquiry elapsed time is 76 seconds and inquiry share is 27/103.",
+    "Residual 76 seconds is not separately measured scanning, recording or productive person-time; other transitions/gaps may be included.",
+    "Do not import seating 72 seconds, cafe/class counts, enquiry grade mappings or accuracy from committee-session-02.",
+    "This adds information to an existing partial observation, not a new additional session or causal effect estimate."
+  ]
+}

@@ -34,6 +34,8 @@ Received 2026-10-29: in a guided synthetic exercise the user submitted A=60+30+3
 
 Received 2026-10-29: user said today's first/next enquiry took 14 s and 13 s. Explicit follow-up confirmed a different session from committee-session-02 (72 s seating / 78 s checking). Date resolved from ‘today’ and client Asia/Seoul context; instrument, timer operator, interval boundaries and whole-session duration unknown. Snapshot: data/inquiry-intervals-2026-10-29.json; discussion: INQUIRY_TIMING_01_KO.md. Sum 27 s and mean 13.5 s are arithmetic of the two reported intervals, not a general rate. No grades or previous context transferred; no cross-session residual calculated.
 
+Subsequent clarification for that same enquiry session: user reported total checking 103 s and no other work while waiting for answers. Preserve as data/inquiry-session-followup-2026-10-29.json, supplementing inquiry-only-session-01. Checking total is now supplied; seating and scan/record split remain unknown. Conditional within-session accounting gives 27 s enquiry intervals, 76 s residual and 26.21% enquiry share, subject to interval containment/non-overlap. Initial source with its then-unknown total is retained. This is a follow-up to the same session, not another session.
+
 ## Primary external sources
 
 
