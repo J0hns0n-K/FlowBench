@@ -26,7 +26,12 @@ Second direct-performance report received 2026-10-29: seating 72 s, checking 78 
 
 Received 2026-10-29: user relayed a graduate's account of briefly using this checking method with about 70–80 students and a recalled usual duration of 2–3 minutes. Follow-up explicitly confirmed **seating is included**. This is oral historical recollection, not a recorded average or a matched verification-only benchmark. Exact period/protocol/boundaries and accuracy are unknown. Snapshot: data/alumnus-recollection-2026-10-29.json; interpretation: LOCAL_PRECEDENT_KO.md. The same user message expressed the judgement that enquiry count matters more to checking duration; that is recorded separately as an untested practitioner hypothesis. Neither changes the count of current direct-performance reports (2).
 
+## Submitted model reasoning
+
+Received 2026-10-29: in a guided synthetic exercise the user submitted A=60+30+30=120 s and B=60+45+30=135 s, and reasoned that the more-question case would need quicker responses when other stage times are fixed. The prompt supplied question counts A=1/B=2; the user supplied duration choices, totals and explanation. Data: data/student-reasoning-2026-10-29.json; review: STUDENT_REASONING_01_KO.md. Formal average thresholds, a completed 110 s example and regression code are assisted additions. This is not a field record; direct-performance count remains two.
+
 ## Primary external sources
+
 
 
 1. MySolvers official product page: https://www.mysolvers.com/ — capabilities described by vendor, not independently benchmarked.

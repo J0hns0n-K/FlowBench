@@ -36,6 +36,7 @@
 
 - [Contribution ledger](CONTRIBUTIONS.md)
 - [Engineering workbook](STUDENT_WORKBOOK.md)
+- [First submitted reasoning: enquiry count versus duration](STUDENT_REASONING_01_KO.md)
 - [Claim and evidence ledger](CLAIM_LEDGER.md)
 - [Work breakdown and issues](ISSUES.md)
 - [Repository provenance](REPOSITORY.md)

@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 87f5f80090a5818010a7ba2c245de45f9e02211ee133fb24e573adf00f160fe6 -->
+<!-- Evidence fingerprint: edbee1fcec6e87034b8e4ef8c7e17c301d6a85e8d047574073a48e66ce647288 -->
 Evidence reviewed through the latest linked report received **2026-10-29**. New-procedure reports recorded: **2**. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -62,6 +62,8 @@ The current prototype runs locally in the browser using anonymous group workload
 ## People and responsibility
 
 Junmo's reported contributions include explaining and correcting the real workflow, proposing its current trial, personally performing checks, supplying observations and seeking prior users' experience. The procedure decision belongs to the committee collectively; a peer supplied the earlier timing series, and a graduate's recalled prior use is credited separately.
+
+In a guided modeling exercise, Junmo supplied synthetic 120 s and 135 s cases and noticed that the more-question case would need quicker responses to finish sooner when scanning and recording costs stayed fixed. The [submitted reasoning and follow-up](docs/STUDENT_REASONING_01_KO.md) distinguish his calculations and observation from the assisted formal clarification and test implementation. This advances the model review from question count alone toward total enquiry duration.
 
 The initial model formalization, code, tests and documentation were produced with Codex assistance. Individually authored model revisions and software changes will be linked as they occur. The [contribution ledger](docs/CONTRIBUTIONS.md) distinguishes field execution, measurement, design and implementation, with dated evidence for each.
 

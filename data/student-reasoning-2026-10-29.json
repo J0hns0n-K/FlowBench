@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-reasoning-01",
+  "sourceKind": "user-submitted-synthetic-reasoning",
+  "reportedOn": "2026-10-29",
+  "units": "seconds",
+  "exerciseContext": {
+    "promptSource": "assistant-guided-exercise",
+    "questionCountsSource": "assistant-prompt-A-one-B-two",
+    "assumptions": "Sequential, non-overlapping scanning, enquiries and recording; scanning and recording held equal between cases."
+  },
+  "studentSubmittedCases": [
+    { "id": "A", "scanSec": 60, "questionCount": 1, "questionTotalSec": 30, "recordSec": 30, "submittedTotalSec": 120 },
+    { "id": "B", "scanSec": 60, "questionCount": 2, "questionTotalSec": 45, "recordSec": 30, "submittedTotalSec": 135 }
+  ],
+  "studentReasoning": "The user notes that with equal scanning and recording times, the more-question case would need quicker responses to finish sooner.",
+  "limitations": [
+    "Synthetic arithmetic and reasoning supplied in chat; not a measured school session.",
+    "The exercise structure and question counts were assistant-provided; the user supplied durations, totals and reasoning.",
+    "The submitted B case is slower, not a completed counterexample with a faster two-question case.",
+    "Aggregate B enquiry time 45 seconds does not supply individual question durations.",
+    "Formal average-duration thresholds, completed counterexamples and automated test implementation are assistant-assisted additions, documented separately.",
+    "Does not establish causal field effects, independent software authorship or a new direct-performance report."
+  ]
+}

@@ -3,6 +3,23 @@ import assert from 'node:assert/strict';
 import { scheduleDependencies } from '../src/dependencies.ts';
 import { compareStudyStartDependencies, studyStartForRole } from '../src/study-start.ts';
 
+test('guided enquiry cases preserve submitted totals, average-time boundary and unknown duration', () => {
+  // 60/30/30=120 and 60/45/30=135 were submitted by the user.
+  // Aggregate 45 is not split into invented individual question durations.
+  const run=(questionDurations:(number|null)[])=>scheduleDependencies([
+    {id:'record',durationSec:30,dependsOn:[`q${questionDurations.length}`]},
+    ...questionDurations.map((durationSec,index)=>({id:`q${index+1}`,durationSec,dependsOn:[index===0?'scan':`q${index}`]})),
+    {id:'scan',durationSec:60,dependsOn:[]},
+  ])[0]!;
+  assert.equal(run([30]).earliestEndSec,120);
+  assert.equal(run([45]).earliestEndSec,135);
+  // Assistant-added cases: two questions can tie or finish earlier if their total is lower.
+  assert.equal(run([15,15]).earliestEndSec,120);
+  assert.equal(run([10,10]).earliestEndSec,110);
+  assert.equal(run([10,10]).earliestStartSec,80);
+  assert.equal(run([10,null]).earliestEndSec,null);
+});
+
 test('serial dependency chain yields hand-calculated study-start milestone', () => {
   const result = scheduleDependencies([
     {id:'study',durationSec:0,dependsOn:['check']},
