@@ -29,7 +29,7 @@
 - [First direct committee-check report](FIRST_COMMITTEE_OBSERVATION_KO.md)
 - [Second report and prior-information context](SECOND_COMMITTEE_OBSERVATION_KO.md)
 - [Separate-session decomposition: total 103 s, enquiries 14 s and 13 s](INQUIRY_TIMING_01_KO.md)
-- [Stage durations and unresolved session linkage](STAGE_TIMING_01_KO.md)
+- [Confirmed new session: stage durations and rechecking](STAGE_TIMING_01_KO.md)
 - [Next-observation form](NEW_PROCEDURE_OBSERVATION_KO.md)
 - [Original class-turn observation form](OBSERVATION_SHEET_KO.md)
 - [Why aggregate time does not identify the process](IDENTIFIABILITY_KO.md)

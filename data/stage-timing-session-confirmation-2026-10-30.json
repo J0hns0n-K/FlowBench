@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "recordId": "stage-timing-report-01-session-confirmation",
+  "sourceKind": "user-reported-stage-session-clarification",
+  "reportedOn": "2026-10-30",
+  "supplementsRecordId": "stage-timing-report-01",
+  "sessionLinkStatus": "confirmed-separate-session",
+  "differentFromRecordId": "inquiry-only-session-01",
+  "userAnswerKo": "새로 측정한 다른 회차",
+  "observedOn": null,
+  "supersedesRecordId": null,
+  "limitations": [
+    "Confirms a separate newly measured session, not a revision of the prior 103-second checking report.",
+    "The original stage snapshot retains the linkage status at first receipt; this follow-up resolves only session identity.",
+    "Checking 123 seconds and whole-sequence 164 seconds remain conditional sums of reported stages, not independently measured totals.",
+    "Observation date, interval overlap/gaps, timing instrument, timer operator, study start and accuracy remain unspecified.",
+    "No prior attendance context or no-concurrent-work statement is transferred."
+  ]
+}

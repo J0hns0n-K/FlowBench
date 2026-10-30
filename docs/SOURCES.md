@@ -40,6 +40,8 @@ Subsequent clarification for that same enquiry session: user reported total chec
 
 Received 2026-10-30: user submitted countdown 10 s, seating/settling 31 s, scanning 58 s, first enquiry 17 s, second enquiry 23 s and recheck 25 s. Snapshot: data/stage-timing-report-2026-10-30.json; analysis: STAGE_TIMING_01_KO.md. Interpretation as consecutive stage durations gives preparation 41 s, checking 123 s and whole 164 s; these are conditional sums, not separately timed totals. The relation to the earlier checking 103 s / enquiries 14+13 s report is unresolved and has been asked explicitly. Preserve both sources without counting another session, superseding values or importing prior context. Observation date, instrument, timer operator and raw boundaries were not supplied.
 
+Follow-up received 2026-10-30: the user explicitly answered ‘새로 측정한 다른 회차’ (a newly measured, different session). Snapshot: data/stage-timing-session-confirmation-2026-10-30.json. This resolves the initial source's pending linkage without overwriting it. Count one new committee-check session, for four total excluding the peer-timed baseline; the clarification itself is not a fifth session. Conditional stage-sum status and missing metadata remain unchanged.
+
 ## Primary external sources
 
 
