@@ -36,6 +36,10 @@ Received 2026-10-29: user said today's first/next enquiry took 14 s and 13 s. Ex
 
 Subsequent clarification for that same enquiry session: user reported total checking 103 s and no other work while waiting for answers. Preserve as data/inquiry-session-followup-2026-10-29.json, supplementing inquiry-only-session-01. Checking total is now supplied; seating and scan/record split remain unknown. Conditional within-session accounting gives 27 s enquiry intervals, 76 s residual and 26.21% enquiry share, subject to interval containment/non-overlap. Initial source with its then-unknown total is retained. This is a follow-up to the same session, not another session.
 
+## Stage breakdown with unresolved session identity
+
+Received 2026-10-30: user submitted countdown 10 s, seating/settling 31 s, scanning 58 s, first enquiry 17 s, second enquiry 23 s and recheck 25 s. Snapshot: data/stage-timing-report-2026-10-30.json; analysis: STAGE_TIMING_01_KO.md. Interpretation as consecutive stage durations gives preparation 41 s, checking 123 s and whole 164 s; these are conditional sums, not separately timed totals. The relation to the earlier checking 103 s / enquiries 14+13 s report is unresolved and has been asked explicitly. Preserve both sources without counting another session, superseding values or importing prior context. Observation date, instrument, timer operator and raw boundaries were not supplied.
+
 ## Primary external sources
 
 

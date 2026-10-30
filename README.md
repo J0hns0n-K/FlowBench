@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: ac3dba53ca82653efc5631eee4a9cc2e7d737201b3ad827284675569ffd6f8cb -->
+<!-- Evidence fingerprint: 5f38e1496236ea3780ec392da54c2661a2a07a62eb0b59c7d40219dcb639b499 -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -36,6 +36,8 @@ Non-checkers reportedly began study after seating. Exact study-start latency and
 The second report introduces a new experimental variable: **what the checker already knows**. Junmo already knew the cafe participants because he had authorized them; two grade-level enquiries addressed the separate class. The investigation now distinguishes seat occupancy, known reasons and unresolved exceptions. Whether prior information reduces checking work—and what it costs to obtain, share and maintain that information—needs comparison across sessions and rotating checkers. [Read the latest field report](docs/SECOND_COMMITTEE_OBSERVATION_KO.md).
 
 A later, explicitly **different session** supplied enquiry intervals of 14 s and 13 s, followed by a whole checking duration of **103 s** and confirmation that Junmo did no other work while waiting for answers. If the reported enquiry intervals lie within that total without overlap, **27 s (26.21%)** belongs to those intervals and **76 s** remains outside them. The residual is not a separate measurement of scanning or recording, and reducing enquiries has not been shown to recover all 27 s. This [linked checking/enquiry record](docs/INQUIRY_TIMING_01_KO.md) has no seating duration; it remains separate from the two reports containing both seating and checking. The earlier 78 s belongs to another session.
+
+A stage-by-stage report received **2026-10-30** adds countdown 10 s, seating/settling 31 s, scanning 58 s, enquiries 17 s and 23 s, and rechecking 25 s. If these durations form consecutive, complete intervals, they sum to **164 s**, including **123 s of checking** and **40 s of enquiries**. Its relationship to the earlier 103 s report is awaiting clarification; neither is overwritten, and no extra session is counted yet. The [stage report](docs/STAGE_TIMING_01_KO.md) makes rechecking an explicit task for further process analysis.
 
 ![Workbench showing two committee-check reports, prior-information context and descriptive comparisons](docs/images/2026-10-29-second-committee-report.png)
 

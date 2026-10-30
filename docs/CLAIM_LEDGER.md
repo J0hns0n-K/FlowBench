@@ -32,6 +32,8 @@
 | C34 | Two enquiry intervals of 14 s and 13 s were reported for an explicitly different session, giving a 27 s sum / 13.5 s arithmetic mean. | partial field timing report | Whole-session duration, boundaries, instrument and overlap audit unknown. Not part of the earlier 78 s; no 51 s residual or 27/78 share. Two complete reports plus one separate partial record. |
 | C35 | Follow-up gives checking total 103 s for the same enquiry session and no other work while waiting for answers. | linked user-reported follow-up | With reported enquiry intervals contained/disjoint, 27/103=26.21% and residual=76 s. No separate scan/record measurement, independent interval audit, seating duration or causal saved-time estimate. Supersedes C34's initially unknown checking total without changing its source snapshot. |
 
+| C36 | On 2026-10-30 the user supplied six stage durations: countdown 10 s, seating/settling 31 s, scanning 58 s, enquiries 17/23 s, recheck 25 s. | user-reported stage breakdown; session identity unresolved | Conditional consecutive sums: preparation 41 s, checking 123 s, whole 164 s, enquiries 40 s (32.52% of checking). Conflicts with 103 s / 14+13 s if the same session; preserve both pending clarification. No new session count, prior-context transfer, independently measured total or avoidable-recheck claim. |
+
 Add achieved software capabilities only after tests/run evidence. A pushed source repository is not a hosted app or school deployment.
 
 | ID | Achieved software statement | Evidence | Limit |

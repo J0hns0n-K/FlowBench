@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "recordId": "stage-timing-report-01",
+  "sourceKind": "user-reported-stage-durations-unresolved-session",
+  "reportedOn": "2026-10-30",
+  "observedOn": null,
+  "units": "seconds",
+  "sessionLinkStatus": "awaiting-user-clarification",
+  "candidateRelatedRecordId": "inquiry-only-session-01",
+  "confirmedRelatedRecordId": null,
+  "supersedesRecordId": null,
+  "stages": [
+    { "order": 1, "labelKo": "카운트다운", "durationSec": 10 },
+    { "order": 2, "labelKo": "착석&진정", "durationSec": 31 },
+    { "order": 3, "labelKo": "훑기", "durationSec": 58 },
+    { "order": 4, "labelKo": "질문1", "durationSec": 17 },
+    { "order": 5, "labelKo": "질문2", "durationSec": 23 },
+    { "order": 6, "labelKo": "다시 체크", "durationSec": 25 }
+  ],
+  "timingInstrument": null,
+  "timingRecorder": null,
+  "rawBoundaryReadings": null,
+  "overlapOrGapsConfirmed": null,
+  "studyStartReport": null,
+  "accuracyAudit": null,
+  "limitations": [
+    "The numbered entries are interpreted as stage durations, not cumulative stopwatch readings; raw boundaries were not provided.",
+    "It is unresolved whether this is another session or a revision/addition to the earlier 103-second checking report with 14/13-second inquiries.",
+    "Sequential stage sums are conditional on non-overlap and complete coverage: preparation 41, checking 123, whole sequence 164, inquiries 40 seconds.",
+    "The 123-second checking sum differs from the earlier 103-second total; the 17/23-second inquiries differ from 14/13. Neither report is overwritten or pooled.",
+    "Do not count a new complete field session, infer an observation date, transfer the earlier no-concurrent-work statement, or update the paired-report series before clarification.",
+    "Rechecking is not assumed avoidable, redundant or an accuracy audit; its contents and necessity remain unspecified."
+  ]
+}
