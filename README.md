@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 7b15db53c2f8f685001b0c88121405bb3a24d2dc427040660416c963927c5c9c -->
+<!-- Evidence fingerprint: 177a96b93e7d021e9e333871ede6811162dc3bacd20fc9b49dff006d11b84c28 -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -38,6 +38,8 @@ The second report introduces a new experimental variable: **what the checker alr
 A later, explicitly **different session** supplied enquiry intervals of 14 s and 13 s, followed by a whole checking duration of **103 s** and confirmation that Junmo did no other work while waiting for answers. If the reported enquiry intervals lie within that total without overlap, **27 s (26.21%)** belongs to those intervals and **76 s** remains outside them. The residual is not a separate measurement of scanning or recording, and reducing enquiries has not been shown to recover all 27 s. This [linked checking/enquiry record](docs/INQUIRY_TIMING_01_KO.md) has no seating duration; it remains separate from the two reports containing both seating and checking. The earlier 78 s belongs to another session.
 
 A stage-by-stage report received **2026-10-30**, explicitly confirmed as a **new, separate session**, adds countdown 10 s, seating/settling 31 s, scanning 58 s, enquiries 17 s and 23 s, and rechecking 25 s. If these durations form consecutive, complete intervals, they sum to **164 s**, including **123 s of checking** and **40 s of enquiries**. The earlier 103 s report remains unchanged. There are now four committee-check observation sessions: two with directly reported seating/checking totals in the series above, one checking/enquiry record and this stage report. The stage sums are kept distinct from directly reported totals. Both enquiry-timed sessions contain two questions, yet their enquiry totals differ (27 s versus 40 s); question count alone does not specify duration. The [stage report](docs/STAGE_TIMING_01_KO.md) makes rechecking an explicit task for further process analysis.
+
+Junmo clarified that the 25 s recheck was a rough browse of what he called a dormitory layout chart, intended to look for students sitting elsewhere. Whether any seat changes were found or attendance decisions corrected was not reported; the chart's relationship to chapel seating remains unspecified. This adds a concrete failure mode to investigate: seat occupancy and student presence can differ. The next observation will record aggregate recheck outcomes alongside duration; the informal browse is not an independent accuracy audit.
 
 ![Workbench showing two committee-check reports, prior-information context and descriptive comparisons](docs/images/2026-10-29-second-committee-report.png)
 

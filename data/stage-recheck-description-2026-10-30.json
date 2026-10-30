@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "recordId": "stage-timing-report-01-recheck-description",
+  "sourceKind": "user-reported-recheck-action-clarification",
+  "reportedOn": "2026-10-30",
+  "supplementsRecordId": "stage-timing-report-01",
+  "stageOrder": 6,
+  "previouslyReportedDurationSec": 25,
+  "userStatementKo": "그냥 기숙사 배치표 한 번 훑어봤어 자리 다르게 앉은 애들 있나 싶어서 대충",
+  "action": "Roughly browsed the user-described dormitory layout chart once, intending to check whether students had sat in different places.",
+  "referenceArtifactUserLabelKo": "기숙사 배치표",
+  "referenceArtifactRelationToChapelAssignedSeats": null,
+  "reviewExtent": "rough-browse-user-reported",
+  "actualSeatBySeatComparisonConfirmed": null,
+  "suspectedSeatChanges": null,
+  "confirmedSeatChanges": null,
+  "correctedAttendanceDecisions": null,
+  "unresolvedCases": null,
+  "independentAccuracyAudit": null,
+  "limitations": [
+    "Clarifies the action within an existing 25-second stage; does not add a new session or another 25 seconds.",
+    "The user named a dormitory layout chart; its exact relationship to the chapel seating assignment has not been established.",
+    "Intent to look for different seating is not evidence that any seat change was found or ruled out.",
+    "A rough chart browse does not establish exhaustive person-seat matching, independent attendance accuracy, or redundant work.",
+    "No chart, names, room assignments or personal attendance data are copied into the repository."
+  ]
+}

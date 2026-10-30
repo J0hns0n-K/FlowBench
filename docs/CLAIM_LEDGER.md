@@ -35,6 +35,8 @@
 | C36 | On 2026-10-30 the user supplied six stage durations: countdown 10 s, seating/settling 31 s, scanning 58 s, enquiries 17/23 s, recheck 25 s. | user-reported stage breakdown; initial linkage unresolved, resolved by C37 | Conditional consecutive sums: preparation 41 s, checking 123 s, whole 164 s, enquiries 40 s (32.52% of checking). No prior-context transfer, independently measured total or avoidable-recheck claim. |
 | C37 | User explicitly confirmed the six-stage report is a newly measured, separate session from the earlier 103 s / 14+13 s report. | explicit session-identity clarification | Four committee-check observation sessions, excluding the earlier peer baseline; follow-ups are not extra sessions. Earlier values remain intact. Both enquiry-timed sessions have two questions but different enquiry totals; no causal coefficient or comparable phase boundaries established. Stage sums remain outside the two-report directly reported total series. |
 
+| C38 | User clarified the 25 s recheck was a rough browse of a user-described dormitory layout chart to look for students sitting in different places. | user-reported action within the confirmed stage session | Exact chart/chapel-seat relation, actual person-seat matching, detected changes and corrected/unresolved decisions unknown. Not a new session, extra duration, independent audit, observed error or proof the step is avoidable. |
+
 Add achieved software capabilities only after tests/run evidence. A pushed source repository is not a hosted app or school deployment.
 
 | ID | Achieved software statement | Evidence | Limit |

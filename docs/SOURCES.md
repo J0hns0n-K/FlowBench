@@ -42,6 +42,8 @@ Received 2026-10-30: user submitted countdown 10 s, seating/settling 31 s, scann
 
 Follow-up received 2026-10-30: the user explicitly answered ‘새로 측정한 다른 회차’ (a newly measured, different session). Snapshot: data/stage-timing-session-confirmation-2026-10-30.json. This resolves the initial source's pending linkage without overwriting it. Count one new committee-check session, for four total excluding the peer-timed baseline; the clarification itself is not a fifth session. Conditional stage-sum status and missing metadata remain unchanged.
 
+Recheck-action follow-up received 2026-10-30: user said they roughly browsed a ‘기숙사 배치표’ once to look for students sitting elsewhere. Snapshot: data/stage-recheck-description-2026-10-30.json, linked to stage 6 of stage-timing-report-01. This explains the existing 25 seconds, without adding time or a session. Artifact relation to chapel assigned seats, exhaustive matching, found changes, corrected decisions and unresolved counts are unspecified. No chart or personal assignment data is retained. Updated interpretation and next-observation outcome fields: STAGE_TIMING_01_KO.md.
+
 ## Primary external sources
 
 
