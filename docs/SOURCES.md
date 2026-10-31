@@ -52,6 +52,8 @@ Received 2026-10-31: user supplied countdown 10 s, seating/settling 50 s, scan 4
 
 Received 2026-10-31: in response to the design exercise, user supplied classmates/close friends → leader or grade 12 → dormitory supervisor → principal by phone. Preserve original wording and order in data/student-escalation-procedure-2026-10-31.json; specification review: ESCALATION_PROCEDURE_KO.md. This is a submitted procedure description, not another observation session, official policy or evidence of actual full-chain execution. Stopping on sufficient confirmation, advancing only while unresolved and retaining unresolved cases are assisted draft rules; acceptance criteria, conflict/unavailability handling, stage timing and final completion conditions remain pending.
 
+Follow-up to the procedure received 2026-10-31: user added ‘정확히 어디로 갔는지 듣고’ and then explicitly ‘더 확인은 안해’. Preserve both statements in data/student-peer-stopping-rule-2026-10-31.json. This supplies the first-peer stopping criterion: obtain a specific destination and end enquiries without additional verification. It is operational closure on a peer report, not independently verified location/authorization or an accuracy outcome. The original procedure snapshot's then-unknown criterion is retained. Later-contact stopping rules and conflict/unavailability handling remain unspecified. Assisted hypothetical cases, including a specific but wrong peer answer, are proposals awaiting student review, not observed failures.
+
 ## Primary external sources
 
 

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-peer-stopping-rule-01",
+  "sourceKind": "user-submitted-procedure-stopping-rule",
+  "reportedOn": "2026-10-31",
+  "supplementsRecordId": "student-escalation-procedure-01",
+  "scope": "First-contact friend/classmate answer in the hypothetical empty-assigned-seat case.",
+  "userStatementsKo": ["정확히 어디로 갔는지 듣고", "더 확인은 안해"],
+  "stoppingCriterion": "After hearing the student's specific destination from the peer, end further enquiries without additional checking.",
+  "additionalVerificationAfterSpecificDestinationReport": false,
+  "informationSource": "peer-report",
+  "actualDestinationReported": null,
+  "accuracyAudit": null,
+  "higherLevelStoppingCriteria": null,
+  "limitations": [
+    "Defines the user's operational stopping rule, not proof that the reported destination is correct or authorized.",
+    "No independent corroboration is required by the described rule; closure must retain its peer-report provenance.",
+    "The specific destination criterion must not be replaced by any answer, mere seat vacancy or a vague outing statement.",
+    "This is a procedure clarification, not a new timed observation, actual destination record, formal school policy or completed full-chain case.",
+    "Advance-on-insufficient-information, conflicting statements, unavailable contacts and final unresolved outcomes remain assisted draft rules or unspecified."
+  ]
+}
