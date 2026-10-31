@@ -44,6 +44,10 @@ Follow-up received 2026-10-30: the user explicitly answered ‘새로 측정한 
 
 Recheck-action follow-up received 2026-10-30: user said they roughly browsed a ‘기숙사 배치표’ once to look for students sitting elsewhere. Snapshot: data/stage-recheck-description-2026-10-30.json, linked to stage 6 of stage-timing-report-01. This explains the existing 25 seconds, without adding time or a session. Artifact relation to chapel assigned seats, exhaustive matching, found changes, corrected decisions and unresolved counts are unspecified. No chart or personal assignment data is retained. Updated interpretation and next-observation outcome fields: STAGE_TIMING_01_KO.md.
 
+## Second stage report and reported suspicion outcome
+
+Received 2026-10-31: user supplied countdown 10 s, seating/settling 50 s, scan 46 s, one inquiry 11 s and recheck 21 s; added ‘의심 건수 없었어’. Preserve as a new record, data/stage-timing-report-2026-10-31.json, with interpretation in STAGE_TIMING_02_KO.md. Consecutive complete-stage assumptions give preparation 60 s, checking 78 s and whole 138 s. In the preceding recheck-outcome context, record zero user-reported suspected seat changes; actual seat changes, errors, exhaustive matching and independently audited accuracy remain unknown. No earlier chart-browse action, study-start claim, attendance context or no-concurrent-work statement is transferred. This is the fifth committee-check observation, excluding the peer baseline; it is separate from the older directly reported 78 s. New observation date and timing metadata were not supplied.
+
 ## Primary external sources
 
 

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "recordId": "stage-timing-report-02",
+  "sourceKind": "user-reported-stage-durations",
+  "reportedOn": "2026-10-31",
+  "observedOn": null,
+  "units": "seconds",
+  "sessionIdentityBasis": "New timing report in the ongoing observation sequence; no correction of earlier values indicated.",
+  "supersedesRecordId": null,
+  "stages": [
+    { "order": 1, "labelKo": "카운트다운", "durationSec": 10 },
+    { "order": 2, "labelKo": "착석&진정", "durationSec": 50 },
+    { "order": 3, "labelKo": "훑기", "durationSec": 46 },
+    { "order": 4, "labelKo": "질문1", "durationSec": 11 },
+    { "order": 5, "labelKo": "다시 체크", "durationSec": 21 }
+  ],
+  "recheck": {
+    "userReportedSuspectedSeatChanges": 0,
+    "userOutcomeStatementKo": "의심 건수 없었어",
+    "outcomeScopeBasis": "Interpreted in context of the preceding request for suspected different-seat cases during rechecking.",
+    "actualActionDescription": null,
+    "referenceArtifact": null,
+    "confirmedSeatChanges": null,
+    "correctedAttendanceDecisions": null,
+    "unresolvedAttendanceCases": null
+  },
+  "timingInstrument": null,
+  "timingRecorder": null,
+  "rawBoundaryReadings": null,
+  "overlapOrGapsConfirmed": null,
+  "studyStartReport": null,
+  "accuracyAudit": null,
+  "limitations": [
+    "Interpreted as non-cumulative stage durations; independently timed whole intervals and raw boundaries were not supplied.",
+    "Consecutive complete non-overlapping stage sums give preparation 60, checking 78, whole 138 and inquiry 11 seconds.",
+    "No second inquiry was reported; do not add an extra stage to match the previous session.",
+    "Zero reported suspicion is not zero actual seat changes, zero attendance errors, zero unresolved attendance cases or an audited accuracy result.",
+    "The previous session's rough chart browse, no-concurrent-work statement from another session, study-start order and attendance context are not transferred.",
+    "The checking sum happens to equal committee-session-02's directly reported 78 seconds; these are different records with different provenance.",
+    "No causal savings, fixed scan/recheck cost or general inquiry-time coefficient is established."
+  ]
+}
