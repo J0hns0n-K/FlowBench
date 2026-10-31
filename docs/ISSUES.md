@@ -4,6 +4,8 @@ Six GitHub issues were created and verified by API readback on 2026-10-27.
 
 Issue #7 was subsequently added for the planned procedure's implementation/validation.
 
+Issue #8 tracks the conditional enquiry model and its later synthetic scenario/UI integration.
+
 | Work unit | Acceptance evidence | Initial status |
 | --- | --- | --- |
 | [#1 Validate real attendance workflow](https://github.com/J0hns0n-K/FlowBench/issues/1) | Repeat comparable observations, document instrument/boundaries and distinguish count/report/gaps; validate predictions separately. | Open: first peer-timed series received (103 s seating, 160 s combined turns); repeat/held-out validation absent |
@@ -11,8 +13,9 @@ Issue #7 was subsequently added for the planned procedure's implementation/valid
 | [#3 Verify deterministic simulation engine](https://github.com/J0hns0n-K/FlowBench/issues/3) | Exact fixtures, ties, invariants, validation, reproducible inputs and comparison metrics. | Software scope complete: 22 tests and typecheck pass |
 | [#4 Build browser experiment workbench](https://github.com/J0hns0n-K/FlowBench/issues/4) | Serial/parallel comparison, raw task inputs, charts, provenance, JSON/CSV exports and mobile behavior. | Implemented and browser-checked; keep open because actual file download was denied by permission review |
 | [#5 Run synthetic evaluation and sensitivity](https://github.com/J0hns0n-K/FlowBench/issues/5) | H1/H2 outcomes, all locked sensitivity points, adverse counterexample, model/source version in export. | Synthetic scope complete; EVALUATION.md and raw JSON retain adverse outcomes |
-| [#6 Record FlowBench engineering contributions](https://github.com/J0hns0n-K/FlowBench/issues/6) | Link project-specific designs, hand calculations, tests, code changes and field observations; distinguish contributor roles and assistance. | Open: independent model/code changes and repeatable validation evidence pending |
-| [#7 Evaluate independent attendance checking](https://github.com/J0hns0n-K/FlowBench/issues/7) | Observe actual study start, committee start/end/person-time, accuracy and interruptions after implementation; preserve collective attribution. | Open: five committee-check observations: two direct seating/checking reports, one checking/enquiry report and two stage reports. Latest conditional sums: preparation 60 s, checking 78 s, whole 138 s; one enquiry 11 s and zero reported suspected seat changes. No independent accuracy audit. Next: define evidence/state/completion rules for ambiguous vacant seats before requesting more timings; see STAGE_TIMING_02_KO.md |
+| [#6 Record FlowBench engineering contributions](https://github.com/J0hns0n-K/FlowBench/issues/6) | Link project-specific designs, hand calculations, tests, code changes and field observations; distinguish contributor roles and assistance. | Open: student supplied enquiry order and stopping/follow-up conditions; first-contact implementation and five tests are AI-assisted. Independent software changes and field validation remain pending |
+| [#7 Evaluate independent attendance checking](https://github.com/J0hns0n-K/FlowBench/issues/7) | Observe actual study start, committee start/end/person-time, accuracy and interruptions after implementation; preserve collective attribution. | Open: five committee-check observations; latest stage sums 60 s preparation / 78 s checking / 138 s whole, one enquiry 11 s and zero reported suspected seat changes. No independent accuracy audit. Student has supplied first-contact rules; their synthetic implementation is tracked in #8 and does not close field validation |
+| [#8 Model conditional enquiries](https://github.com/J0hns0n-K/FlowBench/issues/8) | Preserve evidence states, explicit uncertainty and unknown time; compare synthetic scenarios with adverse cases and integrate UI/exports. | Open: first-contact module and five tests implemented; full suite 50 passed and build passed. Aggregate scenario comparison and browser integration pending; later-contact rules remain unspecified |
 
 Issue completion is scoped precisely. Completing a software issue does not close empirical validation or student attribution.
 

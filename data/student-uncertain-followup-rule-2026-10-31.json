@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-uncertain-followup-rule-01",
+  "sourceKind": "user-submitted-procedure-uncertainty-rule",
+  "reportedOn": "2026-10-31",
+  "supplementsRecordIds": ["student-escalation-procedure-01", "student-peer-stopping-rule-01"],
+  "userStatementKo": "잘 모르면 사감쌤이나 다른 리더들한테 물어봐",
+  "conditionKo": "잘 모르면",
+  "followUpTargetsKo": ["사감쌤", "다른 리더들"],
+  "targetPriority": null,
+  "whoIdentifiesUncertainty": null,
+  "formalConfidenceThreshold": null,
+  "laterContactStoppingCriteria": null,
+  "limitations": [
+    "Adds an explicit uncertainty-triggered follow-up rule; does not retract the earlier stopping rule after a specific destination is accepted without doubt.",
+    "Supervisor and other leaders are alternative follow-up targets; the user did not require a fixed order between them.",
+    "Whose uncertainty triggers this condition, how it is judged, conflicting answers, unreachable contacts and final unresolved handling remain unspecified.",
+    "The assistant models uncertainty as an explicit scenario input, not a machine-inferred confidence score or factual truth signal.",
+    "This is procedure clarification, not a new observation, reported error, official policy or actual contact."
+  ]
+}

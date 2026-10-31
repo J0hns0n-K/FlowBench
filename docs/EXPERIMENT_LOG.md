@@ -140,3 +140,9 @@ Subsequent verification commands and observed outputs will be appended after exe
 - User added total checking 103 s and reported no other work while waiting for answers. Preserved a follow-up linked to inquiry-only-session-01; the original interval-only snapshot remains intact. This is the same separate session, not an additional observation.
 - Under contained/disjoint reported intervals: 14+13=27 s, mean=13.5 s, residual=103-27=76 s, enquiry share=26.21%. Do not split residual into scan/record time or interpret it as recoverable person-time. No prior session contexts transferred.
 - Updated README/table-scope labels, source/claim/contribution records, issue scope and field report. No numerical engine or tests changed; overview freshness and local-link checks used for this evidence/document update.
+
+### First-contact conditional enquiry rule — 2026-10-31
+
+- User supplied specific-destination closure and follow-up to the supervisor or other leaders when not well known. Preserve the original order, stopping rule and uncertainty clarification as separate source snapshots. No new observed session or stage time added.
+- Codex implemented `inquiry-policy.ts`: explicitly synthetic specificity/uncertainty inputs, uncertainty priority, peer-report closure or alternative follow-up contacts, independent verification not established and unknown duration preserved. Vague information is routed to follow-up as an assisted rule. Later contacts, actual truth and UI integration are outside this module.
+- Five new tests passed, including an explicitly precise-but-uncertain report, unknown/zero time, invalid inputs and a confidently wrong hypothetical report that the procedure cannot distinguish from a correct one. Full suite: **50 passed, 0 failed**. Typecheck and browser build passed. Code, flags and tests are assisted artifacts, distinct from student-supplied process rules.

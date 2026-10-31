@@ -7,7 +7,7 @@
   "engines": { "node": ">=24.0.0" },
   "packageManager": "pnpm@11.25.0",
   "scripts": {
-    "test": "node --test tests/engine.test.ts tests/workflow.test.ts tests/scenario.test.ts tests/export.test.ts tests/observed.test.ts tests/dependencies.test.ts",
+    "test": "node --test tests/engine.test.ts tests/workflow.test.ts tests/scenario.test.ts tests/export.test.ts tests/observed.test.ts tests/dependencies.test.ts tests/inquiry-policy.test.ts",
     "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
     "docs:sync": "node scripts/project-overview.mjs --write",
     "docs:check": "node scripts/project-overview.mjs --check",

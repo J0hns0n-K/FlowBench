@@ -54,6 +54,8 @@ Received 2026-10-31: in response to the design exercise, user supplied classmate
 
 Follow-up to the procedure received 2026-10-31: user added ‘정확히 어디로 갔는지 듣고’ and then explicitly ‘더 확인은 안해’. Preserve both statements in data/student-peer-stopping-rule-2026-10-31.json. This supplies the first-peer stopping criterion: obtain a specific destination and end enquiries without additional verification. It is operational closure on a peer report, not independently verified location/authorization or an accuracy outcome. The original procedure snapshot's then-unknown criterion is retained. Later-contact stopping rules and conflict/unavailability handling remain unspecified. Assisted hypothetical cases, including a specific but wrong peer answer, are proposals awaiting student review, not observed failures.
 
+Further clarification received 2026-10-31: user says ‘잘 모르면 사감쌤이나 다른 리더들한테 물어봐’. Preserve in data/student-uncertain-followup-rule-2026-10-31.json. This adds an explicit uncertainty condition and alternative follow-up targets, without fixing target priority or retracting closure after an accepted specific destination. Who judges uncertainty and its threshold remain unspecified. Codex's first-contact module uses explicit synthetic flags as a modeling choice; its test cases and input classifications are assisted artifacts, not new field observations or student-authored software. No later-contact outcome or timing inferred.
+
 ## Primary external sources
 
 
