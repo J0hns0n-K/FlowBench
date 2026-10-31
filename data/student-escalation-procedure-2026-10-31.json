@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-escalation-procedure-01",
+  "sourceKind": "user-submitted-procedure-description",
+  "reportedOn": "2026-10-31",
+  "context": "Response to the design task: an assigned seat is empty and no outing information is known.",
+  "userStatementKo": "동급생이나 친한 아이에게 우선 물어봄 -> 후에 리더나 12학년에게 물어봄 -> 사감쌤에게 물어봄 -> 교장쌤에게 전화함",
+  "orderedContacts": [
+    { "level": 1, "labelKo": "동급생이나 친한 아이", "contactMethod": "ask", "durationSec": null },
+    { "level": 2, "labelKo": "리더나 12학년", "contactMethod": "ask", "durationSec": null },
+    { "level": 3, "labelKo": "사감쌤", "contactMethod": "ask", "durationSec": null },
+    { "level": 4, "labelKo": "교장쌤", "contactMethod": "phone", "durationSec": null }
+  ],
+  "stoppingCriterion": null,
+  "evidenceAcceptanceRule": null,
+  "conflictingInformationRule": null,
+  "contactUnavailableRule": null,
+  "allLevelsUnresolvedRule": null,
+  "actualFullChainExecutionReported": null,
+  "limitations": [
+    "Student-supplied contact order in response to a design exercise, not proof of a formal school policy or a completed full-chain field case.",
+    "Leader is retained as supplied; exact role and contact method for levels 1-3 were not specified.",
+    "Advancing only when unresolved and stopping on sufficient confirmation are assisted design interpretations, not explicit student-defined criteria yet.",
+    "No duration, resolution probability, actual number of calls or accuracy supplied; prior enquiry durations cannot be assigned to these levels.",
+    "Describing a phone contact does not authorize the software or assistant to call anyone."
+  ]
+}

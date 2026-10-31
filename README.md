@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 4544eb7e3a63954e94bad0560bbbe8d53d87ccc10967d051661a6129e0699cc9 -->
+<!-- Evidence fingerprint: 63cd8e25e3d131c3553860d1eb37a55461cc5a11aaad98caa7a5def46e784473 -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -42,6 +42,8 @@ A stage-by-stage report received **2026-10-30**, explicitly confirmed as a **new
 Junmo clarified that the 25 s recheck was a rough browse of what he called a dormitory layout chart, intended to look for students sitting elsewhere. Whether any seat changes were found or attendance decisions corrected was not reported; the chart's relationship to chapel seating remains unspecified. This adds a concrete failure mode to investigate: seat occupancy and student presence can differ. The next observation will record aggregate recheck outcomes alongside duration; the informal browse is not an independent accuracy audit.
 
 The [next stage report, received **2026-10-31**](docs/STAGE_TIMING_02_KO.md), contains countdown 10 s, seating/settling 50 s, scanning 46 s, one enquiry of 11 s and rechecking 21 s. Conditional sums are **60 s preparation, 78 s checking and 138 s overall**. Checking is 45 s shorter than the preceding stage sum, while preparation is 19 s longer; scanning and rechecking also changed. Junmo reports **zero suspected seat-change cases**, which is not an audited zero-error result. There are now **five committee-check observation sessions**: two directly reported seating/checking totals, one checking/enquiry record and two stage reports, excluding the earlier peer baseline. The next design task is to specify what evidence can move an ambiguous vacant-seat case into a confirmed status; more timing reports alone will not define that behavior.
+
+Junmo's first [submitted enquiry procedure](docs/ESCALATION_PROCEDURE_KO.md) specifies an ordered contact chain: classmates or close friends, a leader or grade-12 student, the dormitory supervisor, then a phone call to the principal. It supplies a concrete branching-process design input, rather than another timing. Progressing only while unresolved and stopping after sufficient confirmation are assisted interpretations awaiting student-defined evidence criteria. Stage durations, conflicting-answer handling and the final unresolved outcome remain unspecified; no full-chain execution or official policy is inferred. The next design step is to define what counts as sufficient confirmation before implementing and testing that branching logic.
 
 ![Workbench showing two committee-check reports, prior-information context and descriptive comparisons](docs/images/2026-10-29-second-committee-report.png)
 

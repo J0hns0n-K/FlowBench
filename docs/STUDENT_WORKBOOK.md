@@ -12,7 +12,7 @@ Keep original explanations, sketches, failed predictions and revisions; don't re
 
 Submitted reasoning entry: [question count versus total enquiry time](STUDENT_REASONING_01_KO.md), received 2026-10-29. The user supplied the example durations, correct totals and a response-speed observation in a guided exercise. Prompt structure, formal clarification, completed counterexample and test code are AI-assisted. Independent software changes and the remaining tasks are still pending.
 
-현재 우선 과제 (2026-10-31): [두 번째 단계별 관찰](STAGE_TIMING_02_KO.md)의 설계 과제부터 진행합니다. ‘지정석은 비었지만 학생이 다른 자리에 있을 수 있다’는 가상 사례에서 현재 알 수 있는 사실, 추가로 필요한 정보, 정보를 못 얻었을 때 남길 상태를 본인의 말로 작성합니다. 이 규칙을 정하기 전 추가 시간 측정을 요청하지 않습니다. 아래 과제들은 참고용 대기 목록이며 한꺼번에 수행할 필요는 없습니다. 아직 제출된 설계 답변이나 구현 기능으로 간주하지 않습니다.
+현재 우선 과제 (2026-10-31): 사용자가 문의 대상의 순서를 제출했습니다. [학생 제출 문의 절차](ESCALATION_PROCEDURE_KO.md)에 원문·보조 해석·미정 기준을 구분했습니다. 이는 첫 설계 답변이며 아직 구현 기능이나 충분한 확인 기준의 제출은 아닙니다. 다음에는 ‘친구가 외출했다고 말했을 때, 완료로 처리할지 또는 어떤 근거를 더 확인할지’와 이유를 작성합니다. 이 규칙을 정하기 전 추가 시간 측정을 요청하지 않습니다. 아래 과제들은 참고용 대기 목록이며 한꺼번에 수행할 필요는 없습니다.
 
 추가 분석 과제: [같은 120초의 두 설명](IDENTIFIABILITY_KO.md)을 손으로 계산하세요. 전체 시간은 같은데 왜 대안의 결과가 다른지, 어떤 관찰을 더 해야 구별할 수 있는지 본인의 말로 기록합니다. 사용자 설명상 시간은 채플실 시계를 참고했으며, 이를 초 단위 스톱워치 자료로 바꾸어 주장하지 않습니다.
 

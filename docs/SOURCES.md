@@ -48,6 +48,10 @@ Recheck-action follow-up received 2026-10-30: user said they roughly browsed a �
 
 Received 2026-10-31: user supplied countdown 10 s, seating/settling 50 s, scan 46 s, one inquiry 11 s and recheck 21 s; added ‘의심 건수 없었어’. Preserve as a new record, data/stage-timing-report-2026-10-31.json, with interpretation in STAGE_TIMING_02_KO.md. Consecutive complete-stage assumptions give preparation 60 s, checking 78 s and whole 138 s. In the preceding recheck-outcome context, record zero user-reported suspected seat changes; actual seat changes, errors, exhaustive matching and independently audited accuracy remain unknown. No earlier chart-browse action, study-start claim, attendance context or no-concurrent-work statement is transferred. This is the fifth committee-check observation, excluding the peer baseline; it is separate from the older directly reported 78 s. New observation date and timing metadata were not supplied.
 
+## Student-submitted ordered enquiries
+
+Received 2026-10-31: in response to the design exercise, user supplied classmates/close friends → leader or grade 12 → dormitory supervisor → principal by phone. Preserve original wording and order in data/student-escalation-procedure-2026-10-31.json; specification review: ESCALATION_PROCEDURE_KO.md. This is a submitted procedure description, not another observation session, official policy or evidence of actual full-chain execution. Stopping on sufficient confirmation, advancing only while unresolved and retaining unresolved cases are assisted draft rules; acceptance criteria, conflict/unavailability handling, stage timing and final completion conditions remain pending.
+
 ## Primary external sources
 
 

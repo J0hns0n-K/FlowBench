@@ -31,6 +31,7 @@
 - [Separate-session decomposition: total 103 s, enquiries 14 s and 13 s](INQUIRY_TIMING_01_KO.md)
 - [Confirmed new session: stage durations and rechecking](STAGE_TIMING_01_KO.md)
 - [Second stage report: one enquiry and zero reported suspicion](STAGE_TIMING_02_KO.md)
+- [Student-submitted enquiry order and pending stopping rules](ESCALATION_PROCEDURE_KO.md)
 - [Next-observation form](NEW_PROCEDURE_OBSERVATION_KO.md)
 - [Original class-turn observation form](OBSERVATION_SHEET_KO.md)
 - [Why aggregate time does not identify the process](IDENTIFIABILITY_KO.md)
