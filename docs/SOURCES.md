@@ -56,6 +56,10 @@ Follow-up to the procedure received 2026-10-31: user added ‘정확히 어디�
 
 Further clarification received 2026-10-31: user says ‘잘 모르면 사감쌤이나 다른 리더들한테 물어봐’. Preserve in data/student-uncertain-followup-rule-2026-10-31.json. This adds an explicit uncertainty condition and alternative follow-up targets, without fixing target priority or retracting closure after an accepted specific destination. Who judges uncertainty and its threshold remain unspecified. Codex's first-contact module uses explicit synthetic flags as a modeling choice; its test cases and input classifications are assisted artifacts, not new field observations or student-authored software. No later-contact outcome or timing inferred.
 
+## First submitted weighted-scenario prediction
+
+Received 2026-11-02: user submitted ‘4/1/25’ following the assistant's requested closure/follow-up/first-time outputs for seven specific no-doubt cases, one specific uncertain case and two unclear uncertain cases, each with hypothetical first enquiry 10 s. Snapshot: data/student-scenario-prediction-2026-11-02.json. Interpret the triple positionally; derivation and execution order were not supplied. Assisted arithmetic and summarizeEnquiryScenario agree on 7/3/100. Preserve the mismatch without attributing its cause or claiming a completed student correction, successful independent validation, new code or field observation.
+
 ## Primary external sources
 
 

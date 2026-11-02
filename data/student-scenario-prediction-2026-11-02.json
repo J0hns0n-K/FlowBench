@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-scenario-prediction-01",
+  "sourceKind": "user-submitted-synthetic-prediction",
+  "reportedOn": "2026-11-02",
+  "promptOrigin": "assistant-guided-example",
+  "prompt": {
+    "specificDestinationWithoutUncertaintyCases": 7,
+    "specificDestinationWithUncertaintyCases": 1,
+    "unclearDestinationWithUncertaintyCases": 2,
+    "firstEnquirySecPerCase": 10,
+    "requestedOutputs": ["closedOnPeerReport", "followUpCaseCount", "firstEnquiryTotalSec"]
+  },
+  "userStatement": "4/1/25",
+  "interpretationBasis": "Values interpreted in order of the three requested output blanks; no derivation supplied.",
+  "submittedPrediction": { "closedOnPeerReport": 4, "followUpCaseCount": 1, "firstEnquiryTotalSec": 25 },
+  "studentDerivation": null,
+  "submissionTimingRelativeToBrowserExecution": null,
+  "assistedReference": {
+    "closedOnPeerReport": 7,
+    "followUpCaseCount": 3,
+    "firstEnquiryTotalSec": 100,
+    "calculation": ["7 cases meet peer-report closure", "1+2=3 cases require follow-up", "(7+1+2)*10=100 seconds"],
+    "checkedWith": "summarizeEnquiryScenario in source commit f4800948c5cf7cfe9b49f0a0618f355424fcc5a3"
+  },
+  "limitations": [
+    "The submitted triple differs from the guided scenario reference in all three positions; retain the original answer rather than replacing it with the correction.",
+    "Reasoning and the cause of the mismatch are unknown; do not infer a specific misconception or that the student ran, corrected or independently validated the software.",
+    "Prompt counts, timing, expected result and explanation are assistant-provided; the student contribution here is the submitted prediction.",
+    "Synthetic exercise, not a new field observation, attendance error, accuracy audit or independently authored implementation."
+  ]
+}
