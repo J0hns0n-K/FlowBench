@@ -7,6 +7,7 @@ import type { Experiment } from './export.ts';
 import { summarizePeerTiming, summarizeCommitteeObservation, compareCommitteeObservation } from './observed.ts';
 import { studyStartForRole } from './study-start.ts';
 import type { CheckingRole } from './study-start.ts';
+import { initializeEnquiryComparison } from './inquiry-ui.ts';
 
 function element<T extends HTMLElement>(id: string): T {
   const value=document.getElementById(id);
@@ -255,6 +256,7 @@ async function initialize():Promise<void>{
   // Restore known defaults even if a browser restores form values from an earlier visit.
   element<HTMLInputElement>('seed').value=String(DEFAULT_CONFIG.seed);
   source.value='locked';updateSource();run();
+  initializeEnquiryComparison(sourceRevision);
   await loadObservedBaseline();
 }
 void initialize();

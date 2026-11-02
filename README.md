@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: e4440ed923a137eca2d19fbdeab51c6b5c16a7592e6011505c091eceb1e7a656 -->
+<!-- Evidence fingerprint: b07cc93251553daa8d91d16d251524a32176765fcf776e7e8ad405dbce61c576 -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -43,9 +43,11 @@ Junmo clarified that the 25 s recheck was a rough browse of what he called a dor
 
 The [next stage report, received **2026-10-31**](docs/STAGE_TIMING_02_KO.md), contains countdown 10 s, seating/settling 50 s, scanning 46 s, one enquiry of 11 s and rechecking 21 s. Conditional sums are **60 s preparation, 78 s checking and 138 s overall**. Checking is 45 s shorter than the preceding stage sum, while preparation is 19 s longer; scanning and rechecking also changed. Junmo reports **zero suspected seat-change cases**, which is not an audited zero-error result. There are now **five committee-check observation sessions**: two directly reported seating/checking totals, one checking/enquiry record and two stage reports, excluding the earlier peer baseline. The next design task is to specify what evidence can move an ambiguous vacant-seat case into a confirmed status; more timing reports alone will not define that behavior.
 
-Junmo's [submitted enquiry procedure](docs/ESCALATION_PROCEDURE_KO.md) specifies contact targets and two first-contact conditions: hear a specific destination and stop further checking; when the situation is not well known, ask the dormitory supervisor or other leaders. Codex translated these into an [isolated first-contact module](src/inquiry-policy.ts), using explicit hypothetical specificity/uncertainty inputs. Reported uncertainty takes priority even when a precise destination is mentioned. Closure retains **peer-report provenance**, and independent verification stays **not established**. Five new tests cover uncertainty, unknown time, invalid inputs and a specific but wrong hypothetical report that can still close the enquiry. The full suite passes 50 tests. This is assisted implementation of student-supplied process rules, separate from field validation; it is not yet connected to the browser interface. Later-stage criteria, conflict handling and final unresolved outcomes remain unspecified; neither full-chain execution nor official policy is inferred.
+Junmo's [submitted enquiry procedure](docs/ESCALATION_PROCEDURE_KO.md) specifies contact targets and two first-contact conditions: hear a specific destination and stop further checking; when the situation is not well known, ask the dormitory supervisor or other leaders. The [first-contact module](src/inquiry-policy.ts) and [scenario comparison](docs/INQUIRY_SCENARIOS_KO.md) now connect these rules to editable browser conditions, outcome bars and JSON/CSV result previews. Explicit uncertainty overrides even a precise answer. Closure retains **peer-report provenance** and independent verification stays **not established**.
 
-![Workbench showing two committee-check reports, prior-information context and descriptive comparisons](docs/images/2026-10-29-second-committee-report.png)
+The default hypothetical conditions each contain ten first enquiries of ten seconds. They produce four versus six cases needing follow-up, yet both first-enquiry totals remain 100 seconds. This exposes a useful limit: **more follow-up cases do not determine whole-process time**. Follow-up enquiries, their duration and whole verification time remain unknown. Empty time inputs preserve that uncertainty. The full suite passes **55 tests**, including weighted conservation, zero-weight unknowns, reproducible exports and the confidently wrong-report counterexample. Implementation, defaults and tests are AI-assisted; the procedural rules are student-supplied. Later-stage criteria, conflict handling and final unresolved outcomes remain unspecified.
+
+![Synthetic first-enquiry conditions with different follow-up counts and equal known first-enquiry time](docs/images/2026-11-02-inquiry-comparison.png)
 
 ## Engineering that makes the investigation inspectable
 
@@ -55,6 +57,7 @@ The workbench separates three kinds of reasoning:
 | --- | --- | --- |
 | Deterministic FCFS and count/report workflows | Compare identical synthetic workloads with explicit task ordering, server ties and reporting bottlenecks. | [Engine](src/engine.ts) · [workflow model](docs/MODEL.md) |
 | Dependency graph with unknown durations | Compute earliest milestones in O(V+E). Unknown checking time propagates only through dependent paths; it never becomes zero. Role views keep the checker distinct from non-checkers. | [DAG scheduler](src/dependencies.ts) · [dependency contract](docs/DEPENDENCY_MODEL.md) |
+| Conditional enquiries and weighted scenarios | Apply student-described rules, preserve report provenance and unknown later work, compare answer distributions without asserting accuracy or causal savings. | [Policy](src/inquiry-policy.ts) · [scenario contract and browser checks](docs/INQUIRY_SCENARIOS_KO.md) |
 | Field-report accounting | Validate provenance and intervals, preserve missing metadata, and calculate descriptive differences separately from simulated predictions. | [Accounting code](src/observed.ts) · [source records](data/) |
 
 Pure functions are shared by the browser, tests and experiment runner. Verification covers hand-calculated fixtures, simultaneous events, conservation, invalid inputs, reproducible seeds, unknown propagation and adverse outcomes. JSON/CSV serializers retain synthetic inputs, raw events, assumptions and source versions; charts visualize the same calculations.
@@ -90,4 +93,4 @@ pnpm dev
 
 Open http://127.0.0.1:4173/. `pnpm experiment` reproduces the synthetic study. GitHub Actions runs the tests, typechecked build, experiment and overview freshness check. Browser export serializers are tested; actual browser download completion remains an open check in [issue #4](https://github.com/J0hns0n-K/FlowBench/issues/4). The workbench is a local prototype.
 
-Explore the [research and development records](docs/INDEX.md), [validation protocol](docs/VALIDATION.md) and [open work](docs/ISSUES.md). [Conditional enquiry scenarios](https://github.com/J0hns0n-K/FlowBench/issues/8) track the next model/UI integration work. The overview is maintained with the evidence using the [update protocol](docs/OVERVIEW_MAINTENANCE.md).
+Explore the [research and development records](docs/INDEX.md), [validation protocol](docs/VALIDATION.md) and [open work](docs/ISSUES.md). [Conditional enquiry scenarios](https://github.com/J0hns0n-K/FlowBench/issues/8) record the first-contact comparison scope and its limits. The overview is maintained with the evidence using the [update protocol](docs/OVERVIEW_MAINTENANCE.md).

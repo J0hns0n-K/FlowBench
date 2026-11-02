@@ -66,3 +66,11 @@ Screenshots document software behavior only. They establish no school result or 
 - Latest display: seating 72 s, checking 78 s, 24 s / rounded 23.5% shorter than the preceding 102 s report. History retains both direct records; original peer table retains eight rows.
 - Context: cafe 6, separate class 24, disjoint total 30 context students, two grade-level enquiries. Prior authorization is shown as a condition; no attendance denominator or zero enquiry time derived. Latest accuracy is unknown rather than copied from the earlier report.
 - Desktop screenshot: [second report](images/2026-10-29-second-committee-report.png), working source based on snapshot `5ec84f7`. At 390x844 override client/body widths both 375 px; no overflow or error-level browser logs. Viewport reset after checking. No download attempted.
+
+## Synthetic first-enquiry comparison — 2026-11-02
+
+- New comparison panel uses student-described first-contact conditions with explicitly hypothetical counts/times. Defaults: A closes 6 / requires follow-up 4; B closes 4 / requires follow-up 6; ten first enquiries and 100 s first-enquiry sum in each. Additional enquiry count, follow-up time and whole verification time stay unknown.
+- Clearing B time yields null total, 0 s known subtotal and ten unknown-time cases. Editing hides stale results and disables preview controls. Explicit 0 s differs from a blank value. Unequal case counts are labeled. Sum above 5,000 displays an error and hides results; reset restores the defaults.
+- JSON/CSV previews retain raw inputs, two model versions, source revision, three rule-source paths and null/`unknown` values. Actual file download was not attempted; the prior #4 limitation remains unchanged.
+- Direct field-report panel is explicitly labeled as the two-record directly reported total series, not the newest of all field observations. Existing queue fixture remains 268/78 s.
+- [Desktop proof](images/2026-11-02-inquiry-comparison.png), [mobile proof](images/2026-11-02-inquiry-comparison-mobile.png), captured from working source based on `84618c3` with content fingerprint. At 390×844, document width 375 px, both result cards one column at width ~313.6 px; no page overflow. Viewport reset. Error-level browser logs empty.

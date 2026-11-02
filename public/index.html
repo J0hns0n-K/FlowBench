@@ -28,8 +28,37 @@
       <p>지정석 확인과 추가 질문을 기록합니다. 최근 보고에는 이미 알고 있던 사유와 별도 수업 참여 인원이 포함되어, 사전 정보의 영향도 살펴봅니다.</p></div>
       <span class="source-tag">직접 수행 · 사용자 보고</span>
     </section>
+    <section class="panel enquiry-panel" aria-labelledby="enquiry-title">
+      <div class="panel-heading"><div><p class="eyebrow">CONDITIONAL ENQUIRIES / SYNTHETIC</p><h2 id="enquiry-title">첫 문의 규칙을 가상 상황에 적용하기</h2></div><span class="data-badge">가상 조건 비교</span></div>
+      <p class="section-copy">구체적인 행선지를 듣고 잘 모르는 상태가 없으면 제보로 문의를 끝냅니다. 잘 모르면 리더나 사감쌤에게 묻습니다. 두 조건 모두 같은 규칙을 사용하며, 답변 유형의 구성만 바꿉니다.</p>
+      <form id="enquiry-form">
+        <div class="enquiry-inputs">
+          <fieldset><legend>가상 조건 A</legend><p class="field-note">사례마다 첫 문의 1회 · 기본값은 설명용 가상 숫자</p>
+            <label for="enquiry-A-clear">구체적 행선지 · 잘 모름 표시 없음 (건)</label><input id="enquiry-A-clear" type="number" min="0" max="5000" step="1" value="6" required>
+            <label for="enquiry-A-doubt">구체적 행선지 · 잘 모름 표시 있음 (건)</label><input id="enquiry-A-doubt" type="number" min="0" max="5000" step="1" value="2" required>
+            <label for="enquiry-A-vague">행선지 불명확 · 잘 모름 (건)</label><input id="enquiry-A-vague" type="number" min="0" max="5000" step="1" value="2" required>
+            <label for="enquiry-A-time">각 사례의 첫 문의시간 (초)</label><input id="enquiry-A-time" type="number" min="0" max="86400" step="0.1" value="10" aria-describedby="enquiry-time-note">
+          </fieldset>
+          <fieldset><legend>가상 조건 B</legend><p class="field-note">사례마다 첫 문의 1회 · 조건 A와 답변 구성을 비교</p>
+            <label for="enquiry-B-clear">구체적 행선지 · 잘 모름 표시 없음 (건)</label><input id="enquiry-B-clear" type="number" min="0" max="5000" step="1" value="4" required>
+            <label for="enquiry-B-doubt">구체적 행선지 · 잘 모름 표시 있음 (건)</label><input id="enquiry-B-doubt" type="number" min="0" max="5000" step="1" value="4" required>
+            <label for="enquiry-B-vague">행선지 불명확 · 잘 모름 (건)</label><input id="enquiry-B-vague" type="number" min="0" max="5000" step="1" value="2" required>
+            <label for="enquiry-B-time">각 사례의 첫 문의시간 (초)</label><input id="enquiry-B-time" type="number" min="0" max="86400" step="0.1" value="10" aria-describedby="enquiry-time-note">
+          </fieldset>
+        </div>
+        <p id="enquiry-time-note" class="field-note">시간을 모르면 빈칸으로 두세요. 알려진 시간 소계와 전체 미확인을 구별합니다. 각 조건은 최대 5,000건입니다.</p>
+        <div class="enquiry-actions"><button class="primary-button" type="submit">가상 조건 비교</button><button id="enquiry-reset" class="text-button" type="button">가상 기본값으로 초기화</button></div>
+      </form>
+      <p id="enquiry-status" class="field-note" role="status" aria-live="polite"></p><p id="enquiry-error" class="error" role="alert" hidden></p>
+      <div id="enquiry-results" hidden><div id="enquiry-summary" class="enquiry-summary" aria-live="polite"></div><p id="enquiry-difference" class="field-note"></p></div>
+      <div class="enquiry-legend"><span><i class="enquiry-closed-key"></i>친구 제보로 문의 종료</span><span><i class="enquiry-follow-key"></i>리더·사감쌤에게 추가 문의 필요</span></div>
+      <p class="field-note">문의 종료는 사실 검증 완료가 아닙니다. 확신 있게 전달된 잘못된 제보는 이 규칙만으로 구별하지 못합니다. 추가 문의의 횟수·시간과 전체 확인시간은 아직 계산하지 않습니다.</p>
+      <details class="enquiry-export"><summary>입력과 결과의 JSON · CSV 보기</summary><div class="enquiry-actions"><button id="enquiry-json" type="button" disabled>JSON 결과 보기</button><button id="enquiry-csv" type="button" disabled>CSV 결과 보기</button></div><p id="enquiry-format-status" class="field-note" role="status"></p><textarea id="enquiry-preview" aria-label="가상 문의 비교 결과 미리보기" rows="8" readonly spellcheck="false" hidden></textarea></details>
+      <a class="baseline-source" href="https://github.com/J0hns0n-K/FlowBench/blob/main/docs/ESCALATION_PROCEDURE_KO.md" target="_blank" rel="noreferrer">학생 제출 규칙·보조 해석·구현 범위 읽기 ↗</a>
+    </section>
     <section class="panel observed-panel" aria-labelledby="latest-title">
-      <div class="panel-heading"><div><p class="eyebrow">DIRECT-PERFORMANCE REPORTS</p><h2 id="latest-title">직접 확인 기록과 달라진 조건</h2></div><span id="latest-badge" class="data-badge">자료 확인 중</span></div>
+      <div class="panel-heading"><div><p class="eyebrow">DIRECT-PERFORMANCE REPORTS</p><h2 id="latest-title">직접 보고 합계 시리즈 · 2회</h2></div><span id="latest-badge" class="data-badge">자료 확인 중</span></div>
+      <p class="field-note">착석·확인 합계를 직접 보고한 두 회차의 비교입니다. 이후 질문·단계별 기록은 연구 문서에 별도로 보존하며, 이 표의 최근 값은 전체 관찰 중 최신 회차를 뜻하지 않습니다.</p>
       <div id="latest-summary" class="baseline-summary" aria-live="polite">새 관찰 자료를 읽고 있습니다.</div>
       <div class="table-wrap"><table><caption class="sr-only">직접 수행 기록의 보고일·착석·확인시간·질문 횟수</caption><thead><tr><th>보고일</th><th>착석</th><th>확인</th><th>질문</th></tr></thead><tbody id="latest-history"></tbody></table></div>
       <p id="latest-context" class="section-copy"></p>

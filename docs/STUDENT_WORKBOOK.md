@@ -12,7 +12,7 @@ Keep original explanations, sketches, failed predictions and revisions; don't re
 
 Submitted reasoning entry: [question count versus total enquiry time](STUDENT_REASONING_01_KO.md), received 2026-10-29. The user supplied the example durations, correct totals and a response-speed observation in a guided exercise. Prompt structure, formal clarification, completed counterexample and test code are AI-assisted. Independent software changes and the remaining tasks are still pending.
 
-현재 진행 (2026-10-31): 사용자가 문의 순서·행선지 전달 후 종료에 이어 **잘 모르면 사감쌤이나 다른 리더에게 묻는다**는 조건을 제출했습니다. [절차와 구현 범위](ESCALATION_PROCEDURE_KO.md)에 원문·보조 형식화·테스트를 구분했습니다. Codex가 첫 문의 모듈과 테스트 5개를 구현했으며 학생의 독립 코딩 성과로 귀속하지 않습니다. 다음 개발 단계는 익명 가상 시나리오 비교에 이 분기 결과를 연결하는 것입니다. 현재 추가 질문·시간 측정 요청은 보류합니다. 아래 학생 과제들은 참고용 대기 목록이며 한꺼번에 수행할 필요는 없습니다.
+현재 진행 (2026-11-02): 학생 제출 문의 순서·종료·불확실할 때의 후속 문의 조건을 [가상 시나리오 화면](INQUIRY_SCENARIOS_KO.md)에 연결했습니다. 집계·화면·내보내기와 새 테스트는 Codex 보조 구현이며 학생의 독립 코딩 성과로 귀속하지 않습니다. 지금 할 학생 작업은 문서 마지막의 **조건 B에서 불확실 사례 4→1, 구체적 제보 종료 사례 4→7로 바꿀 때의 결과를 실행 전에 계산하기**입니다. 예상값·이유·실행 후 대조를 본인이 제출하면 별도 기여로 기록합니다. 아직 완료한 과제로 간주하지 않습니다. 추가 시간 측정 요청은 보류합니다. 아래 과제들은 참고용 대기 목록입니다.
 
 추가 분석 과제: [같은 120초의 두 설명](IDENTIFIABILITY_KO.md)을 손으로 계산하세요. 전체 시간은 같은데 왜 대안의 결과가 다른지, 어떤 관찰을 더 해야 구별할 수 있는지 본인의 말로 기록합니다. 사용자 설명상 시간은 채플실 시계를 참고했으며, 이를 초 단위 스톱워치 자료로 바꾸어 주장하지 않습니다.
 
