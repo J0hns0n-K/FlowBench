@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-scenario-context-clarification-01",
+  "sourceKind": "user-clarification-of-task-interpretation",
+  "reportedOn": "2026-11-03",
+  "supplementsRecordId": "student-scenario-prediction-01",
+  "userStatementsKo": ["종료 건수 4건 추가 문의 1건 문의시간 25초", "새로 짜라는 게 아니라 원래 있던걸 말하는 거였어?"],
+  "currentInterpretationStatus": "scenario-context-unresolved-do-not-grade-as-arithmetic-error",
+  "assistantTaskIntent": "Compute outputs for the previously supplied fixed hypothetical ten-case scenario.",
+  "studentIntendedScenario": null,
+  "newScenarioExplicitlyConfirmed": false,
+  "actualFieldObservationExplicitlyConfirmed": false,
+  "limitations": [
+    "The question reveals ambiguity about creating new scenario conditions versus using supplied conditions; it does not yet specify the conditions behind 4/1/25.",
+    "Withdraw the assistant's premature interpretation as evidence of a student calculation error. The original numeric statement and source snapshot remain preserved.",
+    "7/3/100 remains the reference only for the assistant's fixed 7+1+2 cases at 10 seconds each, not a replacement for an unspecified scenario.",
+    "Do not infer student correction, a confirmed new synthetic design, actual field timing or completed independent validation."
+  ]
+}

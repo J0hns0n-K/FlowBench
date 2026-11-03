@@ -58,7 +58,7 @@ Further clarification received 2026-10-31: user says ‘잘 모르면 사감쌤�
 
 ## First submitted weighted-scenario prediction
 
-Received 2026-11-02: user submitted ‘4/1/25’ following the assistant's requested closure/follow-up/first-time outputs for seven specific no-doubt cases, one specific uncertain case and two unclear uncertain cases, each with hypothetical first enquiry 10 s. Snapshot: data/student-scenario-prediction-2026-11-02.json. Interpret the triple positionally; derivation and execution order were not supplied. Assisted arithmetic and summarizeEnquiryScenario agree on 7/3/100. Preserve the mismatch without attributing its cause or claiming a completed student correction, successful independent validation, new code or field observation.
+Received 2026-11-02: user submitted ‘4/1/25’ after the assistant's fixed ten-case exercise. Snapshot: data/student-scenario-prediction-2026-11-02.json records the initial positional interpretation and the assistant's 7/3/100 reference. On 2026-11-03 the user repeated the labels and asked whether the task meant existing conditions rather than creating new ones. Supplement: data/student-scenario-context-clarification-2026-11-03.json. This reveals task-interpretation ambiguity; withdraw the premature grading as a student arithmetic error. The actual conditions intended by the user remain unspecified. Preserve the original source and correction without inferring a confirmed new scenario, field timing, student correction or independent validation. The fixed ten-case reference remains correct only for its stated inputs.
 
 ## Primary external sources
 
