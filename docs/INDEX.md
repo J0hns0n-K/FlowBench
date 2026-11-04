@@ -1,5 +1,7 @@
 # Research and development records
 
+- [Current results, evidence and ownership summary (Korean)](PROJECT_STATUS_KO.md)
+
 ## Problem, decisions and context
 
 - [Problem and evidence](PROBLEM_VALIDATION.md)

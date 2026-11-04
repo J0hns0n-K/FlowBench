@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "recordId": "checking-delegation-scope-01",
+  "sourceKind": "user-reported-role-and-observation-scope",
+  "reportedOn": "2026-11-04",
+  "userStatementKo": "그냥 밑에 부회장이나 여자 회장 시키는데 딱히 내가 관여는 안해",
+  "context": "Response to how other checkers obtain information when the user does not perform checking.",
+  "reportedOtherCheckerRolesKo": ["부회장", "여자 회장"],
+  "userInvolvementInTheirChecking": "reports-not-particularly-involved",
+  "informationHandoffMethod": null,
+  "otherCheckerInformationAvailability": null,
+  "otherCheckerEnquiryPolicy": null,
+  "otherCheckerTiming": null,
+  "informationHandoffCostSec": null,
+  "limitations": [
+    "Roles and assignment are user-reported; do not infer the user's formal title, organizational hierarchy or sole leadership of the procedure change.",
+    "Limited involvement does not establish that the user lacks all knowledge, or that other checkers have no shared information.",
+    "Others' information access, checking procedure, timings and outcomes remain unspecified; do not transfer the user's observations or prior authorization knowledge to them.",
+    "No new timed field session, handoff implementation, software contribution or accuracy result is supplied."
+  ]
+}

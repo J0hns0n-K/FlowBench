@@ -64,6 +64,10 @@ Received 2026-11-02: user submitted ‘4/1/25’ after the assistant's fixed ten
 
 Received 2026-11-04: user replied ‘세 개 다 맞아’ to the assistant's three-path summary: skip peer enquiry when destination is already known through own authorization, otherwise ask a peer and close after a specific destination is accepted, seek supervisor/other leaders if not well known. Source: data/student-workflow-confirmation-2026-11-04.json, preserving both the reply and what was reviewed. This confirms fit to self-reported practice, not independent observation, code authorship, policy approval or accuracy. The 2026-10-29 cafe context had already established own-authorization preknowledge; the v1 synthetic model omitted its zero-first-enquiry path. V2 now includes it, without treating information acquisition/handoff as free or counting another field session.
 
+## Other checkers and observation boundary
+
+Received 2026-11-04: user says they assign checking to the vice-president or female president and are not particularly involved. Source: data/checking-delegation-scope-2026-11-04.json. This reports roles/limited involvement, not how others obtain information. Handoff method, information access, others' enquiry policy, times and outcomes remain unspecified; neither absence of a shared list nor zero transfer cost is inferred. No new observed session or individual leadership title/sole policy ownership is added. PROJECT_STATUS_KO.md consolidates current results and this scope boundary; no follow-up investigation is assigned to the user now.
+
 ## Primary external sources
 
 

@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 159d88349956fa03f2d8a3439948c14269cb9f7285e1fe7f0f874ee826be55d5 -->
+<!-- Evidence fingerprint: 6ef6fa63d832bf1a8deb0d6d1b7eab1935436ff41feffc353dd120eb1e22dc2a -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -79,6 +79,8 @@ Junmo's reported contributions include explaining and correcting the real workfl
 In a guided modeling exercise, Junmo supplied synthetic 120 s and 135 s cases and noticed that the more-question case would need quicker responses to finish sooner when scanning and recording costs stayed fixed. The [submitted reasoning and follow-up](docs/STUDENT_REASONING_01_KO.md) distinguish his calculations and observation from the assisted formal clarification and test implementation. This advances the model review from question count alone toward total enquiry duration.
 
 The initial model formalization, code, tests and documentation were produced with Codex assistance. Individually authored model revisions and software changes will be linked as they occur. The [contribution ledger](docs/CONTRIBUTIONS.md) distinguishes field execution, measurement, design and implementation, with dated evidence for each.
+
+Junmo reports assigning other checks to the vice-president or female president and not being closely involved in their checking. Their information access, handoff method and timings remain unspecified; his own authorization knowledge is not transferred to them as an assumption. The [current project review](docs/PROJECT_STATUS_KO.md) brings together achieved functionality, field evidence, contributor roles and remaining validation boundaries.
 
 ## Reproduce and follow the work
 
