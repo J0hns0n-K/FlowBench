@@ -6,6 +6,8 @@ Issue #7 was subsequently added for the planned procedure's implementation/valid
 
 Issue #8 tracks the conditional enquiry model and its later synthetic scenario/UI integration.
 
+Issue #9 adds the prior-information path confirmed during student workflow review.
+
 | Work unit | Acceptance evidence | Initial status |
 | --- | --- | --- |
 | [#1 Validate real attendance workflow](https://github.com/J0hns0n-K/FlowBench/issues/1) | Repeat comparable observations, document instrument/boundaries and distinguish count/report/gaps; validate predictions separately. | Open: first peer-timed series received (103 s seating, 160 s combined turns); repeat/held-out validation absent |
@@ -16,6 +18,7 @@ Issue #8 tracks the conditional enquiry model and its later synthetic scenario/U
 | [#6 Record FlowBench engineering contributions](https://github.com/J0hns0n-K/FlowBench/issues/6) | Link project-specific designs, hand calculations, tests, code changes and field observations; distinguish contributor roles and assistance. | Open: student supplied enquiry order and stopping/follow-up conditions; first-contact implementation and five tests are AI-assisted. Independent software changes and field validation remain pending |
 | [#7 Evaluate independent attendance checking](https://github.com/J0hns0n-K/FlowBench/issues/7) | Observe actual study start, committee start/end/person-time, accuracy and interruptions after implementation; preserve collective attribution. | Open: five committee-check observations; latest stage sums 60 s preparation / 78 s checking / 138 s whole, one enquiry 11 s and zero reported suspected seat changes. No independent accuracy audit. Student has supplied first-contact rules; their synthetic implementation is tracked in #8 and does not close field validation |
 | [#8 Model conditional enquiries](https://github.com/J0hns0n-K/FlowBench/issues/8) | Preserve evidence states, explicit uncertainty and unknown time; compare synthetic scenarios with adverse cases and integrate UI/exports. | First-contact comparison scope complete: weighted aggregation, browser views, JSON/CSV content previews/serializers, five new tests, full 55-test suite and build passed. Later-contact rules and full-process prediction remain outside scope; actual download remains under #4 |
+| [#9 Prior-information path](https://github.com/J0hns0n-K/FlowBench/issues/9) | Distinguish skipped first enquiries, conserve total cases, preserve information source/unknown costs, update v2 UI/exports. | Implementation and local verification complete: four new tests, full 59-test suite/build and desktop/mobile QA. User reviewed three-path fidelity; information handoff cost and independent empirical validation remain pending |
 
 Issue completion is scoped precisely. Completing a software issue does not close empirical validation or student attribution.
 

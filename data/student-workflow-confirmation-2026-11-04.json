@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-workflow-confirmation-01",
+  "sourceKind": "user-confirmation-of-workflow-summary",
+  "reportedOn": "2026-11-04",
+  "userStatementKo": "세 개 다 맞아",
+  "summaryOrigin": "Assistant synthesized earlier user descriptions and asked for corrections.",
+  "confirmedRulesKo": [
+    "이미 행선지를 알고 있음: 카페에 간 학생처럼 직접 허가한 경우에는 질문을 건너뜀.",
+    "행선지를 모름: 동급생이나 친한 친구에게 묻고, 구체적인 행선지를 들으면 문의를 끝냄.",
+    "여전히 잘 모름: 사감쌤이나 다른 리더에게 추가로 물어봄."
+  ],
+  "relatedRecords": [
+    "committee-session-02",
+    "student-escalation-procedure-01",
+    "student-peer-stopping-rule-01",
+    "student-uncertain-followup-rule-01"
+  ],
+  "limitations": [
+    "Student confirms fidelity of an assistant-written workflow summary; this is not independent code authorship or a new field session.",
+    "Already-known destination can skip a peer enquiry; information acquisition, maintenance and handoff work are not thereby zero.",
+    "This confirms reported procedure, not true location, official authorization status, school policy approval or an accuracy audit.",
+    "No new case count, duration, uncertainty threshold, later-contact stopping condition or deployment supplied."
+  ]
+}

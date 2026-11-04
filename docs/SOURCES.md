@@ -60,6 +60,10 @@ Further clarification received 2026-10-31: user says ‘잘 모르면 사감쌤�
 
 Received 2026-11-02: user submitted ‘4/1/25’ after the assistant's fixed ten-case exercise. Snapshot: data/student-scenario-prediction-2026-11-02.json records the initial positional interpretation and the assistant's 7/3/100 reference. On 2026-11-03 the user repeated the labels and asked whether the task meant existing conditions rather than creating new ones. Supplement: data/student-scenario-context-clarification-2026-11-03.json. This reveals task-interpretation ambiguity; withdraw the premature grading as a student arithmetic error. The actual conditions intended by the user remain unspecified. Preserve the original source and correction without inferring a confirmed new scenario, field timing, student correction or independent validation. The fixed ten-case reference remains correct only for its stated inputs.
 
+## Three-path workflow review and prior-information branch
+
+Received 2026-11-04: user replied ‘세 개 다 맞아’ to the assistant's three-path summary: skip peer enquiry when destination is already known through own authorization, otherwise ask a peer and close after a specific destination is accepted, seek supervisor/other leaders if not well known. Source: data/student-workflow-confirmation-2026-11-04.json, preserving both the reply and what was reviewed. This confirms fit to self-reported practice, not independent observation, code authorship, policy approval or accuracy. The 2026-10-29 cafe context had already established own-authorization preknowledge; the v1 synthetic model omitted its zero-first-enquiry path. V2 now includes it, without treating information acquisition/handoff as free or counting another field session.
+
 ## Primary external sources
 
 

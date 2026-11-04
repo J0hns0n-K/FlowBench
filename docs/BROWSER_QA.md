@@ -74,3 +74,10 @@ Screenshots document software behavior only. They establish no school result or 
 - JSON/CSV previews retain raw inputs, two model versions, source revision, three rule-source paths and null/`unknown` values. Actual file download was not attempted; the prior #4 limitation remains unchanged.
 - Direct field-report panel is explicitly labeled as the two-record directly reported total series, not the newest of all field observations. Existing queue fixture remains 268/78 s.
 - [Desktop proof](images/2026-11-02-inquiry-comparison.png), [mobile proof](images/2026-11-02-inquiry-comparison-mobile.png), captured from working source based on `84618c3` with content fingerprint. At 390×844, document width 375 px, both result cards one column at width ~313.6 px; no page overflow. Viewport reset. Error-level browser logs empty.
+
+## Prior-known path and v2 result provenance — 2026-11-04
+
+- Defaults: ten hypothetical cases each; A skipped/peer-closed/follow-up 0/6/4, first enquiries 10, time 100 s; B 3/3/4, enquiries 7, time 70 s. Prior, peer and follow-up segments/legend agree. Information acquisition/handoff and whole-process time remain unknown.
+- B blank time yields seven unknown queried cases, not ten; all ten prior-known with zero queried counts and blank time gives first enquiry 0 / time 0 s while information/whole costs remain unknown. Prior-known counts participate in the 5,000-case bound. Editing invalidates results and previews; reset restores defaults.
+- JSON reports schema 2 / enquiry-scenarios-v2, prior count/source, seven enquiries, null information cost and four rule sources. CSV content includes the prior-known row and unknown-cost/source columns. Actual file downloads not attempted.
+- [Desktop](images/2026-11-04-prior-information.png), [mobile](images/2026-11-04-prior-information-mobile.png), captured from working source based on `4916379` with fingerprint. At 390×844, page width 375 px, one-column result cards ~313.6 px; no overflow or browser errors. Viewport restored.

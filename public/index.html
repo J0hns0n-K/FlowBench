@@ -30,28 +30,30 @@
     </section>
     <section class="panel enquiry-panel" aria-labelledby="enquiry-title">
       <div class="panel-heading"><div><p class="eyebrow">CONDITIONAL ENQUIRIES / SYNTHETIC</p><h2 id="enquiry-title">첫 문의 규칙을 가상 상황에 적용하기</h2></div><span class="data-badge">가상 조건 비교</span></div>
-      <p class="section-copy">구체적인 행선지를 듣고 잘 모르는 상태가 없으면 제보로 문의를 끝냅니다. 잘 모르면 리더나 사감쌤에게 묻습니다. 두 조건 모두 같은 규칙을 사용하며, 답변 유형의 구성만 바꿉니다.</p>
+      <p class="section-copy">직접 허가해 행선지를 이미 아는 사례는 질문을 건너뜁니다. 모르면 친구에게 묻고, 구체적 행선지를 들으면 문의를 끝내며, 잘 모르면 리더나 사감쌤에게 묻습니다. 두 조건 모두 같은 규칙을 사용합니다.</p>
       <form id="enquiry-form">
         <div class="enquiry-inputs">
-          <fieldset><legend>가상 조건 A</legend><p class="field-note">사례마다 첫 문의 1회 · 기본값은 설명용 가상 숫자</p>
+          <fieldset><legend>가상 조건 A</legend><p class="field-note">사전 정보가 없는 사례에 첫 문의 1회 · 설명용 가상 숫자</p>
+            <label for="enquiry-A-prior">직접 허가해 행선지를 이미 앎 (건)</label><input id="enquiry-A-prior" type="number" min="0" max="5000" step="1" value="0" required>
             <label for="enquiry-A-clear">구체적 행선지 · 잘 모름 표시 없음 (건)</label><input id="enquiry-A-clear" type="number" min="0" max="5000" step="1" value="6" required>
             <label for="enquiry-A-doubt">구체적 행선지 · 잘 모름 표시 있음 (건)</label><input id="enquiry-A-doubt" type="number" min="0" max="5000" step="1" value="2" required>
             <label for="enquiry-A-vague">행선지 불명확 · 잘 모름 (건)</label><input id="enquiry-A-vague" type="number" min="0" max="5000" step="1" value="2" required>
-            <label for="enquiry-A-time">각 사례의 첫 문의시간 (초)</label><input id="enquiry-A-time" type="number" min="0" max="86400" step="0.1" value="10" aria-describedby="enquiry-time-note">
+            <label for="enquiry-A-time">질문하는 사례당 첫 문의시간 (초)</label><input id="enquiry-A-time" type="number" min="0" max="86400" step="0.1" value="10" aria-describedby="enquiry-time-note">
           </fieldset>
-          <fieldset><legend>가상 조건 B</legend><p class="field-note">사례마다 첫 문의 1회 · 조건 A와 답변 구성을 비교</p>
-            <label for="enquiry-B-clear">구체적 행선지 · 잘 모름 표시 없음 (건)</label><input id="enquiry-B-clear" type="number" min="0" max="5000" step="1" value="4" required>
-            <label for="enquiry-B-doubt">구체적 행선지 · 잘 모름 표시 있음 (건)</label><input id="enquiry-B-doubt" type="number" min="0" max="5000" step="1" value="4" required>
+          <fieldset><legend>가상 조건 B</legend><p class="field-note">같은 업무에서 사전 정보가 있는 경우를 비교</p>
+            <label for="enquiry-B-prior">직접 허가해 행선지를 이미 앎 (건)</label><input id="enquiry-B-prior" type="number" min="0" max="5000" step="1" value="3" required>
+            <label for="enquiry-B-clear">구체적 행선지 · 잘 모름 표시 없음 (건)</label><input id="enquiry-B-clear" type="number" min="0" max="5000" step="1" value="3" required>
+            <label for="enquiry-B-doubt">구체적 행선지 · 잘 모름 표시 있음 (건)</label><input id="enquiry-B-doubt" type="number" min="0" max="5000" step="1" value="2" required>
             <label for="enquiry-B-vague">행선지 불명확 · 잘 모름 (건)</label><input id="enquiry-B-vague" type="number" min="0" max="5000" step="1" value="2" required>
-            <label for="enquiry-B-time">각 사례의 첫 문의시간 (초)</label><input id="enquiry-B-time" type="number" min="0" max="86400" step="0.1" value="10" aria-describedby="enquiry-time-note">
+            <label for="enquiry-B-time">질문하는 사례당 첫 문의시간 (초)</label><input id="enquiry-B-time" type="number" min="0" max="86400" step="0.1" value="10" aria-describedby="enquiry-time-note">
           </fieldset>
         </div>
-        <p id="enquiry-time-note" class="field-note">시간을 모르면 빈칸으로 두세요. 알려진 시간 소계와 전체 미확인을 구별합니다. 각 조건은 최대 5,000건입니다.</p>
+        <p id="enquiry-time-note" class="field-note">시간을 모르면 빈칸으로 두세요. 사전 정보 사례는 첫 질문을 하지 않습니다. 정보를 얻고 전달하는 비용은 별도로 미확인입니다. 각 조건은 최대 5,000건입니다.</p>
         <div class="enquiry-actions"><button class="primary-button" type="submit">가상 조건 비교</button><button id="enquiry-reset" class="text-button" type="button">가상 기본값으로 초기화</button></div>
       </form>
       <p id="enquiry-status" class="field-note" role="status" aria-live="polite"></p><p id="enquiry-error" class="error" role="alert" hidden></p>
       <div id="enquiry-results" hidden><div id="enquiry-summary" class="enquiry-summary" aria-live="polite"></div><p id="enquiry-difference" class="field-note"></p></div>
-      <div class="enquiry-legend"><span><i class="enquiry-closed-key"></i>친구 제보로 문의 종료</span><span><i class="enquiry-follow-key"></i>리더·사감쌤에게 추가 문의 필요</span></div>
+      <div class="enquiry-legend"><span><i class="enquiry-prior-key"></i>사전 정보로 질문 생략</span><span><i class="enquiry-closed-key"></i>친구 제보로 문의 종료</span><span><i class="enquiry-follow-key"></i>리더·사감쌤에게 추가 문의 필요</span></div>
       <p class="field-note">문의 종료는 사실 검증 완료가 아닙니다. 확신 있게 전달된 잘못된 제보는 이 규칙만으로 구별하지 못합니다. 추가 문의의 횟수·시간과 전체 확인시간은 아직 계산하지 않습니다.</p>
       <details class="enquiry-export"><summary>입력과 결과의 JSON · CSV 보기</summary><div class="enquiry-actions"><button id="enquiry-json" type="button" disabled>JSON 결과 보기</button><button id="enquiry-csv" type="button" disabled>CSV 결과 보기</button></div><p id="enquiry-format-status" class="field-note" role="status"></p><textarea id="enquiry-preview" aria-label="가상 문의 비교 결과 미리보기" rows="8" readonly spellcheck="false" hidden></textarea></details>
       <a class="baseline-source" href="https://github.com/J0hns0n-K/FlowBench/blob/main/docs/ESCALATION_PROCEDURE_KO.md" target="_blank" rel="noreferrer">학생 제출 규칙·보조 해석·구현 범위 읽기 ↗</a>
