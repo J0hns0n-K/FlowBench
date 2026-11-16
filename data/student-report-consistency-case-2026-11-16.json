@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-report-consistency-case-01",
+  "sourceKind": "user-selected-synthetic-test-case",
+  "reportedOn": "2026-11-16",
+  "promptOrigin": "Assistant asked the user to choose two hypothetical answers, an expected result and a reason.",
+  "userStatementKo": "첫 답변 : 병원, 두 번째 답변 : 반 -> 예상 결과 : conflict\n\n둘이 답변이 다르기 때문에",
+  "first": "병원",
+  "second": "반",
+  "userExpectedResult": "conflict",
+  "userReasonKo": "둘이 답변이 다르기 때문에",
+  "execution": {
+    "actor": "Codex (AI assistant)",
+    "function": "compareDestinations",
+    "sourceRevision": "4d4775cbf5996191c0f6246af866663edf509ae3",
+    "workingTreeCodeChanges": false,
+    "actualResult": "conflict",
+    "matchesUserExpectation": true
+  },
+  "limitations": [
+    "User selected the inputs, expected result and reason in a guided task; assistant executed the code.",
+    "This is a hypothetical report comparison, not a real student's destination, attendance error or new field session.",
+    "A matching example does not establish broad empirical validity, independent implementation or student-authored automated tests.",
+    "No redundant permanent test was added for the already-covered unequal-string branch; the automated suite remains at 61 tests."
+  ]
+}
