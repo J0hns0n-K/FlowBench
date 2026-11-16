@@ -12,7 +12,21 @@ Keep original explanations, sketches, failed predictions and revisions; don't re
 
 Submitted reasoning entry: [question count versus total enquiry time](STUDENT_REASONING_01_KO.md), received 2026-10-29. The user supplied the example durations, correct totals and a response-speed observation in a guided exercise. Prompt structure, formal clarification, completed counterexample and test code are AI-assisted. Independent software changes and the remaining tasks are still pending.
 
-현재 진행 (2026-11-04): 학생이 세 절차를 검토했고 사전 정보 경로를 v2에 반영했습니다. 이어 다른 확인을 부회장이나 여자 회장에게 맡기며 크게 관여하지 않는다고 설명했습니다. 다른 담당자의 정보 접근·전달 방법은 검증 범위 밖의 미확인 항목으로 남깁니다. 이를 알아보는 과제는 더 요청하지 않습니다. [현재 결과와 역할 요약](PROJECT_STATUS_KO.md)을 정리했으며 기존 4/1/25의 조건도 여전히 미확인입니다. 코드·테스트·요약 문서는 Codex 보조 작업이고 학생의 독립 구현·검증 완료로 간주하지 않습니다. 아래 과제들은 장기 참고 목록이며 지금 수행을 요청하는 목록이 아닙니다.
+현재 진행 (2026-11-16): 사용자가 보조자가 제공한 compareDestinations 코드를 입력·저장했고 확인을 요청했습니다. 저장된 원본은 대표 사례 8개와 형식 검사를 통과했습니다. 보조자가 중복 세미콜론·예전 주석을 정리하고 테스트 2개를 추가했으며 전체 61개와 빌드가 통과했습니다. 이는 안내에 따른 코드 입력 연습이며 독립 설계·테스트 작성으로 기록하지 않습니다. 다음 학습은 **첫 줄의 null 검사가 왜 trim()보다 먼저 필요한지** 본인의 말로 설명하는 것입니다. 아직 답변한 것으로 간주하지 않습니다. 기존 4/1/25의 조건과 다른 담당자의 정보 전달 방식은 계속 미확인이며 추가 조사는 요청하지 않습니다. 아래 과제들은 장기 참고 목록입니다.
+
+### 저장한 함수의 확인 결과 — 2026-11-16
+
+코드: [compareDestinations](../src/report-consistency.ts) · 검증: [두 계약 테스트](../tests/report-consistency.test.ts).
+
+| 가상 입력 | 출력 |
+| --- | --- |
+| A / A | same |
+| A / B | conflict |
+| A / null 또는 null / A | unknown |
+| 빈 문자열·공백 / A | unknown |
+| 앞뒤 공백이 있는 A / A | same |
+
+입력 순서를 바꿔도 결과가 같고, 대소문자가 다른 위치 코드를 임의로 합치지 않습니다. 이 함수는 가상 제보 문자열 사이의 일치 여부만 다루며 사실 여부를 검증하지 않습니다. 실제 문의 흐름·브라우저 UI에는 아직 연결하지 않았습니다. 코드 본문은 보조자가 제공했고 사용자가 저장했습니다.
 
 추가 분석 과제: [같은 120초의 두 설명](IDENTIFIABILITY_KO.md)을 손으로 계산하세요. 전체 시간은 같은데 왜 대안의 결과가 다른지, 어떤 관찰을 더 해야 구별할 수 있는지 본인의 말로 기록합니다. 사용자 설명상 시간은 채플실 시계를 참고했으며, 이를 초 단위 스톱워치 자료로 바꾸어 주장하지 않습니다.
 
