@@ -247,13 +247,20 @@ jsonButton.addEventListener('click',()=>download('json'));
 csvButton.addEventListener('click',()=>download('csv'));
 
 async function initialize():Promise<void>{
-  initializeReportComparison();
+  let reportRevision:string|null=null, reportFingerprint:string|null=null;
   try{
     const response=await fetch('/source-meta.json');
     if(response.ok){const meta:unknown=await response.json();
-      if(meta&&typeof meta==='object'&&'sourceRevision' in meta&&typeof meta.sourceRevision==='string')sourceRevision=meta.sourceRevision;
+      if(meta&&typeof meta==='object'){
+        if('sourceRevision' in meta&&typeof meta.sourceRevision==='string'){
+          sourceRevision=meta.sourceRevision;
+          if(/^[a-f0-9]{40}(?:\+dirty:[a-f0-9]{12})?$/.test(meta.sourceRevision))reportRevision=meta.sourceRevision;
+        }
+        if('sourceFingerprint' in meta&&typeof meta.sourceFingerprint==='string'&&/^[a-f0-9]{64}$/.test(meta.sourceFingerprint))reportFingerprint=meta.sourceFingerprint;
+      }
     }
   }catch{/* Source unavailability is explicit in exports; computation remains browser-local. */}
+  initializeReportComparison({sourceRevision:reportRevision,sourceFingerprint:reportFingerprint});
   element('source-revision').textContent=`${MODEL_VERSION} · 소스 ${sourceRevision.slice(0,12)}${sourceRevision.includes('+dirty')?' (수정 중)':''}`;
   // Restore known defaults even if a browser restores form values from an earlier visit.
   element<HTMLInputElement>('seed').value=String(DEFAULT_CONFIG.seed);

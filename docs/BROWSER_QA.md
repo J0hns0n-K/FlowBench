@@ -88,3 +88,10 @@ Screenshots document software behavior only. They establish no school result or 
 - Empty second answer and whitespace-wrapped 모름 return unknown; Enter submits. Editing hides the previous result until comparison or a preset runs. Result code, Korean explanation and normalized values agree.
 - [Desktop](images/2026-11-17-report-comparison.jpg), [mobile](images/2026-11-17-report-comparison-mobile.jpg), captured from working source based on `7eae790` and fingerprint. JPEG signatures verified. At 390×844, page width 375 px and input/result widths ~313.6 px; no horizontal overflow or browser errors. Viewport restored.
 - Existing cohort example and field-history panels still load independently. No actual attendance decision, network form submission, storage/export of these inputs or browser download added/tested. Student screen review is not yet reported.
+
+### Comparison record content previews — 2026-11-17
+
+- Opened the separate JSON/CSV disclosure; spaced hospital answers preserve original spaces in raw, remove them in normalized and yield same. Both 모름 and a blank input yield unknown. JSON includes source revision with dirty suffix and full SHA-256 fingerprint. CSV retains the same run timestamp and source metadata.
+- Editing hides results, clears/hides preview and disables both format buttons. Resubmission enables fresh previews; preset selection clears the previous preview. No physical file download attempted. Missing-source fallback covered by unit tests only.
+- Requested desktop/mobile overrides 1280×900 and 390×844; actual DOM CSS width 984 / 300 px, document width 973 / 288 px, preview width approximately 871 / 234 px. Narrow layout uses one column and stays within viewport. Warnings/errors empty. Temporary override reset. The first preset action immediately after reset did not apply; re-observation and selection confirmed the final spaced-input same record.
+- Proof: [desktop JSON](images/2026-11-17-report-record.jpg), [narrow CSV](images/2026-11-17-report-record-mobile.jpg). Assistant QA only; no student UAT claimed.

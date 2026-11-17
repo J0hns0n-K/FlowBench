@@ -44,3 +44,7 @@
 Each future entry should link an issue, commit or approved aggregate experiment record and specify whether the student wrote, reviewed, modified or merely ran an artifact. Running AI-generated code alone does not establish independent engineering design. Do not backdate work, invent debugging stories, or assign AI-authored code to the student.
 
 2026-10-28 overview maintenance: Codex rewrote the project overview from linked project evidence and implemented its generated evidence block and freshness checks. This documentation/tooling work is AI-assisted; the field contributions above remain separately attributed.
+
+### Reproducible comparison record implementation — 2026-11-17
+
+Codex added the separate record module, four serialization/validation tests and JSON/CSV content previews, reused the existing helper, and verified 66 tests, build and desktop/narrow-browser behavior. This is assisted implementation. The student's guided marker condition remains attributed separately; no new student implementation, independent screen review or field measurement is inferred from “계속”. See [format and verification contract](REPORT_COMPARISON_KO.md).

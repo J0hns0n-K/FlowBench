@@ -38,7 +38,8 @@
       <div class="report-examples" aria-label="가상 예제"><span>예제 넣기</span><button id="report-example-different" type="button">서로 다른 답변</button><button id="report-example-spaced" type="button">앞뒤 공백만 다름</button><button id="report-example-missing" type="button">둘 다 모름</button></div>
       <p id="report-status" class="field-note" role="status" aria-live="polite"></p>
       <div id="report-result" class="report-result" hidden aria-live="polite"><div class="report-verdict"><strong id="report-code"></strong><span id="report-label"></span></div><p id="report-explanation"></p><div class="report-normalized"><span>공백 정리 후 첫 답변 <output id="report-first-normalized"></output></span><span>공백 정리 후 두 번째 답변 <output id="report-second-normalized"></output></span></div></div>
-      <p class="field-note">답변이 같아도 실제 행선지가 맞다는 뜻은 아닙니다. 이 가상 비교는 출석을 확정하거나 기존 문의 절차를 자동으로 바꾸지 않습니다. 입력은 이 화면에서만 사용하며 저장하지 않습니다.</p>
+      <details class="enquiry-export"><summary>이번 비교의 JSON · CSV 기록 보기</summary><div class="enquiry-actions"><button id="report-json" type="button" disabled>JSON 기록 보기</button><button id="report-csv" type="button" disabled>CSV 기록 보기</button></div><p id="report-format-status" class="field-note" role="status"></p><textarea id="report-preview" aria-label="두 답변 비교 실험 기록 미리보기" rows="8" readonly spellcheck="false" hidden></textarea><p class="field-note">원래 입력과 규칙·코드 버전을 함께 확인합니다. CSV의 각 값은 JSON 표기로 담아 빈칸과 정보 없음(null)을 구별합니다.</p></details>
+      <p class="field-note">답변이 같아도 실제 행선지가 맞다는 뜻은 아닙니다. 이 가상 비교는 출석을 확정하거나 기존 문의 절차를 자동으로 바꾸지 않습니다. 입력과 기록은 페이지 메모리에서만 사용하며 자동 저장·전송하지 않습니다. 실제 학생 이름 대신 가상 답변을 입력하세요.</p>
       <a class="baseline-source" href="https://github.com/J0hns0n-K/FlowBench/blob/main/docs/REPORT_COMPARISON_KO.md" target="_blank" rel="noreferrer">비교 규칙과 검증 기록 읽기 ↗</a>
     </section>
     <section class="panel enquiry-panel" aria-labelledby="enquiry-title">
