@@ -28,6 +28,19 @@
       <p>지정석 확인과 추가 질문을 기록합니다. 최근 보고에는 이미 알고 있던 사유와 별도 수업 참여 인원이 포함되어, 사전 정보의 영향도 살펴봅니다.</p></div>
       <span class="source-tag">직접 수행 · 사용자 보고</span>
     </section>
+    <section class="panel report-panel" aria-labelledby="report-title">
+      <div class="panel-heading"><div><p class="eyebrow">TWO-ANSWER COMPARISON / SYNTHETIC</p><h2 id="report-title">두 답변을 직접 비교해 보기</h2></div><span class="data-badge">가상 입력</span></div>
+      <p class="section-copy">두 답변의 내용이 같은지, 서로 다른지, 비교할 정보가 없는지 확인합니다. 정보 없음은 빈칸 또는 ‘모름’으로 입력하세요.</p>
+      <form id="report-form">
+        <div class="report-fields"><div><label for="report-first">첫 번째 가상 답변</label><input id="report-first" type="text" maxlength="80" value="병원" autocomplete="off" spellcheck="false"></div><div><label for="report-second">두 번째 가상 답변</label><input id="report-second" type="text" maxlength="80" value="반" autocomplete="off" spellcheck="false"></div></div>
+        <button class="primary-button" type="submit">답변 비교</button>
+      </form>
+      <div class="report-examples" aria-label="가상 예제"><span>예제 넣기</span><button id="report-example-different" type="button">서로 다른 답변</button><button id="report-example-spaced" type="button">앞뒤 공백만 다름</button><button id="report-example-missing" type="button">둘 다 모름</button></div>
+      <p id="report-status" class="field-note" role="status" aria-live="polite"></p>
+      <div id="report-result" class="report-result" hidden aria-live="polite"><div class="report-verdict"><strong id="report-code"></strong><span id="report-label"></span></div><p id="report-explanation"></p><div class="report-normalized"><span>공백 정리 후 첫 답변 <output id="report-first-normalized"></output></span><span>공백 정리 후 두 번째 답변 <output id="report-second-normalized"></output></span></div></div>
+      <p class="field-note">답변이 같아도 실제 행선지가 맞다는 뜻은 아닙니다. 이 가상 비교는 출석을 확정하거나 기존 문의 절차를 자동으로 바꾸지 않습니다. 입력은 이 화면에서만 사용하며 저장하지 않습니다.</p>
+      <a class="baseline-source" href="https://github.com/J0hns0n-K/FlowBench/blob/main/docs/REPORT_COMPARISON_KO.md" target="_blank" rel="noreferrer">비교 규칙과 검증 기록 읽기 ↗</a>
+    </section>
     <section class="panel enquiry-panel" aria-labelledby="enquiry-title">
       <div class="panel-heading"><div><p class="eyebrow">CONDITIONAL ENQUIRIES / SYNTHETIC</p><h2 id="enquiry-title">첫 문의 규칙을 가상 상황에 적용하기</h2></div><span class="data-badge">가상 조건 비교</span></div>
       <p class="section-copy">직접 허가해 행선지를 이미 아는 사례는 질문을 건너뜁니다. 모르면 친구에게 묻고, 구체적 행선지를 들으면 문의를 끝내며, 잘 모르면 리더나 사감쌤에게 묻습니다. 두 조건 모두 같은 규칙을 사용합니다.</p>

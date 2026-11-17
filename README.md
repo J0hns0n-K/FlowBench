@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: c1ab6257a64dead730e6863e468088aeb00775d002a2e3a743f012b0f29fcecf -->
+<!-- Evidence fingerprint: 2c561298fccf5660a3d21db42717be1a93363fdb8999e8ce383fe2fe6b8a152f -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -78,7 +78,7 @@ Junmo's reported contributions include explaining and correcting the real workfl
 
 In a guided modeling exercise, Junmo supplied synthetic 120 s and 135 s cases and noticed that the more-question case would need quicker responses to finish sooner when scanning and recording costs stayed fixed. The [submitted reasoning and follow-up](docs/STUDENT_REASONING_01_KO.md) distinguish his calculations and observation from the assisted formal clarification and test implementation. This advances the model review from question count alone toward total enquiry duration.
 
-In a [guided code extension](docs/STUDENT_WORKBOOK.md), Junmo added an explicit unknown-answer condition and reordered it after feedback showed that equality returned too early. The condition and corrected placement were saved by the student; the requirement, failing regression and diagnostic explanation were assistant-provided. The helper remains separate from the attendance interface and field-policy validation.
+In a [guided code extension](docs/STUDENT_WORKBOOK.md), Junmo added an explicit unknown-answer condition and reordered it after feedback showed that equality returned too early. The condition and corrected placement were saved by the student; the requirement, failing regression and diagnostic explanation were assistant-provided. A [separate synthetic comparison panel](docs/REPORT_COMPARISON_KO.md) now calls that helper, showing agreement, conflict or missing information with trimmed values and examples. The panel is assisted implementation; it neither changes the enquiry policy nor verifies real attendance.
 
 The initial model formalization, code, tests and documentation were produced with Codex assistance. The [contribution ledger](docs/CONTRIBUTIONS.md) distinguishes guided code changes from independent work, field execution and assisted implementation, with dated evidence for each.
 

@@ -172,3 +172,9 @@ Subsequent verification commands and observed outputs will be appended after exe
 - User added the exact trimmed 모름 condition but initially placed it after equal-answer closure. Direct execution showed 모름/병원 and 병원/모름 returning unknown, while 모름/모름 returned same. An assistant-authored regression failed: focused suite 2 passed / 1 failed.
 - Assistant explained the early return and requested moving the marker check above equality. The user reordered the saved source; focused suite now **3 passed, 0 failed**, including whitespace-wrapped markers and both argument orders.
 - Full **62 passed, 0 failed**, typechecked build passed. Student authored the guided condition/reordering; requirement, diagnosis and tests are assisted. This does not establish independent defect discovery or a new field policy. Helper remains separate from the UI; only the exact trimmed literal 모름 is treated as an unknown marker.
+
+### Two-answer helper connected to synthetic browser form — 2026-11-17
+
+- Added report-consistency-ui.ts calling the existing helper directly; no helper logic, enquiry scenario contract or field records changed. Panel shows same/conflict/unknown, explanations and trimmed inputs. Presets use the student's hospital/classroom case and assisted whitespace/missing cases. Inputs are not persisted or exported.
+- Full **62 passed, 0 failed**, typechecked build passed. No redundant automatic test was added for the thin display adapter; actual browser QA verified all states, presets, blank and wrapped-marker inputs, Enter submission and stale-result hiding.
+- Desktop/mobile proof and limitations are in REPORT_COMPARISON_KO.md. At 390×844, page width 375 px and no overflow/errors. Actual downloads not attempted. UI and QA assisted; student's guided marker condition/reordering retains its separate attribution.

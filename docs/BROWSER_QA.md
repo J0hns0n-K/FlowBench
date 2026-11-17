@@ -81,3 +81,10 @@ Screenshots document software behavior only. They establish no school result or 
 - B blank time yields seven unknown queried cases, not ten; all ten prior-known with zero queried counts and blank time gives first enquiry 0 / time 0 s while information/whole costs remain unknown. Prior-known counts participate in the 5,000-case bound. Editing invalidates results and previews; reset restores defaults.
 - JSON reports schema 2 / enquiry-scenarios-v2, prior count/source, seven enquiries, null information cost and four rule sources. CSV content includes the prior-known row and unknown-cost/source columns. Actual file downloads not attempted.
 - [Desktop](images/2026-11-04-prior-information.png), [mobile](images/2026-11-04-prior-information-mobile.png), captured from working source based on `4916379` with fingerprint. At 390×844, page width 375 px, one-column result cards ~313.6 px; no overflow or browser errors. Viewport restored.
+
+## Two-answer synthetic comparison — 2026-11-17
+
+- New panel calls compareDestinations directly. Default student-selected 병원/반 displays conflict. Preset with surrounding whitespace displays same with both trimmed values 병원. Both 모름 displays unknown despite equal text, exercising the student's corrected priority.
+- Empty second answer and whitespace-wrapped 모름 return unknown; Enter submits. Editing hides the previous result until comparison or a preset runs. Result code, Korean explanation and normalized values agree.
+- [Desktop](images/2026-11-17-report-comparison.jpg), [mobile](images/2026-11-17-report-comparison-mobile.jpg), captured from working source based on `7eae790` and fingerprint. JPEG signatures verified. At 390×844, page width 375 px and input/result widths ~313.6 px; no horizontal overflow or browser errors. Viewport restored.
+- Existing cohort example and field-history panels still load independently. No actual attendance decision, network form submission, storage/export of these inputs or browser download added/tested. Student screen review is not yet reported.

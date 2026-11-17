@@ -8,6 +8,7 @@ import { summarizePeerTiming, summarizeCommitteeObservation, compareCommitteeObs
 import { studyStartForRole } from './study-start.ts';
 import type { CheckingRole } from './study-start.ts';
 import { initializeEnquiryComparison } from './inquiry-ui.ts';
+import { initializeReportComparison } from './report-consistency-ui.ts';
 
 function element<T extends HTMLElement>(id: string): T {
   const value=document.getElementById(id);
@@ -246,6 +247,7 @@ jsonButton.addEventListener('click',()=>download('json'));
 csvButton.addEventListener('click',()=>download('csv'));
 
 async function initialize():Promise<void>{
+  initializeReportComparison();
   try{
     const response=await fetch('/source-meta.json');
     if(response.ok){const meta:unknown=await response.json();
