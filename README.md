@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 6b04015559bec362663ad5d1c199fa4f5a24e790478b5f036d263ea39bab1184 -->
+<!-- Evidence fingerprint: c1ab6257a64dead730e6863e468088aeb00775d002a2e3a743f012b0f29fcecf -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -45,7 +45,7 @@ The [next stage report, received **2026-10-31**](docs/STAGE_TIMING_02_KO.md), co
 
 Junmo reviewed the [three-path procedure](data/student-workflow-confirmation-2026-11-04.json) on 2026-11-04: skip asking when he already knows the destination through his own authorization; otherwise ask a peer, closing after a specific destination is accepted; seek a supervisor or another leader when uncertain. That review exposed an omission in the initial scenario model, which required one first enquiry for every case. The [v2 comparison](docs/INQUIRY_SCENARIOS_KO.md) now distinguishes **prior information, peer-report closure and follow-up needed**, with editable inputs, three-part outcome bars and JSON/CSV previews. Information source is retained; neither closure route establishes independently audited accuracy.
 
-The default hypothetical conditions each contain ten cases. Moving three cases from enquiry-based closure to prior information reduces first enquiries from ten to seven, and their assumed time from 100 to 70 seconds; four cases still need follow-up in each condition. **The cost of obtaining and sharing that information remains unknown**, as do follow-up work and whole verification time. This isolates the modeled first-enquiry difference without calling it a net saving. The full suite passes **61 tests**, including conserved workload under reallocation, all-prior cases, zero-weight unknowns, versioned exports and the confidently wrong-report counterexample. Student contributions are the reported workflow and review; code, defaults and tests are AI-assisted. Later-stage criteria and empirical validation remain open.
+The default hypothetical conditions each contain ten cases. Moving three cases from enquiry-based closure to prior information reduces first enquiries from ten to seven, and their assumed time from 100 to 70 seconds; four cases still need follow-up in each condition. **The cost of obtaining and sharing that information remains unknown**, as do follow-up work and whole verification time. This isolates the modeled first-enquiry difference without calling it a net saving. The full suite passes **62 tests**, including conserved workload under reallocation, all-prior cases, zero-weight unknowns, versioned exports and the confidently wrong-report counterexample. Student contributions are the reported workflow and review; code, defaults and tests are AI-assisted. Later-stage criteria and empirical validation remain open.
 
 ![Prior information reduces hypothetical first enquiries while follow-up cases and unknown costs remain explicit](docs/images/2026-11-04-prior-information.png)
 
@@ -78,7 +78,9 @@ Junmo's reported contributions include explaining and correcting the real workfl
 
 In a guided modeling exercise, Junmo supplied synthetic 120 s and 135 s cases and noticed that the more-question case would need quicker responses to finish sooner when scanning and recording costs stayed fixed. The [submitted reasoning and follow-up](docs/STUDENT_REASONING_01_KO.md) distinguish his calculations and observation from the assisted formal clarification and test implementation. This advances the model review from question count alone toward total enquiry duration.
 
-The initial model formalization, code, tests and documentation were produced with Codex assistance. Individually authored model revisions and software changes will be linked as they occur. The [contribution ledger](docs/CONTRIBUTIONS.md) distinguishes field execution, measurement, design and implementation, with dated evidence for each.
+In a [guided code extension](docs/STUDENT_WORKBOOK.md), Junmo added an explicit unknown-answer condition and reordered it after feedback showed that equality returned too early. The condition and corrected placement were saved by the student; the requirement, failing regression and diagnostic explanation were assistant-provided. The helper remains separate from the attendance interface and field-policy validation.
+
+The initial model formalization, code, tests and documentation were produced with Codex assistance. The [contribution ledger](docs/CONTRIBUTIONS.md) distinguishes guided code changes from independent work, field execution and assisted implementation, with dated evidence for each.
 
 Junmo reports assigning other checks to the vice-president or female president and not being closely involved in their checking. Their information access, handoff method and timings remain unspecified; his own authorization knowledge is not transferred to them as an assumption. The [current project review](docs/PROJECT_STATUS_KO.md) brings together achieved functionality, field evidence, contributor roles and remaining validation boundaries.
 

@@ -23,3 +23,12 @@ test('trimmed agreement and conflict are symmetric and do not erase distinct loc
   // Agreement describes two reports; actual location is not an input or a verified result.
   assert.equal(compareDestinations('LOC_A','LOC_A'),'same');
 });
+
+test('explicit 모름 takes priority over equal reports in either position', () => {
+  for (const unknown of ['모름',' 모름 ','\t모름\n']) {
+    for (const other of [null,'','병원','모름',' 모름 ']) {
+      assert.equal(compareDestinations(unknown,other),'unknown');
+      assert.equal(compareDestinations(other,unknown),'unknown');
+    }
+  }
+});

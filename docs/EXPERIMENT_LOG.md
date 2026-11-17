@@ -166,3 +166,9 @@ Subsequent verification commands and observed outputs will be appended after exe
 - User reported saving the assistant-provided function. Inspected the actual file: null/blank guards, trimmed equality and conflict return were present. Eight representative cases and typecheck passed before edits. Removed a harmless duplicate semicolon and corrected a stale scaffold comment; no logic correction was needed.
 - Added two contract tests for null/blank precedence in either position, trimmed agreement, symmetric conflicts and preserving distinct case-sensitive codes. Full **61 passed, 0 failed**; typechecked build passed.
 - Code and tests are assisted; the user entered/saved the provided example. This is not independent algorithm design, field evidence, UI integration or established school conflict-handling policy. Agreement of reports does not verify their truth. No browser actions were needed for this isolated function.
+
+### Guided unknown-marker addition and priority regression — 2026-11-17
+
+- User added the exact trimmed 모름 condition but initially placed it after equal-answer closure. Direct execution showed 모름/병원 and 병원/모름 returning unknown, while 모름/모름 returned same. An assistant-authored regression failed: focused suite 2 passed / 1 failed.
+- Assistant explained the early return and requested moving the marker check above equality. The user reordered the saved source; focused suite now **3 passed, 0 failed**, including whitespace-wrapped markers and both argument orders.
+- Full **62 passed, 0 failed**, typechecked build passed. Student authored the guided condition/reordering; requirement, diagnosis and tests are assisted. This does not establish independent defect discovery or a new field policy. Helper remains separate from the UI; only the exact trimmed literal 모름 is treated as an unknown marker.

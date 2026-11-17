@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-unknown-marker-change-01",
+  "sourceKind": "guided-student-code-change",
+  "reportedOn": "2026-11-17",
+  "sourcePath": "src/report-consistency.ts",
+  "sourceParentRevision": "3dd92b7162e8d869b647e7ed110fdb9799c0999a",
+  "taskOrigin": "Assistant proposed treating the exact synthetic answer marker 모름 as unknown, giving a natural-language condition and insertion location.",
+  "studentAddedCondition": "if (first.trim() === '모름' || second.trim() === '모름') return 'unknown';",
+  "initialSavedOrder": ["null", "blank", "equal-answers", "explicit-unknown-marker", "conflict"],
+  "initialVerification": {
+    "actor": "Codex (AI assistant)",
+    "first": "모름",
+    "second": "모름",
+    "actual": "same",
+    "expected": "unknown",
+    "focusedTestsPassed": 2,
+    "focusedTestsFailed": 1
+  },
+  "assistantFeedback": "Explained that the earlier same return ends the function and asked the user to move the marker check above equality.",
+  "studentCorrectionObserved": "Moved the added condition above the equal-answers branch and saved.",
+  "correctedSavedOrder": ["null", "blank", "explicit-unknown-marker", "equal-answers", "conflict"],
+  "finalVerification": {
+    "actor": "Codex (AI assistant)",
+    "focusedTestsPassed": 3,
+    "focusedTestsFailed": 0,
+    "fullTestsPassed": 62,
+    "fullTestsFailed": 0,
+    "typecheckedBuildPassed": true
+  },
+  "limitations": [
+    "Student implemented and repositioned a condition in a guided exercise; the assistant supplied the requirement, regression test and diagnostic feedback.",
+    "The student did not independently discover the failure or author the automated test; base helper code was previously assistant-provided.",
+    "Only the exact trimmed marker 모름 is recognized, not arbitrary Korean uncertainty expressions or verified real-world facts.",
+    "Separate hypothetical helper, not integrated into attendance UI or adopted as a school policy; no new field session or accuracy result."
+  ]
+}

@@ -12,7 +12,7 @@ Keep original explanations, sketches, failed predictions and revisions; don't re
 
 Submitted reasoning entry: [question count versus total enquiry time](STUDENT_REASONING_01_KO.md), received 2026-10-29. The user supplied the example durations, correct totals and a response-speed observation in a guided exercise. Prompt structure, formal clarification, completed counterexample and test code are AI-assisted. Independent software changes and the remaining tasks are still pending.
 
-현재 진행 (2026-11-16): 사용자가 보조자가 제공한 compareDestinations 코드를 입력·저장했고 검증 후 if·null·trim 설명을 받았습니다. 이어 **병원 / 반 → conflict, 두 답변이 다르기 때문**이라는 가상 사례·예상값·이유를 직접 선택했습니다. 보조자가 저장된 함수를 실행했고 실제 conflict로 예상과 일치했습니다. 이는 안내된 과제 안에서의 테스트 사례 선택·예상이며 실행·코드·기존 자동 테스트는 보조 작업입니다. 독립 구현이나 전체 현장 검증 완료로 확대하지 않습니다. 자동 테스트는 61개 그대로입니다. 기존 4/1/25의 조건과 다른 담당자의 정보 전달 방식은 계속 미확인이며 추가 조사는 요청하지 않습니다. 아래 과제들은 장기 참고 목록입니다.
+현재 진행 (2026-11-17): 사용자가 보조자가 제시한 요구사항에 따라 **'모름' 조건문을 작성**했고, 첫 저장에서 조건의 위치 때문에 모름/모름이 same으로 나왔습니다. 보조자의 실패 테스트·return 설명 후 사용자가 해당 줄을 동등 비교보다 앞으로 옮겨 저장했습니다. 함수 테스트 3개와 전체 62개·빌드가 통과했습니다. 조건 작성·재배치는 사용자 작업이며 요구사항·진단·테스트는 보조 작업입니다. 독립적인 결함 발견이나 알고리즘 설계로 확대하지 않습니다. 기존 4/1/25의 조건과 다른 담당자의 정보 전달 방식은 계속 미확인입니다. 아래 과제들은 장기 참고 목록입니다.
 
 ### 저장한 함수의 확인 결과 — 2026-11-16
 
@@ -37,6 +37,17 @@ Submitted reasoning entry: [question count versus total enquiry time](STUDENT_RE
 | 병원 | 반 | conflict | conflict |
 
 학생 이유: **‘둘이 답변이 다르기 때문에’**. 보조자는 깨끗한 소스 `4d4775c`의 함수를 실행했습니다. null·빈칸 검사에 걸리지 않고, 두 문자열이 같지도 않아 마지막 conflict 반환으로 끝납니다. 어떤 답변이 실제로 맞는지는 이 함수가 판단하지 않습니다. 입력·예상·이유는 학생 선택이며 실행은 보조 작업입니다. 이미 자동 테스트가 다루는 분기이므로 같은 자동 테스트를 중복 추가하지 않았습니다.
+
+### '모름' 조건 추가와 순서 수정 — 2026-11-17
+
+[변경 과정과 실행 결과](../data/student-unknown-marker-change-2026-11-17.json).
+
+| 단계 | 저장된 검사 순서 | 모름 / 모름 결과 |
+| --- | --- | --- |
+| 사용자의 첫 수정 | null → 빈칸 → 같음 → 모름 → conflict | same — 기대와 불일치 |
+| 피드백 후 사용자 수정 | null → 빈칸 → 모름 → 같음 → conflict | unknown — 기대와 일치 |
+
+조건문 자체의 비교식은 맞았으나 앞선 return으로 검사에 도달하지 못했습니다. 사용자가 순서를 옮긴 뒤 공백이 붙은 모름과 역순 입력까지 회귀 테스트가 통과했습니다. 요구사항·테스트·설명은 보조자가 제공했고 사용자가 조건문과 재배치를 작성했습니다. 정확히 '모름'이라는 표기만 처리하며 자연어 이해·실제 출석 검증 기능은 아닙니다. 기존 화면에는 아직 연결하지 않았습니다.
 
 추가 분석 과제: [같은 120초의 두 설명](IDENTIFIABILITY_KO.md)을 손으로 계산하세요. 전체 시간은 같은데 왜 대안의 결과가 다른지, 어떤 관찰을 더 해야 구별할 수 있는지 본인의 말로 기록합니다. 사용자 설명상 시간은 채플실 시계를 참고했으며, 이를 초 단위 스톱워치 자료로 바꾸어 주장하지 않습니다.
 
