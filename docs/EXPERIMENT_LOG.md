@@ -221,3 +221,7 @@ Connected unchanged core to editable contact cards, four synthetic presets, stat
 ### Trace replay core — 2026-11-18
 
 Added bounded JSON parsing/version/provenance validation, deterministic recalculation and mismatch-field reporting. Four tests cover reordered JSON/unknowns, changed/missing outputs, invalid records and the self-consistent-edit limitation. Metadata is untrusted; no source authenticity, field verification or import UI claimed. Implementation/tests assisted.
+
+### Trace JSON import adapter — 2026-11-18
+
+Connected replay core to paste/import UI; only matching calculated records load. Preserves anonymous IDs and assigns unused IDs on add. Desktop QA covered null-time round-trip, tampered total, invalid JSON/recovery and custom IDs. Existing 80 tests/build checked. No authenticity/field-verification claim; previous no-import-UI scope is superseded for this adapter.

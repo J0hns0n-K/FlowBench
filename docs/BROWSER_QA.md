@@ -106,3 +106,7 @@ Screenshots document software behavior only. They establish no school result or 
 ### Enquiry trace panel — 2026-11-18
 
 Verified default unknown disposition/30sec, first-peer closure, later reported stop, unknown duration/17sec subtotal, prior-information skip, add/remove correction of invalid paths, stale result/JSON clearing, and source-stamped JSON. Desktop1280×900/document1265px and mobile390×844/document375px showed no overflow or warning/error logs. Override reset. Proof: [desktop](images/2026-11-18-enquiry-trace.jpg), [mobile](images/2026-11-18-enquiry-trace-mobile.jpg). No physical download or student UAT.
+
+### Trace JSON replay UI — 2026-11-18
+
+Verified unknown-total/17sec subtotal round-trip, changed total rejection, malformed JSON rejection/recovery, custom IDs P7/C1/C2 retained and new C3 assigned on add. Existing inputs remain intact on failed import. No warnings/errors. Desktop proof: [replay](images/2026-11-18-trace-replay.jpg). No new mobile QA or downloads; source authenticity/attendance are not verified.

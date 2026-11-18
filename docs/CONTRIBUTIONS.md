@@ -80,3 +80,5 @@ Codex implemented the synthetic trace state machine, runtime validation, known/u
 2026-11-18: Codex connected the enquiry trace core to an editable browser form, presets, event table and source-stamped JSON content preview, with desktop/mobile QA. Commit identity follows repository owner J0hns0n-K by user request; implementation and QA remain assistant work. No new student code, UAT, field measurements or validated later stopping criteria inferred.
 
 2026-11-18: Codex implemented trace JSON recalculation and four tests. It checks internal consistency, not source authenticity; consistently edited inputs/results can pass. No student-authored code, actual attendance verification or import UI is inferred.
+
+2026-11-18: Codex connected JSON recalculation to a paste/import UI and preserved anonymous contact IDs during editing/addition. Browser verified round-trip, invalid/inconsistent rejection and recovery. Existing 80 tests/build checked. Owner commit identity is J0hns0n-K; implementation/QA remain assisted, with no new student UAT or field evidence.

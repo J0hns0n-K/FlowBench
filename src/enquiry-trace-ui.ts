@@ -1,4 +1,5 @@
 import { evaluateEnquiryTrace, MAX_TRACE_CONTACTS } from './enquiry-trace.ts';
+import { replayEnquiryTrace } from './enquiry-trace-replay.ts';
 import type { TraceContact, TraceState } from './enquiry-trace.ts';
 
 export function initializeEnquiryTrace(metadata:{sourceRevision:string|null;sourceFingerprint:string|null}):void {
@@ -18,7 +19,7 @@ export function initializeEnquiryTrace(metadata:{sourceRevision:string|null;sour
   const read=():TraceContact[]=>Array.from(rows.querySelectorAll('fieldset')).map((row,index)=>{
     const field=(name:string)=>row.querySelector<HTMLInputElement|HTMLSelectElement>(`[data-field="${name}"]`)!;
     const time=field('time').value;
-    return {id:`C${index+1}`,target:field('target').value as TraceContact['target'],
+    return {id:row.dataset.contactId!,target:field('target').value as TraceContact['target'],
       specificDestinationReported:field('specific').value==='yes',uncertaintyReported:field('uncertain').value==='yes',
       enquiryDurationSec:time.trim()===''?null:Number(time),
       followUpDisposition:index===0?null:field('disposition').value as TraceContact['followUpDisposition']};
@@ -27,6 +28,7 @@ export function initializeEnquiryTrace(metadata:{sourceRevision:string|null;sour
     rows.replaceChildren();
     contacts.forEach((contact,index)=>{
       const row=document.createElement('fieldset'), legend=document.createElement('legend');
+      row.dataset.contactId=contact.id;
       legend.textContent=`가상 문의 ${index+1}`;row.append(legend);
       const select=(key:string,label:string,options:readonly (readonly [string,string])[],value:string)=>{
         const wrapper=document.createElement('label');wrapper.textContent=label;
@@ -79,12 +81,31 @@ export function initializeEnquiryTrace(metadata:{sourceRevision:string|null;sour
   form.addEventListener('input',invalidate);
   prior.addEventListener('change',()=>{sync();invalidate();});
   form.addEventListener('submit',event=>{event.preventDefault();execute();});
-  add.addEventListener('click',()=>{const contacts=read();if(contacts.length<MAX_TRACE_CONTACTS)paint([...contacts,contacts.length?later():peer()]);});
+  add.addEventListener('click',()=>{const contacts=read();if(contacts.length<MAX_TRACE_CONTACTS){
+    let next=1;while(contacts.some(contact=>contact.id===`C${next}`))next++;
+    paint([...contacts,{...(contacts.length?later():peer()),id:`C${next}`}]);
+  }});
   remove.addEventListener('click',()=>paint(read().slice(0,-1)));
   for(const [id,contacts] of Object.entries({first:[peer(true)],missing:[peer(),later()],
-    stopped:[peer(),later(20,'reported-stop')],unknown:[peer(),later(null,'continue'),later(7,'reported-stop')]})){
+    stopped:[peer(),later(20,'reported-stop')],unknown:[peer(),later(null,'continue'),{...later(7,'reported-stop'),id:'C3'}]})){
     get(`trace-example-${id}`).addEventListener('click',()=>{prior.value='none';paint(contacts);execute();});
   }
   show.addEventListener('click',()=>{if(record){preview.value=JSON.stringify(record,null,2);preview.hidden=false;}});
+  const replayInput=get<HTMLTextAreaElement>('trace-replay-input'), replayStatus=get('trace-replay-status');
+  replayInput.addEventListener('input',()=>{replayStatus.textContent='';});
+  get('trace-replay').addEventListener('click',()=>{
+    try{
+      const checked=replayEnquiryTrace(replayInput.value);
+      if(!checked.matchesStoredCalculation){
+        replayStatus.textContent=`저장된 계산과 일치하지 않아 불러오지 않았습니다. 불일치 항목: ${checked.mismatchedFields.join(', ')}`;
+        return;
+      }
+      prior.value=checked.recomputed.input.priorInformation;
+      paint(checked.recomputed.input.contacts);execute();
+      replayStatus.textContent='현재 코드의 재계산 결과와 일치해 불러왔습니다. 원본 출처나 실제 출석을 인증한 것은 아닙니다. 새 기록에는 현재 코드 버전과 생성 시각을 사용합니다.';
+    }catch{
+      replayStatus.textContent='불러오지 못했습니다. 지원되는 가상 문의 경로 JSON인지, 입력·버전·크기(최대 200,000자)를 확인하세요.';
+    }
+  });
   prior.value='none';paint([peer(),later()]);execute();
 }
