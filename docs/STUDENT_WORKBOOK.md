@@ -73,3 +73,9 @@ Submitted reasoning entry: [question count versus total enquiry time](STUDENT_RE
 보조자가 제시한 가상 입력 학교 카페 / 학교카페와 trim 설명에 대해, 사용자는 conflict를 예상하고 가운데 띄어쓰기가 남기 때문이라고 설명했습니다. 보조자가 소스 523ef70fad38baa1c3d70c555e83a0db6ed6cc66에서 실행한 결과도 conflict였고 정리 값은 각각 학교 카페 / 학교카페였습니다. [예측·실행 기록](../data/student-internal-space-prediction-2026-11-18.json).
 
 입력과 힌트는 보조자가 제공했으며 예상과 이유는 사용자 응답입니다. 다른 글자라는 결과는 실제로 다른 장소라는 증거가 아닙니다. 현재 정책은 앞뒤 공백 정리 후 정확한 문자열 비교이며, 별칭이나 실제 위치 확인으로 확장하지 않았습니다.
+
+### 번역 표현 사례 선택 — 2026-11-18
+
+사용자가 같은 장소를 다르게 부르는 가상 사례로 ‘병원, hospital’을 선택했습니다. 예상 결과는 별도로 말하지 않았습니다. 보조자가 unchanged source f47b8f6675da599989c7bac783ed3eb86d505a4e에서 실행한 현재 결과는 conflict입니다. [원문과 실행 출처](../data/student-alias-pair-2026-11-18.json).
+
+이는 번역으로 대응하는 장소 표현이며 동일한 특정 병원이라는 증거는 아닙니다. 후속 안내 과제는 기존 비교 규칙과 분리한 normalizeDestinationLabel에서 정확한 hospital 표기를 병원으로 정리하는 한 줄을 작성하는 것입니다. 이 과제는 보조자가 제안했으며 아직 저장·구현된 것으로 기록하지 않습니다. 실제 출석 판정이나 임의 동의어·번역 처리는 추가하지 않았습니다.

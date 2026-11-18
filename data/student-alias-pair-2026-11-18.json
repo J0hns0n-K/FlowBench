@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-alias-pair-01",
+  "sourceKind": "user-proposed-synthetic-alias-pair",
+  "reportedOn": "2026-11-18",
+  "promptOrigin": "Assistant asked for a hypothetical pair of differently named expressions for the same place, beyond whitespace differences.",
+  "userStatementKo": "병원, hospital",
+  "first": "병원",
+  "second": "hospital",
+  "userExpectedResult": null,
+  "execution": {
+    "actor": "Codex (AI assistant)",
+    "function": "compareDestinations",
+    "sourceRevision": "f47b8f6675da599989c7bac783ed3eb86d505a4e",
+    "workingTreeCodeChanges": false,
+    "actualResult": "conflict"
+  },
+  "interpretation": "An explicit translation/label-alias example. Matching these labels would not establish the same physical hospital or verify attendance.",
+  "limitations": [
+    "The user selected the pair within an assisted task, but did not state a code prediction, implementation or general alias policy.",
+    "Execution and the proposed separate exact-label normalization exercise are assistant work.",
+    "No alias normalization is implemented by this evidence-only update; the existing comparison contract remains unchanged.",
+    "This is not a field observation or an actual student destination."
+  ]
+}

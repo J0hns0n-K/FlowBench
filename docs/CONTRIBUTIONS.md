@@ -56,3 +56,7 @@ The user entered and saved trimDestination using an assistant-provided function 
 ### Internal-whitespace prediction — 2026-11-18
 
 Given assistant-selected hypothetical inputs 학교 카페 / 학교카페 and a trim hint, the user predicted conflict and explained that the internal space remains. Codex executed the unchanged helper at 523ef70fad38baa1c3d70c555e83a0db6ed6cc66 and confirmed conflict. This is a guided prediction/reason, not user-selected inputs, independently authored code/tests or a field finding. [Source record](../data/student-internal-space-prediction-2026-11-18.json).
+
+### Translation-alias example selection — 2026-11-18
+
+The user selected 병원 / hospital in response to an assisted request for differently named hypothetical place labels. No expected code result or general alias policy was supplied. Codex executed unchanged source f47b8f6675da599989c7bac783ed3eb86d505a4e and obtained conflict. This identifies a label-comparison limitation; it does not identify a shared physical hospital. A separate exact-label normalization exercise is assistant-proposed and remains unimplemented. [Source record](../data/student-alias-pair-2026-11-18.json).
