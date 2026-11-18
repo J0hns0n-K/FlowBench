@@ -48,3 +48,7 @@ Each future entry should link an issue, commit or approved aggregate experiment 
 ### Reproducible comparison record implementation — 2026-11-17
 
 Codex added the separate record module, four serialization/validation tests and JSON/CSV content previews, reused the existing helper, and verified 66 tests, build and desktop/narrow-browser behavior. This is assisted implementation. The student's guided marker condition remains attributed separately; no new student implementation, independent screen review or field measurement is inferred from “계속”. See [format and verification contract](REPORT_COMPARISON_KO.md).
+
+### Shared whitespace helper — 2026-11-18
+
+The user entered and saved trimDestination using an assistant-provided function skeleton, null guard and exact return example. The first saved skeleton lacked the return; after the explicit example, the saved function returned value.trim(). This is guided code entry, not independent design or defect discovery. Codex connected it to comparison and record creation and made the UI display the record's normalized values. Direct helper checks, existing 66 tests and typechecked build passed; raw inputs, decision priority and export versions remain unchanged. See [implementation note](REPORT_COMPARISON_KO.md).

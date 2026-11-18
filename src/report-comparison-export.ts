@@ -1,4 +1,4 @@
-import { compareDestinations } from './report-consistency.ts';
+import { compareDestinations, trimDestination } from './report-consistency.ts';
 
 export const REPORT_COMPARISON_VERSION = 'report-comparison-v1';
 export interface ReportMetadata {
@@ -33,7 +33,7 @@ export function makeReportComparison(first: string | null, second: string | null
     sourceRevision: metadata.sourceRevision,
     sourceFingerprint: metadata.sourceFingerprint,
     raw: { first, second },
-    normalized: { first: first === null ? null : first.trim(), second: second === null ? null : second.trim() },
+    normalized: { first: trimDestination(first), second: trimDestination(second) },
     result: compareDestinations(first, second),
     rules: ['null, blank or exact trimmed 모름 => unknown before equality', 'trim edges only; case-sensitive exact equality'],
     scope: 'hypothetical-text-comparison-only',

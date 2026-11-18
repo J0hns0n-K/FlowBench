@@ -184,3 +184,9 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Added report-comparison-export.ts, calling the unchanged helper. Records preserve raw/normalized values, schema/model version, timestamp, nullable source revision/fingerprint, rules and synthetic/verification boundaries. CSV uses JSON-valued cells to distinguish null, blank and literal text while preserving special characters.
 - Four new tests cover JSON round-trip/replay, unknown metadata, CSV preservation and malformed-input rejection. Full **66 passed, 0 failed** and typechecked build passed. UI previews share one run; edits clear old content and disable format buttons.
 - Browser checks verified spaced agreement, missing/blank inputs, raw and normalized JSON values, matching CSV metadata, preset replacement and stale-content invalidation. Actual CSS widths were 984 and 300 px under requested 1280×900 / 390×844 overrides; no horizontal overflow or logged warnings/errors. Details and images: REPORT_COMPARISON_KO.md. Actual file download not attempted. No new field data or student-authored export implementation.
+
+### Shared whitespace normalizer, behavior preserved — 2026-11-18
+
+- Verified the user's saved guided helper: null stays null; edge spaces around 병원/모름 are removed; whitespace-only becomes empty text; internal space in 학교 카페 remains. No field measurement or independent student design inferred.
+- Codex replaced repeated trimming in comparison and record creation with trimDestination; UI reads run.normalized. Raw values, missing-before-equality order and report-comparison-v1/schema 1 are unchanged.
+- Existing **66 passed, 0 failed**, typechecked build passed. Existing comparison and serializer fixtures cover behavior and raw/normalized preservation; no duplicate tests added. No browser recheck for this internal refactor; screenshots remain the dated 11/17 evidence.

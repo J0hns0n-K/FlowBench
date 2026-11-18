@@ -31,8 +31,8 @@ export function initializeReportComparison(metadata: Omit<ReportMetadata,'genera
     get('report-code').textContent = value;
     get('report-label').textContent = description.title;
     get('report-explanation').textContent = description.explanation;
-    get('report-first-normalized').textContent = JSON.stringify(first.value.trim());
-    get('report-second-normalized').textContent = JSON.stringify(second.value.trim());
+    get('report-first-normalized').textContent = JSON.stringify(run.normalized.first);
+    get('report-second-normalized').textContent = JSON.stringify(run.normalized.second);
     result.dataset.state = value; result.hidden = false;
     jsonButton.disabled = false; csvButton.disabled = false;
     status.textContent = '가상 답변 비교 완료';

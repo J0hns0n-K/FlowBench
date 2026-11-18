@@ -3,9 +3,18 @@ export function compareDestinations(
   first: string | null,
   second: string | null
 ): 'same' | 'conflict' | 'unknown' {
-  if (first === null || second === null) return 'unknown';
-  if (first.trim() === '' || second.trim() === '') return 'unknown';
-  if (first.trim() === '모름' || second.trim() === '모름') return 'unknown';
-  if (first.trim() === second.trim()) return 'same';
+  const normalizedFirst = trimDestination(first);
+  const normalizedSecond = trimDestination(second);
+  if (normalizedFirst === null || normalizedSecond === null) return 'unknown';
+  if (normalizedFirst === '' || normalizedSecond === '') return 'unknown';
+  if (normalizedFirst === '모름' || normalizedSecond === '모름') return 'unknown';
+  if (normalizedFirst === normalizedSecond) return 'same';
   return 'conflict';
+}
+
+// 함수 틀과 return 예제를 안내받아 사용자가 입력·저장했습니다. 호출 연결은 Codex 보조 작업입니다.
+export function trimDestination(value: string | null): string | null {
+  if (value === null) return null;
+
+  return value.trim();
 }
