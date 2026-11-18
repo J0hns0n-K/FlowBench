@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 242b58e6da3a8d118b6d06535d8f71b3d26cdd0d0072f48d037acb8e4106255a -->
+<!-- Evidence fingerprint: de565dbf01a5463b599bfdb70b0321f7554915fee2dcdba7e2d612c1dff7723e -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -61,6 +61,8 @@ The workbench separates three kinds of reasoning:
 | Field-report accounting | Validate provenance and intervals, preserve missing metadata, and calculate descriptive differences separately from simulated predictions. | [Accounting code](src/observed.ts) · [source records](data/) |
 
 The separate [two-answer playground](docs/REPORT_COMPARISON_KO.md) compares two explicit interpretation rules. Junmo selected the hypothetical pair 병원 / hospital: strict text comparison returns conflict, while a single declared hospital → 병원 alias produces matching labels. Both results remain visible, and v2 JSON/CSV records preserve raw/trimmed/alias-normalized values, the exact alias table, rule versions and source fingerprints. Unknown information takes priority over agreement; matching generic labels cannot identify the same physical hospital or verify attendance. The alias implementation, dual-result interface and tests are AI-assisted; the student’s example selection and guided helper changes retain separate attribution.
+
+An [executable limitation argument](docs/LABEL_COMPARISON_LIMITS_KO.md) holds the visible reports fixed while changing only invented physical-site relationships. Four constructed worlds produce two indistinguishable input pairs: matching labels alone cannot identify the same physical hospital. CI reproduces both witnesses and checks the saved evidence against the source fingerprint. These are post-implementation synthetic counterexamples, with empirical accuracy left unknown.
 
 Pure functions are shared by the browser, tests and experiment runner. Verification covers hand-calculated fixtures, simultaneous events, conservation, invalid inputs, reproducible seeds, unknown propagation and adverse outcomes. JSON/CSV serializers retain synthetic inputs, raw events, assumptions and source versions; charts visualize the same calculations.
 

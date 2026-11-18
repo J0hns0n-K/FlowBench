@@ -39,7 +39,7 @@ const context=comparison.exceptionSummary;
 const contextText=context?`\n\nLatest context: ${context.cafeStudents} students at the school cafe and ${context.classStudents} in a separate class${context.distinctContextStudents===null?'':`, ${context.distinctContextStudents} distinct students by explicit confirmation`}; ${context.inquiryEvents} grade-level enquiry events. These counts are not a measured vacant-seat count or verified attendance denominator. ${context.cafeKnownThroughUserAuthorization?"Cafe attendance was already known through Junmo's prior authorization; ":''}Information availability is a possible confounding factor, not a demonstrated cause of the timing difference.`:'';
 const fingerprint=createHash('sha256');
 const evidenceFiles=[...dataPaths,...(await readdir('docs')).filter(file=>/\.(md|json)$/.test(file)).map(file=>`docs/${file}`),
-  'scripts/project-overview.mjs','scripts/build.mjs','scripts/experiment.ts','.github/workflows/verify.yml','package.json'];
+  'scripts/project-overview.mjs','scripts/build.mjs','scripts/experiment.ts','scripts/label-comparison-limits.mjs','.github/workflows/verify.yml','package.json'];
 for(const directory of ['src','tests']){
   evidenceFiles.push(...(await readdir(directory)).filter(file=>file.endsWith('.ts')).map(file=>`${directory}/${file}`));
 }

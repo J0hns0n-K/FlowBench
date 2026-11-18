@@ -68,3 +68,7 @@ After the user asked Codex to do the implementation, Codex filled the saved norm
 ### Dual-rule comparison and v2 evidence records — 2026-11-18
 
 Codex connected the assistant-authored exact alias helper to a second browser result, preserved strict comparison, and added v2 records retaining the exact alias table and both results. Three new tests, 69-test full suite, typechecked build and desktop/mobile preview QA passed. Student selected the hypothetical 병원 / hospital pair; code, rule formalization, schema change and verification are assisted. No student independent implementation, direct UI review, new observation or actual attendance decision inferred. [Contract and proof](REPORT_COMPARISON_KO.md).
+
+### Executable label/site limitation argument — 2026-11-18
+
+Codex constructed post-implementation synthetic twin worlds, formalized the label/site identifiability argument, implemented the source-fingerprinted evidence/reproduction runner and added CI verification. Four worlds form two identical-input/opposite-truth witnesses. Existing 69 tests/build passed. Student contribution remains the prior 병원 / hospital example selection, with no new student proof, independent counterexample discovery, field observation or accuracy measurement inferred. [Argument and provenance](LABEL_COMPARISON_LIMITS_KO.md).

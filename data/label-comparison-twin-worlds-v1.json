@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "provenance": "synthetic",
+  "construction": "assistant-constructed-post-implementation-counterexamples",
+  "createdOn": "2026-11-18",
+  "sourceExample": "data/student-alias-pair-2026-11-18.json",
+  "purpose": "Test whether identical visible labels can identify the same physical site across constructed possible worlds.",
+  "worlds": [
+    {
+      "id": "translated-same-site",
+      "reports": { "first": "병원", "second": "hospital" },
+      "hypotheticalSites": { "first": "SYNTHETIC_SITE_A", "second": "SYNTHETIC_SITE_A" },
+      "expectedTextResults": { "strict": "conflict", "alias": "same" }
+    },
+    {
+      "id": "translated-different-sites",
+      "reports": { "first": "병원", "second": "hospital" },
+      "hypotheticalSites": { "first": "SYNTHETIC_SITE_A", "second": "SYNTHETIC_SITE_B" },
+      "expectedTextResults": { "strict": "conflict", "alias": "same" }
+    },
+    {
+      "id": "identical-same-site",
+      "reports": { "first": "병원", "second": "병원" },
+      "hypotheticalSites": { "first": "SYNTHETIC_SITE_A", "second": "SYNTHETIC_SITE_A" },
+      "expectedTextResults": { "strict": "same", "alias": "same" }
+    },
+    {
+      "id": "identical-different-sites",
+      "reports": { "first": "병원", "second": "병원" },
+      "hypotheticalSites": { "first": "SYNTHETIC_SITE_A", "second": "SYNTHETIC_SITE_B" },
+      "expectedTextResults": { "strict": "same", "alias": "same" }
+    }
+  ],
+  "limitations": [
+    "All site identifiers and site relationships are invented for this counterexample; they are not reports about actual students or hospitals.",
+    "Hypothetical site identifiers belong to the evaluation oracle and are never supplied to the text comparison functions.",
+    "The worlds were constructed after the functions existed; this is not preregistration, an independent holdout set or field validation.",
+    "No prevalence, empirical accuracy, error-rate estimate or student-authored counterexample is established."
+  ]
+}

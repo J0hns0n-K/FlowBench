@@ -29,3 +29,5 @@ jobs:
         run: pnpm build
       - name: Reproduce synthetic sensitivity experiment
         run: pnpm experiment
+      - name: Reproduce label-comparison limitation witnesses
+        run: pnpm label:limits

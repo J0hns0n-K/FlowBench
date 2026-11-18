@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "evaluationVersion": "label-site-identifiability-v1",
+  "provenance": "synthetic",
+  "construction": "assistant-constructed-post-implementation-counterexamples",
+  "generatedAt": "2026-11-18T02:45:23.004Z",
+  "sourceRevision": "a019b5726841f84fc0e0d418d8ccd01316d5dab8+dirty:9762bc7c511d",
+  "sourceFingerprint": "9762bc7c511d058696d56c7d457b824c031f6fb742f98d547d6466b19b8333ff",
+  "sourceFiles": [
+    "src/report-consistency.ts",
+    "src/report-comparison-export.ts",
+    "data/label-comparison-twin-worlds-v1.json",
+    "scripts/label-comparison-limits.mjs"
+  ],
+  "fixturePath": "data/label-comparison-twin-worlds-v1.json",
+  "worlds": [
+    {
+      "id": "translated-same-site",
+      "reports": {
+        "first": "병원",
+        "second": "hospital"
+      },
+      "hypotheticalSites": {
+        "first": "SYNTHETIC_SITE_A",
+        "second": "SYNTHETIC_SITE_A"
+      },
+      "expectedTextResults": {
+        "strict": "conflict",
+        "alias": "same"
+      },
+      "hypotheticalSameSite": true,
+      "comparison": {
+        "schemaVersion": 2,
+        "modelVersion": "report-comparison-v2",
+        "provenance": "synthetic",
+        "generatedAt": "2026-11-18T02:45:23.004Z",
+        "sourceRevision": "a019b5726841f84fc0e0d418d8ccd01316d5dab8+dirty:9762bc7c511d",
+        "sourceFingerprint": "9762bc7c511d058696d56c7d457b824c031f6fb742f98d547d6466b19b8333ff",
+        "raw": {
+          "first": "병원",
+          "second": "hospital"
+        },
+        "normalized": {
+          "first": "병원",
+          "second": "hospital"
+        },
+        "result": "conflict",
+        "aliasComparison": {
+          "modelVersion": "hospital-label-v1",
+          "aliasTable": [
+            {
+              "from": "hospital",
+              "to": "병원"
+            }
+          ],
+          "normalized": {
+            "first": "병원",
+            "second": "병원"
+          },
+          "result": "same",
+          "rules": [
+            "trim edges, then apply exact case-sensitive aliases from aliasTable; all other labels unchanged",
+            "null, blank or exact trimmed 모름 => unknown before equality"
+          ]
+        },
+        "rules": [
+          "null, blank or exact trimmed 모름 => unknown before equality",
+          "trim edges only; case-sensitive exact equality"
+        ],
+        "scope": "hypothetical-text-comparison-only",
+        "independentVerification": "not-established",
+        "limitations": [
+          "Agreement does not establish a true destination or authorization.",
+          "Alias agreement describes equivalent labels, not the same physical hospital.",
+          "Does not change attendance or enquiry policy."
+        ],
+        "sources": [
+          "src/report-consistency.ts",
+          "data/student-report-consistency-case-2026-11-16.json",
+          "data/student-unknown-marker-change-2026-11-17.json",
+          "data/student-alias-pair-2026-11-18.json"
+        ]
+      }
+    },
+    {
+      "id": "translated-different-sites",
+      "reports": {
+        "first": "병원",
+        "second": "hospital"
+      },
+      "hypotheticalSites": {
+        "first": "SYNTHETIC_SITE_A",
+        "second": "SYNTHETIC_SITE_B"
+      },
+      "expectedTextResults": {
+        "strict": "conflict",
+        "alias": "same"
+      },
+      "hypotheticalSameSite": false,
+      "comparison": {
+        "schemaVersion": 2,
+        "modelVersion": "report-comparison-v2",
+        "provenance": "synthetic",
+        "generatedAt": "2026-11-18T02:45:23.004Z",
+        "sourceRevision": "a019b5726841f84fc0e0d418d8ccd01316d5dab8+dirty:9762bc7c511d",
+        "sourceFingerprint": "9762bc7c511d058696d56c7d457b824c031f6fb742f98d547d6466b19b8333ff",
+        "raw": {
+          "first": "병원",
+          "second": "hospital"
+        },
+        "normalized": {
+          "first": "병원",
+          "second": "hospital"
+        },
+        "result": "conflict",
+        "aliasComparison": {
+          "modelVersion": "hospital-label-v1",
+          "aliasTable": [
+            {
+              "from": "hospital",
+              "to": "병원"
+            }
+          ],
+          "normalized": {
+            "first": "병원",
+            "second": "병원"
+          },
+          "result": "same",
+          "rules": [
+            "trim edges, then apply exact case-sensitive aliases from aliasTable; all other labels unchanged",
+            "null, blank or exact trimmed 모름 => unknown before equality"
+          ]
+        },
+        "rules": [
+          "null, blank or exact trimmed 모름 => unknown before equality",
+          "trim edges only; case-sensitive exact equality"
+        ],
+        "scope": "hypothetical-text-comparison-only",
+        "independentVerification": "not-established",
+        "limitations": [
+          "Agreement does not establish a true destination or authorization.",
+          "Alias agreement describes equivalent labels, not the same physical hospital.",
+          "Does not change attendance or enquiry policy."
+        ],
+        "sources": [
+          "src/report-consistency.ts",
+          "data/student-report-consistency-case-2026-11-16.json",
+          "data/student-unknown-marker-change-2026-11-17.json",
+          "data/student-alias-pair-2026-11-18.json"
+        ]
+      }
+    },
+    {
+      "id": "identical-same-site",
+      "reports": {
+        "first": "병원",
+        "second": "병원"
+      },
+      "hypotheticalSites": {
+        "first": "SYNTHETIC_SITE_A",
+        "second": "SYNTHETIC_SITE_A"
+      },
+      "expectedTextResults": {
+        "strict": "same",
+        "alias": "same"
+      },
+      "hypotheticalSameSite": true,
+      "comparison": {
+        "schemaVersion": 2,
+        "modelVersion": "report-comparison-v2",
+        "provenance": "synthetic",
+        "generatedAt": "2026-11-18T02:45:23.004Z",
+        "sourceRevision": "a019b5726841f84fc0e0d418d8ccd01316d5dab8+dirty:9762bc7c511d",
+        "sourceFingerprint": "9762bc7c511d058696d56c7d457b824c031f6fb742f98d547d6466b19b8333ff",
+        "raw": {
+          "first": "병원",
+          "second": "병원"
+        },
+        "normalized": {
+          "first": "병원",
+          "second": "병원"
+        },
+        "result": "same",
+        "aliasComparison": {
+          "modelVersion": "hospital-label-v1",
+          "aliasTable": [
+            {
+              "from": "hospital",
+              "to": "병원"
+            }
+          ],
+          "normalized": {
+            "first": "병원",
+            "second": "병원"
+          },
+          "result": "same",
+          "rules": [
+            "trim edges, then apply exact case-sensitive aliases from aliasTable; all other labels unchanged",
+            "null, blank or exact trimmed 모름 => unknown before equality"
+          ]
+        },
+        "rules": [
+          "null, blank or exact trimmed 모름 => unknown before equality",
+          "trim edges only; case-sensitive exact equality"
+        ],
+        "scope": "hypothetical-text-comparison-only",
+        "independentVerification": "not-established",
+        "limitations": [
+          "Agreement does not establish a true destination or authorization.",
+          "Alias agreement describes equivalent labels, not the same physical hospital.",
+          "Does not change attendance or enquiry policy."
+        ],
+        "sources": [
+          "src/report-consistency.ts",
+          "data/student-report-consistency-case-2026-11-16.json",
+          "data/student-unknown-marker-change-2026-11-17.json",
+          "data/student-alias-pair-2026-11-18.json"
+        ]
+      }
+    },
+    {
+      "id": "identical-different-sites",
+      "reports": {
+        "first": "병원",
+        "second": "병원"
+      },
+      "hypotheticalSites": {
+        "first": "SYNTHETIC_SITE_A",
+        "second": "SYNTHETIC_SITE_B"
+      },
+      "expectedTextResults": {
+        "strict": "same",
+        "alias": "same"
+      },
+      "hypotheticalSameSite": false,
+      "comparison": {
+        "schemaVersion": 2,
+        "modelVersion": "report-comparison-v2",
+        "provenance": "synthetic",
+        "generatedAt": "2026-11-18T02:45:23.004Z",
+        "sourceRevision": "a019b5726841f84fc0e0d418d8ccd01316d5dab8+dirty:9762bc7c511d",
+        "sourceFingerprint": "9762bc7c511d058696d56c7d457b824c031f6fb742f98d547d6466b19b8333ff",
+        "raw": {
+          "first": "병원",
+          "second": "병원"
+        },
+        "normalized": {
+          "first": "병원",
+          "second": "병원"
+        },
+        "result": "same",
+        "aliasComparison": {
+          "modelVersion": "hospital-label-v1",
+          "aliasTable": [
+            {
+              "from": "hospital",
+              "to": "병원"
+            }
+          ],
+          "normalized": {
+            "first": "병원",
+            "second": "병원"
+          },
+          "result": "same",
+          "rules": [
+            "trim edges, then apply exact case-sensitive aliases from aliasTable; all other labels unchanged",
+            "null, blank or exact trimmed 모름 => unknown before equality"
+          ]
+        },
+        "rules": [
+          "null, blank or exact trimmed 모름 => unknown before equality",
+          "trim edges only; case-sensitive exact equality"
+        ],
+        "scope": "hypothetical-text-comparison-only",
+        "independentVerification": "not-established",
+        "limitations": [
+          "Agreement does not establish a true destination or authorization.",
+          "Alias agreement describes equivalent labels, not the same physical hospital.",
+          "Does not change attendance or enquiry policy."
+        ],
+        "sources": [
+          "src/report-consistency.ts",
+          "data/student-report-consistency-case-2026-11-16.json",
+          "data/student-unknown-marker-change-2026-11-17.json",
+          "data/student-alias-pair-2026-11-18.json"
+        ]
+      }
+    }
+  ],
+  "witnesses": [
+    {
+      "worldIds": [
+        "translated-same-site",
+        "translated-different-sites"
+      ],
+      "visibleInputs": {
+        "first": "병원",
+        "second": "hospital"
+      },
+      "strictResult": "conflict",
+      "aliasResult": "same",
+      "possibleSameSiteTruth": [
+        false,
+        true
+      ],
+      "siteTruthIdentifiedFromTheseReports": false
+    },
+    {
+      "worldIds": [
+        "identical-same-site",
+        "identical-different-sites"
+      ],
+      "visibleInputs": {
+        "first": "병원",
+        "second": "병원"
+      },
+      "strictResult": "same",
+      "aliasResult": "same",
+      "possibleSameSiteTruth": [
+        false,
+        true
+      ],
+      "siteTruthIdentifiedFromTheseReports": false
+    }
+  ],
+  "conclusion": "Identical visible reports admit same-site and different-site worlds; text comparison cannot identify site equality across these worlds.",
+  "empiricalAccuracy": null,
+  "independentVerification": "not-established",
+  "limitations": [
+    "All site identifiers and site relationships are invented for this counterexample; they are not reports about actual students or hospitals.",
+    "Hypothetical site identifiers belong to the evaluation oracle and are never supplied to the text comparison functions.",
+    "The worlds were constructed after the functions existed; this is not preregistration, an independent holdout set or field validation.",
+    "No prevalence, empirical accuracy, error-rate estimate or student-authored counterexample is established."
+  ]
+}

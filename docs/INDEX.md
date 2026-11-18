@@ -36,6 +36,7 @@
 - [Student-submitted enquiry order and pending stopping rules](ESCALATION_PROCEDURE_KO.md)
 - [Synthetic enquiry scenarios: aggregation, browser comparison and exports](INQUIRY_SCENARIOS_KO.md)
 - [Two-answer synthetic comparison: interface and validation](REPORT_COMPARISON_KO.md)
+- [Executable counterexamples: matching labels versus physical sites](LABEL_COMPARISON_LIMITS_KO.md)
 - [Next-observation form](NEW_PROCEDURE_OBSERVATION_KO.md)
 - [Original class-turn observation form](OBSERVATION_SHEET_KO.md)
 - [Why aggregate time does not identify the process](IDENTIFIABILITY_KO.md)
