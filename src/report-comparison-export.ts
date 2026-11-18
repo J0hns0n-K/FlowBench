@@ -1,6 +1,6 @@
-import { compareDestinations, trimDestination } from './report-consistency.ts';
+import { compareDestinations, trimDestination, normalizeDestinationLabel, DESTINATION_LABEL_VERSION, HOSPITAL_LABEL_ALIAS } from './report-consistency.ts';
 
-export const REPORT_COMPARISON_VERSION = 'report-comparison-v1';
+export const REPORT_COMPARISON_VERSION = 'report-comparison-v2';
 export interface ReportMetadata {
   generatedAt: string;
   sourceRevision: string | null;
@@ -25,8 +25,9 @@ export function makeReportComparison(first: string | null, second: string | null
       (typeof metadata.sourceFingerprint !== 'string' || !/^[a-f0-9]{64}$/.test(metadata.sourceFingerprint))) {
     throw new TypeError('sourceFingerprint must be a SHA-256 fingerprint or null.');
   }
+  const aliasNormalized = { first: normalizeDestinationLabel(first), second: normalizeDestinationLabel(second) };
   return {
-    schemaVersion: 1 as const,
+    schemaVersion: 2 as const,
     modelVersion: REPORT_COMPARISON_VERSION,
     provenance: 'synthetic' as const,
     generatedAt: metadata.generatedAt,
@@ -35,11 +36,21 @@ export function makeReportComparison(first: string | null, second: string | null
     raw: { first, second },
     normalized: { first: trimDestination(first), second: trimDestination(second) },
     result: compareDestinations(first, second),
+    aliasComparison: {
+      modelVersion: DESTINATION_LABEL_VERSION,
+      aliasTable: [{ ...HOSPITAL_LABEL_ALIAS }],
+      normalized: aliasNormalized,
+      result: compareDestinations(aliasNormalized.first, aliasNormalized.second),
+      rules: ['trim edges, then apply exact case-sensitive aliases from aliasTable; all other labels unchanged',
+        'null, blank or exact trimmed 모름 => unknown before equality'],
+    },
     rules: ['null, blank or exact trimmed 모름 => unknown before equality', 'trim edges only; case-sensitive exact equality'],
     scope: 'hypothetical-text-comparison-only',
     independentVerification: 'not-established' as const,
-    limitations: ['Agreement does not establish a true destination or authorization.', 'Does not change attendance or enquiry policy.'],
-    sources: ['src/report-consistency.ts', 'data/student-report-consistency-case-2026-11-16.json', 'data/student-unknown-marker-change-2026-11-17.json'],
+    limitations: ['Agreement does not establish a true destination or authorization.',
+      'Alias agreement describes equivalent labels, not the same physical hospital.', 'Does not change attendance or enquiry policy.'],
+    sources: ['src/report-consistency.ts', 'data/student-report-consistency-case-2026-11-16.json', 'data/student-unknown-marker-change-2026-11-17.json',
+      'data/student-alias-pair-2026-11-18.json'],
   };
 }
 export type ReportComparison = ReturnType<typeof makeReportComparison>;
@@ -58,6 +69,9 @@ export function reportCsvExport(run: ReportComparison): string {
     first_raw: run.raw.first, second_raw: run.raw.second,
     first_normalized: run.normalized.first, second_normalized: run.normalized.second,
     result: run.result, rules: run.rules, scope: run.scope,
+    alias_model_version: run.aliasComparison.modelVersion, alias_table: run.aliasComparison.aliasTable,
+    first_alias_normalized: run.aliasComparison.normalized.first, second_alias_normalized: run.aliasComparison.normalized.second,
+    alias_result: run.aliasComparison.result, alias_rules: run.aliasComparison.rules,
     independent_verification: run.independentVerification, limitations: run.limitations, sources: run.sources,
   };
   const cell = (value: unknown) => '"' + JSON.stringify(value).replaceAll('"', '""') + '"';

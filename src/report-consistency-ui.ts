@@ -33,12 +33,25 @@ export function initializeReportComparison(metadata: Omit<ReportMetadata,'genera
     get('report-explanation').textContent = description.explanation;
     get('report-first-normalized').textContent = JSON.stringify(run.normalized.first);
     get('report-second-normalized').textContent = JSON.stringify(run.normalized.second);
-    result.dataset.state = value; result.hidden = false;
+    get('report-strict-result').dataset.state = value;
+    const alias = run.aliasComparison;
+    get('report-alias-code').textContent = alias.result;
+    get('report-alias-label').textContent = alias.result === 'same' ? '별칭 정리 후 표현이 같음' : descriptions[alias.result].title;
+    get('report-alias-explanation').textContent = alias.result === 'unknown' ? descriptions.unknown.explanation :
+      alias.result === 'same' ? '정해 둔 별칭을 적용한 두 표현이 같습니다. 같은 특정 장소에 있다는 확인은 아닙니다.' :
+      '정해 둔 별칭을 적용해도 두 표현의 글자가 다릅니다.';
+    get('report-first-alias').textContent = JSON.stringify(alias.normalized.first);
+    get('report-second-alias').textContent = JSON.stringify(alias.normalized.second);
+    get('report-alias-result').dataset.state = alias.result;
+    get('report-difference').textContent = run.result !== alias.result ?
+      '같은 입력에서 적용한 표현 규칙에 따라 결과가 달라졌습니다. 별칭의 표현 일치는 실제 위치나 출석의 검증 결과가 아닙니다.' :
+      '이번 입력은 두 규칙에서 결과가 같습니다. 두 결과 모두 표현 비교이며 실제 위치나 출석을 검증하지 않습니다.';
+    result.hidden = false;
     jsonButton.disabled = false; csvButton.disabled = false;
-    status.textContent = '가상 답변 비교 완료';
+    status.textContent = '원문·별칭 정리 후 가상 비교 완료';
   };
   const examples: Record<string,readonly [string,string]> = {
-    different:['병원','반'], spaced:['  병원  ','병원'], missing:['모름','모름'],
+    different:['병원','반'], spaced:['  병원  ','병원'], missing:['모름','모름'], alias:['병원','hospital'],
   };
   for (const [id,values] of Object.entries(examples)) {
     get(`report-example-${id}`).addEventListener('click',() => {

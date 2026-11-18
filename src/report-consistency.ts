@@ -19,11 +19,14 @@ export function trimDestination(value: string | null): string | null {
   return value.trim();
 }
 
+export const DESTINATION_LABEL_VERSION = 'hospital-label-v1';
+export const HOSPITAL_LABEL_ALIAS = Object.freeze({ from: 'hospital', to: '병원' } as const);
+
 // 별칭 정리 조건은 사용자 요청에 따라 Codex가 구현했습니다. 실제 위치 확인은 아닙니다.
 export function normalizeDestinationLabel(value: string | null): string | null {
   const cleaned = trimDestination(value);
 
-  if (cleaned === 'hospital') return '병원';
+  if (cleaned === HOSPITAL_LABEL_ALIAS.from) return HOSPITAL_LABEL_ALIAS.to;
 
   return cleaned;
 }

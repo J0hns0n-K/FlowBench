@@ -194,3 +194,9 @@ Subsequent verification commands and observed outputs will be appended after exe
 ### Student prediction: internal space preserved — 2026-11-18
 
 The user predicted conflict for assistant-provided hypothetical inputs (학교 카페 / 학교카페), explaining the internal whitespace. Direct execution on unchanged source 523ef70fad38baa1c3d70c555e83a0db6ed6cc66 matched, with distinct normalized strings. See student-internal-space-prediction-2026-11-18.json. Text disagreement does not establish different physical destinations. No source/policy changes or duplicate automated tests; this documentation-only update does not rerun the existing 66-test suite or browser QA.
+
+### Strict versus explicit-alias comparison — 2026-11-18
+
+- Connected the assistant-implemented label helper to a second result beside unchanged strict comparison. Student-selected 병원 / hospital yields conflict / same. One shared frozen exact hospital → 병원 rule; other labels remain literal, missing information remains unknown in both paths. No actual-location finding.
+- Added three meaningful tests for dual-rule boundaries/unknown priority, replay from the v2 JSON alias table, and 22-column CSV retention. Full **69 passed, 0 failed**, typechecked build passed. Metadata remains nullable; raw strings and distinct normalization stages retained.
+- Browser checked defaults/presets, wrapped hospital, Hospital, blanks, 모름, Enter, stale dual results/previews and v2 content. Desktop 1280×900 (document 1265 px); mobile 390×844 (document 375 px). No overflow/warnings/errors, override reset. Proof in REPORT_COMPARISON_KO.md. No physical download, new field data or independent student implementation/UAT.

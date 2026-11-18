@@ -64,3 +64,7 @@ The user selected 병원 / hospital in response to an assisted request for diffe
 ### Exact-label helper completed by request — 2026-11-18
 
 After the user asked Codex to do the implementation, Codex filled the saved normalizeDestinationLabel skeleton with the exact hospital → 병원 condition. Earlier unimplemented-exercise status is superseded for this isolated helper only. Student selected the hypothetical alias pair; the new condition and verification are assistant work. Direct execution checked eight cases, idempotence, and unchanged compareDestinations output; existing 66 tests and typechecked build passed. No UI, export-contract or attendance-policy integration; no new physical-location verification or field observation.
+
+### Dual-rule comparison and v2 evidence records — 2026-11-18
+
+Codex connected the assistant-authored exact alias helper to a second browser result, preserved strict comparison, and added v2 records retaining the exact alias table and both results. Three new tests, 69-test full suite, typechecked build and desktop/mobile preview QA passed. Student selected the hypothetical 병원 / hospital pair; code, rule formalization, schema change and verification are assisted. No student independent implementation, direct UI review, new observation or actual attendance decision inferred. [Contract and proof](REPORT_COMPARISON_KO.md).

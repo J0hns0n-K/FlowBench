@@ -95,3 +95,10 @@ Screenshots document software behavior only. They establish no school result or 
 - Editing hides results, clears/hides preview and disables both format buttons. Resubmission enables fresh previews; preset selection clears the previous preview. No physical file download attempted. Missing-source fallback covered by unit tests only.
 - Requested desktop/mobile overrides 1280×900 and 390×844; actual DOM CSS width 984 / 300 px, document width 973 / 288 px, preview width approximately 871 / 234 px. Narrow layout uses one column and stays within viewport. Warnings/errors empty. Temporary override reset. The first preset action immediately after reset did not apply; re-observation and selection confirmed the final spaced-input same record.
 - Proof: [desktop JSON](images/2026-11-17-report-record.jpg), [narrow CSV](images/2026-11-17-report-record-mobile.jpg). Assistant QA only; no student UAT claimed.
+
+### Dual strict/alias result cards and v2 previews — 2026-11-18
+
+- 병원 / hospital gives strict conflict and alias same; wrapped hospital retains original spaces in JSON raw, has hospital after trim and 병원 after alias. Hospital remains conflict in both. Both 모름 and blank yield unknown in both. Existing differing/edge-space presets retain conflict/conflict and same/same; Enter submits.
+- Editing hides both results, clears/hides record content and disables format buttons. Presets clear earlier previews. JSON schema 2 includes hospital-label-v1 and exact alias table; CSV preview has 22 columns and both results. Actual file downloads not attempted.
+- 1280×900: two 545.5 px cards, document width 1265 px. 390×844: one column, document 375 px, cards/preview approximately 313.6 px. No overflow or warning/error logs. Temporary viewport reset and final preset shows conflict/same.
+- Proof: [desktop](images/2026-11-18-alias-comparison.jpg), [mobile](images/2026-11-18-alias-comparison-mobile.jpg). Assistant QA; same labels do not establish the same physical hospital or attendance, and student UAT remains unreported.
