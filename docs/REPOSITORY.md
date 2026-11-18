@@ -23,3 +23,5 @@ Personal records are not copied into this public repository. Private working fil
 - [GitHub Actions for the workbench commit](https://github.com/J0hns0n-K/FlowBench/actions/runs/40462892254): **completed / success**, verified by API. Includes 22 tests, typechecked build and reproduction of the synthetic study.
 
 Later documentation-only commits preserve the tested implementation. Read the current remote branch SHA with `git ls-remote origin refs/heads/main`; no document can truthfully embed its own final commit hash before it is committed.
+
+2026-11-18: repository-local commit identity configured for owner `J0hns0n-K`; this documentation-only push tests account association. Engineering contribution attribution remains documented separately.
