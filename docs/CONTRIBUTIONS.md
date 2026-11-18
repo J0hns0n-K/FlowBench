@@ -86,3 +86,5 @@ Codex implemented the synthetic trace state machine, runtime validation, known/u
 2026-11-18: Codex audited mobile JSON generation/replay/re-edit flow, found stale validation feedback after trace edits and fixed its invalidation. Scope/reproduction review and issue index refreshed. This is assisted QA/implementation, not student UAT or a new field session.
 
 2026-11-18: Codex added per-contact duration bars and unknown/zero/empty states, using unchanged core event durations. Desktop/mobile QA performed; no student-authored visualization, new field timing or UAT inferred.
+
+2026-11-18: Codex implemented typed JSON-valued CSV for enquiry traces, its preview adapter and three serializer/replay tests. Full83 tests/build and browser preview checks passed. No new student implementation, UAT or field measurement inferred.

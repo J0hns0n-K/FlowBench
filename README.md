@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 6c83774093ba51a2edf858189761552023092b5e9b3cb722563a7e37b8fb91b3 -->
+<!-- Evidence fingerprint: 241f1121ea17848a28437b9d0c2a5bc4101142d4c63f472ec598c606e4f0628b -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -45,7 +45,7 @@ The [next stage report, received **2026-10-31**](docs/STAGE_TIMING_02_KO.md), co
 
 Junmo reviewed the [three-path procedure](data/student-workflow-confirmation-2026-11-04.json) on 2026-11-04: skip asking when he already knows the destination through his own authorization; otherwise ask a peer, closing after a specific destination is accepted; seek a supervisor or another leader when uncertain. That review exposed an omission in the initial scenario model, which required one first enquiry for every case. The [v2 comparison](docs/INQUIRY_SCENARIOS_KO.md) now distinguishes **prior information, peer-report closure and follow-up needed**, with editable inputs, three-part outcome bars and JSON/CSV previews. Information source is retained; neither closure route establishes independently audited accuracy.
 
-The default hypothetical conditions each contain ten cases. Moving three cases from enquiry-based closure to prior information reduces first enquiries from ten to seven, and their assumed time from 100 to 70 seconds; four cases still need follow-up in each condition. **The cost of obtaining and sharing that information remains unknown**, as do follow-up work and whole verification time. This isolates the modeled first-enquiry difference without calling it a net saving. The full suite passes **80 tests**, including conserved workload under reallocation, all-prior cases, zero-weight unknowns, versioned exports and the confidently wrong-report counterexample. Student contributions are the reported workflow and review; code, defaults and tests are AI-assisted. Later-stage criteria and empirical validation remain open.
+The default hypothetical conditions each contain ten cases. Moving three cases from enquiry-based closure to prior information reduces first enquiries from ten to seven, and their assumed time from 100 to 70 seconds; four cases still need follow-up in each condition. **The cost of obtaining and sharing that information remains unknown**, as do follow-up work and whole verification time. This isolates the modeled first-enquiry difference without calling it a net saving. The full suite passes **83 tests**, including conserved workload under reallocation, all-prior cases, zero-weight unknowns, versioned exports and the confidently wrong-report counterexample. Student contributions are the reported workflow and review; code, defaults and tests are AI-assisted. Later-stage criteria and empirical validation remain open.
 
 ![Prior information reduces hypothetical first enquiries while follow-up cases and unknown costs remain explicit](docs/images/2026-11-04-prior-information.png)
 

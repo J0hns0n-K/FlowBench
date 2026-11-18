@@ -1,5 +1,7 @@
 import { evaluateEnquiryTrace, MAX_TRACE_CONTACTS } from './enquiry-trace.ts';
 import { replayEnquiryTrace } from './enquiry-trace-replay.ts';
+import { enquiryTraceCsv } from './enquiry-trace-csv.ts';
+import type { TraceExportRecord } from './enquiry-trace-csv.ts';
 import type { TraceContact, TraceState } from './enquiry-trace.ts';
 
 export function initializeEnquiryTrace(metadata:{sourceRevision:string|null;sourceFingerprint:string|null}):void {
@@ -7,14 +9,16 @@ export function initializeEnquiryTrace(metadata:{sourceRevision:string|null;sour
   const form=get<HTMLFormElement>('trace-form'), rows=get('trace-contacts');
   const prior=get<HTMLSelectElement>('trace-prior'), result=get('trace-result');
   const preview=get<HTMLTextAreaElement>('trace-preview'), show=get<HTMLButtonElement>('trace-json');
+  const csv=get<HTMLButtonElement>('trace-csv');
   const add=get<HTMLButtonElement>('trace-add'), remove=get<HTMLButtonElement>('trace-remove');
   const states:Record<TraceState,string>={
     'not-started':'문의 시작 전','skipped-on-prior-information':'사전 정보로 질문 생략',
     'closed-on-peer-report':'첫 친구 제보로 종료','follow-up-required':'후속 문의 필요 / 계속 기록',
     'reported-stop-after-follow-up':'후속 단계에서 종료했다고 기록','follow-up-disposition-unknown':'후속 종료 판단 미기록',
   };
-  let record:unknown=null;
+  let record:TraceExportRecord|null=null;
   const invalidate=()=>{record=null;result.hidden=true;preview.value='';preview.hidden=true;show.disabled=true;
+    csv.disabled=true;get('trace-format-status').textContent='';
     get('trace-replay-status').textContent='';
     get('trace-error').hidden=true;get('trace-status').textContent='입력이 바뀌었습니다. 경로 계산을 눌러 주세요.';};
   const read=():TraceContact[]=>Array.from(rows.querySelectorAll('fieldset')).map((row,index)=>{
@@ -88,6 +92,7 @@ export function initializeEnquiryTrace(metadata:{sourceRevision:string|null;sour
         }return row;
       }));
       get('trace-status').textContent='가상 문의 경로 계산 완료';result.hidden=false;show.disabled=false;
+      csv.disabled=false;
       record={...run,generatedAt:new Date().toISOString(),...metadata};
     }catch{
       get('trace-error').textContent='종료했거나 판단이 미기록인 단계 뒤에는 문의를 붙일 수 없습니다. 앞 단계의 판단 기록과 시간 범위를 확인하세요.';
@@ -106,7 +111,8 @@ export function initializeEnquiryTrace(metadata:{sourceRevision:string|null;sour
     stopped:[peer(),later(20,'reported-stop')],unknown:[peer(),later(null,'continue'),{...later(7,'reported-stop'),id:'C3'}]})){
     get(`trace-example-${id}`).addEventListener('click',()=>{prior.value='none';paint(contacts);execute();});
   }
-  show.addEventListener('click',()=>{if(record){preview.value=JSON.stringify(record,null,2);preview.hidden=false;}});
+  show.addEventListener('click',()=>{if(record){preview.value=JSON.stringify(record,null,2);preview.hidden=false;get('trace-format-status').textContent='JSON 기록 · 재계산해서 불러올 수 있습니다.';}});
+  csv.addEventListener('click',()=>{if(record){preview.value=enquiryTraceCsv(record);preview.hidden=false;get('trace-format-status').textContent='CSV 표 · 요약 1행과 문의별 행. 각 셀은 JSON 값이며 미확인은 null입니다. 불러오기는 JSON만 지원합니다.';}});
   const replayInput=get<HTMLTextAreaElement>('trace-replay-input'), replayStatus=get('trace-replay-status');
   replayInput.addEventListener('input',()=>{replayStatus.textContent='';});
   get('trace-replay').addEventListener('click',()=>{

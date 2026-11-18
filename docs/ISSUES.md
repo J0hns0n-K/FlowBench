@@ -29,6 +29,7 @@ Issue #9 adds the prior-information path confirmed during student workflow revie
 | [#17 Replay import UI](https://github.com/J0hns0n-K/FlowBench/issues/17) | Load matching records, preserve IDs, reject malformed/inconsistent records. | Complete; desktop QA plus later mobile audit. Assisted work |
 | [#18 Mobile reproduction audit](https://github.com/J0hns0n-K/FlowBench/issues/18) | Check replay/re-edit, clear stale validation feedback and align status records. | Verified390x844 workflow; no field/authenticity/download claim |
 | [#19 Contact-duration visualization](https://github.com/J0hns0n-K/FlowBench/issues/19) | Show known interval lengths without inventing unknown widths or total-time ratios. | Desktop/mobile known/unknown/zero/skip states verified; assisted visualization |
+| [#20 Trace CSV content](https://github.com/J0hns0n-K/FlowBench/issues/20) | Preserve summary/contact rows, JSON-valued unknowns and replayable input; expose content preview. | Three new tests, full83 tests/build, browser checks; no actual download or CSV import |
 
 Issue completion is scoped precisely. Completing a software issue does not close empirical validation or student attribution.
 

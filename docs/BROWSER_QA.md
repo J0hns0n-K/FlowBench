@@ -118,3 +118,7 @@ Verified unknown-total/17sec subtotal round-trip, changed total rejection, malfo
 ### Per-contact duration bars — 2026-11-18
 
 Verified10/null/7sec displays known bars100%/70% and an unscaled unknown marker, keeping totalnull/subtotal17. Verified0/null/0 displays zero-width known bars; prior-information skip displays no bars. Desktop1280/document1265px; mobile390/document375px; no overflow/warnings/errors, viewport restored. Proof: [desktop](images/2026-11-18-trace-duration.jpg), [mobile](images/2026-11-18-trace-duration-mobile.jpg). No total-time ratio, field observation or location inference.
+
+### Trace CSV content previews — 2026-11-18
+
+Verified34 columns/summary+3 contacts for unknown-time example, one summary for skip, stale preview/format clearing and both buttons disabled after edits. JSON still yields null total/subtotal19 after first interval edit12. Mobile390/document375/preview313.6px, no overflow/warnings/errors; override reset. [Proof](images/2026-11-18-trace-csv-mobile.jpg). No physical download or CSV import.

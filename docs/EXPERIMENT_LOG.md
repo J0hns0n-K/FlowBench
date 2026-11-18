@@ -233,3 +233,7 @@ Checked mobile generate→replay→re-edit with null total and known subtotal17�
 ### Contact-duration visualization — 2026-11-18
 
 Added per-contact duration bars scaled only to the largest known interval. Unknowns are unscaled text, explicit zero stays zero and skipped enquiries have no bars. Core/JSON contracts unchanged. Browser verified10/null/7, zero/unknown and skip cases on desktop/mobile; no errors/overflow. Existing80 tests/build checked; no duplicate display-only tests. Assisted implementation and synthetic inputs.
+
+### Trace CSV summary/contact rows — 2026-11-18
+
+Added34-column CSV with summary1 row and contact rows, JSON-valued cells and retained input/unknowns/zero/metadata/assumptions. Three new tests; full83 tests/build passed. Browser checked unknown/skip row counts, stale invalidation, unchanged JSON preview and mobile layout. No actual file download or CSV import. Implementation and QA assisted.
