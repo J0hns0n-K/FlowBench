@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 480b4691df377631cadbd08fba0713f356089cdf30a47ef862eb4adb1c87c4fa -->
+<!-- Evidence fingerprint: 770ac1f144c1320ceb09ae466a9292e468dc6db2be89ccd2256cd260b1e1d7aa -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -58,7 +58,7 @@ The workbench separates three kinds of reasoning:
 | Deterministic FCFS and count/report workflows | Compare identical synthetic workloads with explicit task ordering, server ties and reporting bottlenecks. | [Engine](src/engine.ts) · [workflow model](docs/MODEL.md) |
 | Dependency graph with unknown durations | Compute earliest milestones in O(V+E). Unknown checking time propagates only through dependent paths; it never becomes zero. Role views keep the checker distinct from non-checkers. | [DAG scheduler](src/dependencies.ts) · [dependency contract](docs/DEPENDENCY_MODEL.md) |
 | Conditional enquiries and weighted scenarios | Apply student-described rules, preserve report provenance and unknown later work, compare answer distributions without asserting accuracy or causal savings. | [Policy](src/inquiry-policy.ts) · [scenario contract and browser checks](docs/INQUIRY_SCENARIOS_KO.md) |
-| Sequential enquiry traces | Replay supplied contact paths, distinguish first-rule closure from an unvalidated later stop, and preserve unknown duration through offsets while retaining a known subtotal. Later stopping criteria remain unconfirmed. | [Trace core](src/enquiry-trace.ts) · [state and timing contract](docs/ENQUIRY_TRACE_KO.md) |
+| Sequential enquiry traces | Replay supplied contact paths, distinguish first-rule closure from an unvalidated later stop, and preserve unknown duration through offsets while retaining a known subtotal. Later stopping criteria remain unconfirmed. | [Trace core](src/enquiry-trace.ts) · [editable browser panel and contract](docs/ENQUIRY_TRACE_KO.md) |
 | Field-report accounting | Validate provenance and intervals, preserve missing metadata, and calculate descriptive differences separately from simulated predictions. | [Accounting code](src/observed.ts) · [source records](data/) |
 
 The separate [two-answer playground](docs/REPORT_COMPARISON_KO.md) compares two explicit interpretation rules. Junmo selected the hypothetical pair 병원 / hospital: strict text comparison returns conflict, while a single declared hospital → 병원 alias produces matching labels. Both results remain visible, and v2 JSON/CSV records preserve raw/trimmed/alias-normalized values, the exact alias table, rule versions and source fingerprints. Unknown information takes priority over agreement; matching generic labels cannot identify the same physical hospital or verify attendance. The alias implementation, dual-result interface and tests are AI-assisted; the student’s example selection and guided helper changes retain separate attribution.

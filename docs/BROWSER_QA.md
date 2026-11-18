@@ -102,3 +102,7 @@ Screenshots document software behavior only. They establish no school result or 
 - Editing hides both results, clears/hides record content and disables format buttons. Presets clear earlier previews. JSON schema 2 includes hospital-label-v1 and exact alias table; CSV preview has 22 columns and both results. Actual file downloads not attempted.
 - 1280×900: two 545.5 px cards, document width 1265 px. 390×844: one column, document 375 px, cards/preview approximately 313.6 px. No overflow or warning/error logs. Temporary viewport reset and final preset shows conflict/same.
 - Proof: [desktop](images/2026-11-18-alias-comparison.jpg), [mobile](images/2026-11-18-alias-comparison-mobile.jpg). Assistant QA; same labels do not establish the same physical hospital or attendance, and student UAT remains unreported.
+
+### Enquiry trace panel — 2026-11-18
+
+Verified default unknown disposition/30sec, first-peer closure, later reported stop, unknown duration/17sec subtotal, prior-information skip, add/remove correction of invalid paths, stale result/JSON clearing, and source-stamped JSON. Desktop1280×900/document1265px and mobile390×844/document375px showed no overflow or warning/error logs. Override reset. Proof: [desktop](images/2026-11-18-enquiry-trace.jpg), [mobile](images/2026-11-18-enquiry-trace-mobile.jpg). No physical download or student UAT.

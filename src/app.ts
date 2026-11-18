@@ -9,6 +9,7 @@ import { studyStartForRole } from './study-start.ts';
 import type { CheckingRole } from './study-start.ts';
 import { initializeEnquiryComparison } from './inquiry-ui.ts';
 import { initializeReportComparison } from './report-consistency-ui.ts';
+import { initializeEnquiryTrace } from './enquiry-trace-ui.ts';
 
 function element<T extends HTMLElement>(id: string): T {
   const value=document.getElementById(id);
@@ -261,6 +262,7 @@ async function initialize():Promise<void>{
     }
   }catch{/* Source unavailability is explicit in exports; computation remains browser-local. */}
   initializeReportComparison({sourceRevision:reportRevision,sourceFingerprint:reportFingerprint});
+  initializeEnquiryTrace({sourceRevision:reportRevision,sourceFingerprint:reportFingerprint});
   element('source-revision').textContent=`${MODEL_VERSION} · 소스 ${sourceRevision.slice(0,12)}${sourceRevision.includes('+dirty')?' (수정 중)':''}`;
   // Restore known defaults even if a browser restores form values from an earlier visit.
   element<HTMLInputElement>('seed').value=String(DEFAULT_CONFIG.seed);

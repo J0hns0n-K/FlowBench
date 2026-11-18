@@ -213,3 +213,7 @@ The user predicted conflict for assistant-provided hypothetical inputs (학교 �
 - Added synthetic-only enquiry-trace-v1 core, max 32 anonymous contacts. Prior-known skips enquiries; first peer reuses existing rule. Later target order/disposition are supplied records, not inferred school policy. Missing later disposition stays unknown even for a specific answer; reported stop retains unestablished criteria/verification.
 - Sequential nonoverlapping contact-only offsets propagate unknown duration; known subtotal and zero remain distinct. Search/gaps/information/scanning/rechecking costs and whole verification are excluded/unknown. Rejects contacts after closure or unrecorded disposition.
 - Seven meaningful tests cover first rule, missing later criteria, explicit paths/stops, unknown offsets/subtotals, skip/no-start, snapshot/JSON replay, invalid data and bounds. Full **76 passed, 0 failed**, typechecked build passed. No UI/export changes, browser recheck or new field evidence. Contract: ENQUIRY_TRACE_KO.md.
+
+### Enquiry trace browser connection — 2026-11-18
+
+Connected unchanged core to editable contact cards, four synthetic presets, state/offset table and source-stamped JSON preview. Browser verified states, unknown-time propagation, skip, invalid paths, add/remove and stale-record invalidation; desktop/mobile proof in ENQUIRY_TRACE_KO.md. Existing 76 tests/build checked, no duplicate display tests. UI/QA assisted, no new field observations or later-policy approval.
