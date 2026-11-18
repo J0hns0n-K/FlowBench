@@ -217,3 +217,7 @@ The user predicted conflict for assistant-provided hypothetical inputs (학교 �
 ### Enquiry trace browser connection — 2026-11-18
 
 Connected unchanged core to editable contact cards, four synthetic presets, state/offset table and source-stamped JSON preview. Browser verified states, unknown-time propagation, skip, invalid paths, add/remove and stale-record invalidation; desktop/mobile proof in ENQUIRY_TRACE_KO.md. Existing 76 tests/build checked, no duplicate display tests. UI/QA assisted, no new field observations or later-policy approval.
+
+### Trace replay core — 2026-11-18
+
+Added bounded JSON parsing/version/provenance validation, deterministic recalculation and mismatch-field reporting. Four tests cover reordered JSON/unknowns, changed/missing outputs, invalid records and the self-consistent-edit limitation. Metadata is untrusted; no source authenticity, field verification or import UI claimed. Implementation/tests assisted.
