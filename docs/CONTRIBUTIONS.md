@@ -72,3 +72,7 @@ Codex connected the assistant-authored exact alias helper to a second browser re
 ### Executable label/site limitation argument — 2026-11-18
 
 Codex constructed post-implementation synthetic twin worlds, formalized the label/site identifiability argument, implemented the source-fingerprinted evidence/reproduction runner and added CI verification. Four worlds form two identical-input/opposite-truth witnesses. Existing 69 tests/build passed. Student contribution remains the prior 병원 / hospital example selection, with no new student proof, independent counterexample discovery, field observation or accuracy measurement inferred. [Argument and provenance](LABEL_COMPARISON_LIMITS_KO.md).
+
+### Sequential enquiry trace core — 2026-11-18
+
+Codex implemented the synthetic trace state machine, runtime validation, known/unknown sequential timing and seven tests. It reuses the user's previously described/reviewed first-peer rule, but later dispositions remain scenario inputs and their stopping/path criteria are not validated. Specific later answers do not close automatically. Full 76 tests and typechecked build passed. No new student-authored code, later-rule confirmation, field observation or independent accuracy result inferred. [Contract and boundaries](ENQUIRY_TRACE_KO.md).

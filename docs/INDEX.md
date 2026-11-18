@@ -35,6 +35,7 @@
 - [Second stage report: one enquiry and zero reported suspicion](STAGE_TIMING_02_KO.md)
 - [Student-submitted enquiry order and pending stopping rules](ESCALATION_PROCEDURE_KO.md)
 - [Synthetic enquiry scenarios: aggregation, browser comparison and exports](INQUIRY_SCENARIOS_KO.md)
+- [Sequential contact traces: states, reported stops and unknown timing](ENQUIRY_TRACE_KO.md)
 - [Two-answer synthetic comparison: interface and validation](REPORT_COMPARISON_KO.md)
 - [Executable counterexamples: matching labels versus physical sites](LABEL_COMPARISON_LIMITS_KO.md)
 - [Next-observation form](NEW_PROCEDURE_OBSERVATION_KO.md)
