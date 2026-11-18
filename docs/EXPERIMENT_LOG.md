@@ -229,3 +229,7 @@ Connected replay core to paste/import UI; only matching calculated records load.
 ### Mobile replay audit and feedback invalidation — 2026-11-18
 
 Checked mobile generate→replay→re-edit with null total and known subtotal17→19. Fixed previous replay-success text surviving input edits; verified it clears and returns only after another successful replay. Screenshot and scope matrix in REPRODUCTION_CHECK_KO.md. No calculation change or duplicate display test; no new field/authenticity/download claim.
+
+### Contact-duration visualization — 2026-11-18
+
+Added per-contact duration bars scaled only to the largest known interval. Unknowns are unscaled text, explicit zero stays zero and skipped enquiries have no bars. Core/JSON contracts unchanged. Browser verified10/null/7, zero/unknown and skip cases on desktop/mobile; no errors/overflow. Existing80 tests/build checked; no duplicate display-only tests. Assisted implementation and synthetic inputs.

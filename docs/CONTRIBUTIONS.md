@@ -84,3 +84,5 @@ Codex implemented the synthetic trace state machine, runtime validation, known/u
 2026-11-18: Codex connected JSON recalculation to a paste/import UI and preserved anonymous contact IDs during editing/addition. Browser verified round-trip, invalid/inconsistent rejection and recovery. Existing 80 tests/build checked. Owner commit identity is J0hns0n-K; implementation/QA remain assisted, with no new student UAT or field evidence.
 
 2026-11-18: Codex audited mobile JSON generation/replay/re-edit flow, found stale validation feedback after trace edits and fixed its invalidation. Scope/reproduction review and issue index refreshed. This is assisted QA/implementation, not student UAT or a new field session.
+
+2026-11-18: Codex added per-contact duration bars and unknown/zero/empty states, using unchanged core event durations. Desktop/mobile QA performed; no student-authored visualization, new field timing or UAT inferred.

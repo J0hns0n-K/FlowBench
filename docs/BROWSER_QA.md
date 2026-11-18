@@ -114,3 +114,7 @@ Verified unknown-total/17sec subtotal round-trip, changed total rejection, malfo
 ### Mobile trace replay/re-edit audit — 2026-11-18
 
 390x844: generated unknown-time JSON, replayed/imported, edited first duration10→12; known subtotal17→19 while total stayed null. Found stale replay-success text after edits; invalidation now clears it. Verified hidden result/empty status after editing and renewed status after re-import. Document375px/input313.6px, no overflow/warnings/errors, override restored. [Proof](images/2026-11-18-trace-replay-mobile.jpg). No downloads or field observations.
+
+### Per-contact duration bars — 2026-11-18
+
+Verified10/null/7sec displays known bars100%/70% and an unscaled unknown marker, keeping totalnull/subtotal17. Verified0/null/0 displays zero-width known bars; prior-information skip displays no bars. Desktop1280/document1265px; mobile390/document375px; no overflow/warnings/errors, viewport restored. Proof: [desktop](images/2026-11-18-trace-duration.jpg), [mobile](images/2026-11-18-trace-duration-mobile.jpg). No total-time ratio, field observation or location inference.

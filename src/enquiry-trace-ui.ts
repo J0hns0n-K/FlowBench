@@ -66,6 +66,21 @@ export function initializeEnquiryTrace(metadata:{sourceRevision:string|null;sour
       get('trace-state').textContent=states[run.finalState];
       const sec=(value:number|null)=>value===null?'미확인':`${value}초`;
       get('trace-time').textContent=`문의 ${run.contactCount}건 · 문의 구간 합 ${sec(run.enquiryTotalSec)} · 알려진 소계 ${sec(run.knownEnquirySubtotalSec)} · 시간 미확인 ${run.unknownDurationCount}건`;
+      const maximum=Math.max(0,...run.events.map(event=>event.contact.enquiryDurationSec??0));
+      const targets={peer:'친구·동급생',leader:'리더','dormitory-supervisor':'사감쌤',principal:'교장쌤'};
+      const bars=get('trace-duration-bars');
+      bars.replaceChildren(...run.events.map(({contact})=>{
+        const row=document.createElement('div');row.className='trace-duration-row';row.setAttribute('role','listitem');
+        const label=document.createElement('span');label.textContent=`${contact.id} · ${targets[contact.target]}`;
+        const track=document.createElement('div');track.className='trace-duration-track';track.setAttribute('aria-hidden','true');
+        if(contact.enquiryDurationSec===null){track.classList.add('unknown');track.textContent='길이 미확인';}
+        else{const bar=document.createElement('span');bar.style.width=`${maximum?100*contact.enquiryDurationSec/maximum:0}%`;track.append(bar);}
+        const value=document.createElement('strong');value.textContent=sec(contact.enquiryDurationSec);
+        row.append(label,track,value);return row;
+      }));
+      get('trace-duration-note').textContent=run.contactCount===0?'문의 구간이 없어 막대를 표시하지 않습니다. 정보 비용과 전체 확인시간은 여전히 미확인입니다.':
+        maximum===0?'알려진 양의 시간이 없습니다. 0초는 막대 길이 0, 모르는 시간은 길이 미확인으로 표시합니다.':
+        `막대는 각 문의 구간의 길이만 비교합니다. 가장 긴 알려진 구간은 ${maximum}초입니다. 전체 완료 시각이나 전체 시간 비율을 나타내지 않습니다.`;
       get('trace-events').replaceChildren(...run.events.map(event=>{
         const row=document.createElement('tr');
         for(const value of [event.contact.id,sec(event.startOffsetSec),sec(event.endOffsetSec),states[event.stateAfter]]){
