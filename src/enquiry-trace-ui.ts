@@ -15,6 +15,7 @@ export function initializeEnquiryTrace(metadata:{sourceRevision:string|null;sour
   };
   let record:unknown=null;
   const invalidate=()=>{record=null;result.hidden=true;preview.value='';preview.hidden=true;show.disabled=true;
+    get('trace-replay-status').textContent='';
     get('trace-error').hidden=true;get('trace-status').textContent='입력이 바뀌었습니다. 경로 계산을 눌러 주세요.';};
   const read=():TraceContact[]=>Array.from(rows.querySelectorAll('fieldset')).map((row,index)=>{
     const field=(name:string)=>row.querySelector<HTMLInputElement|HTMLSelectElement>(`[data-field="${name}"]`)!;

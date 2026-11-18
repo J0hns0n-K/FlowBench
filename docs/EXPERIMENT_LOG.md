@@ -225,3 +225,7 @@ Added bounded JSON parsing/version/provenance validation, deterministic recalcul
 ### Trace JSON import adapter — 2026-11-18
 
 Connected replay core to paste/import UI; only matching calculated records load. Preserves anonymous IDs and assigns unused IDs on add. Desktop QA covered null-time round-trip, tampered total, invalid JSON/recovery and custom IDs. Existing 80 tests/build checked. No authenticity/field-verification claim; previous no-import-UI scope is superseded for this adapter.
+
+### Mobile replay audit and feedback invalidation — 2026-11-18
+
+Checked mobile generate→replay→re-edit with null total and known subtotal17→19. Fixed previous replay-success text surviving input edits; verified it clears and returns only after another successful replay. Screenshot and scope matrix in REPRODUCTION_CHECK_KO.md. No calculation change or duplicate display test; no new field/authenticity/download claim.

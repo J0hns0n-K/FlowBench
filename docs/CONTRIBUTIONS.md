@@ -82,3 +82,5 @@ Codex implemented the synthetic trace state machine, runtime validation, known/u
 2026-11-18: Codex implemented trace JSON recalculation and four tests. It checks internal consistency, not source authenticity; consistently edited inputs/results can pass. No student-authored code, actual attendance verification or import UI is inferred.
 
 2026-11-18: Codex connected JSON recalculation to a paste/import UI and preserved anonymous contact IDs during editing/addition. Browser verified round-trip, invalid/inconsistent rejection and recovery. Existing 80 tests/build checked. Owner commit identity is J0hns0n-K; implementation/QA remain assisted, with no new student UAT or field evidence.
+
+2026-11-18: Codex audited mobile JSON generation/replay/re-edit flow, found stale validation feedback after trace edits and fixed its invalidation. Scope/reproduction review and issue index refreshed. This is assisted QA/implementation, not student UAT or a new field session.

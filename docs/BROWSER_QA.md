@@ -110,3 +110,7 @@ Verified default unknown disposition/30sec, first-peer closure, later reported s
 ### Trace JSON replay UI — 2026-11-18
 
 Verified unknown-total/17sec subtotal round-trip, changed total rejection, malformed JSON rejection/recovery, custom IDs P7/C1/C2 retained and new C3 assigned on add. Existing inputs remain intact on failed import. No warnings/errors. Desktop proof: [replay](images/2026-11-18-trace-replay.jpg). No new mobile QA or downloads; source authenticity/attendance are not verified.
+
+### Mobile trace replay/re-edit audit — 2026-11-18
+
+390x844: generated unknown-time JSON, replayed/imported, edited first duration10→12; known subtotal17→19 while total stayed null. Found stale replay-success text after edits; invalidation now clears it. Verified hidden result/empty status after editing and renewed status after re-import. Document375px/input313.6px, no overflow/warnings/errors, override restored. [Proof](images/2026-11-18-trace-replay-mobile.jpg). No downloads or field observations.

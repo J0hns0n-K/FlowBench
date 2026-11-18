@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 4712bc43d64067b74cc141c63a20ad92158420ec80caf9a80392c44c29b6ea9b -->
+<!-- Evidence fingerprint: 4dae7caec0c48d5ce9ea1aabf5ced5b25aba6e5946820c7c98f54fb06a471506 -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -101,5 +101,7 @@ pnpm dev
 ```
 
 Open http://127.0.0.1:4173/. `pnpm experiment` reproduces the synthetic study. GitHub Actions runs the tests, typechecked build, experiment and overview freshness check. Browser export serializers are tested; actual browser download completion remains an open check in [issue #4](https://github.com/J0hns0n-K/FlowBench/issues/4). The workbench is a local prototype.
+
+See the [reproduction review](docs/REPRODUCTION_CHECK_KO.md) for the mobile JSON workflow and remaining validation boundaries.
 
 Explore the [research and development records](docs/INDEX.md), [validation protocol](docs/VALIDATION.md) and [open work](docs/ISSUES.md). [Conditional enquiry scenarios](https://github.com/J0hns0n-K/FlowBench/issues/8) record the first-contact comparison scope and its limits. The overview is maintained with the evidence using the [update protocol](docs/OVERVIEW_MAINTENANCE.md).
