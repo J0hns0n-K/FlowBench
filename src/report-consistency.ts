@@ -18,3 +18,12 @@ export function trimDestination(value: string | null): string | null {
 
   return value.trim();
 }
+
+// 별칭 정리 조건은 사용자 요청에 따라 Codex가 구현했습니다. 실제 위치 확인은 아닙니다.
+export function normalizeDestinationLabel(value: string | null): string | null {
+  const cleaned = trimDestination(value);
+
+  if (cleaned === 'hospital') return '병원';
+
+  return cleaned;
+}

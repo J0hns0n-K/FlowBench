@@ -79,3 +79,9 @@ Submitted reasoning entry: [question count versus total enquiry time](STUDENT_RE
 사용자가 같은 장소를 다르게 부르는 가상 사례로 ‘병원, hospital’을 선택했습니다. 예상 결과는 별도로 말하지 않았습니다. 보조자가 unchanged source f47b8f6675da599989c7bac783ed3eb86d505a4e에서 실행한 현재 결과는 conflict입니다. [원문과 실행 출처](../data/student-alias-pair-2026-11-18.json).
 
 이는 번역으로 대응하는 장소 표현이며 동일한 특정 병원이라는 증거는 아닙니다. 후속 안내 과제는 기존 비교 규칙과 분리한 normalizeDestinationLabel에서 정확한 hospital 표기를 병원으로 정리하는 한 줄을 작성하는 것입니다. 이 과제는 보조자가 제안했으며 아직 저장·구현된 것으로 기록하지 않습니다. 실제 출석 판정이나 임의 동의어·번역 처리는 추가하지 않았습니다.
+
+### 별칭 조건 구현 요청·완료 — 2026-11-18
+
+이전 항목의 미구현 과제에 대해 사용자가 ‘너가 해줘’라고 요청했습니다. 저장된 함수 틀을 확인한 뒤 Codex가 `if (cleaned === 'hospital') return '병원';`을 작성했습니다. 사용자 기여는 가상 표현 쌍 선택과 구현 요청이며, 이 조건문 구현은 보조자 작업입니다.
+
+앞뒤 공백을 정리한 정확한 소문자 hospital만 병원으로 바꿉니다. null·빈칸·모름·다른 글자와 가운데 공백은 보존합니다. 아직 비교 화면이나 compareDestinations에 연결하지 않은 별도 표현 정리 함수입니다. 실제 같은 병원이나 출석 여부를 확인하지 않습니다. 직접 실행 8개 사례와 재적용 시 같은 값 유지, 기존 비교 병원/hospital → conflict를 확인했고 전체 기존 66개 테스트와 빌드가 통과했습니다.
