@@ -190,3 +190,7 @@ Subsequent verification commands and observed outputs will be appended after exe
 - Verified the user's saved guided helper: null stays null; edge spaces around 병원/모름 are removed; whitespace-only becomes empty text; internal space in 학교 카페 remains. No field measurement or independent student design inferred.
 - Codex replaced repeated trimming in comparison and record creation with trimDestination; UI reads run.normalized. Raw values, missing-before-equality order and report-comparison-v1/schema 1 are unchanged.
 - Existing **66 passed, 0 failed**, typechecked build passed. Existing comparison and serializer fixtures cover behavior and raw/normalized preservation; no duplicate tests added. No browser recheck for this internal refactor; screenshots remain the dated 11/17 evidence.
+
+### Student prediction: internal space preserved — 2026-11-18
+
+The user predicted conflict for assistant-provided hypothetical inputs (학교 카페 / 학교카페), explaining the internal whitespace. Direct execution on unchanged source 523ef70fad38baa1c3d70c555e83a0db6ed6cc66 matched, with distinct normalized strings. See student-internal-space-prediction-2026-11-18.json. Text disagreement does not establish different physical destinations. No source/policy changes or duplicate automated tests; this documentation-only update does not rerun the existing 66-test suite or browser QA.

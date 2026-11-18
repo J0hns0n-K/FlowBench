@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: a8e02013dcbb659e05bc6e1bd36c579e2a9ace14694a398c3ace8c5881925c5d -->
+<!-- Evidence fingerprint: 641d3b1f1973951eafe8d8a002f99de3300c0a7efb717d12182157846095f607 -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |

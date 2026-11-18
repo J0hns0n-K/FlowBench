@@ -52,3 +52,7 @@ Codex added the separate record module, four serialization/validation tests and 
 ### Shared whitespace helper — 2026-11-18
 
 The user entered and saved trimDestination using an assistant-provided function skeleton, null guard and exact return example. The first saved skeleton lacked the return; after the explicit example, the saved function returned value.trim(). This is guided code entry, not independent design or defect discovery. Codex connected it to comparison and record creation and made the UI display the record's normalized values. Direct helper checks, existing 66 tests and typechecked build passed; raw inputs, decision priority and export versions remain unchanged. See [implementation note](REPORT_COMPARISON_KO.md).
+
+### Internal-whitespace prediction — 2026-11-18
+
+Given assistant-selected hypothetical inputs 학교 카페 / 학교카페 and a trim hint, the user predicted conflict and explained that the internal space remains. Codex executed the unchanged helper at 523ef70fad38baa1c3d70c555e83a0db6ed6cc66 and confirmed conflict. This is a guided prediction/reason, not user-selected inputs, independently authored code/tests or a field finding. [Source record](../data/student-internal-space-prediction-2026-11-18.json).

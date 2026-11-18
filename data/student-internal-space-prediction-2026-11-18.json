@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "recordId": "student-internal-space-prediction-01",
+  "sourceKind": "user-predicted-synthetic-test-case",
+  "reportedOn": "2026-11-18",
+  "promptOrigin": "Assistant supplied the two hypothetical inputs and explicitly reminded the user that trim removes edge whitespace only.",
+  "userStatementKo": "conflict - 왜냐하면 중간에 띄어쓰기 때문에 다른 걸로 인식할 것이기 때문",
+  "first": "학교 카페",
+  "second": "학교카페",
+  "userExpectedResult": "conflict",
+  "userReasonKo": "중간에 띄어쓰기 때문에 다른 걸로 인식할 것이기 때문",
+  "execution": {
+    "actor": "Codex (AI assistant)",
+    "function": "compareDestinations",
+    "sourceRevision": "523ef70fad38baa1c3d70c555e83a0db6ed6cc66",
+    "workingTreeCodeChanges": false,
+    "normalizedFirst": "학교 카페",
+    "normalizedSecond": "학교카페",
+    "actualResult": "conflict",
+    "matchesUserExpectation": true
+  },
+  "limitations": [
+    "Inputs and trim hint were supplied by the assistant; the user supplied the prediction and reason in a guided exercise.",
+    "This shows reasoning about internal whitespace in one example, not independent algorithm design, test authoring or generalized mastery.",
+    "The code compares text, not actual destinations. Different strings do not establish different physical locations.",
+    "No field session, actual student destination or normalization-policy change is recorded. No duplicate automated test was added."
+  ]
+}
