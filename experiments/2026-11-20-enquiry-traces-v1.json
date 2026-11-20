@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "evaluationVersion": "enquiry-trace-fixtures-v1",
+  "provenance": "synthetic",
+  "construction": "assistant-constructed-post-implementation-fixtures",
+  "generatedAt": "2026-11-20T01:13:55.205Z",
+  "sourceRevision": "546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b",
+  "sourceFingerprint": "2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386",
+  "sourceFiles": [
+    "src/enquiry-trace.ts",
+    "src/inquiry-policy.ts",
+    "src/engine.ts",
+    "src/enquiry-trace-replay.ts",
+    "src/enquiry-trace-csv.ts",
+    "data/enquiry-trace-fixtures-v1.json",
+    "scripts/enquiry-trace-fixtures.mjs"
+  ],
+  "fixturePath": "data/enquiry-trace-fixtures-v1.json",
+  "cases": [
+    {
+      "id": "not-started",
+      "expected": {
+        "finalState": "not-started",
+        "enquiryEnded": false,
+        "enquiryTotalSec": 0,
+        "knownEnquirySubtotalSec": 0,
+        "unknownDurationCount": 0
+      },
+      "record": {
+        "schemaVersion": 1,
+        "modelVersion": "enquiry-trace-v1",
+        "provenance": "synthetic-policy-evaluation",
+        "input": {
+          "provenance": "synthetic",
+          "priorInformation": "none",
+          "contacts": []
+        },
+        "events": [],
+        "contactCount": 0,
+        "finalState": "not-started",
+        "closureBasis": null,
+        "enquiryEnded": false,
+        "knownEnquirySubtotalSec": 0,
+        "unknownDurationCount": 0,
+        "enquiryTotalSec": 0,
+        "timingAssumption": "sequential-nonoverlapping-contact-intervals-only",
+        "excludedTime": [
+          "searching",
+          "gaps-between-contacts",
+          "prior-information-acquisition-and-handoff",
+          "scanning",
+          "rechecking"
+        ],
+        "priorInformationCostSec": null,
+        "wholeVerificationSec": null,
+        "laterStoppingRuleValidation": "not-established",
+        "pathPolicyValidation": "not-established",
+        "independentVerification": "not-established",
+        "sources": [
+          "data/student-workflow-confirmation-2026-11-04.json",
+          "data/student-peer-stopping-rule-2026-10-31.json",
+          "data/student-uncertain-followup-rule-2026-10-31.json",
+          "data/student-escalation-procedure-2026-10-31.json"
+        ],
+        "generatedAt": "2026-11-20T01:13:55.205Z",
+        "sourceRevision": "546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b",
+        "sourceFingerprint": "2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386"
+      },
+      "csv": "record_type,csv_schema_version,trace_schema_version,model_version,provenance,generated_at,source_revision,source_fingerprint,source_authenticity,independent_verification,contact_count,final_state,enquiry_ended,closure_basis,enquiry_total_sec,known_enquiry_subtotal_sec,unknown_duration_count,prior_information_cost_sec,whole_verification_sec,timing_assumption,excluded_time,later_stopping_rule_validation,path_policy_validation,sources,contact_id,target,specific_destination_reported,uncertainty_reported,enquiry_duration_sec,follow_up_disposition,start_offset_sec,end_offset_sec,state_after,input\r\n\"\"\"summary\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"0\",\"\"\"not-started\"\"\",\"false\",\"null\",\"0\",\"0\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"{\"\"provenance\"\":\"\"synthetic\"\",\"\"priorInformation\"\":\"\"none\"\",\"\"contacts\"\":[]}\"\r\n"
+    },
+    {
+      "id": "prior-known",
+      "expected": {
+        "finalState": "skipped-on-prior-information",
+        "enquiryEnded": true,
+        "enquiryTotalSec": 0,
+        "knownEnquirySubtotalSec": 0,
+        "unknownDurationCount": 0
+      },
+      "record": {
+        "schemaVersion": 1,
+        "modelVersion": "enquiry-trace-v1",
+        "provenance": "synthetic-policy-evaluation",
+        "input": {
+          "provenance": "synthetic",
+          "priorInformation": "checker-prior-authorization",
+          "contacts": []
+        },
+        "events": [],
+        "contactCount": 0,
+        "finalState": "skipped-on-prior-information",
+        "closureBasis": "checker-prior-authorization",
+        "enquiryEnded": true,
+        "knownEnquirySubtotalSec": 0,
+        "unknownDurationCount": 0,
+        "enquiryTotalSec": 0,
+        "timingAssumption": "sequential-nonoverlapping-contact-intervals-only",
+        "excludedTime": [
+          "searching",
+          "gaps-between-contacts",
+          "prior-information-acquisition-and-handoff",
+          "scanning",
+          "rechecking"
+        ],
+        "priorInformationCostSec": null,
+        "wholeVerificationSec": null,
+        "laterStoppingRuleValidation": "not-established",
+        "pathPolicyValidation": "not-established",
+        "independentVerification": "not-established",
+        "sources": [
+          "data/student-workflow-confirmation-2026-11-04.json",
+          "data/student-peer-stopping-rule-2026-10-31.json",
+          "data/student-uncertain-followup-rule-2026-10-31.json",
+          "data/student-escalation-procedure-2026-10-31.json"
+        ],
+        "generatedAt": "2026-11-20T01:13:55.205Z",
+        "sourceRevision": "546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b",
+        "sourceFingerprint": "2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386"
+      },
+      "csv": "record_type,csv_schema_version,trace_schema_version,model_version,provenance,generated_at,source_revision,source_fingerprint,source_authenticity,independent_verification,contact_count,final_state,enquiry_ended,closure_basis,enquiry_total_sec,known_enquiry_subtotal_sec,unknown_duration_count,prior_information_cost_sec,whole_verification_sec,timing_assumption,excluded_time,later_stopping_rule_validation,path_policy_validation,sources,contact_id,target,specific_destination_reported,uncertainty_reported,enquiry_duration_sec,follow_up_disposition,start_offset_sec,end_offset_sec,state_after,input\r\n\"\"\"summary\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"0\",\"\"\"skipped-on-prior-information\"\"\",\"true\",\"\"\"checker-prior-authorization\"\"\",\"0\",\"0\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"{\"\"provenance\"\":\"\"synthetic\"\",\"\"priorInformation\"\":\"\"checker-prior-authorization\"\",\"\"contacts\"\":[]}\"\r\n"
+    },
+    {
+      "id": "peer-closed",
+      "expected": {
+        "finalState": "closed-on-peer-report",
+        "enquiryEnded": true,
+        "enquiryTotalSec": 10,
+        "knownEnquirySubtotalSec": 10,
+        "unknownDurationCount": 0
+      },
+      "record": {
+        "schemaVersion": 1,
+        "modelVersion": "enquiry-trace-v1",
+        "provenance": "synthetic-policy-evaluation",
+        "input": {
+          "provenance": "synthetic",
+          "priorInformation": "none",
+          "contacts": [
+            {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": true,
+              "uncertaintyReported": false,
+              "enquiryDurationSec": 10,
+              "followUpDisposition": null
+            }
+          ]
+        },
+        "events": [
+          {
+            "contact": {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": true,
+              "uncertaintyReported": false,
+              "enquiryDurationSec": 10,
+              "followUpDisposition": null
+            },
+            "startOffsetSec": 0,
+            "endOffsetSec": 10,
+            "stateAfter": "closed-on-peer-report"
+          }
+        ],
+        "contactCount": 1,
+        "finalState": "closed-on-peer-report",
+        "closureBasis": "first-peer-rule",
+        "enquiryEnded": true,
+        "knownEnquirySubtotalSec": 10,
+        "unknownDurationCount": 0,
+        "enquiryTotalSec": 10,
+        "timingAssumption": "sequential-nonoverlapping-contact-intervals-only",
+        "excludedTime": [
+          "searching",
+          "gaps-between-contacts",
+          "prior-information-acquisition-and-handoff",
+          "scanning",
+          "rechecking"
+        ],
+        "priorInformationCostSec": null,
+        "wholeVerificationSec": null,
+        "laterStoppingRuleValidation": "not-established",
+        "pathPolicyValidation": "not-established",
+        "independentVerification": "not-established",
+        "sources": [
+          "data/student-workflow-confirmation-2026-11-04.json",
+          "data/student-peer-stopping-rule-2026-10-31.json",
+          "data/student-uncertain-followup-rule-2026-10-31.json",
+          "data/student-escalation-procedure-2026-10-31.json"
+        ],
+        "generatedAt": "2026-11-20T01:13:55.205Z",
+        "sourceRevision": "546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b",
+        "sourceFingerprint": "2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386"
+      },
+      "csv": "record_type,csv_schema_version,trace_schema_version,model_version,provenance,generated_at,source_revision,source_fingerprint,source_authenticity,independent_verification,contact_count,final_state,enquiry_ended,closure_basis,enquiry_total_sec,known_enquiry_subtotal_sec,unknown_duration_count,prior_information_cost_sec,whole_verification_sec,timing_assumption,excluded_time,later_stopping_rule_validation,path_policy_validation,sources,contact_id,target,specific_destination_reported,uncertainty_reported,enquiry_duration_sec,follow_up_disposition,start_offset_sec,end_offset_sec,state_after,input\r\n\"\"\"summary\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"1\",\"\"\"closed-on-peer-report\"\"\",\"true\",\"\"\"first-peer-rule\"\"\",\"10\",\"10\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"{\"\"provenance\"\":\"\"synthetic\"\",\"\"priorInformation\"\":\"\"none\"\",\"\"contacts\"\":[{\"\"id\"\":\"\"P1\"\",\"\"target\"\":\"\"peer\"\",\"\"specificDestinationReported\"\":true,\"\"uncertaintyReported\"\":false,\"\"enquiryDurationSec\"\":10,\"\"followUpDisposition\"\":null}]}\"\r\n\"\"\"contact\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"1\",\"\"\"closed-on-peer-report\"\"\",\"true\",\"\"\"first-peer-rule\"\"\",\"10\",\"10\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"\"\"P1\"\"\",\"\"\"peer\"\"\",\"true\",\"false\",\"10\",\"null\",\"0\",\"10\",\"\"\"closed-on-peer-report\"\"\",\"null\"\r\n"
+    },
+    {
+      "id": "peer-waiting",
+      "expected": {
+        "finalState": "follow-up-required",
+        "enquiryEnded": false,
+        "enquiryTotalSec": 10,
+        "knownEnquirySubtotalSec": 10,
+        "unknownDurationCount": 0
+      },
+      "record": {
+        "schemaVersion": 1,
+        "modelVersion": "enquiry-trace-v1",
+        "provenance": "synthetic-policy-evaluation",
+        "input": {
+          "provenance": "synthetic",
+          "priorInformation": "none",
+          "contacts": [
+            {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": false,
+              "uncertaintyReported": true,
+              "enquiryDurationSec": 10,
+              "followUpDisposition": null
+            }
+          ]
+        },
+        "events": [
+          {
+            "contact": {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": false,
+              "uncertaintyReported": true,
+              "enquiryDurationSec": 10,
+              "followUpDisposition": null
+            },
+            "startOffsetSec": 0,
+            "endOffsetSec": 10,
+            "stateAfter": "follow-up-required"
+          }
+        ],
+        "contactCount": 1,
+        "finalState": "follow-up-required",
+        "closureBasis": null,
+        "enquiryEnded": false,
+        "knownEnquirySubtotalSec": 10,
+        "unknownDurationCount": 0,
+        "enquiryTotalSec": 10,
+        "timingAssumption": "sequential-nonoverlapping-contact-intervals-only",
+        "excludedTime": [
+          "searching",
+          "gaps-between-contacts",
+          "prior-information-acquisition-and-handoff",
+          "scanning",
+          "rechecking"
+        ],
+        "priorInformationCostSec": null,
+        "wholeVerificationSec": null,
+        "laterStoppingRuleValidation": "not-established",
+        "pathPolicyValidation": "not-established",
+        "independentVerification": "not-established",
+        "sources": [
+          "data/student-workflow-confirmation-2026-11-04.json",
+          "data/student-peer-stopping-rule-2026-10-31.json",
+          "data/student-uncertain-followup-rule-2026-10-31.json",
+          "data/student-escalation-procedure-2026-10-31.json"
+        ],
+        "generatedAt": "2026-11-20T01:13:55.205Z",
+        "sourceRevision": "546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b",
+        "sourceFingerprint": "2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386"
+      },
+      "csv": "record_type,csv_schema_version,trace_schema_version,model_version,provenance,generated_at,source_revision,source_fingerprint,source_authenticity,independent_verification,contact_count,final_state,enquiry_ended,closure_basis,enquiry_total_sec,known_enquiry_subtotal_sec,unknown_duration_count,prior_information_cost_sec,whole_verification_sec,timing_assumption,excluded_time,later_stopping_rule_validation,path_policy_validation,sources,contact_id,target,specific_destination_reported,uncertainty_reported,enquiry_duration_sec,follow_up_disposition,start_offset_sec,end_offset_sec,state_after,input\r\n\"\"\"summary\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"1\",\"\"\"follow-up-required\"\"\",\"false\",\"null\",\"10\",\"10\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"{\"\"provenance\"\":\"\"synthetic\"\",\"\"priorInformation\"\":\"\"none\"\",\"\"contacts\"\":[{\"\"id\"\":\"\"P1\"\",\"\"target\"\":\"\"peer\"\",\"\"specificDestinationReported\"\":false,\"\"uncertaintyReported\"\":true,\"\"enquiryDurationSec\"\":10,\"\"followUpDisposition\"\":null}]}\"\r\n\"\"\"contact\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"1\",\"\"\"follow-up-required\"\"\",\"false\",\"null\",\"10\",\"10\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"\"\"P1\"\"\",\"\"\"peer\"\"\",\"false\",\"true\",\"10\",\"null\",\"0\",\"10\",\"\"\"follow-up-required\"\"\",\"null\"\r\n"
+    },
+    {
+      "id": "later-unrecorded",
+      "expected": {
+        "finalState": "follow-up-disposition-unknown",
+        "enquiryEnded": null,
+        "enquiryTotalSec": 30,
+        "knownEnquirySubtotalSec": 30,
+        "unknownDurationCount": 0
+      },
+      "record": {
+        "schemaVersion": 1,
+        "modelVersion": "enquiry-trace-v1",
+        "provenance": "synthetic-policy-evaluation",
+        "input": {
+          "provenance": "synthetic",
+          "priorInformation": "none",
+          "contacts": [
+            {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": false,
+              "uncertaintyReported": true,
+              "enquiryDurationSec": 10,
+              "followUpDisposition": null
+            },
+            {
+              "id": "L1",
+              "target": "leader",
+              "specificDestinationReported": true,
+              "uncertaintyReported": false,
+              "enquiryDurationSec": 20,
+              "followUpDisposition": "not-recorded"
+            }
+          ]
+        },
+        "events": [
+          {
+            "contact": {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": false,
+              "uncertaintyReported": true,
+              "enquiryDurationSec": 10,
+              "followUpDisposition": null
+            },
+            "startOffsetSec": 0,
+            "endOffsetSec": 10,
+            "stateAfter": "follow-up-required"
+          },
+          {
+            "contact": {
+              "id": "L1",
+              "target": "leader",
+              "specificDestinationReported": true,
+              "uncertaintyReported": false,
+              "enquiryDurationSec": 20,
+              "followUpDisposition": "not-recorded"
+            },
+            "startOffsetSec": 10,
+            "endOffsetSec": 30,
+            "stateAfter": "follow-up-disposition-unknown"
+          }
+        ],
+        "contactCount": 2,
+        "finalState": "follow-up-disposition-unknown",
+        "closureBasis": null,
+        "enquiryEnded": null,
+        "knownEnquirySubtotalSec": 30,
+        "unknownDurationCount": 0,
+        "enquiryTotalSec": 30,
+        "timingAssumption": "sequential-nonoverlapping-contact-intervals-only",
+        "excludedTime": [
+          "searching",
+          "gaps-between-contacts",
+          "prior-information-acquisition-and-handoff",
+          "scanning",
+          "rechecking"
+        ],
+        "priorInformationCostSec": null,
+        "wholeVerificationSec": null,
+        "laterStoppingRuleValidation": "not-established",
+        "pathPolicyValidation": "not-established",
+        "independentVerification": "not-established",
+        "sources": [
+          "data/student-workflow-confirmation-2026-11-04.json",
+          "data/student-peer-stopping-rule-2026-10-31.json",
+          "data/student-uncertain-followup-rule-2026-10-31.json",
+          "data/student-escalation-procedure-2026-10-31.json"
+        ],
+        "generatedAt": "2026-11-20T01:13:55.205Z",
+        "sourceRevision": "546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b",
+        "sourceFingerprint": "2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386"
+      },
+      "csv": "record_type,csv_schema_version,trace_schema_version,model_version,provenance,generated_at,source_revision,source_fingerprint,source_authenticity,independent_verification,contact_count,final_state,enquiry_ended,closure_basis,enquiry_total_sec,known_enquiry_subtotal_sec,unknown_duration_count,prior_information_cost_sec,whole_verification_sec,timing_assumption,excluded_time,later_stopping_rule_validation,path_policy_validation,sources,contact_id,target,specific_destination_reported,uncertainty_reported,enquiry_duration_sec,follow_up_disposition,start_offset_sec,end_offset_sec,state_after,input\r\n\"\"\"summary\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"2\",\"\"\"follow-up-disposition-unknown\"\"\",\"null\",\"null\",\"30\",\"30\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"{\"\"provenance\"\":\"\"synthetic\"\",\"\"priorInformation\"\":\"\"none\"\",\"\"contacts\"\":[{\"\"id\"\":\"\"P1\"\",\"\"target\"\":\"\"peer\"\",\"\"specificDestinationReported\"\":false,\"\"uncertaintyReported\"\":true,\"\"enquiryDurationSec\"\":10,\"\"followUpDisposition\"\":null},{\"\"id\"\":\"\"L1\"\",\"\"target\"\":\"\"leader\"\",\"\"specificDestinationReported\"\":true,\"\"uncertaintyReported\"\":false,\"\"enquiryDurationSec\"\":20,\"\"followUpDisposition\"\":\"\"not-recorded\"\"}]}\"\r\n\"\"\"contact\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"2\",\"\"\"follow-up-disposition-unknown\"\"\",\"null\",\"null\",\"30\",\"30\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"\"\"P1\"\"\",\"\"\"peer\"\"\",\"false\",\"true\",\"10\",\"null\",\"0\",\"10\",\"\"\"follow-up-required\"\"\",\"null\"\r\n\"\"\"contact\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"2\",\"\"\"follow-up-disposition-unknown\"\"\",\"null\",\"null\",\"30\",\"30\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"\"\"L1\"\"\",\"\"\"leader\"\"\",\"true\",\"false\",\"20\",\"\"\"not-recorded\"\"\",\"10\",\"30\",\"\"\"follow-up-disposition-unknown\"\"\",\"null\"\r\n"
+    },
+    {
+      "id": "later-reported-stop",
+      "expected": {
+        "finalState": "reported-stop-after-follow-up",
+        "enquiryEnded": true,
+        "enquiryTotalSec": 30,
+        "knownEnquirySubtotalSec": 30,
+        "unknownDurationCount": 0
+      },
+      "record": {
+        "schemaVersion": 1,
+        "modelVersion": "enquiry-trace-v1",
+        "provenance": "synthetic-policy-evaluation",
+        "input": {
+          "provenance": "synthetic",
+          "priorInformation": "none",
+          "contacts": [
+            {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": false,
+              "uncertaintyReported": true,
+              "enquiryDurationSec": 10,
+              "followUpDisposition": null
+            },
+            {
+              "id": "L1",
+              "target": "leader",
+              "specificDestinationReported": true,
+              "uncertaintyReported": false,
+              "enquiryDurationSec": 20,
+              "followUpDisposition": "reported-stop"
+            }
+          ]
+        },
+        "events": [
+          {
+            "contact": {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": false,
+              "uncertaintyReported": true,
+              "enquiryDurationSec": 10,
+              "followUpDisposition": null
+            },
+            "startOffsetSec": 0,
+            "endOffsetSec": 10,
+            "stateAfter": "follow-up-required"
+          },
+          {
+            "contact": {
+              "id": "L1",
+              "target": "leader",
+              "specificDestinationReported": true,
+              "uncertaintyReported": false,
+              "enquiryDurationSec": 20,
+              "followUpDisposition": "reported-stop"
+            },
+            "startOffsetSec": 10,
+            "endOffsetSec": 30,
+            "stateAfter": "reported-stop-after-follow-up"
+          }
+        ],
+        "contactCount": 2,
+        "finalState": "reported-stop-after-follow-up",
+        "closureBasis": "reported-follow-up-stop",
+        "enquiryEnded": true,
+        "knownEnquirySubtotalSec": 30,
+        "unknownDurationCount": 0,
+        "enquiryTotalSec": 30,
+        "timingAssumption": "sequential-nonoverlapping-contact-intervals-only",
+        "excludedTime": [
+          "searching",
+          "gaps-between-contacts",
+          "prior-information-acquisition-and-handoff",
+          "scanning",
+          "rechecking"
+        ],
+        "priorInformationCostSec": null,
+        "wholeVerificationSec": null,
+        "laterStoppingRuleValidation": "not-established",
+        "pathPolicyValidation": "not-established",
+        "independentVerification": "not-established",
+        "sources": [
+          "data/student-workflow-confirmation-2026-11-04.json",
+          "data/student-peer-stopping-rule-2026-10-31.json",
+          "data/student-uncertain-followup-rule-2026-10-31.json",
+          "data/student-escalation-procedure-2026-10-31.json"
+        ],
+        "generatedAt": "2026-11-20T01:13:55.205Z",
+        "sourceRevision": "546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b",
+        "sourceFingerprint": "2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386"
+      },
+      "csv": "record_type,csv_schema_version,trace_schema_version,model_version,provenance,generated_at,source_revision,source_fingerprint,source_authenticity,independent_verification,contact_count,final_state,enquiry_ended,closure_basis,enquiry_total_sec,known_enquiry_subtotal_sec,unknown_duration_count,prior_information_cost_sec,whole_verification_sec,timing_assumption,excluded_time,later_stopping_rule_validation,path_policy_validation,sources,contact_id,target,specific_destination_reported,uncertainty_reported,enquiry_duration_sec,follow_up_disposition,start_offset_sec,end_offset_sec,state_after,input\r\n\"\"\"summary\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"2\",\"\"\"reported-stop-after-follow-up\"\"\",\"true\",\"\"\"reported-follow-up-stop\"\"\",\"30\",\"30\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"{\"\"provenance\"\":\"\"synthetic\"\",\"\"priorInformation\"\":\"\"none\"\",\"\"contacts\"\":[{\"\"id\"\":\"\"P1\"\",\"\"target\"\":\"\"peer\"\",\"\"specificDestinationReported\"\":false,\"\"uncertaintyReported\"\":true,\"\"enquiryDurationSec\"\":10,\"\"followUpDisposition\"\":null},{\"\"id\"\":\"\"L1\"\",\"\"target\"\":\"\"leader\"\",\"\"specificDestinationReported\"\":true,\"\"uncertaintyReported\"\":false,\"\"enquiryDurationSec\"\":20,\"\"followUpDisposition\"\":\"\"reported-stop\"\"}]}\"\r\n\"\"\"contact\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"2\",\"\"\"reported-stop-after-follow-up\"\"\",\"true\",\"\"\"reported-follow-up-stop\"\"\",\"30\",\"30\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"\"\"P1\"\"\",\"\"\"peer\"\"\",\"false\",\"true\",\"10\",\"null\",\"0\",\"10\",\"\"\"follow-up-required\"\"\",\"null\"\r\n\"\"\"contact\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"2\",\"\"\"reported-stop-after-follow-up\"\"\",\"true\",\"\"\"reported-follow-up-stop\"\"\",\"30\",\"30\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"\"\"L1\"\"\",\"\"\"leader\"\"\",\"true\",\"false\",\"20\",\"\"\"reported-stop\"\"\",\"10\",\"30\",\"\"\"reported-stop-after-follow-up\"\"\",\"null\"\r\n"
+    },
+    {
+      "id": "unknown-time",
+      "expected": {
+        "finalState": "reported-stop-after-follow-up",
+        "enquiryEnded": true,
+        "enquiryTotalSec": null,
+        "knownEnquirySubtotalSec": 17,
+        "unknownDurationCount": 1
+      },
+      "record": {
+        "schemaVersion": 1,
+        "modelVersion": "enquiry-trace-v1",
+        "provenance": "synthetic-policy-evaluation",
+        "input": {
+          "provenance": "synthetic",
+          "priorInformation": "none",
+          "contacts": [
+            {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": false,
+              "uncertaintyReported": true,
+              "enquiryDurationSec": 10,
+              "followUpDisposition": null
+            },
+            {
+              "id": "L1",
+              "target": "leader",
+              "specificDestinationReported": true,
+              "uncertaintyReported": false,
+              "enquiryDurationSec": null,
+              "followUpDisposition": "continue"
+            },
+            {
+              "id": "L2",
+              "target": "leader",
+              "specificDestinationReported": true,
+              "uncertaintyReported": false,
+              "enquiryDurationSec": 7,
+              "followUpDisposition": "reported-stop"
+            }
+          ]
+        },
+        "events": [
+          {
+            "contact": {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": false,
+              "uncertaintyReported": true,
+              "enquiryDurationSec": 10,
+              "followUpDisposition": null
+            },
+            "startOffsetSec": 0,
+            "endOffsetSec": 10,
+            "stateAfter": "follow-up-required"
+          },
+          {
+            "contact": {
+              "id": "L1",
+              "target": "leader",
+              "specificDestinationReported": true,
+              "uncertaintyReported": false,
+              "enquiryDurationSec": null,
+              "followUpDisposition": "continue"
+            },
+            "startOffsetSec": 10,
+            "endOffsetSec": null,
+            "stateAfter": "follow-up-required"
+          },
+          {
+            "contact": {
+              "id": "L2",
+              "target": "leader",
+              "specificDestinationReported": true,
+              "uncertaintyReported": false,
+              "enquiryDurationSec": 7,
+              "followUpDisposition": "reported-stop"
+            },
+            "startOffsetSec": null,
+            "endOffsetSec": null,
+            "stateAfter": "reported-stop-after-follow-up"
+          }
+        ],
+        "contactCount": 3,
+        "finalState": "reported-stop-after-follow-up",
+        "closureBasis": "reported-follow-up-stop",
+        "enquiryEnded": true,
+        "knownEnquirySubtotalSec": 17,
+        "unknownDurationCount": 1,
+        "enquiryTotalSec": null,
+        "timingAssumption": "sequential-nonoverlapping-contact-intervals-only",
+        "excludedTime": [
+          "searching",
+          "gaps-between-contacts",
+          "prior-information-acquisition-and-handoff",
+          "scanning",
+          "rechecking"
+        ],
+        "priorInformationCostSec": null,
+        "wholeVerificationSec": null,
+        "laterStoppingRuleValidation": "not-established",
+        "pathPolicyValidation": "not-established",
+        "independentVerification": "not-established",
+        "sources": [
+          "data/student-workflow-confirmation-2026-11-04.json",
+          "data/student-peer-stopping-rule-2026-10-31.json",
+          "data/student-uncertain-followup-rule-2026-10-31.json",
+          "data/student-escalation-procedure-2026-10-31.json"
+        ],
+        "generatedAt": "2026-11-20T01:13:55.205Z",
+        "sourceRevision": "546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b",
+        "sourceFingerprint": "2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386"
+      },
+      "csv": "record_type,csv_schema_version,trace_schema_version,model_version,provenance,generated_at,source_revision,source_fingerprint,source_authenticity,independent_verification,contact_count,final_state,enquiry_ended,closure_basis,enquiry_total_sec,known_enquiry_subtotal_sec,unknown_duration_count,prior_information_cost_sec,whole_verification_sec,timing_assumption,excluded_time,later_stopping_rule_validation,path_policy_validation,sources,contact_id,target,specific_destination_reported,uncertainty_reported,enquiry_duration_sec,follow_up_disposition,start_offset_sec,end_offset_sec,state_after,input\r\n\"\"\"summary\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"3\",\"\"\"reported-stop-after-follow-up\"\"\",\"true\",\"\"\"reported-follow-up-stop\"\"\",\"null\",\"17\",\"1\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"{\"\"provenance\"\":\"\"synthetic\"\",\"\"priorInformation\"\":\"\"none\"\",\"\"contacts\"\":[{\"\"id\"\":\"\"P1\"\",\"\"target\"\":\"\"peer\"\",\"\"specificDestinationReported\"\":false,\"\"uncertaintyReported\"\":true,\"\"enquiryDurationSec\"\":10,\"\"followUpDisposition\"\":null},{\"\"id\"\":\"\"L1\"\",\"\"target\"\":\"\"leader\"\",\"\"specificDestinationReported\"\":true,\"\"uncertaintyReported\"\":false,\"\"enquiryDurationSec\"\":null,\"\"followUpDisposition\"\":\"\"continue\"\"},{\"\"id\"\":\"\"L2\"\",\"\"target\"\":\"\"leader\"\",\"\"specificDestinationReported\"\":true,\"\"uncertaintyReported\"\":false,\"\"enquiryDurationSec\"\":7,\"\"followUpDisposition\"\":\"\"reported-stop\"\"}]}\"\r\n\"\"\"contact\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"3\",\"\"\"reported-stop-after-follow-up\"\"\",\"true\",\"\"\"reported-follow-up-stop\"\"\",\"null\",\"17\",\"1\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"\"\"P1\"\"\",\"\"\"peer\"\"\",\"false\",\"true\",\"10\",\"null\",\"0\",\"10\",\"\"\"follow-up-required\"\"\",\"null\"\r\n\"\"\"contact\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"3\",\"\"\"reported-stop-after-follow-up\"\"\",\"true\",\"\"\"reported-follow-up-stop\"\"\",\"null\",\"17\",\"1\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"\"\"L1\"\"\",\"\"\"leader\"\"\",\"true\",\"false\",\"null\",\"\"\"continue\"\"\",\"10\",\"null\",\"\"\"follow-up-required\"\"\",\"null\"\r\n\"\"\"contact\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"3\",\"\"\"reported-stop-after-follow-up\"\"\",\"true\",\"\"\"reported-follow-up-stop\"\"\",\"null\",\"17\",\"1\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"\"\"L2\"\"\",\"\"\"leader\"\"\",\"true\",\"false\",\"7\",\"\"\"reported-stop\"\"\",\"null\",\"null\",\"\"\"reported-stop-after-follow-up\"\"\",\"null\"\r\n"
+    },
+    {
+      "id": "explicit-zero",
+      "expected": {
+        "finalState": "follow-up-required",
+        "enquiryEnded": false,
+        "enquiryTotalSec": 0,
+        "knownEnquirySubtotalSec": 0,
+        "unknownDurationCount": 0
+      },
+      "record": {
+        "schemaVersion": 1,
+        "modelVersion": "enquiry-trace-v1",
+        "provenance": "synthetic-policy-evaluation",
+        "input": {
+          "provenance": "synthetic",
+          "priorInformation": "none",
+          "contacts": [
+            {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": false,
+              "uncertaintyReported": true,
+              "enquiryDurationSec": 0,
+              "followUpDisposition": null
+            }
+          ]
+        },
+        "events": [
+          {
+            "contact": {
+              "id": "P1",
+              "target": "peer",
+              "specificDestinationReported": false,
+              "uncertaintyReported": true,
+              "enquiryDurationSec": 0,
+              "followUpDisposition": null
+            },
+            "startOffsetSec": 0,
+            "endOffsetSec": 0,
+            "stateAfter": "follow-up-required"
+          }
+        ],
+        "contactCount": 1,
+        "finalState": "follow-up-required",
+        "closureBasis": null,
+        "enquiryEnded": false,
+        "knownEnquirySubtotalSec": 0,
+        "unknownDurationCount": 0,
+        "enquiryTotalSec": 0,
+        "timingAssumption": "sequential-nonoverlapping-contact-intervals-only",
+        "excludedTime": [
+          "searching",
+          "gaps-between-contacts",
+          "prior-information-acquisition-and-handoff",
+          "scanning",
+          "rechecking"
+        ],
+        "priorInformationCostSec": null,
+        "wholeVerificationSec": null,
+        "laterStoppingRuleValidation": "not-established",
+        "pathPolicyValidation": "not-established",
+        "independentVerification": "not-established",
+        "sources": [
+          "data/student-workflow-confirmation-2026-11-04.json",
+          "data/student-peer-stopping-rule-2026-10-31.json",
+          "data/student-uncertain-followup-rule-2026-10-31.json",
+          "data/student-escalation-procedure-2026-10-31.json"
+        ],
+        "generatedAt": "2026-11-20T01:13:55.205Z",
+        "sourceRevision": "546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b",
+        "sourceFingerprint": "2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386"
+      },
+      "csv": "record_type,csv_schema_version,trace_schema_version,model_version,provenance,generated_at,source_revision,source_fingerprint,source_authenticity,independent_verification,contact_count,final_state,enquiry_ended,closure_basis,enquiry_total_sec,known_enquiry_subtotal_sec,unknown_duration_count,prior_information_cost_sec,whole_verification_sec,timing_assumption,excluded_time,later_stopping_rule_validation,path_policy_validation,sources,contact_id,target,specific_destination_reported,uncertainty_reported,enquiry_duration_sec,follow_up_disposition,start_offset_sec,end_offset_sec,state_after,input\r\n\"\"\"summary\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"1\",\"\"\"follow-up-required\"\"\",\"false\",\"null\",\"0\",\"0\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"null\",\"{\"\"provenance\"\":\"\"synthetic\"\",\"\"priorInformation\"\":\"\"none\"\",\"\"contacts\"\":[{\"\"id\"\":\"\"P1\"\",\"\"target\"\":\"\"peer\"\",\"\"specificDestinationReported\"\":false,\"\"uncertaintyReported\"\":true,\"\"enquiryDurationSec\"\":0,\"\"followUpDisposition\"\":null}]}\"\r\n\"\"\"contact\"\"\",\"1\",\"1\",\"\"\"enquiry-trace-v1\"\"\",\"\"\"synthetic-policy-evaluation\"\"\",\"\"\"2026-11-20T01:13:55.205Z\"\"\",\"\"\"546da49df4da859f9e3cb0c9c42e04b24b62fcb5+dirty:2eb21512a07b\"\"\",\"\"\"2eb21512a07bc1c372e4c8b1ca9379be9cc52fbfd5e0c978fe8f0bee18f11386\"\"\",\"\"\"not-verified\"\"\",\"\"\"not-established\"\"\",\"1\",\"\"\"follow-up-required\"\"\",\"false\",\"null\",\"0\",\"0\",\"0\",\"null\",\"null\",\"\"\"sequential-nonoverlapping-contact-intervals-only\"\"\",\"[\"\"searching\"\",\"\"gaps-between-contacts\"\",\"\"prior-information-acquisition-and-handoff\"\",\"\"scanning\"\",\"\"rechecking\"\"]\",\"\"\"not-established\"\"\",\"\"\"not-established\"\"\",\"[\"\"data/student-workflow-confirmation-2026-11-04.json\"\",\"\"data/student-peer-stopping-rule-2026-10-31.json\"\",\"\"data/student-uncertain-followup-rule-2026-10-31.json\"\",\"\"data/student-escalation-procedure-2026-10-31.json\"\"]\",\"\"\"P1\"\"\",\"\"\"peer\"\"\",\"false\",\"true\",\"0\",\"null\",\"0\",\"0\",\"\"\"follow-up-required\"\"\",\"null\"\r\n"
+    }
+  ],
+  "empiricalAccuracy": null,
+  "sourceAuthenticity": "not-verified",
+  "limitations": [
+    "Constructed after implementation by Codex; not preregistered, independent holdout data, student-authored tests or field observations.",
+    "Durations are invented fixture inputs, not reassigned school timings.",
+    "Reported later stops and supplied paths do not establish validated stopping criteria or route approval.",
+    "No empirical accuracy, field prevalence, causal improvement or source-authenticity claim."
+  ]
+}

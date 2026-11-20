@@ -30,6 +30,7 @@ Issue #9 adds the prior-information path confirmed during student workflow revie
 | [#18 Mobile reproduction audit](https://github.com/J0hns0n-K/FlowBench/issues/18) | Check replay/re-edit, clear stale validation feedback and align status records. | Verified390x844 workflow; no field/authenticity/download claim |
 | [#19 Contact-duration visualization](https://github.com/J0hns0n-K/FlowBench/issues/19) | Show known interval lengths without inventing unknown widths or total-time ratios. | Desktop/mobile known/unknown/zero/skip states verified; assisted visualization |
 | [#20 Trace CSV content](https://github.com/J0hns0n-K/FlowBench/issues/20) | Preserve summary/contact rows, JSON-valued unknowns and replayable input; expose content preview. | Three new tests, full83 tests/build, browser checks; no actual download or CSV import |
+| [#21 Headless trace fixtures](https://github.com/J0hns0n-K/FlowBench/issues/21) | Reproduce8 synthetic core/JSON/CSV cases and source-fingerprinted saved evidence in CI. | Eight checks passed; corrupt saved CSV rejected then original restored; existing83 tests/build. Assisted post-implementation fixtures, no empirical accuracy |
 
 Issue completion is scoped precisely. Completing a software issue does not close empirical validation or student attribution.
 

@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 241f1121ea17848a28437b9d0c2a5bc4101142d4c63f472ec598c606e4f0628b -->
+<!-- Evidence fingerprint: 365d7f95cbb109ee8065d6b792ce9907408c4a78b340de882008dac46c3b2a5d -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -96,11 +96,12 @@ Requires Node.js 24+ and pnpm 11.25.0.
 ```sh
 pnpm install --frozen-lockfile
 pnpm test
+pnpm trace:fixtures
 pnpm build
 pnpm dev
 ```
 
-Open http://127.0.0.1:4173/. `pnpm experiment` reproduces the synthetic study. GitHub Actions runs the tests, typechecked build, experiment and overview freshness check. Browser export serializers are tested; actual browser download completion remains an open check in [issue #4](https://github.com/J0hns0n-K/FlowBench/issues/4). The workbench is a local prototype.
+Open http://127.0.0.1:4173/. `pnpm experiment` reproduces the synthetic study. GitHub Actions runs the tests, typechecked build, experiment, fixed enquiry JSON/CSV fixtures and overview freshness check. Browser export serializers are tested; actual browser download completion remains an open check in [issue #4](https://github.com/J0hns0n-K/FlowBench/issues/4). The workbench is a local prototype.
 
 See the [reproduction review](docs/REPRODUCTION_CHECK_KO.md) for the mobile JSON workflow and remaining validation boundaries.
 

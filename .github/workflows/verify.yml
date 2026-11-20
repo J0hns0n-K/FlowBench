@@ -31,3 +31,5 @@ jobs:
         run: pnpm experiment
       - name: Reproduce label-comparison limitation witnesses
         run: pnpm label:limits
+      - name: Reproduce enquiry trace JSON and CSV fixtures
+        run: pnpm trace:fixtures

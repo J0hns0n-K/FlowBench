@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "provenance": "synthetic",
+  "construction": "assistant-constructed-post-implementation-fixtures",
+  "createdOn": "2026-11-20",
+  "contacts": {
+    "peer-waiting": { "id": "P1", "target": "peer", "specificDestinationReported": false, "uncertaintyReported": true, "enquiryDurationSec": 10, "followUpDisposition": null },
+    "peer-clear": { "id": "P1", "target": "peer", "specificDestinationReported": true, "uncertaintyReported": false, "enquiryDurationSec": 10, "followUpDisposition": null },
+    "peer-zero": { "id": "P1", "target": "peer", "specificDestinationReported": false, "uncertaintyReported": true, "enquiryDurationSec": 0, "followUpDisposition": null },
+    "leader-unrecorded": { "id": "L1", "target": "leader", "specificDestinationReported": true, "uncertaintyReported": false, "enquiryDurationSec": 20, "followUpDisposition": "not-recorded" },
+    "leader-stopped": { "id": "L1", "target": "leader", "specificDestinationReported": true, "uncertaintyReported": false, "enquiryDurationSec": 20, "followUpDisposition": "reported-stop" },
+    "leader-unknown-time": { "id": "L1", "target": "leader", "specificDestinationReported": true, "uncertaintyReported": false, "enquiryDurationSec": null, "followUpDisposition": "continue" },
+    "leader-final-seven": { "id": "L2", "target": "leader", "specificDestinationReported": true, "uncertaintyReported": false, "enquiryDurationSec": 7, "followUpDisposition": "reported-stop" }
+  },
+  "cases": [
+    { "id": "not-started", "priorInformation": "none", "contactRefs": [], "expected": { "finalState": "not-started", "enquiryEnded": false, "enquiryTotalSec": 0, "knownEnquirySubtotalSec": 0, "unknownDurationCount": 0 } },
+    { "id": "prior-known", "priorInformation": "checker-prior-authorization", "contactRefs": [], "expected": { "finalState": "skipped-on-prior-information", "enquiryEnded": true, "enquiryTotalSec": 0, "knownEnquirySubtotalSec": 0, "unknownDurationCount": 0 } },
+    { "id": "peer-closed", "priorInformation": "none", "contactRefs": ["peer-clear"], "expected": { "finalState": "closed-on-peer-report", "enquiryEnded": true, "enquiryTotalSec": 10, "knownEnquirySubtotalSec": 10, "unknownDurationCount": 0 } },
+    { "id": "peer-waiting", "priorInformation": "none", "contactRefs": ["peer-waiting"], "expected": { "finalState": "follow-up-required", "enquiryEnded": false, "enquiryTotalSec": 10, "knownEnquirySubtotalSec": 10, "unknownDurationCount": 0 } },
+    { "id": "later-unrecorded", "priorInformation": "none", "contactRefs": ["peer-waiting", "leader-unrecorded"], "expected": { "finalState": "follow-up-disposition-unknown", "enquiryEnded": null, "enquiryTotalSec": 30, "knownEnquirySubtotalSec": 30, "unknownDurationCount": 0 } },
+    { "id": "later-reported-stop", "priorInformation": "none", "contactRefs": ["peer-waiting", "leader-stopped"], "expected": { "finalState": "reported-stop-after-follow-up", "enquiryEnded": true, "enquiryTotalSec": 30, "knownEnquirySubtotalSec": 30, "unknownDurationCount": 0 } },
+    { "id": "unknown-time", "priorInformation": "none", "contactRefs": ["peer-waiting", "leader-unknown-time", "leader-final-seven"], "expected": { "finalState": "reported-stop-after-follow-up", "enquiryEnded": true, "enquiryTotalSec": null, "knownEnquirySubtotalSec": 17, "unknownDurationCount": 1 } },
+    { "id": "explicit-zero", "priorInformation": "none", "contactRefs": ["peer-zero"], "expected": { "finalState": "follow-up-required", "enquiryEnded": false, "enquiryTotalSec": 0, "knownEnquirySubtotalSec": 0, "unknownDurationCount": 0 } }
+  ],
+  "limitations": [
+    "Constructed after implementation by Codex; not preregistered, independent holdout data, student-authored tests or field observations.",
+    "Durations are invented fixture inputs, not reassigned school timings.",
+    "Reported later stops and supplied paths do not establish validated stopping criteria or route approval.",
+    "No empirical accuracy, field prevalence, causal improvement or source-authenticity claim."
+  ]
+}

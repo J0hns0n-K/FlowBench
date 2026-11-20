@@ -237,3 +237,7 @@ Added per-contact duration bars scaled only to the largest known interval. Unkno
 ### Trace CSV summary/contact rows — 2026-11-18
 
 Added34-column CSV with summary1 row and contact rows, JSON-valued cells and retained input/unknowns/zero/metadata/assumptions. Three new tests; full83 tests/build passed. Browser checked unknown/skip row counts, stale invalidation, unchanged JSON preview and mobile layout. No actual file download or CSV import. Implementation and QA assisted.
+
+### Fixed enquiry trace JSON/CSV reproduction — 2026-11-20
+
+Eight assistant-constructed post-implementation cases cover start/skip/peer closure/waiting/later disposition/unknown time/zero. Runner checks expected results, JSON replay,34-column CSV summary/contact rows and compares the complete saved bundle using original run metadata plus matching current source fingerprint. Explicit --write regenerates evidence; CI default only checks. Modified saved CSV was rejected; original restored and all8 passed. Existing83 tests/build passed. No new core/UI policy or browser QA, field data, empirical accuracy or independent student test design.
