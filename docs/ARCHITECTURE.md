@@ -47,3 +47,5 @@ enquiry-trace.ts is a pure synthetic-only sequential trace core. It reuses evalu
 2026-11-18: enquiry-trace-ui.ts now connects the core to editable synthetic contact cards, skip/presets, a state/offset table and source-stamped JSON content preview. Edits clear stale results; no CSV/import/download or new attendance policy.
 
 2026-11-20: enquiry-trace-fixtures.mjs is a separate headless cross-format evaluator. Eight synthetic cases feed unchanged trace/replay/CSV modules. Default execution validates source fingerprint and reproduces the stored JSON/CSV bundle with its original metadata; --write explicitly regenerates it. Source files include core, peer policy, numerical bounds, replay, CSV, fixture and runner. CI runs this alongside unit tests. No runtime browser or field-policy changes.
+
+2026-11-20: scripts/verify.mjs orchestrates five checks with process.execPath, root cwd and fail-fast exit status: unit tests, overview freshness, typechecked build, label/site witnesses and saved trace fixtures. It invokes no regeneration flags; CI shares this command, with legacy sensitivity generation kept separate. No runtime UI or model changes.

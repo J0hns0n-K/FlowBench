@@ -31,6 +31,7 @@ Issue #9 adds the prior-information path confirmed during student workflow revie
 | [#19 Contact-duration visualization](https://github.com/J0hns0n-K/FlowBench/issues/19) | Show known interval lengths without inventing unknown widths or total-time ratios. | Desktop/mobile known/unknown/zero/skip states verified; assisted visualization |
 | [#20 Trace CSV content](https://github.com/J0hns0n-K/FlowBench/issues/20) | Preserve summary/contact rows, JSON-valued unknowns and replayable input; expose content preview. | Three new tests, full83 tests/build, browser checks; no actual download or CSV import |
 | [#21 Headless trace fixtures](https://github.com/J0hns0n-K/FlowBench/issues/21) | Reproduce8 synthetic core/JSON/CSV cases and source-fingerprinted saved evidence in CI. | Eight checks passed; corrupt saved CSV rejected then original restored; existing83 tests/build. Assisted post-implementation fixtures, no empirical accuracy |
+| [#22 One-command verification](https://github.com/J0hns0n-K/FlowBench/issues/22) | Orchestrate five existing checks, stop on failure, preserve saved evidence and align CI. | Unified runner and documented scope; no new model or empirical validation |
 
 Issue completion is scoped precisely. Completing a software issue does not close empirical validation or student attribution.
 

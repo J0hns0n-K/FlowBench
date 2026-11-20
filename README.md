@@ -17,7 +17,7 @@ This progression—from correcting the premise to changing the dependency—is d
 ## Current evidence
 
 <!-- FLOWBENCH:CURRENT:START -->
-<!-- Evidence fingerprint: 365d7f95cbb109ee8065d6b792ce9907408c4a78b340de882008dac46c3b2a5d -->
+<!-- Evidence fingerprint: 25cddb02d68e75268924dfa4b4d7e6b979ba17b1e055458cc06a69534f9e840b -->
 This series contains reports with both seating and checking durations, through the linked report received **2026-10-29**: **2** reports. Separate enquiry/checking-only observations are described below. Report dates are not independently confirmed observation dates.
 
 | Report | Seating | Attendance verification | Source |
@@ -95,13 +95,11 @@ Requires Node.js 24+ and pnpm 11.25.0.
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm test
-pnpm trace:fixtures
-pnpm build
+pnpm verify
 pnpm dev
 ```
 
-Open http://127.0.0.1:4173/. `pnpm experiment` reproduces the synthetic study. GitHub Actions runs the tests, typechecked build, experiment, fixed enquiry JSON/CSV fixtures and overview freshness check. Browser export serializers are tested; actual browser download completion remains an open check in [issue #4](https://github.com/J0hns0n-K/FlowBench/issues/4). The workbench is a local prototype.
+Open http://127.0.0.1:4173/. `pnpm verify` (or `node --run verify` with dependencies installed) runs unit tests, overview freshness, typechecked build, label/site witnesses and saved enquiry JSON/CSV fixture checks, stopping at the first failure without regenerating saved experiments. `pnpm experiment` reproduces the synthetic study. GitHub Actions runs the tests, typechecked build, experiment, fixed enquiry JSON/CSV fixtures and overview freshness check. Browser export serializers are tested; actual browser download completion remains an open check in [issue #4](https://github.com/J0hns0n-K/FlowBench/issues/4). The workbench is a local prototype.
 
 See the [reproduction review](docs/REPRODUCTION_CHECK_KO.md) for the mobile JSON workflow and remaining validation boundaries.
 

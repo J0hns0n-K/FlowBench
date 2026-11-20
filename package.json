@@ -17,7 +17,8 @@
     "dev": "node scripts/serve.mjs",
     "experiment": "node scripts/experiment.ts",
     "label:limits": "node scripts/label-comparison-limits.mjs",
-    "trace:fixtures": "node scripts/enquiry-trace-fixtures.mjs"
+    "trace:fixtures": "node scripts/enquiry-trace-fixtures.mjs",
+    "verify": "node scripts/verify.mjs"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

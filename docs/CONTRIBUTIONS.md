@@ -90,3 +90,5 @@ Codex implemented the synthetic trace state machine, runtime validation, known/u
 2026-11-18: Codex implemented typed JSON-valued CSV for enquiry traces, its preview adapter and three serializer/replay tests. Full83 tests/build and browser preview checks passed. No new student implementation, UAT or field measurement inferred.
 
 2026-11-20: Codex constructed eight post-implementation synthetic fixtures, implemented JSON/core/CSV reproduction and source-fingerprinted evidence, tested saved-CSV corruption rejection/restoration and connected CI. Existing83 tests/build passed. No new student code, independent benchmark/preregistration, field observation or empirical accuracy inferred.
+
+2026-11-20: Codex added fail-fast one-command verification and aligned CI/documentation. Five existing checks are orchestrated without regenerating saved experiments; no new model, student implementation or field evidence inferred.

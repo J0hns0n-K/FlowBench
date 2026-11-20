@@ -241,3 +241,9 @@ Added34-column CSV with summary1 row and contact rows, JSON-valued cells and ret
 ### Fixed enquiry trace JSON/CSV reproduction — 2026-11-20
 
 Eight assistant-constructed post-implementation cases cover start/skip/peer closure/waiting/later disposition/unknown time/zero. Runner checks expected results, JSON replay,34-column CSV summary/contact rows and compares the complete saved bundle using original run metadata plus matching current source fingerprint. Explicit --write regenerates evidence; CI default only checks. Modified saved CSV was rejected; original restored and all8 passed. Existing83 tests/build passed. No new core/UI policy or browser QA, field data, empirical accuracy or independent student test design.
+
+### Unified verification runner — 2026-11-20
+
+Added verify command for existing83 unit tests, overview freshness, typechecked build, two label/site witnesses and eight saved trace fixtures. Uses node executable/root cwd, stops on first failure, and does not regenerate saved experiment records. CI shares it and keeps legacy sensitivity generation separate. Implementation/QA assisted; no UI/core changes or new field results.
+
+All5 stages passed locally. Intentionally mismatching the README fingerprint caused stage2 failure and stages3–5 did not run; original README restored and freshness passed. Tracked experiment files remained unchanged. No redundant orchestration unit test added.
